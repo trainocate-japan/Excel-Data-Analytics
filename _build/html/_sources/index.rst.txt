@@ -11,6 +11,7 @@ Architecting on AWS メモ&補足集
    src/2.ipynb
    src/3.ipynb
    src/4.ipynb
+   src/4-01.ipynb
    src/5.ipynb
    src/6.ipynb
    src/7.ipynb
