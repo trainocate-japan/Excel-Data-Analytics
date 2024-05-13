@@ -250,6 +250,42 @@
 </ul>
 </section>
 </section>
+<section id="【発展：デモ】ロジスティック回帰">
+<h2>【発展：デモ】ロジスティック回帰<a class="headerlink" href="#【発展：デモ】ロジスティック回帰" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">データ分析で重回帰分析と並びよく用いられる手法としてロジスティック回帰があります。 重回帰分析は連続値を目標値として分析や予測を行う手法です。</div>
+<div class="line">つまり、今回のユースケースのような成約の有無（0or1)のようなカテゴリの分析や予測には適していません。</div>
+</div>
+<p>そういったカテゴリ→分類のユースケースにて用いられる手法がロジスティック回帰です。回帰と名前がついておりますが分類の手法です。</p>
+<p>Excel ではこのロジスティクス回帰は搭載されておらず、サードパーティのアドインを有効化し、利用する必要があります。</p>
+<section id="ロジスティック回帰の実装">
+<h3>ロジスティック回帰の実装<a class="headerlink" href="#ロジスティック回帰の実装" title="Link to this heading"></a></h3>
+<section id="環境構築">
+<h4>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h4>
+</section>
+<section id="実装">
+<h4>実装<a class="headerlink" href="#実装" title="Link to this heading"></a></h4>
+</section>
+</section>
+<section id="結果の考察">
+<h3>結果の考察<a class="headerlink" href="#結果の考察" title="Link to this heading"></a></h3>
+<p>実装が完了すると下記のような結果のシートが出力されます。 <img alt="lo1" src="../_images/logistic1.png" /></p>
+<p>では結果を見てみましょう。確認をする主な指標は下記です。</p>
+<ul class="simple">
+<li><p>Logistic Regression Equation:計算によって割り出された数式が記載されます。</p></li>
+<li><p>Logistic Regression Statistics:重回帰分析のときと同じ様は表が表示されます</p>
+<ul>
+<li><p>Coefficient:係数、数式に当てはまる重みです。</p></li>
+<li><p>z-statistic:回帰係数を標準誤差(*1)で割った値で、誤差が小さいほどこの値が大きくなります。値が大きいほど結果が信頼できる</p></li>
+<li><p>P-value:P値、0.05を下回っているかどうか(その変数が目的に対して影響しない確率が5％未満かどうか)で、その変数が目的に与える影響を判断</p></li>
+<li><p>Std.coeff:標準化した値から算出される係数</p></li>
+</ul>
+</li>
+</ul>
+<p>続いて下記についても確認します。</p>
+<p><img alt="lo2" src="../_images/logistic2.png" /></p>
+</section>
+</section>
 </section>
 <section id="補足">
 <h1>補足<a class="headerlink" href="#補足" title="Link to this heading"></a></h1>
@@ -623,7 +659,7 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_04_10_1.png" src="../_images/src_04_10_1.png" />
+<img alt="../_images/src_04_13_1.png" src="../_images/src_04_13_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -995,7 +1031,7 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_04_12_1.png" src="../_images/src_04_12_1.png" />
+<img alt="../_images/src_04_15_1.png" src="../_images/src_04_15_1.png" />
 </div>
 </div>
 <ul class="simple">
@@ -2157,8 +2193,8 @@ AとEの売上には差がない
 </div>
 <p>売上の最も高たったEと低かったAさんでは差がないということが言えないということが検定結果からわかります。営業マンによる成約率の上下はあまりなさそうです。</p>
 </section>
-<section id="id17">
-<h3>相関分析<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<section id="id22">
+<h3>相関分析<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
 <p>年齢が上がるほど、銀行残高が上がるのかどうか相関関係を分析する</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -2239,8 +2275,8 @@ previous  0.020169  0.030805 -0.058981  0.507272  1.000000  0.063562
 <p>期待すること - 売上の高い→優良顧客の発見 - 成約はするが売上の低い顧客属性の発見</p>
 <p>売上予測の重回帰モデルを作成して、売上の要因→成約の要因を探す 成約している人のみに注目し、売上に影響（成約）与える要因を探索する。</p>
 </section>
-<section id="id19">
-<h2>重回帰分析の結果の解釈<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
+<section id="id24">
+<h2>重回帰分析の結果の解釈<a class="headerlink" href="#id24" title="Link to this heading"></a></h2>
 <p>重回帰分析の結果の解釈を行います。 上図の注目すべき項目のみ着目して進めましょう。 回帰分析の結果の善し悪しを評価するものに、決定係数があります。決定係数は、モデルのデータに対する当てはまりの良さ（回帰式でデータをどの程度うまく表現できているか）を表す数値で、最大が　1 となります。</p>
 <p>Excel での回帰分析では、係数や切片に対して p 値(両側検定の結果)という値が算出されます。先程確認したように、以下の組み合わせで仮説を立てて、検定という統計処理を行った結果算出される値です。p 値については、0 に近い値を取っていればよいというふうに取られておけば構いません。 ※ 検定については少し難解であるため、資料後半に入れています。</p>
 <p>P 値が一定の値（一般に 5）を下回れば、説明変数は目的変数に対して影響を及ぼしていると主張できるようになります。</p>
@@ -5185,8 +5221,8 @@ dtype: int64
     </div>
   </div></div>
 </div>
-<section id="id20">
-<h3>重回帰分析<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<section id="id25">
+<h3>重回帰分析<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
 <p>重回帰分析を行い、売上に影響力のある特徴を算出する</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
@@ -5285,7 +5321,7 @@ array([[ 0.00053038,  0.0099747 ,  0.23074688,  0.45746109, -0.00058006,
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_04_62_0.png" src="../_images/src_04_62_0.png" />
+<img alt="../_images/src_04_65_0.png" src="../_images/src_04_65_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -5346,7 +5382,7 @@ Accuracy: 0.6516753270023293
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_04_65_1.png" src="../_images/src_04_65_1.png" />
+<img alt="../_images/src_04_68_1.png" src="../_images/src_04_68_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -6097,7 +6133,7 @@ Accuracy: 0.9051245296541839
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_04_69_0.png" src="../_images/src_04_69_0.png" />
+<img alt="../_images/src_04_72_0.png" src="../_images/src_04_72_0.png" />
 </div>
 </div>
 <p>重回帰分析まで一緒に行って、２周目を受講者に演習かなーと思ってます</p>
