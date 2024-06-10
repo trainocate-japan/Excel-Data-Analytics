@@ -1,21 +1,21 @@
-Architecting on AWS メモ&補足集
+データ分析講座（仮）
 =========================
 
 .. toctree::
-   :maxdepth: 13
+   :maxdepth: 3
    :caption: Contents:
    :glob:
    
    src/0.ipynb
-   src/1.ipynb
-   src/2.ipynb
-   src/3.ipynb
-   src/4.ipynb
-   src/4-01.ipynb
-   src/5.ipynb
-   src/6.ipynb
-   src/7.ipynb
-   src/8.ipynb
+   src/01.ipynb
+   src/02.ipynb
+   src/03.ipynb
+   src/04.ipynb
+   src/04-01.ipynb
+   src/05.ipynb
+   src/06.ipynb
+   src/07.ipynb
+   src/08.ipynb
    src/9.ipynb
    src/10.ipynb
    src/11.ipynb
