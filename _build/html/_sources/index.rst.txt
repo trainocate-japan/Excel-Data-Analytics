@@ -10,7 +10,7 @@
    src/01.ipynb
    src/02.ipynb
    src/03.ipynb
-   src/04.ipynb
+   src/04-00.ipynb
    src/04-01.ipynb
    src/05.ipynb
    src/06.ipynb
