@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>検定とは（推測統計） &mdash; Sphinx  ドキュメント</title>
+  <title>A(analysis、分析)：データに基づく分析・処理 2 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" />
-    <link rel="prev" title="A(analysis、分析)：データに基づく分析、処理" href="04.html" /> 
+    <link rel="prev" title="D(data、データ収集)：データの収集・整理" href="03.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,17 +52,19 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">A(analysis、分析)：データに基づく分析、処理</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#統計的仮説検定">統計的仮説検定</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#平均の差の検定の仕組み">平均の差の検定の仕組み</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A(analysis、分析)：データに基づく分析・処理 2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">検定とは（推測統計）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t-検定">t-検定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#【実装】t-検定">【実装】t-検定</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#t-検定:-等分散を仮定した２標本による検定-の実装">t-検定: 等分散を仮定した２標本による検定 の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#カイ二乗検定">カイ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#カイ二乗検定の実装">カイ二乗検定の実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#χ二乗検定">χ二乗検定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#【実装】χ二乗検定の実装">【実装】χ二乗検定の実装</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
@@ -82,7 +84,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">検定とは（推測統計）</li>
+      <li class="breadcrumb-item active">A(analysis、分析)：データに基づく分析・処理 2</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/04-01.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,49 +94,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="検定とは（推測統計）">
-<h1>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h1>
+  <section id="A(analysis、分析)：データに基づく分析・処理-2">
+<h1>A(analysis、分析)：データに基づく分析・処理 2<a class="headerlink" href="#A(analysis、分析)：データに基づく分析・処理-2" title="Link to this heading"></a></h1>
+<section id="検定とは（推測統計）">
+<h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
 <p>本章では統計的仮説検定について学習します。検定を行うことで、仮説が正しいと言ってよいのかを判断できます。</p>
-<p>これだけではわかりにくいので具体例を用いて考えましょう 集計や可視化を行った際に平均の差などを見つけられました。ですが現状では本当にその差があると言うことはできません。 なぜかというと、データは一部であり、すべての店舗や期間のデータがあるわけではないからです。このとき、すべてのデータのことを母集団と呼び、データが取れているもののことを標本集団と呼びます。</p>
-<p>前章で見つけた平均の差等はあくまでも標本集団における差であり、母集団で差があるかどうかはわからないということになります。しかし、母集団のレビューデータが取れているわけではないので、母集団の平均値を直接求めることはできません。</p>
-<p>このとき、抽出された標本集団における結果から母集団においても平均の差があるのかどうかを判定するのが検定です。 また、この検定は推測統計という分野の 1 つであり、推測統計は標本集団から母集団の性質を推測するという内容です。前章で行った標本集団の集計や可視化を行うことを記述統計と呼びます。</p>
+<div class="line-block">
+<div class="line">これだけではわかりにくいので具体例を用いて考えましょう。</div>
+<div class="line">集計や可視化を行うとそれぞれに差があることがわかります。ですが現状では本当にその差があると言うことはできません。</div>
+<div class="line">なぜかというと、データは一部であり、すべての店舗や期間のデータがあるわけではないからです。</div>
+<div class="line">このとき、すべてのデータのことを母集団と呼び、データが取れているもののことを<strong>標本集団</strong>と呼びます。</div>
+</div>
+<p>このとき、抽出された標本集団における結果から母集団においても平均の差があるのかどうかを判定するのが<strong>検定</strong>です。 また、この検定は推測統計という分野の 1 つであり、推測統計は標本集団から母集団の性質を推測するという内容です。前章で行った標本集団の集計や可視化を行うことを記述統計と呼びます。</p>
 <p>また推測統計には検定以外にも推定という内容があり、推定は標本集団の結果から母集団の平均値や分散を推測するような内容になります。 それでは検定の詳しい内容について学習していきましょう。</p>
 </section>
-<section id="統計的仮説検定">
-<h1>統計的仮説検定<a class="headerlink" href="#統計的仮説検定" title="Link to this heading"></a></h1>
-<p>統計的仮説検定は検定統計量と呼ばれる値を用いて確率的に正しさを検定します。具体例を用いてイメージを付けましょう。 例えば、以下のような課題に対して扱うことができます。</p>
-<div class="line-block">
-<div class="line">【例 1】</div>
-<div class="line">ある製品の重量が平均 100g と言われているが、最近製品の重量が減ったように感じている。 そこである製品 100 個を無作為に抽出し、調べてみたところ、平均の重量は 98g でした。 この平均の差は意味のある差でしょうか。 検定では、一定の確率のもとで行う ◯× 判定(定性評価)ができます。このとき、生産されているすべての製品が母集団であり、無作為に抽出した 100個の製品が標本集団になります。</div>
-</div>
-<p>検定を使用すると、平均の差は偶然出た差なのか、それとも何らかの要因で出た差なのか、ということを判定することができます。 また、以下のような課題も扱うことができます。</p>
-<div class="line-block">
-<div class="line">【例 2】</div>
-<div class="line">ある自動車メーカーが新開発したエンジンを性能評価しました。 新型と従来型の車を 50 台づつ用意し、燃費を比較したところ、</div>
-</div>
-<div class="line-block">
-<div class="line">新開発エンジン : 24 km/L</div>
-<div class="line">従来型エンジン : 20 km/L</div>
-</div>
-<div class="line-block">
-<div class="line">でした。</div>
-<div class="line">ここには 4 km/L の差がありますが、この差は意味のある差でしょうか。</div>
-</div>
-<p>このような課題に対して使用できるのが統計的仮説検定です。 統計的仮説検定では、例 1 のように、母集団と標本集団の差を確認するものと、例 2 のように 2 標本の差を確認するものなどがあり、それぞれで活用できる大変便利な手法です。</p>
-<p>では、なぜ検定で平均の差を確認できるのか以下の図からイメージを掴みましょう。</p>
-<p><img alt="26" src="../_images/demo.png" /></p>
-<section id="平均の差の検定の仕組み">
-<h2>平均の差の検定の仕組み<a class="headerlink" href="#平均の差の検定の仕組み" title="Link to this heading"></a></h2>
-<p>検定にはいくつかの種類がり、目的やデータの性質によって使い分けを行います。 本章では、代表的な分析手法として t 検定（平均の差の検定）と 二乗検定を扱います。 それぞれは以下のような使い分けがなされます。</p>
-<p>まずは、t 検定から扱います。 t 検定は先程ご紹介した 2 標本の平均の差を証明刷るなどに使用できる検定手法です。</p>
+<section id="t-検定">
+<h2>t-検定<a class="headerlink" href="#t-検定" title="Link to this heading"></a></h2>
+<p>検定にはいくつかの種類がり、目的やデータの性質によって使い分けを行います。 本章では、代表的な分析手法として t 検定（平均の差の検定）と χ二乗検定を扱います。</p>
+<p>まずは、t 検定から扱います。 t 検定は 2 標本の平均の差を証明刷るなどに使用できる検定手法です。</p>
 <p>今回はキャンペーン前の２ヶ月まえのデータと本データの検定を行い、キャンペーンによる差があったのかどうか。（キャンペーンに効果があったのかどうか）を検定します。</p>
-<p>検定の流れがつかめたところで、検定の種類についても確認しておきましょう。t 検定を含む平均の差の検定にはいくつかの種類があり、使い分ける必要があります。使い分けにはいくつかの条件があるのですが、まずは以下の図から確認しましょう。</p>
-<p><img alt="demo1" src="../_images/demo1.png" /></p>
-</section>
-</section>
-<section id="t-検定:-等分散を仮定した２標本による検定-の実装">
-<h1>t-検定: 等分散を仮定した２標本による検定 の実装<a class="headerlink" href="#t-検定:-等分散を仮定した２標本による検定-の実装" title="Link to this heading"></a></h1>
-<p>T 検定を実装し、下記についてしらべます。 今回は、銀行のマーケティングキャンペーンのデータではなくデモデータを用いて解説します。 最後の演習時にマーケティングデータを用いて T 検定を実装してみましょう。</p>
+<div class="line-block">
+<div class="line">【補足】</div>
+<div class="line">t 検定には主に 3 つのタイプがあります。使い分けは、データの性質や測定の方法によります。</div>
+</div>
+<ul class="simple">
+<li><p>対応のある t 検定（ペア t 検定）</p>
+<ul>
+<li><p>概要: 同じ対象に対して2つの異なる時間点で測定されたデータを比較する。</p></li>
+<li><p>例: キャンペーンの前と後で同じ店舗の売上を比較する。</p></li>
+<li><p>適用条件: 2つのデータが対応している（ペアになっている）場合。</p></li>
+</ul>
+</li>
+<li><p>対応のない t 検定（独立2標本 t 検定）</p>
+<ul>
+<li><p>概要: 別々のグループから取得したデータを比較する。</p></li>
+<li><p>例: キャンペーンを実施した店舗と実施していない店舗の売上を比較する。</p></li>
+<li><p>適用条件: 2つのデータが独立している（対応していない）場合。</p></li>
+</ul>
+</li>
+<li><p>1 標本 t 検定</p>
+<ul>
+<li><p>概要: あるグループの平均が既知の値と等しいかどうかを調べる。</p></li>
+<li><p>例: キャンペーン後の売上が、業界標準の売上と比較して増加したかどうかを検証する。</p></li>
+<li><p>適用条件: データを1つの標本（グループ）から取得し、その平均が特定の値と異なるかどうかを確認する場合。</p></li>
+</ul>
+</li>
+</ul>
+<section id="【実装】t-検定">
+<h3>【実装】t-検定<a class="headerlink" href="#【実装】t-検定" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">t-検定を実装し、下記についてしらべます。 今回は、銀行のマーケティングキャンペーンのデータではなくデモデータを用いて解説します。 最後の演習時にマーケティングデータを用いて T 検定を実装してみましょう。</div>
+<div class="line">では Excel の <strong>ワークシート_4_</strong> を開いていください。まずはコンビニでの施策データを使用し t 検定の流れを抑えましょう。</div>
+</div>
 <div class="line-block">
 <div class="line">【問題設定 1】</div>
 <div class="line">渋谷を担当するコンビニチェーンのエリアマネージャーは、クーポンシールの導入を検討しています。</div>
@@ -145,25 +156,56 @@
 <p>②有意水準を決める</p>
 <p>今回は有意水準を 5% とします。</p>
 <p>③ p 値を計算する</p>
-<p>今回は対応があるデータですので、t-検定: 一対の標本による平均の検定 を使用して p 値を計算します。</p>
+<p>t-検定: 一対の標本による平均の検定 を使用して p 値を計算します。</p>
+<ol class="arabic">
+<li><p>ツールバーを選択し、データ→データ分析を開きます</p>
+<p><img alt="analytics" src="../_images/Excelanaly.png" /> <img alt="analytics2" src="../_images/exelanaly2.png" /></p>
+</li>
+<li><p>1 対の標本による平均の検定を選択します</p></li>
+<li><p>検定を行う列を選択します。</p>
+<p><img alt="t01" src="../_images/t-01.png" /></p>
+</li>
+</ol>
+<p>画像のように販促前列と販促後の列をそれぞれ選択し、ラベルを含むにチェックを入れて下さい。 出力先は同じExcelシート上の空きスペースを選択してください。設定ができましたら、OKを選択し分析を実行しましょう。</p>
+<p>すると下記のような結果が出力されます。</p>
+<p><img alt="t02" src="../_images/t-02.png" /></p>
+<p><strong>P(T&lt;=t)両側</strong>に注目しましょう。0.000551038 と優位水準を下回るため、<strong>販促前と後では有意差があると結論づけることができます。</strong></p>
+<div class="line-block">
+<div class="line">【結果の説明】 - 平均：各データの平均値</div>
+<div class="line">- 分散：各データの不偏分散</div>
+<div class="line">- 観測数：各データのサンプルサイズ</div>
+<div class="line">- ピアソン相関：2つのデータのピアソン積率相関係数</div>
+<div class="line">- 仮説平均との差異：仮説平均との差異に設定した値</div>
+<div class="line">- 自由度：サンプルサイズ-1</div>
+<div class="line">- t：データから算出されたt値</div>
+<div class="line">- P(T&lt;=t)片側：片側検定の場合のP値</div>
+<div class="line">- t境界値 片側：片側検定の場合の棄却限界値（この値をt値が超えると有意）</div>
+<div class="line">- P(T&lt;=t)両側：両側検定の場合のP値</div>
+<div class="line">- t境界値 両側：両側検定の場合の棄却限界値（この値をt値が超えると有意）</div>
+</div>
 </section>
-<section id="カイ二乗検定">
-<h1>カイ二乗検定<a class="headerlink" href="#カイ二乗検定" title="Link to this heading"></a></h1>
-<p>次は、カイ二乗検定について取り扱います。 カイ二乗検定は独立性の検定とも呼ばれ、A と B には関連があるかないかを調べるために使用します。使用シーンとしては、「アンケート結果について、ある質問 A ある質問 B の結果に関連があるかどうかを調べる」などです。</p>
+</section>
+<section id="χ二乗検定">
+<h2>χ二乗検定<a class="headerlink" href="#χ二乗検定" title="Link to this heading"></a></h2>
+<p>次は、χ二乗検定について取り扱います。 カイ二乗検定は独立性の検定とも呼ばれ、A と B には関連があるかないかを調べるために使用します。使用シーンとしては、「アンケート結果について、ある質問 A ある質問 B の結果に関連があるかどうかを調べる」などです。</p>
 <p>t 検定と混同しやすいのですが、t 検定は数値（確率）に関する検定、 カイ二乗検定はカテゴリ分けの検定とイメージを持っておくと良いです。</p>
-<p>カイ二乗検定は前提としてノンパラメトリックな分析手法の 1 つです。そのため分析対象とするデータは正規分布に従っている必要はありません。</p>
+<p>（カイ二乗検定は前提としてノンパラメトリックな分析手法の 1 つです。そのため分析対象とするデータは正規分布に従っている必要はありません。）</p>
 <p>カイ二乗検定は次の手順で行います。</p>
 <ol class="arabic simple">
 <li><p>仮説を設定する</p></li>
 <li><p>期待度数を求める</p></li>
 <li><p>実測度数と期待度数から,カイ二乗値を算出</p></li>
-<li><p>カイ二乗値から P 値を算出する</p></li>
+<li><p>χ二乗値から P 値を算出する</p></li>
 </ol>
-</section>
-<section id="カイ二乗検定の実装">
-<h1>カイ二乗検定の実装<a class="headerlink" href="#カイ二乗検定の実装" title="Link to this heading"></a></h1>
-<p>カイ二乗検定は［分析ツール］ではサポートしていませんが、CHISQ.TEST という関数を使って検定を行います。 期待度数という考え方を理解して、 カイ二乗値を計算できるようになりましょう。</p>
-<p>【問題】 以下の仮説を調べる - 結婚状況と成約の有無は関連性があるのではないか</p>
+<p>またχ二乗検定の計算方法は下記の通りです。</p>
+<p>χ二乗検定はχ二乗値と自由度を用いて、<a class="reference external" href="https://home.hiroshima-u.ac.jp/ichi/chi-square-distribution.pdf">二乗分布表</a>と見比べて有意な差があるといえるかどうか検定する手法です。</p>
+<p>χ二乗値＝((観測度数−期待度数)²/期待度数)の総和</p>
+<p>自由度は、行と列がある二次元の表の場合の以下のようにして計算する。 自由度＝（行の数-1）x（列の数-1）</p>
+<section id="【実装】χ二乗検定の実装">
+<h3>【実装】χ二乗検定の実装<a class="headerlink" href="#【実装】χ二乗検定の実装" title="Link to this heading"></a></h3>
+<p>χ二乗検定は［分析ツール］ではサポートしていませんが、CHISQ.TEST という関数を使って検定を行います。期待度数という考え方を理解し、χ二乗値を計算できるようになりましょう。</p>
+<p><strong>期待度数</strong>：行要素の合計や列要素の合計の比率から逆算して期待される度数のこと。期待度数に対し、実験、調査、観察などによって得られたデータに基づく度数を、実測度数、観測度数、観察度数などと言う。</p>
+<p>【問題】 以下の仮説を調べる - 結婚状況と成約の有無は関連性があるのではないか - ワークシート_3_ を開いてください。</p>
 <ol class="arabic">
 <li><p>仮説を立てる</p>
 <p>帰無仮説（H_0）：二つの変数は独立である。</p>
@@ -176,20 +218,28 @@
 <p><img alt="x3" src="../_images/x2.png" /></p>
 <p>Excelを参考に他の値を計算し、埋めましょう。</p>
 </li>
-<li><p>p 値を計算する カイ二乗検定の P 値は以下を使用して算出します。 =CHISQ.TEST(実測度数, 期待度数)</p></li>
+<li><p>p 値を計算する</p>
+<div class="line-block">
+<div class="line">カイ二乗検定の P 値は以下の関数を使用して算出します。</div>
+<div class="line"><strong>=CHISQ.TEST(実測度数, 期待度数)</strong></div>
+<div class="line"><img alt="kai1" src="../_images/%CF%8701.jpg" /></div>
+</div>
+</li>
 <li><p>判定 <img alt="x2" src="../_images/x3.png" /></p>
 <p>結果は、p 値が有意水準 5% を下回りました。そのため、帰無仮説は棄却され、成約と有無と結婚状況には関連があることがわかりました。</p>
 </li>
 </ol>
-<p>ここまでで仮説検定を実装してきました。最後に行った カイ二乗検定は、連続値であっても区切ってしまえば順位尺度として扱えるため、幅広く使用できるため便利です。</p>
+<p>ここまでで仮説検定を実装してきました。最後に行った χ二乗検定は、連続値であっても区切ってしまえば順位尺度として扱えるため、幅広く使用できるため便利です。</p>
 <p>しっかりとインプットとアウトプットを意識して実装に慣れていきましょう。</p>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="04.html" class="btn btn-neutral float-left" title="A(analysis、分析)：データに基づく分析、処理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03.html" class="btn btn-neutral float-left" title="D(data、データ収集)：データの収集・整理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="05.html" class="btn btn-neutral float-right" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

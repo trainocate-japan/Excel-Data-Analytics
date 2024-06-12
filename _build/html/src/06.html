@@ -53,16 +53,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">A(analysis、分析)：データに基づく分析、処理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#t-検定:-等分散を仮定した２標本による検定-の実装">t-検定: 等分散を仮定した２標本による検定 の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定">カイ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定の実装">カイ二乗検定の実装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html#【実装】t-検定:等分散を仮定した２標本による検定">【実装】t-検定:等分散を仮定した２標本による検定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html#χ二乗検定">χ二乗検定</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">C(conclusion、結論)：分析結果の考察、結論</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#【コード:デモ】">【コード:デモ】</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#最終結論">最終結論</a></li>
 </ul>
 </li>
@@ -95,8 +93,10 @@
              
   <section id="C(conclusion、結論)：分析結果の考察、結論">
 <h1>C(conclusion、結論)：分析結果の考察、結論<a class="headerlink" href="#C(conclusion、結論)：分析結果の考察、結論" title="Link to this heading"></a></h1>
-<p>２つの分析結果から結論を導く</p>
+<p>分析結果から結論を導く</p>
 <p>分析から得られた結果： - 売上にはローンの有無・銀行の残高が影響を与える - 成約率には持ち家の有無・結婚の状態が影響を与える 寄り高度な分析を行ったところ持ち家の有無が、成約に大きな影響があることがわかりました。持ち家の有無と成約について確認してみましょう。</p>
+<section id="【コード:デモ】">
+<h2>【コード:デモ】<a class="headerlink" href="#【コード:デモ】" title="Link to this heading"></a></h2>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -727,49 +727,49 @@
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_0.png" src="../_images/src_06_4_0.png" />
+<img alt="../_images/src_06_5_0.png" src="../_images/src_06_5_0.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_1.png" src="../_images/src_06_4_1.png" />
+<img alt="../_images/src_06_5_1.png" src="../_images/src_06_5_1.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_2.png" src="../_images/src_06_4_2.png" />
+<img alt="../_images/src_06_5_2.png" src="../_images/src_06_5_2.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_3.png" src="../_images/src_06_4_3.png" />
+<img alt="../_images/src_06_5_3.png" src="../_images/src_06_5_3.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_4.png" src="../_images/src_06_4_4.png" />
+<img alt="../_images/src_06_5_4.png" src="../_images/src_06_5_4.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_5.png" src="../_images/src_06_4_5.png" />
+<img alt="../_images/src_06_5_5.png" src="../_images/src_06_5_5.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_4_6.png" src="../_images/src_06_4_6.png" />
+<img alt="../_images/src_06_5_6.png" src="../_images/src_06_5_6.png" />
 </div>
 </div>
 <p>20,60,70 代の持ち家のない人が成約をしている。</p>
@@ -825,16 +825,16 @@ Name: count, dtype: int64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/src_06_10_0.png" src="../_images/src_06_10_0.png" />
+<img alt="../_images/src_06_11_0.png" src="../_images/src_06_11_0.png" />
 </div>
 </div>
+</section>
 <section id="最終結論">
 <h2>最終結論<a class="headerlink" href="#最終結論" title="Link to this heading"></a></h2>
-<div class="line-block">
-<div class="line">・データ分析の結果、持ち家の有無が成約数に大きな影響を与える。中でも60代以降の高齢者で仕事を退職した、持ち家のない人を優先的にアプローチしていく。</div>
-<div class="line">・更に、持ち家も、ローンもない人は定期預金口座に対して貯金も多くしてくれることがわかった。</div>
-<div class="line">・営業マンによる、力量の差はほとんどないことがわかった。</div>
-</div>
+<ul class="simple">
+<li><p>データ分析の結果、持ち家の有無が成約数に大きな影響を与える。中でも60代以降の高齢者で仕事を退職した、持ち家のない人を優先的にアプローチしていく。</p></li>
+<li><p>更に、持ち家も、ローンもない人は定期預金口座に対して貯金も多くしてくれることがわかった。絶対数は少なそうだが、優先的にアプローチを行う。</p></li>
+</ul>
 </section>
 </section>
 

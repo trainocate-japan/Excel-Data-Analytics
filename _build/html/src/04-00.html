@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A(analysis、分析)：データに基づく分析・処理 &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html#【実装】t-検定:等分散を仮定した２標本による検定">【実装】t-検定:等分散を仮定した２標本による検定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html#χ二乗検定">χ二乗検定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">A(analysis、分析)：データに基づく分析・処理</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/04-00.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="A(analysis、分析)：データに基づく分析・処理">
+<h1>A(analysis、分析)：データに基づく分析・処理<a class="headerlink" href="#A(analysis、分析)：データに基づく分析・処理" title="Link to this heading"></a></h1>
+<div class="line-block">
+<div class="line">ここまでデータの理解を進めました。 クロス集計や散布図を用いて可視化を行いデータの分析を行うことを探索的分析といいます。</div>
+<div class="line">本章では探索的分析ではなく、分析や検定について紹介します。</div>
+</div>
+<section id="多変量解析の基礎---相関と回帰分析">
+<h2>多変量解析の基礎 - 相関と回帰分析<a class="headerlink" href="#多変量解析の基礎---相関と回帰分析" title="Link to this heading"></a></h2>
+<p>多変量解析（単変量解析を含む）では、予測・要因分析が可能です。つまり、データ間にある関係性を捉えることができます。更に良い点として、分析において重要な、ある変数にある変数がどのように影響しているのかを数値的に評価することができます。つまり、うまく解析を進めると変数の因果関係を読み取ることも可能なのです。</p>
+<p>まとめると、多変量解析の手法では以下のような関係性を見つけることができます。また、数値で相対的に目的変数に対する影響度を比較することが可能です。（全ての多変量解析の手法がそうであるわけではありません。）</p>
+<section id="【確認】相関分析">
+<h3>【確認】相関分析<a class="headerlink" href="#【確認】相関分析" title="Link to this heading"></a></h3>
+<p>相関分析とは文字通り、変数同士の相関を見る分析方法です。相関とは、互いに影響しあっているような状態または、関係の事を指します。</p>
+<p>例えば、アイスの販売数と気温には、気温が上がればアイスが売れるという関係がありますが、これは相関のわかりやすい一例です。 相関分析を使用すると、関連性を相関係数という数値で定量的に評価することが可能です。つまり、相関分析とは、2 種類のデータの関係性の強さを、相関係数という数値で表す分析手法です。</p>
+<p>下記について相関関係があるかどうかを調べます。</p>
+<ul class="simple">
+<li><p>売上と銀行残高の相関関係</p></li>
+<li><p>年齢と銀行残高の相関関係</p></li>
+</ul>
+<p>相関関係を確認する方法として、散布図を用いて可視化を行い、可視化結果から相関の有無を判断するという方法があります。散布図で可視化を行うと下記のように表示されます。</p>
+<p><img alt="01" src="../_images/01.png" /> <img alt="02" src="../_images/02.png" /></p>
+<p>画像のような結果になります。銀行残高と年齢には相関関係はあまりなさそうですが、銀行残高と売上に関しては相関がありそうです。</p>
+<p>結果から下記のような気づきを得ることができます。</p>
+<ul class="simple">
+<li><p><strong>もともとの預金の多い人が定義預金講座を開講後も多くのお金を預けてくれる可能性が高い</strong></p></li>
+<li><p><strong>我々の顧客は年齢によって銀行残高（貯金）に差があるということは言えない</strong></p></li>
+</ul>
+</section>
+<section id="【実装】相関係数をみる">
+<h3>【実装】相関係数をみる<a class="headerlink" href="#【実装】相関係数をみる" title="Link to this heading"></a></h3>
+<p>可視化を行うことでおおよそ 2 つの変数の間に関連性があることが分かりました。 ですが現状は、確かにありそうであることは分かっても、「どれが最も関連性が強いですか？」という問いに回答できません。 つまりは相対的に比較ができる定量的な指標があればよいのですが、そこで相関係数が有効に用いることができます。</p>
+<p>相関係数は、excelのデータ分析機能を使用して簡単に算出できます。　　 ここは、すべてのデータを使って確認します。（各満足度で絞ると、相関関数の計算の都合上、エラーとなってしまうためです）</p>
+<p><img alt="04" src="../_images/04.png" /></p>
+<p>相関の設定は下記のようにしてください。 <img alt="05" src="../_images/05.png" /></p>
+<p>入力範囲 : データ全体 先頭行をラベルとして使用 : ☑</p>
+<p>結果以下のような値が算出されていれば成功です。 <img alt="03" src="../_images/03.png" /></p>
+<div class="line-block">
+<div class="line">相関係数としても売上と銀行残高に0.656648808と算出されています。これが相関係数です。</div>
+<div class="line">一般的な指標でみるとやや相関あり、という結果です。</div>
+<div class="line">売上は成約が行われると初めて発生するものであり、成約がされてない→売上=0の行に影響されていることを考慮しましょう。</div>
+<div class="line">　　 他の変数との組み合わせで相関係数を見ることができれば、どの変数が相関が高いのかについて答えることが可能です。</div>
+</div>
+</section>
+<section id="【発展】因果関係">
+<h3>【発展】因果関係<a class="headerlink" href="#【発展】因果関係" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line">相関分析は非常に強力な手法ですが、これにはいくつか注意点があります。相関は 2 つの変数間に因果関係があれば強く出ます。ここに注目すべき点があり、相関はお互いの影響度合いを見ている点には注意が必要です。</div>
+<div class="line">つまり上図のように、A ⇔ B の関係性を基本的に見ているので、A ⇒ B、B ⇒ A の様な関係性（因果関係）が必ず読み取れる訳ではありません。</div>
+</div>
+<p>例えば、先程例に挙げた「アイスの販売数と気温」であれば、アイスの販売数 ⇒ 気温の関係でなく、気温 ⇒ アイスの販売数の関係であることが分かります。</p>
+<p>上記のような例を「逆の相関関係」と呼んだりします。</p>
+</section>
+</section>
+<section id="重回帰分析">
+<h2>重回帰分析<a class="headerlink" href="#重回帰分析" title="Link to this heading"></a></h2>
+<p>次にデータ分析で最も活用される分析手法についてお伝えします。 重回帰分析です。データ分析のタスクのうちの 6 割以上の案件にてこの手法が用いられているとも言われています。</p>
+<div class="line-block">
+<div class="line">重回帰分析をしよすうることによって、複数の変数に対して分析を行うことが可能です。</div>
+<div class="line">扱う変数が複数であるため重回帰分析は多変量解析の手法です。</div>
+</div>
+<p>多変量解析で行えることは大きく分けて以下の 2 つです。</p>
+<ul class="simple">
+<li><p>要因分析</p></li>
+<li><p>予測分析</p></li>
+</ul>
+<p>単回帰分析では、2 つの変数の関係性をモデルで表現するにとどまりますが、重回帰分析では複数の変数を扱えるようになるため、できることの幅が広がります。</p>
+<p>重回帰分析のモデル式は以下のようになります。</p>
+<p><img alt="demo" src="../_images/juukaiki.png" /></p>
+<ul class="simple">
+<li><p>y: 目的変数（結果）</p></li>
+<li><p>x: 説明変数（原因）</p></li>
+<li><p>a: 偏回帰係数</p></li>
+<li><p>b: 切片</p></li>
+</ul>
+<p>上式からも重回帰分析は単回帰分析の拡張版でああることがわかります。</p>
+</section>
+<section id="要因分析と予測分析">
+<h2>要因分析と予測分析<a class="headerlink" href="#要因分析と予測分析" title="Link to this heading"></a></h2>
+<p>先程もお伝えしましたが、重回帰分析の使用用途は要因分析と予測分析に分かれます。</p>
+<ul class="simple">
+<li><p>要因分析：複数ある要因（説明変数）のうち、目的変数に関連している度合いの大きいものを調べること</p></li>
+<li><p>予測分析：要因分析を元に重回帰式を求めて未来の値を予測すること</p></li>
+</ul>
+<p>単回帰分析では 1 対 1 の変数の関係を見ていたのに対し、重回帰分析では、1 対複数の変数の関係をみることになります。単回帰分析の回帰係数との違いとして、もともとのデータを上手く表現できている重回帰分析の偏回帰係数は、用いている複数の説明変数を考慮した上での目的変数に対するそれぞれの影響度合いが算出されています。</p>
+</section>
+<section id="【実装】重回帰分析">
+<h2>【実装】重回帰分析<a class="headerlink" href="#【実装】重回帰分析" title="Link to this heading"></a></h2>
+<p>Excelの分析ツールを使用して行いましょう。こちらはデフォルトでは使用できないため設定を行いましょう。</p>
+<div class="line-block">
+<div class="line">【分析に期待すること】 売上予測の重回帰モデルを作成して、売上の要因→成約の要因を探す</div>
+<div class="line">成約している人のみに注目し、売上に影響（成約）与える要因を探索する。</div>
+</div>
+<ul class="simple">
+<li><p>売上の高い→優良顧客の発見</p></li>
+<li><p>成約はするが売上の低い顧客属性の発見</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>データ分析 → 「回帰分析」を選択します。</p></li>
+</ol>
+<p><img alt="06" src="../_images/06.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>変数の定義
+「入力 Y の範囲」に売上
+「入力 X の範囲」にその他の項目（変数）を選択します。</p></li>
+</ol>
+<p><img alt="07" src="../_images/07.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>画像のように設定ができたら OK ボタンを選択して、重回帰分析を実行しましょう。 a 分析の実装が完了すると下記のように実行結果が表示されます。</p></li>
+</ol>
+<p><img alt="08q" src="../_images/08-1.png" /></p>
+<section id="重回帰分析の結果の解釈">
+<h3>重回帰分析の結果の解釈<a class="headerlink" href="#重回帰分析の結果の解釈" title="Link to this heading"></a></h3>
+<p>重回帰分析の結果の解釈を行います。</p>
+<p>上図の注目すべき項目のみ着目して進めましょう。 回帰分析の結果の善し悪しを評価するものに、決定係数があります。決定係数は、モデルのデータに対する当てはまりの良さ（回帰式でデータをどの程度うまく表現できているか）を表す数値で、最大が　1 となります。 #### P 値 Excel での回帰分析では、係数や切片に対して p 値(両側検定の結果)という値が算出されます。先程確認したように、以下の組み合わせで仮説を立てて、検定という統計処理を行った結果算出される値です。p 値については、0
+に近い値を取っていればよいというふうに取られておけば構いません。 ※ 検定については少し難解であるため、資料後半に入れています。</p>
+<p>P 値が一定の値（一般に 5）を下回れば、説明変数は目的変数に対して影響を及ぼしていると主張できるようになります。</p>
+<p>y =ax+b の場合、</p>
+<p>帰無仮説：a = 0</p>
+<p>対立仮説：a ≠ 0 #### T 値 先程の P 値は、説明変数が目的変数に影響しているか否かの判定には使用できますが、どの程度しているのかは判断できません。</p>
+<p>重回帰分析の場合には t 値を使用することで、複数の変数の影響度合いを考慮し、どの説明変数が結果に最も影響しているのかなどを見ることが可能です。 t 値は偏回帰係数毎に算出されており、絶対値的に大きいほど目的変数に対する影響が大きいと判断します。また、t 値も目安の大きさがあり、t の絶対値が 2 より小さい場合は統計的にはその変数は目的変数に寄与しないと判断できます。」<strong>t値は個々の説明変数の有意性を判定するt検定で用いられる数値です</strong></p>
+<p>※ 別の方法として偏回帰係数をみて判断するという方法もあります。 #### 係数 係数は回帰式「Y = aX + b」のaやbの定数部分を表しています。 今回のケースでは、導き出された係数から以下の回帰式が算出されています。 この数値を見ることで、どの要素が目的変数に強い影響を与えているかがわかります。</p>
+<p>※ いくつかの変数の後ろの「E-○」は、Eの前の数字×0.1 の○乗を指します。今のデータにおいては、とてつもなく小さな数字になることを押さえていれば問題ありません。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目名</p></th>
+<th class="head"><p>説明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>重相関R</p></td>
+<td><p>相関係数のこと。</p></td>
+</tr>
+<tr class="row-odd"><td><p>標準誤差</p></td>
+<td><p>得られた推定量そのもののばらつきのこと。</p></td>
+</tr>
+<tr class="row-even"><td><p>観測数</p></td>
+<td><p>分析に使ったデータ数のこと。</p></td>
+</tr>
+<tr class="row-odd"><td><p>回帰</p></td>
+<td><p>回帰直線（式）のこと。</p></td>
+</tr>
+<tr class="row-even"><td><p>残差</p></td>
+<td><p>推定された回帰式が求めた値と、実際のデータの値の差のこと。</p></td>
+</tr>
+<tr class="row-odd"><td><p>自由度</p></td>
+<td><p>自由に決めることができる値の数のこと。現時点では、有意Fを求めるために必要な値。回帰の場合は、変数の個数を指すことが多い。</p></td>
+</tr>
+<tr class="row-even"><td><p>変動</p></td>
+<td><p>偏差の平方和のこと。偏差とは、データの個別の値から平均値を引いたもの。</p></td>
+</tr>
+<tr class="row-odd"><td><p>観測された分散比</p></td>
+<td><p>F値のこと。有意F に使用する値。F検定に用いる。</p></td>
+</tr>
+<tr class="row-even"><td><p>有意F</p></td>
+<td><p>すべての係数が 0 である確率のこと。0に近ければ近いほどよく、0.05未満なら統計的に「全ての係数が 0 ではない」言える。</p></td>
+</tr>
+<tr class="row-odd"><td><p>下限95%</p></td>
+<td><p>95%の確率で係数が取りうる値の下限のこと。</p></td>
+</tr>
+<tr class="row-even"><td><p>上限95%</p></td>
+<td><p>95%の確率で係数が取りうる値の上限</p></td>
+</tr>
+</tbody>
+</table>
+<section id="Excel-での機械学習分析の注意">
+<h4>Excel での機械学習分析の注意<a class="headerlink" href="#Excel-での機械学習分析の注意" title="Link to this heading"></a></h4>
+<p>Excel での分析には制限があります。下記に注意してください。 - 主な実装は重回帰分析のみ 成約の分析などを行う際には回帰ではなく分類の手法が好ましいです。ロジスティクス回帰や決定木はExcelではサポートされておりません。 - 変数の制限 Excelでの重回帰分析では入力変数は 16 変数までときまりがあります。 - データの数値化 数式にかけるため、データはすべて数値化を行う必要があります。本データは講師側ですでに数値化を行いましたが実務では数値がをする必要が発生します。</p>
+</section>
+</section>
+</section>
+<section id="まとめ">
+<h2>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line"><strong>今回のデータはもともとの数値データが少なかったため、重回帰分析からではあまり大きな発見がありませんでした。とはいえ、売上の予測をしたり、需要予測・分析を行う際などに使用することが可能です。一つのテクニックとして抑えましょう。</strong> （Python などのプログラミング言語を用いた分析を行うことによってより柔軟な分析を行うことが可能となります。）</div>
+<div class="line">重回帰分析の結果によって、売上に影響を与える要因として下記のようなことがわかります。</div>
+</div>
+<ul class="simple">
+<li><p>銀行残高・ローンの有無が売上の値と何かしらの関連がある</p></li>
+<li><p>結婚状況が独身の方は売上に影響がある</p></li>
+</ul>
+</section>
+<section id="【発展：デモ】ロジスティック回帰">
+<h2>【発展：デモ】ロジスティック回帰<a class="headerlink" href="#【発展：デモ】ロジスティック回帰" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">データ分析で重回帰分析と並びよく用いられる手法としてロジスティック回帰があります。 重回帰分析は連続値を目標値として分析や予測を行う手法です。</div>
+<div class="line">つまり、今回のユースケースのような成約の有無（0or1）のようなカテゴリの分析や予測には適していません。</div>
+</div>
+<p>そういったカテゴリを予測するような、分類のユースケースにて用いられる手法がロジスティック回帰です。回帰と名前がついておりますが分類の手法です。</p>
+<p>Excel ではこのロジスティクス回帰は搭載されておらず、サードパーティのアドインを有効化し、利用する必要があります。</p>
+<ol class="arabic simple">
+<li><p>アドインツールをインストールします。デフォルトの機能では実装ができないため、サードパーティプラグをExcelに追加し実装を行います。
+<a class="reference external" href="https://regressit.com/logistic-regression.html">https://regressit.com/logistic-regression.html</a></p></li>
+<li><p>ExcelのOptionからインストールしたアドインを追加する #### 実装</p></li>
+<li><p>アドイン追加後、Excelを再起動し、Regresslt タブが追加されるため、タブを開く</p></li>
+<li><p>SelectDataでデータの選択、CreateName で適当な名前をつける</p></li>
+<li><p>LogisticLegression を選択して、目標値と入力値を選択する</p></li>
+</ol>
+<section id="結果の考察">
+<h3>結果の考察<a class="headerlink" href="#結果の考察" title="Link to this heading"></a></h3>
+<p>実装が完了すると下記のような結果のシートが出力されます。 <img alt="lo1" src="../_images/logistic1.png" /></p>
+<p>では結果を見てみましょう。確認をする主な指標は下記です。</p>
+<ul class="simple">
+<li><p>Logistic Regression Equation:計算によって割り出された数式が記載されます。</p></li>
+<li><p>Logistic Regression Statistics:重回帰分析のときと同じ様は表が表示されます</p>
+<ul>
+<li><p>Coefficient:係数、数式に当てはまる重みです。</p></li>
+<li><p>z-statistic:回帰係数を標準誤差(*1)で割った値で、誤差が小さいほどこの値が大きくなります。値が大きいほど結果が信頼できる</p></li>
+<li><p>P-value:P値、0.05を下回っているかどうか(その変数が目的に対して影響しない確率が5％未満かどうか)で、その変数が目的に与える影響を判断</p></li>
+<li><p>Std.coeff:標準化した値から算出される係数</p></li>
+</ul>
+</li>
+</ul>
+<p>続いて下記についても確認します。</p>
+<p><img alt="lo2" src="../_images/logistic2.png" /></p>
+</section>
+</section>
+<section id="id12">
+<h2>まとめ<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">こちらでは代表的なデータ分析の手法について学習しました。</div>
+<div class="line">分析結果より、確認できたことをまとめましょう。</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
