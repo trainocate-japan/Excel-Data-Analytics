@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画" href="02.html" />
+    <link rel="next" title="D(data、データ収集)：データの収集・整理" href="03.html" />
     <link rel="prev" title="〜研修へようこそ" href="0.html" /> 
 </head>
 
@@ -52,20 +52,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">データ分析とは</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#1.-データ分析とは">1. データ分析とは</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#３．データ分析のフレームワークPPDAC">３．データ分析のフレームワークPPDAC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#４．研修テーマの説明">４．研修テーマの説明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">データ分析とは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#データ分析のフレームワークPPDAC">データ分析のフレームワークPPDAC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#研修テーマの説明">研修テーマの説明</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">A(analysis、分析)：データに基づく分析、処理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#t-検定:-等分散を仮定した２標本による検定-の実装">t-検定: 等分散を仮定した２標本による検定 の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定">カイ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定の実装">カイ二乗検定の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
 </ul>
@@ -96,16 +90,30 @@
              
   <section id="データ分析とは">
 <h1>データ分析とは<a class="headerlink" href="#データ分析とは" title="Link to this heading"></a></h1>
-<section id="1.-データ分析とは">
-<h2>1. データ分析とは<a class="headerlink" href="#1.-データ分析とは" title="Link to this heading"></a></h2>
-<p>データ分析とは収集した情報の整理、加工、取捨選択を経て分析するプロセスです。 データサイエンティストに必要なスキル <img alt="data" src="https://www.insource-da.co.jp/common/img/column/210818a_1.png" /> 皆さんは、データサイエンティストにはどのようなイメージがあるでしょうか。 「プログラミングしながら、統計学を使って、画面に表示された大量のデータを 分析する」……そういった光景をイメージする方も多いかと存じます。 もちろんプログラミングをしてデータ分析を行うというのも、大事な工程の１つです。 しかし、それだけではデータ活用はうまく進みません。
-「このデータから何が言えるのか分からない……」「このデータからどう問題解決に つなげればいいのか……」といったお悩みに繋がりがちです。 これはなぜでしょうか。 データを並べて分析する前に、「どんな問題を解決したいか」「問題を解決するのに どんなデータが必要か」など、なんのためにデータ分析を行うのか、目的がはっきり していないと、せっかくのデータがあっても、どうすればいいのかが分からなくなって
-しまうからです。本講座ではメインとなるデータサイエンス力に注力し講義をお伝えしますが、同じくらいビジネス力やデータの処理能力も重要ということを抑えてください。</p>
-<p>データ分析を行う理由は下記のとおりです。 1. 問題の原因を究明したり、課題を達成したりするため 2. 相手を説得するため 3. 自分ん思考を裏付けるため</p>
-<p>データ分析を行うことで下記のメリットを得ることが出来る。 1. 仕事をより深く理解し、遂行力が上がる 2. 視点が多角化し、１つのデータから複数の視点を持つことが出来る 3. 経験と勘に見が気がかかる。（どんなデータが必要なのかあたりを付ける勘のこと）</p>
+<section id="id2">
+<h2>データ分析とは<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>データ分析とは収集した情報の整理、加工、取捨選択を経て分析するプロセスです。</p>
+<div class="line-block">
+<div class="line">【データサイエンティストに必要なスキル】</div>
+<div class="line"><img alt="data" src="https://www.insource-da.co.jp/common/img/column/210818a_1.png" /></div>
+</div>
+<p>皆さんは、データサイエンティストにはどのようなイメージがあるでしょうか。 「プログラミングしながら、統計学を使って、画面に表示された大量のデータを 分析する」……そういった光景をイメージする方も多いかと存じます。 もちろんプログラミングをしてデータ分析を行うというのも、大事な工程の１つです。 しかし、それだけではデータ活用はうまく進みません。 「このデータから何が言えるのか分からない……」「このデータからどう問題解決に つなげればいいのか……」といったお悩みに繋がりがちです。
+これはなぜでしょうか。 データを並べて分析する前に、「どんな問題を解決したいか」「問題を解決するのに どんなデータが必要か」など、なんのためにデータ分析を行うのか、目的がはっきり していないと、せっかくのデータがあっても、どうすればいいのかが分からなくなって しまうからです。本講座ではメインとなるデータサイエンス力に注力し講義をお伝えしますが、同じくらいビジネス力やデータの処理能力も重要ということを抑えてください。</p>
+<p>データ分析を行う理由は下記のとおりです。</p>
+<ol class="arabic simple">
+<li><p>問題の原因を究明したり、課題を達成したりするため</p></li>
+<li><p>相手を説得するため</p></li>
+<li><p>自分ん思考を裏付けるため</p></li>
+</ol>
+<p>データ分析を行うことで下記のメリットを得ることが出来る。</p>
+<ol class="arabic simple">
+<li><p>仕事をより深く理解し、遂行力が上がる</p></li>
+<li><p>視点が多角化し、１つのデータから複数の視点を持つことが出来る</p></li>
+<li><p>経験と勘に見が気がかかる。（どんなデータが必要なのかあたりを付ける勘のこと）</p></li>
+</ol>
 </section>
-<section id="３．データ分析のフレームワークPPDAC">
-<h2>３．データ分析のフレームワークPPDAC<a class="headerlink" href="#３．データ分析のフレームワークPPDAC" title="Link to this heading"></a></h2>
+<section id="データ分析のフレームワークPPDAC">
+<h2>データ分析のフレームワークPPDAC<a class="headerlink" href="#データ分析のフレームワークPPDAC" title="Link to this heading"></a></h2>
 <p>ではデータ分析を行う上でどのような手順で分析を進めて行けば良いでしょうか。 おすすめの手順としてPPDAC というデータ分析のフレームワークがあります。 こちらを使用するメリットは下記のとおりです</p>
 <ul class="simple">
 <li><p>どこから手をつけたらいいかわからないときに手順が明確になる</p></li>
@@ -122,11 +130,16 @@
 <div class="line">C(conclusion、結論)：分析結果の考察、結論</div>
 </div>
 <p>2つのPとCの間に、D(データ収集)とA(分析)のプロセスがあるところに注目してください。明確な問題と計画の立案があってこそ、実際のデータ収集や分析を行うことができ、問題解決へ導くことができる。データ利活用を進めるにあたっての格好のフレームワークといえます。</p>
-<p><em>あくまでフレームワークであり、必ずこの順番で進めないと行けないものではない</em> 本講座でははじめの段階でデータの収集ができているため、順番が入れ替わることがあります。</p>
+<p><em>あくまでフレームワークであり、必ずこの順番で進めないと行けないものではない</em> 本講座でははじめの段階でデータの収集ができているため、順番が入れ替わることがあります</p>
 </section>
-<section id="４．研修テーマの説明">
-<h2>４．研修テーマの説明<a class="headerlink" href="#４．研修テーマの説明" title="Link to this heading"></a></h2>
-<p>ある銀行で営業支援を行うデータサイエンティストです。 手元にはデータは過去の定期預金加入のキャンペーンの営業データがあります。同一キャンペーンの営業データから一部をランダムに収集しています。 データには大きく３種類のデータがあります。 - 顧客情報→顧客の年齢、結婚状況、仕事 - 営業情報→どのようにアプローチしたか、いつアプローチしたか、どの営業マンがアプローチしたか - 成約情報→顧客が定期預金口座の成約をしたか否か、成約をした場合の売上（預金金額の10%が売上）</p>
+<section id="研修テーマの説明">
+<h2>研修テーマの説明<a class="headerlink" href="#研修テーマの説明" title="Link to this heading"></a></h2>
+<p>ある銀行で営業支援を行うデータサイエンティストです。 手元にはデータは過去の定期預金加入のキャンペーンの営業データがあります。同一キャンペーンの営業データから一部をランダムに収集しています。 データには大きく３種類のデータがあります。</p>
+<ul class="simple">
+<li><p>顧客情報→顧客の年齢、結婚状況、仕事</p></li>
+<li><p>営業情報→どのようにアプローチしたか、いつアプローチしたか、どの営業マンがアプローチしたか</p></li>
+<li><p>成約情報→顧客が定期預金口座の成約をしたか否か、成約をした場合の売上（預金金額の10%が売上）</p></li>
+</ul>
 <p>営業を行うには限りがあるため、データ分析を行い、効率的に営業が出来るよう支援を行いたいと考えています。</p>
 </section>
 </section>
@@ -136,7 +149,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="0.html" class="btn btn-neutral float-left" title="〜研修へようこそ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="02.html" class="btn btn-neutral float-right" title="P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03.html" class="btn btn-neutral float-right" title="D(data、データ収集)：データの収集・整理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

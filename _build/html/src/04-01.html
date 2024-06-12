@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" />
+    <link rel="next" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" />
     <link rel="prev" title="D(data、データ収集)：データの収集・整理" href="03.html" /> 
 </head>
 
@@ -60,12 +60,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#χ二乗検定">χ二乗検定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【実装】χ二乗検定の実装">【実装】χ二乗検定の実装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#【実装】χ二乗検定">【実装】χ二乗検定</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
 </ul>
@@ -201,8 +201,8 @@
 <p>χ二乗検定はχ二乗値と自由度を用いて、<a class="reference external" href="https://home.hiroshima-u.ac.jp/ichi/chi-square-distribution.pdf">二乗分布表</a>と見比べて有意な差があるといえるかどうか検定する手法です。</p>
 <p>χ二乗値＝((観測度数−期待度数)²/期待度数)の総和</p>
 <p>自由度は、行と列がある二次元の表の場合の以下のようにして計算する。 自由度＝（行の数-1）x（列の数-1）</p>
-<section id="【実装】χ二乗検定の実装">
-<h3>【実装】χ二乗検定の実装<a class="headerlink" href="#【実装】χ二乗検定の実装" title="Link to this heading"></a></h3>
+<section id="【実装】χ二乗検定">
+<h3>【実装】χ二乗検定<a class="headerlink" href="#【実装】χ二乗検定" title="Link to this heading"></a></h3>
 <p>χ二乗検定は［分析ツール］ではサポートしていませんが、CHISQ.TEST という関数を使って検定を行います。期待度数という考え方を理解し、χ二乗値を計算できるようになりましょう。</p>
 <p><strong>期待度数</strong>：行要素の合計や列要素の合計の比率から逆算して期待される度数のこと。期待度数に対し、実験、調査、観察などによって得られたデータに基づく度数を、実測度数、観測度数、観察度数などと言う。</p>
 <p>【問題】 以下の仮説を調べる - 結婚状況と成約の有無は関連性があるのではないか - ワークシート_3_ を開いてください。</p>
@@ -240,7 +240,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="03.html" class="btn btn-neutral float-left" title="D(data、データ収集)：データの収集・整理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="05.html" class="btn btn-neutral float-right" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05.html" class="btn btn-neutral float-right" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
