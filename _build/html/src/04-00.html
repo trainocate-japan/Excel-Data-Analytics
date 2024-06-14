@@ -24,7 +24,9 @@
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" /> 
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="A(analysis、分析)：データに基づく分析・処理 2" href="04-01.html" />
+    <link rel="prev" title="D(data、データ収集)：データの収集・整理" href="03.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,17 +49,39 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#【実装】t-検定:等分散を仮定した２標本による検定">【実装】t-検定:等分散を仮定した２標本による検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#χ二乗検定">χ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A(analysis、分析)：データに基づく分析・処理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#多変量解析の基礎---相関と回帰分析">多変量解析の基礎 - 相関と回帰分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【実装】環境構築">【実装】環境構築</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#【確認】相関分析">【確認】相関分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#【実装】相関係数をみる">【実装】相関係数をみる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#【発展】因果関係">【発展】因果関係</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#重回帰分析">重回帰分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#要因分析と予測分析">要因分析と予測分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【実装】重回帰分析">【実装】重回帰分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#重回帰分析の結果の解釈">重回帰分析の結果の解釈</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Excel-での機械学習分析の注意">Excel での機械学習分析の注意</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#まとめ">まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【発展：デモ】ロジスティック回帰">【発展：デモ】ロジスティック回帰</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#結果の考察">結果の考察</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">まとめ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -94,6 +118,30 @@
 <h2>多変量解析の基礎 - 相関と回帰分析<a class="headerlink" href="#多変量解析の基礎---相関と回帰分析" title="Link to this heading"></a></h2>
 <p>多変量解析（単変量解析を含む）では、予測・要因分析が可能です。つまり、データ間にある関係性を捉えることができます。更に良い点として、分析において重要な、ある変数にある変数がどのように影響しているのかを数値的に評価することができます。つまり、うまく解析を進めると変数の因果関係を読み取ることも可能なのです。</p>
 <p>まとめると、多変量解析の手法では以下のような関係性を見つけることができます。また、数値で相対的に目的変数に対する影響度を比較することが可能です。（全ての多変量解析の手法がそうであるわけではありません。）</p>
+</section>
+<section id="【実装】環境構築">
+<h2>【実装】環境構築<a class="headerlink" href="#【実装】環境構築" title="Link to this heading"></a></h2>
+<div class="line-block">
+<div class="line">Excel にて分析ツールを使用するにはアドインを追加する必要があります。</div>
+<div class="line">まずは分析環境の構築から行いましょう。</div>
+</div>
+<ol class="arabic">
+<li><p>ファイルタブを選択します。</p>
+<p><img alt="en" src="../_images/en1.jpg" /></p>
+</li>
+<li><p>左下のオプションボタンを選択します。</p>
+<p><img alt="en2" src="../_images/en2.jpg" /></p>
+</li>
+<li><p>アドインを選択し、分析ツールを選択、その後、設定ボタンを押して下さい。</p>
+<p><img alt="en3" src="../_images/en3.jpg" /></p>
+</li>
+<li><p>分析ツールにチェックを入れてOKボタンを選択します。</p>
+<p><img alt="en4" src="../_images/en4.jpg" /></p>
+</li>
+</ol>
+<p>設定が完了しました。Excelにもどり、データタブを選択します。すると画像のように新たに分析ツールが選択できるようになります。</p>
+<p><img alt="en5" src="../_images/en5.jpg" /></p>
+<p>環境構築は以上です。分析の各種手法や検定等を行う際に使用します。</p>
 <section id="【確認】相関分析">
 <h3>【確認】相関分析<a class="headerlink" href="#【確認】相関分析" title="Link to this heading"></a></h3>
 <p>相関分析とは文字通り、変数同士の相関を見る分析方法です。相関とは、互いに影響しあっているような状態または、関係の事を指します。</p>
@@ -300,8 +348,8 @@
 <p><img alt="lo2" src="../_images/logistic2.png" /></p>
 </section>
 </section>
-<section id="id12">
-<h2>まとめ<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>まとめ<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">こちらでは代表的なデータ分析の手法について学習しました。</div>
 <div class="line">分析結果より、確認できたことをまとめましょう。</div>
@@ -312,7 +360,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="03.html" class="btn btn-neutral float-left" title="D(data、データ収集)：データの収集・整理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-01.html" class="btn btn-neutral float-right" title="A(analysis、分析)：データに基づく分析・処理 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

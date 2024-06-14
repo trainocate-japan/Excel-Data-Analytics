@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="検定とは（推測統計）" href="04-01.html" />
+    <link rel="next" title="A(analysis、分析)：データに基づく分析・処理" href="04-00.html" />
     <link rel="prev" title="データ分析とは" href="01.html" /> 
 </head>
 
@@ -61,7 +61,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#データの全体像の理解">データの全体像の理解</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【復習・実装】代表値の算出">【復習・実装】代表値の算出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#【復習・演習】代表値の算出">【復習・演習】代表値の算出</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#【実装】集計-（単純集計）">【実装】集計 （単純集計）</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#【実装】可視化：円グラフ">【実装】可視化：円グラフ</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#【実装】可視化：ヒストグラム">【実装】可視化：ヒストグラム</a></li>
@@ -76,13 +76,11 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#【実装】t-検定:等分散を仮定した２標本による検定">【実装】t-検定:等分散を仮定した２標本による検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#χ二乗検定">χ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">A(analysis、分析)：データに基づく分析・処理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -172,21 +170,21 @@
 </section>
 <section id="データの全体像の理解">
 <h2>データの全体像の理解<a class="headerlink" href="#データの全体像の理解" title="Link to this heading"></a></h2>
-<section id="【復習・実装】代表値の算出">
-<h3>【復習・実装】代表値の算出<a class="headerlink" href="#【復習・実装】代表値の算出" title="Link to this heading"></a></h3>
+<section id="【復習・演習】代表値の算出">
+<h3>【復習・演習】代表値の算出<a class="headerlink" href="#【復習・演習】代表値の算出" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line">データの概要が理解できました。次にデータから情報を抽出しましょう。</div>
 <div class="line">データから得られる情報として<strong>平均値・中央値・最頻値</strong>があります。この様なデータ全体の特徴を数値で表したものを代表値と呼びます。</div>
 </div>
 <p>平均値（Mean）・最頻値（Mode）・中央値（Median） それぞれ意味合いは以下です。 意味</p>
 <ul class="simple">
-<li><p>平均値：データの個数、観測値など数値を合計し、その数値の個数で割った値</p></li>
-<li><p>最頻値：データの中で最も出現する値</p></li>
-<li><p>中央値：データを小さい順に並べたときの中央に位置する値</p></li>
+<li><p>平均値(Mean)：データの個数、観測値など数値を合計し、その数値の個数で割った値</p></li>
+<li><p>最頻値(Mode)：データの中で最も出現する値</p></li>
+<li><p>中央値(Median)：データを小さい順に並べたときの中央に位置する値</p></li>
 </ul>
 <p>この代表値を扱う際に重要なこととして、データの特徴を表現する際に １ つの代表値だけで判断しないことが挙げられます。 実際に確認をしてみましょう。</p>
 <p>まず初めにデータから<strong>年齢、銀行残高、売上</strong>の各種代表値を算出しましょう。 <strong>ワークシート_1_</strong>のシートを開き、各セルに代表値を算出してください。</p>
-<p>下記のように値が算出できているかを確認しましょう。</p>
+<p><strong>下記のように値が算出できているかを確認しましょう。</strong></p>
 <ul class="simple">
 <li><p>年齢の代表値</p>
 <ul>
@@ -222,8 +220,12 @@
 <p>データ分析のはじめに分析の成果物や対象物として最も重要度の高いデータから概要を確認します。 まずは、成約の有無の値を確認してみましょう。 今回データには 0（成約無）,1（成約）の数値が入っています。それぞれどのくらい各値が含まれているのか、頻度の集計を行いましょう。</p>
 <p>これには Excel の <strong>COUNTIF</strong> 関数を使用します。</p>
 <p>COUNTIF(範囲,条件) の様に値を渡します。</p>
-<p>![実装画像１]</p>
-<p>うまく集計ができました。 結果を確認すると、<strong>成約の有無の値には大きな差がない</strong>ことがわかります。</p>
+<p><strong>例）=countif(J:J,1)</strong></p>
+<p><img alt="Excel" src="../_images/2.png" /></p>
+<p>うまく集計ができました。</p>
+<p>そのまま、成約の有無がNo(0)も集計をします。</p>
+<p><img alt="kannsu" src="../_images/%E3%82%B0%E3%83%A9%E3%83%95%EF%BC%91.png" /></p>
+<p>結果を確認すると、<strong>成約の有無の値には大きな差がない</strong>ことがわかります。</p>
 <p>続けて、職業やローンの有無列も単純集計を行いデータの分布を確認しましょう。</p>
 <div class="line-block">
 <div class="line">職業に関しては、<strong>工場作業員やマネージャーといった職種のデータが多く</strong>取られていることがわかりました。</div>
@@ -234,35 +236,38 @@
 <h3>【実装】可視化：円グラフ<a class="headerlink" href="#【実装】可視化：円グラフ" title="Link to this heading"></a></h3>
 <p>今回のようなデータを扱う際にはどのような値がどのような割合で含まれているかに注目される事が多いです。 また、データ分析では、結果を誰かに伝える必要があるため、可視化を用いて結果を説明される誰かが直感的に分かるようにする必要があります。 円グラフを用いることにより、データの割合の情報を視覚的に確認します。</p>
 <p>今回は成約の有無と職業の割合を円グラフで可視化します。</p>
-<p>【実装手順】 1. 先程算出した頻度の部分を選択して、「挿入」 → 「円グラフ」の順に進めます。</p>
-<ol class="arabic simple" start="2">
-<li><p>次に、グラフエリアで右クリック → 「データラベルの追加」</p></li>
-<li><p>加えて、グラフエリアで右クリック → 「データラベルの書式設定」 → 「ラベルの内容」のパーセンテージにチェックを入れます。</p></li>
-<li><p>グラフのデータを確認します。 グラフエリアで右クリック → 「グラフデータの選択」 → 「横（項目）軸ラベル」に成約の値が指定されていることを確認します。</p></li>
-</ol>
-<p>以下のようにチェックが入っていれば OK をクリックします。 表示されている割合や実数値と、グラフの凡例が正しい事を確認してください。</p>
+<p>【実装手順】 1. 先程算出した頻度の部分を選択して、「挿入」 → 「円グラフ」の順に進めます。 <img alt="graff" src="../_images/%E5%86%86%E3%82%B0%E3%83%A9%E3%83%95.jpg" /></p>
+<ol class="arabic" start="2">
+<li><p>表示されている割合や実数値と、グラフの凡例が正しい事を確認してください。</p>
 <p><img alt="maru" src="../_images/001.png" /></p>
+</li>
+<li><p>円グラフの種類を変更することも可能です。</p>
+<p><img alt="styale" src="../_images/style.png" /></p>
+</li>
+</ol>
 <p>続いて職業も同じ用に円グラフで可視化を行いましょう。</p>
-<p><img alt="maru2" src="../_images/002.png" /></p>
+<p><img alt="maru2" src="../_images/%E5%86%86%E3%82%B0%E3%83%A9%E3%83%951.png" /></p>
 <p>画像のように可視化ができましたら実装完了です。可視化をすることにより、より端的にデータを把握することができました。</p>
 </section>
 <section id="【実装】可視化：ヒストグラム">
 <h3>【実装】可視化：ヒストグラム<a class="headerlink" href="#【実装】可視化：ヒストグラム" title="Link to this heading"></a></h3>
 <p>先程のように割合を見ても良いですが、割合の分割数が多いため、解釈がしにくく、最適ではない場合もあります。 このような場合は、<strong>分布</strong>を確認します。分布はヒストグラムで確認します。</p>
 <p>ヒストグラムはデータをある特定の区間で区切ることで、区間の個数や各区間でのばらつきを表示するグラフで、例えば身長のような連続する値の場合に使用することが適した可視化の方法です。</p>
-<ol class="arabic simple">
-<li><p>年齢の列を選択したままで、「挿入」 → 「ヒストグラム」を選択します。</p></li>
-</ol>
+<ol class="arabic">
+<li><p>年齢の列を選択したままで、「挿入」 → 「ヒストグラム」を選択します。</p>
 <p>ヒストグラムは、区間でデータを区切ります。身長で言えば、120~130、140〜150、のように区切るイメージです。この区間のことを bin と呼びます。 ヒストグラムでは、bin の幅を調整することができます。</p>
-<p>ここまでで以下のようなヒストグラムが作成できます。</p>
+<p>ここまでで以下のようなヒストグラムが作成できます。 <img alt="hist" src="../_images/%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0.png" /></p>
+</li>
+</ol>
 <div class="line-block">
-<div class="line">Excel　のヒストグラムは、bin を自動で設定してくれますが、この状態だとうまく表現できているとは言えない場合があります。今回も bin　の調整する必要が理想です。</div>
+<div class="line">Excel のヒストグラムは、bin を自動で設定してくれますが、この状態だとうまく表現できているとは言えない場合があります。今回も bin　の調整する必要が理想です。</div>
 <div class="line">bin の調整にはいくつか方法がありますが、今回は数を調整します。</div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>「右クリック」 → 「軸の書式設定」 → 「ビンの幅」を 5 に変更します。</p></li>
-</ol>
+<ol class="arabic" start="2">
+<li><p>「年齢の x 軸をダブルクリック」 → 「軸の書式設定」 → 「ビンの幅」を画像のように変更します。</p>
 <p><img alt="maru3" src="../_images/003.png" /></p>
+</li>
+</ol>
 <p>画像の用に年代ごとでの可視化を行うことができました。データを見てみると 30 代の顧客のデータが多いことがわかりました。</p>
 <p>この用にデータを可視化し、理解を深めることによって分析の指針を決定することも可能です。フレームワークの都合上、先に仮説の設定を紹介しましたが、この段階でデータから仮説を考えることも可能です。</p>
 </section>
@@ -306,16 +311,21 @@
 <h3>【実装】成約の有無と他の列の関係性を確認する<a class="headerlink" href="#【実装】成約の有無と他の列の関係性を確認する" title="Link to this heading"></a></h3>
 <p>それでは、クロス集計を使用して、職業と成約の有無の関係を見てみましょう。</p>
 <p>Excel では、クロス集計を関数を使用して実装することも可能ですが、今回はピポッドテーブルを使用しましょう。</p>
-<ol class="arabic simple">
-<li><p>ピボットテーブルを使用するために元のデータから必要な変数のみをコピーしてデータを用意します。データは使用していない列（AA 移行の列）に<strong>成約の有無と職業の列</strong>のコピーを行いましょう。</p></li>
-<li><p>データを用意できたら、成約の有無と職業の列を選択した状態で、「挿入」 → 「ピボットテーブル」の順で進みます。</p></li>
-<li><p>以下の図のように、列に職業、行に成約の有無、値に成約の有無を選択します</p></li>
-</ol>
+<ol class="arabic">
+<li><p>挿入タブからピボットテーブルを選択します。</p></li>
+<li><p>データの範囲を選択します。 テーブル全体を画像のように選択しましょう。ピボットテーブルの出力先はどちらでも構いません。</p>
+<p><img alt="pibot0" src="../_images/pibot1.png" /></p>
+</li>
+<li><p>以下の図のように、列に職業、行に成約の有無、値に成約の有無を選択します</p>
 <p><img alt="pibot" src="../_images/0004.png" /></p>
+</li>
+</ol>
 <p>クロス集計を行ったピボットテーブルの作成ができました。結果を確認してみましょう。</p>
 <p>【気づき】 - 引退した方や失業者と行った方の成約が多い - 学生の成約率も高い - 工場作業員・接客業・家政婦は成約率が低い。だが現状の顧客リストに工場作業員は 2 番目に多くいると考えられる。</p>
-<p>ピボットテーブルを可視化する場合には、棒グラフにすると関連性が分かりやすくなります。 ピボットテーブルを選択した状態で、「挿入」 → 「棒グラフ」を選択します。</p>
-<p><img alt="pibotgrah" src="../_images/0005.png" /></p>
+<p>ピボットテーブルを可視化する場合には、棒グラフにすると関連性が分かりやすくなります。 1. 作成をした、ピボットテーブルを選択した状態で、「挿入」 → 「棒グラフ」を選択します。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>![pibotgrah](img/03/0005.png)
+</pre></div>
+</div>
 <p>上記のように可視化できていれば成功です。 非常に簡単に可視化ができました。</p>
 </section>
 <section id="【実装・演習】成約の有無と他の列の関係性を確認する">
@@ -341,7 +351,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="01.html" class="btn btn-neutral float-left" title="データ分析とは" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="04-01.html" class="btn btn-neutral float-right" title="検定とは（推測統計）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="04-00.html" class="btn btn-neutral float-right" title="A(analysis、分析)：データに基づく分析・処理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

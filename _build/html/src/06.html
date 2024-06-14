@@ -4,10 +4,9 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C(conclusion、結論)：分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
+  <title>【補足】 C(conclusion、結論)：分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
 
   
   <!--[if lt IE 9]>
@@ -26,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="【補足】 分析結果の考察、結論" href="07.html" />
-    <link rel="prev" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" /> 
+    <link rel="next" title="C(conclusion、結論)：分析結果の考察、結論" href="07.html" />
+    <link rel="prev" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,17 +53,25 @@
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#【実装】t-検定:等分散を仮定した２標本による検定">【実装】t-検定:等分散を仮定した２標本による検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#χ二乗検定">χ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">C(conclusion、結論)：分析結果の考察、結論</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#【コード:デモ】">【コード:デモ】</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#最終結論">最終結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">A(analysis、分析)：データに基づく分析・処理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】 C(conclusion、結論)：分析結果の考察、結論</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Power-BI-を使用した可視化">Power BI を使用した可視化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#PowerBI-の実装">PowerBI の実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Power-BI-Desktop-のセットアップ">Power BI Desktop のセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Power-BI(Web)-のセットアップ">Power BI(Web) のセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#データの可視化">データの可視化</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#円グラフ">円グラフ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ヒストグラム">ヒストグラム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#PowerBI-を用いた高度な分析">PowerBI を用いた高度な分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#主要なインフルエンサー">主要なインフルエンサー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ツリー">ツリー</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -81,7 +88,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">C(conclusion、結論)：分析結果の考察、結論</li>
+      <li class="breadcrumb-item active">【補足】 C(conclusion、結論)：分析結果の考察、結論</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/06.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -91,750 +98,121 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="C(conclusion、結論)：分析結果の考察、結論">
-<h1>C(conclusion、結論)：分析結果の考察、結論<a class="headerlink" href="#C(conclusion、結論)：分析結果の考察、結論" title="Link to this heading"></a></h1>
-<p>分析結果から結論を導く</p>
-<p>分析から得られた結果： - 売上にはローンの有無・銀行の残高が影響を与える - 成約率には持ち家の有無・結婚の状態が影響を与える 寄り高度な分析を行ったところ持ち家の有無が、成約に大きな影響があることがわかりました。持ち家の有無と成約について確認してみましょう。</p>
-<section id="【コード:デモ】">
-<h2>【コード:デモ】<a class="headerlink" href="#【コード:デモ】" title="Link to this heading"></a></h2>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
+  <section id="【補足】-C(conclusion、結論)：分析結果の考察、結論">
+<h1>【補足】 C(conclusion、結論)：分析結果の考察、結論<a class="headerlink" href="#【補足】-C(conclusion、結論)：分析結果の考察、結論" title="Link to this heading"></a></h1>
+<p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
+<div class="line-block">
+<div class="line">まずはホテルのレビューデータを使用し、PowerBIの操作に慣れましょう。</div>
+<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。 <img alt="01" src="../_images/011.png" /></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 持ち家の有無と成約の有無についてまとめて</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="c1"># 持ち家の有無と成約の有無のクロス集計</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-  <div id="df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>成約の有無</th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-    </tr>
-    <tr>
-      <th>持ち家の有無</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2527</td>
-      <td>3354</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3346</td>
-      <td>1935</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-6673305f-f0b0-46e6-a8de-84a9bab05681">
-  <button class="colab-df-quickchart" onclick="quickchart('df-6673305f-f0b0-46e6-a8de-84a9bab05681')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-6673305f-f0b0-46e6-a8de-84a9bab05681 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-
-    </div>
-  </div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 年齢列を10代ごとに区切って</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-  <div id="df-e10a648b-0d61-4d99-bfad-514eaf2f7913" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>年齢</th>
-      <th>仕事</th>
-      <th>結婚状況</th>
-      <th>最終学歴</th>
-      <th>銀行残高</th>
-      <th>持ち家の有無</th>
-      <th>ローンの有無</th>
-      <th>day</th>
-      <th>成約の有無</th>
-      <th>売上</th>
-      <th>年齢の10の位</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>2343.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>23.43</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>45.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0.45</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>40.0</td>
-      <td>technician</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>1270.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>12.70</td>
-      <td>40.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.0</td>
-      <td>services</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>2476.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>24.76</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>tertiary</td>
-      <td>184.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1.84</td>
-      <td>50.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e10a648b-0d61-4d99-bfad-514eaf2f7913')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-e10a648b-0d61-4d99-bfad-514eaf2f7913 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e10a648b-0d61-4d99-bfad-514eaf2f7913');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93">
-  <button class="colab-df-quickchart" onclick="quickchart('df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-
-    </div>
-  </div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 年齢列と持ち家の有無、成約の有無の関係性を可視化して</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="c1"># 年齢の10の位と持ち家の有無、成約の有無の関係性を可視化</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)]</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">],</span> <span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;年齢</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">代&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_0.png" src="../_images/src_06_5_0.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_1.png" src="../_images/src_06_5_1.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_2.png" src="../_images/src_06_5_2.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_3.png" src="../_images/src_06_5_3.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_4.png" src="../_images/src_06_5_4.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_5.png" src="../_images/src_06_5_5.png" />
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_5_6.png" src="../_images/src_06_5_6.png" />
-</div>
-</div>
-<p>20,60,70 代の持ち家のない人が成約をしている。</p>
-<p>60 代の人の持ち家のない人の詳細を探索する</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 60代で持ち家の有無が0の人の職業は</span>
-
-<span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;仕事&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-仕事
-retired          214
-management        60
-admin.            25
-housemaid         25
-blue-collar       21
-technician        20
-self-employed     14
-entrepreneur       7
-unemployed         6
-unknown            3
-services           2
-Name: count, dtype: int64
-</pre></div></div>
-</div>
-<p>Retireしている人が多い。</p>
-<p>持ち家が0の人のとローンの有無と売上の関係を可視化</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 持ち家が0の人のとローンの有無と売上の関係を可視化して</span>
-
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">loan_no_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">loan_no_df</span><span class="p">[</span><span class="s1">&#39;ローンの有無&#39;</span><span class="p">],</span> <span class="n">loan_no_df</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;持ち家なしのローンの有無と成約の有無&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_06_11_0.png" src="../_images/src_06_11_0.png" />
-</div>
-</div>
+<section id="Power-BI-を使用した可視化">
+<h2>Power BI を使用した可視化<a class="headerlink" href="#Power-BI-を使用した可視化" title="Link to this heading"></a></h2>
+<p>Power BI は関連性のないデータソースを一貫性のある視覚的にイマーシブでインタラクティブな洞察に変えるために、連携して動作するソフトウェア サービス、アプリ、コネクタのコレクションです。データがシンプルな Microsoft Excel ワークブックであっても、クラウドベースおよびオンプレミスのハイブリッド データ ウェアハウスのコレクションであっても、Power BI を使用すると、データソースに簡単に接続して、基になるソースに影響を及ぼすことなく、データをクリーンアップおよびモデル化したり、重要なデータを可視化
+(または発見) したり、あらゆる必要なユーザー全員とデータを共有したりできます。 PowerBI は可視化ツールとしての認識が強いですが、可視化以外にも分析などを行うことが可能です。 <img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
+<p>Power BI は、Power BI Desktop と呼ばれる Microsoft Windows デスクトップ アプリケーション、Power BI サービスと呼ばれるオンライン SaaS (サービスとしてのソフトウェア) サービス、および携帯電話やタブレットで使用できるモバイル Power BI アプリ(PowerBI Mobile) で構成されます。</p>
+<p>Power BI の使用手順 使用手順は下記の通りです。</p>
+<p><img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
+<ol class="arabic simple">
+<li><p>Power BI Desktop にデータを取り込み、レポートを作成します。</p></li>
+<li><p>Power BI サービスに発行して、新しい視覚エフェクトを作成したり、ダッシュボードを作成したりできます。</p></li>
+<li><p>他のユーザー、特に外出先のユーザーとダッシュボードを共有します。</p></li>
+<li><p>Power BI Mobile アプリで共有ダッシュボードおよびレポートを表示および操作します。</p></li>
+</ol>
+<p>例えば、工場などでリアルタイムなデータを取得しそれを常に携帯などの IOT デバイスで確認することが可能です。 Power BI Desktop は Windows のみの提供のため、Mac をご利用の方は Web 版を使用してください。</p>
 </section>
-<section id="最終結論">
-<h2>最終結論<a class="headerlink" href="#最終結論" title="Link to this heading"></a></h2>
+<section id="PowerBI-の実装">
+<h2>PowerBI の実装<a class="headerlink" href="#PowerBI-の実装" title="Link to this heading"></a></h2>
+<p>BI ツールを使用しデータから新たな傾向を見つけ出しましょう。</p>
+<p>Power BI Desktop もしくは Power BI (Web) を開いてください。 Desktop と Web 版でデータの取得の方法が異なるので注意してください</p>
+</section>
+<section id="Power-BI-Desktop-のセットアップ">
+<h2>Power BI Desktop のセットアップ<a class="headerlink" href="#Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
+<p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
+<p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
+<p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
+<p><img alt="03" src="../_images/031.png" /></p>
+<p>データにチェックをいれて読み込みをクリックしてください。</p>
+<p><img alt="04" src="../_images/041.png" /></p>
+<p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
+<p><img alt="05" src="../_images/051.png" /></p>
+<p>データの可視化から実装を行います。</p>
+</section>
+<section id="Power-BI(Web)-のセットアップ">
+<h2>Power BI(Web) のセットアップ<a class="headerlink" href="#Power-BI(Web)-のセットアップ" title="Link to this heading"></a></h2>
+<p>ホーム画面にてデータの取得先を選択できます。 Exel からのインポートも可能ですが実務では Desktop 版で作成された .pbix のファイルを読み込むことが一般的ですので下記ファイルをダウンロードしてください。</p>
+<p><a class="reference external" href="img/07/bi_hotel.pbix">ホテルレビュー.pbix</a></p>
+<p>データのダウンロードが完了しましたら、Power BI にデータのアップロードを行います。 Power BI を開いていただき、データの取得をクリックしてください。</p>
+<p><img alt="06" src="../_images/061.png" /></p>
+<p>ファイルを選択してください。先程ダウンロードをしました、bi_hotel.pbix を選択しアップロードしてください。 <img alt="07" src="../_images/071.png" /></p>
+<p>画像のようにレポートとデータセットの表示がされてましたら完了です。 次にレポートを選択してください。 <img alt="08" src="../_images/08.png" /></p>
+<p>すると画像のような画面に遷移しますので編集を押してください。</p>
+<p><img alt="09" src="../_images/09.png" /></p>
+<p>すると Workspace を開くことができます。 データを見てみるとホテルレビューの分析で使用したものと同じカラムが入っていることが確認できます。こちらでデータの可視化の実装を行います。</p>
+<p><img alt="10" src="../_images/10.png" /></p>
+</section>
+<section id="データの可視化">
+<h2>データの可視化<a class="headerlink" href="#データの可視化" title="Link to this heading"></a></h2>
+<p>こちらからの操作は Power BI Desktop, Power BI どちらを使用している方も同様となります</p>
+<section id="円グラフ">
+<h3>円グラフ<a class="headerlink" href="#円グラフ" title="Link to this heading"></a></h3>
+<p>それでは Power BI を使用してデータの可視化を行います。 満足度の割合を確認します。視覚化ウィンドウから円グラフを選択します。 すると画像のように表示がされます。この時点ではどのようなデータを表示させるのか定義をしていないので画像のような形になります。</p>
+<p><img alt="11" src="../_images/11.png" /></p>
+<p>次に表示させるデータを選択します。満足度を選択し値の部分に挿入てください。 すると画像のように表示されます</p>
+<p><img alt="12" src="../_images/12.png" /></p>
+<p>これでは割合を確認することができません。 値の表示方法を変更します。値の満足度をクリックしてください。</p>
+<p><img alt="13" src="../_images/13.png" /></p>
+<p>カウントにチェックいれます。</p>
+<p><img alt="14" src="../_images/14.png" /></p>
+<p>その後凡例に満足度をドラッグ・アンド・ドロップし、再度表示を確認します。</p>
+<p><img alt="15" src="../_images/15.png" /></p>
+<p>すると下記のように満足度の 1~5 のアンケート結果の割合を表示させることができました。</p>
+<p><img alt="16" src="../_images/16.png" /></p>
+</section>
+<section id="ヒストグラム">
+<h3>ヒストグラム<a class="headerlink" href="#ヒストグラム" title="Link to this heading"></a></h3>
+<p>次に Wifi 設備を Exel で実装した際と同じように可視化します。 視覚化ウィンドウから積み上げ縦棒グラフを選択してください。</p>
+<p><img alt="19" src="../_images/19.png" /></p>
+<p>ヒストグラムを整形するために必要な軸、凡例、値の情報を受け渡します。 凡例は値を渡さなくても実装できますがより理解しやすくするために入力をしています。3つの変数を使用し可視化をして分析を行う際にも有効です。</p>
+<p><img alt="20" src="../_images/20.png" /></p>
+<p>正しくデータが渡されると画像のように可視化を行うことができます。</p>
+<p><img alt="21" src="../_images/21.png" /></p>
+<p>次に 2 つの変数を使用し可視化を行います。 満足度とホテルの立地の平均値を可視化します。 再度ヒストグラムを選択してください。軸、凡例、値には下記を入力してください。</p>
+<p><img alt="22" src="../_images/22.png" /></p>
+<p>こちらが可視化結果です。</p>
+<p><img alt="23" src="../_images/23.png" /></p>
+<p>満足度の低いお客様はホテルの立地に対する評価も満足度5の平均と比べると低い傾向がありますが、満足度に関しまして 1,2,3 をつけたお客様のなかで3をつけたお客様がホテルの立地に対する平均の評価が最も低いという結果でした。</p>
 <ul class="simple">
-<li><p>データ分析の結果、持ち家の有無が成約数に大きな影響を与える。中でも60代以降の高齢者で仕事を退職した、持ち家のない人を優先的にアプローチしていく。</p></li>
-<li><p>更に、持ち家も、ローンもない人は定期預金口座に対して貯金も多くしてくれることがわかった。絶対数は少なそうだが、優先的にアプローチを行う。</p></li>
+<li><p>満足度に反してホテルの立地への評価が高いことからお客様へのサービスが十分でない可能性が考えられる。データにはないが、ホテルの稼働率などを見ることによって従業員が足りていないなどの原因を特定できる。</p></li>
+<li><p>3 をつけたお客様はホテル選びの際に立地をある程度重視していたが期待していたほどのホテル立地ではなかった可能性があり、そのためホテルに来られる前からネガティブな印象をお持ちであったかもしれない。立地が満足度が向上しない要因である可能性がある。</p></li>
 </ul>
+<p>１例ではありますが上記のような仮説や考察をたてることができます。</p>
+</section>
+<section id="PowerBI-を用いた高度な分析">
+<h3>PowerBI を用いた高度な分析<a class="headerlink" href="#PowerBI-を用いた高度な分析" title="Link to this heading"></a></h3>
+<p>ここまで基礎的な Power BI の実装方法についてご紹介いたしました。 他にも Power BI ではデータの説明の補助、分析の補助をするためのツールがありますのでそちらについてご紹介致します。</p>
+</section>
+<section id="主要なインフルエンサー">
+<h3>主要なインフルエンサー<a class="headerlink" href="#主要なインフルエンサー" title="Link to this heading"></a></h3>
+<p>主要なインフルエンサーは、関心のある変数（ホテルのレビュー）を動作させる要因を理解するのに役立ちます。 データを分析し、重要な要因にランクを付け、主要なインフルエンサーとして表示します。重回帰などのデータ分析を行ったことがない方でも簡単に重要度を可視化できる便利なツールです。 便利な反面、ブラックボックスな要素が多く、重要度を算出する上でどのような分析手法や計算を行ったのかがわかりません。 視覚化ウィンドウから主要なインフルエンサーを選択します。</p>
+<p><img alt="25" src="../_images/25.png" /></p>
+<p>分析を行う対象は満足度なので画像のようにします。 <img alt="26" src="../_images/26.png" /></p>
+<p>分析後の重要度です。</p>
+<p><img alt="27" src="../_images/27.png" /></p>
+<p>こちらは滞在時の快適さが 1.32 上昇すると満足度に対しても 0.52 の上昇が見られるということを表しています。 表示を変えることで満足度が下がってしまう要因の特定を行うことも可能です。使用されている分析手法のの詳細等は<a class="reference external" href="https://dotnet.microsoft.com/en-us/platform/customers/power-bi">こちら</a>こちらをご確認ください。</p>
+</section>
+<section id="ツリー">
+<h3>ツリー<a class="headerlink" href="#ツリー" title="Link to this heading"></a></h3>
+<p>ツリーは集計された値を任意の順序で探索することができます。アドホック探索や根本原因分析に役立つツールになります。 データサイエンスの知識がなくてもデータの深堀りを行い、メトリックの要因の特定を行うことが可能です。詳細はこちらをご確認ください。</p>
+<p>視覚化ウィンドウから分解ツリーを選択します。</p>
+<p><img alt="30" src="../_images/30.png" /></p>
+<p>次に分析に使用するメトリックを決めます。今回は満足度の平均値に注目をし、立地の悪いホテルでも高い満足度を得ることが可能かどうかを検証します。使用する変数はホテル立地、wifi満足度、食事満足度です。 tree1.png</p>
+<p>画像のようにホテル立地に対して最低点の1の評価をつけたお客様でもwifiや食事といったサービスを充実させることによって平均以上の満足度を得ることが可能です。</p>
+<p><img alt="31" src="../_images/31.png" /></p>
+<p>また、実務で考えますと新しいホテルを建設する際に、立地の良いところに建設すべきなのかそれとも建設予算を押さえてその他のサービスに力を入れるべきなのかなど、様々な場面でのビジネス上の意思決定においても活用が可能です。</p>
+<p><img alt="32" src="../_images/32.png" /></p>
+<p>ここまで Power BI の基礎的な使用方法と活用場面について解説を行いました。データサイエンスだけではなく、意思決定を行う際の説明ツールとしても使用可能ですのでぜひ使用してください。</p>
+<p>時間のある方は、講座内で使用した Bank データを使用し、試行錯誤を行ってみてください。</p>
+</section>
 </section>
 </section>
 
@@ -842,8 +220,8 @@ Name: count, dtype: int64
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="05.html" class="btn btn-neutral float-left" title="演習：データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="07.html" class="btn btn-neutral float-right" title="【補足】 分析結果の考察、結論" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05.html" class="btn btn-neutral float-left" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="07.html" class="btn btn-neutral float-right" title="C(conclusion、結論)：分析結果の考察、結論" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
