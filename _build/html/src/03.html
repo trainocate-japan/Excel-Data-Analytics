@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D(data、データ収集)：データの収集・整理 &mdash; Sphinx  ドキュメント</title>
+  <title>3. データの収集・整理 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="A(analysis、分析)：データに基づく分析・処理" href="04-00.html" />
-    <link rel="prev" title="データ分析とは" href="01.html" /> 
+    <link rel="next" title="4. データに基づく分析・処理（分析）" href="04-00.html" />
+    <link rel="prev" title="2. 問題の把握・明確化" href="02.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,8 +51,9 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">D(data、データ収集)：データの収集・整理</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. データの収集・整理</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#効率の良いデータ収集">効率の良いデータ収集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの最適化">データの最適化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの理解をする">データの理解をする</a></li>
@@ -76,8 +77,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04-00.html">A(analysis、分析)：データに基づく分析・処理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">データに基づく分析・処理 2 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
@@ -97,7 +98,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">D(data、データ収集)：データの収集・整理</li>
+      <li class="breadcrumb-item active">3. データの収集・整理</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/03.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -107,8 +108,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="D(data、データ収集)：データの収集・整理">
-<h1>D(data、データ収集)：データの収集・整理<a class="headerlink" href="#D(data、データ収集)：データの収集・整理" title="Link to this heading"></a></h1>
+  <section id="3.-データの収集・整理">
+<h1>3. データの収集・整理<a class="headerlink" href="#3.-データの収集・整理" title="Link to this heading"></a></h1>
 <div class="line-block">
 <div class="line">ここではデータの収集収集と整理を行い、収集されたデータに対しての理解を深めます。</div>
 <div class="line">グラフ化などは一部、分析と重複する部分もありますがデータの理解という文脈でも使用できます。</div>
@@ -305,7 +306,7 @@
 <p>これらは見分けるのが難しいのですが、コツとして数値に仮に置き換えて考えてみると良いです。例えば、性別において 男性 : 1 、女性 : 0 と置き換えて考えます。数値として扱うとこの 2 つには差が存在しますが、その差に厳密な意味は存在しません。それに対して満足度は、満足度を 満足 ： １、普通 : 2、不満足 : 0 と置き換えた場合、この数値の差には意味が存在することが分かります。つまり 0 ~ 2 の数値には順序の概念があります。</p>
 <p>量的データは数字の変化が連続的であることが特徴です。例えば、先程挙げた満足度も、1 ~ 5 で評価してください。とアンケートを取った場合には、量的データとも捉えることができます。本コースでは満足度を含めた評価点はすべて量的データとして取り扱います。</p>
 <p>量的データも尺度によって 2 つに分けることができます。これは 0 が本当になにもないことを指しているかで見分けます。年齢が 0 は、本当になにもないことを指していませんが、売上が 0 は本当になにもないことを示しています。 先程挙げたデータの種類の組み合わせによって、関連性の把握する方法が異なります。</p>
-<p>では、実際に今回のデータに対しても、クロス集計や散布図を用いて関係性の把握を行いましょう。</p>
+<p>では、実際に今回のデータに対しても、クロス集計を用いて関係性の把握を行いましょう。</p>
 </section>
 <section id="【実装】成約の有無と他の列の関係性を確認する">
 <h3>【実装】成約の有無と他の列の関係性を確認する<a class="headerlink" href="#【実装】成約の有無と他の列の関係性を確認する" title="Link to this heading"></a></h3>
@@ -339,7 +340,14 @@
 <div class="line">実際に 2 変数をクロス集計や散布図を用いて描画することによって、データのさらなる理解が深まりました。</div>
 <div class="line">最後にデータを集計し、可視化をすることによって得られた新たな気づきを記載しましょう。</div>
 </div>
-<p>【（例）気づき】 - 「工場作業員」や「接客」の仕事に就いている顧客は、断られることが多い - 既婚の顧客は成約率が低い傾向にあるがデータ数は一番多い。 - 最終学歴が中等教育だと成約率が低い。学歴が上がるほど成約率が上がっている。 - 学生の成約率も高い - 工場作業員・接客業・家政婦は成約率が低い。だが現状の顧客リストに工場作業員は 2 番目に多くいると考えられる。</p>
+<p>【（例）気づき】</p>
+<ul class="simple">
+<li><p>「工場作業員」や「接客」の仕事に就いている顧客は、断られることが多い</p></li>
+<li><p>既婚の顧客は成約率が低い傾向にあるがデータ数は一番多い。</p></li>
+<li><p>最終学歴が中等教育だと成約率が低い。学歴が上がるほど成約率が上がっている。</p></li>
+<li><p>学生の成約率も高い</p></li>
+<li><p>工場作業員・接客業・家政婦は成約率が低い。だが現状の顧客リストに工場作業員は 2 番目に多くいると考えられる。</p></li>
+</ul>
 </section>
 </section>
 </section>
@@ -348,8 +356,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="01.html" class="btn btn-neutral float-left" title="データ分析とは" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="04-00.html" class="btn btn-neutral float-right" title="A(analysis、分析)：データに基づく分析・処理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="02.html" class="btn btn-neutral float-left" title="2. 問題の把握・明確化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-00.html" class="btn btn-neutral float-right" title="4. データに基づく分析・処理（分析）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

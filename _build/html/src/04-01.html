@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A(analysis、分析)：データに基づく分析・処理 2 &mdash; Sphinx  ドキュメント</title>
+  <title>4-2データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" />
-    <link rel="prev" title="A(analysis、分析)：データに基づく分析・処理" href="04-00.html" /> 
+    <link rel="prev" title="4. データに基づく分析・処理（分析）" href="04-00.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,10 +51,11 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-00.html">A(analysis、分析)：データに基づく分析・処理</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">A(analysis、分析)：データに基づく分析・処理 2</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4-2データに基づく分析・処理 （統計仮説検定）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">検定とは（推測統計）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#t-検定">t-検定</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#【実装】t-検定">【実装】t-検定</a></li>
@@ -68,7 +69,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -85,7 +86,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">A(analysis、分析)：データに基づく分析・処理 2</li>
+      <li class="breadcrumb-item active">4-2データに基づく分析・処理 （統計仮説検定）</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/04-01.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -95,8 +96,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="A(analysis、分析)：データに基づく分析・処理-2">
-<h1>A(analysis、分析)：データに基づく分析・処理 2<a class="headerlink" href="#A(analysis、分析)：データに基づく分析・処理-2" title="Link to this heading"></a></h1>
+  <section id="4-2データに基づく分析・処理-（統計仮説検定）">
+<h1>4-2データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#4-2データに基づく分析・処理-（統計仮説検定）" title="Link to this heading"></a></h1>
 <section id="検定とは（推測統計）">
 <h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
 <p>本章では統計的仮説検定について学習します。検定を行うことで、仮説が正しいと言ってよいのかを判断できます。</p>
@@ -241,7 +242,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="04-00.html" class="btn btn-neutral float-left" title="A(analysis、分析)：データに基づく分析・処理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-00.html" class="btn btn-neutral float-left" title="4. データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="05.html" class="btn btn-neutral float-right" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

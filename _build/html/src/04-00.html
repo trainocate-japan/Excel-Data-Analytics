@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A(analysis、分析)：データに基づく分析・処理 &mdash; Sphinx  ドキュメント</title>
+  <title>4. データに基づく分析・処理（分析） &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="A(analysis、分析)：データに基づく分析・処理 2" href="04-01.html" />
-    <link rel="prev" title="D(data、データ収集)：データの収集・整理" href="03.html" /> 
+    <link rel="next" title="データに基づく分析・処理 2 （統計仮説検定）" href="04-01.html" />
+    <link rel="prev" title="3. データの収集・整理" href="03.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,9 +51,10 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">A(analysis、分析)：データに基づく分析・処理</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. データに基づく分析・処理（分析）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#多変量解析の基礎---相関と回帰分析">多変量解析の基礎 - 相関と回帰分析</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#【実装】環境構築">【実装】環境構築</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#【確認】相関分析">【確認】相関分析</a></li>
@@ -75,10 +76,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#結果の考察">結果の考察</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">A(analysis、分析)：データに基づく分析・処理 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">データに基づく分析・処理 2 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
@@ -98,7 +99,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">A(analysis、分析)：データに基づく分析・処理</li>
+      <li class="breadcrumb-item active">4. データに基づく分析・処理（分析）</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/04-00.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -108,8 +109,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="A(analysis、分析)：データに基づく分析・処理">
-<h1>A(analysis、分析)：データに基づく分析・処理<a class="headerlink" href="#A(analysis、分析)：データに基づく分析・処理" title="Link to this heading"></a></h1>
+  <section id="4.-データに基づく分析・処理（分析）">
+<h1>4. データに基づく分析・処理（分析）<a class="headerlink" href="#4.-データに基づく分析・処理（分析）" title="Link to this heading"></a></h1>
 <div class="line-block">
 <div class="line">ここまでデータの理解を進めました。 クロス集計や散布図を用いて可視化を行いデータの分析を行うことを探索的分析といいます。</div>
 <div class="line">本章では探索的分析ではなく、分析や検定について紹介します。</div>
@@ -348,8 +349,8 @@
 <p><img alt="lo2" src="../_images/logistic2.png" /></p>
 </section>
 </section>
-<section id="id13">
-<h2>まとめ<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>まとめ<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">こちらでは代表的なデータ分析の手法について学習しました。</div>
 <div class="line">分析結果より、確認できたことをまとめましょう。</div>
@@ -361,8 +362,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="03.html" class="btn btn-neutral float-left" title="D(data、データ収集)：データの収集・整理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="04-01.html" class="btn btn-neutral float-right" title="A(analysis、分析)：データに基づく分析・処理 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="03.html" class="btn btn-neutral float-left" title="3. データの収集・整理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-01.html" class="btn btn-neutral float-right" title="データに基づく分析・処理 2 （統計仮説検定）" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

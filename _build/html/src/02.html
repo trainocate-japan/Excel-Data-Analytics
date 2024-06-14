@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画 &mdash; Sphinx  ドキュメント</title>
+  <title>2. 問題の把握・明確化 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -25,8 +25,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="D(data、データ収集)：データの収集・整理" href="03.html" />
-    <link rel="prev" title="データ分析とは" href="01.html" /> 
+    <link rel="next" title="3. データの収集・整理" href="03.html" />
+    <link rel="prev" title="1. データ分析とは" href="01.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,21 +51,14 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#イシューツリー">イシューツリー</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">D(data、データ収集)：データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04.html">A(analysis、分析)：データに基づく分析、処理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">検定とは（推測統計）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#統計的仮説検定">統計的仮説検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#t-検定:-等分散を仮定した２標本による検定-の実装">t-検定: 等分散を仮定した２標本による検定 の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定">カイ二乗検定</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html#カイ二乗検定の実装">カイ二乗検定の実装</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">演習：データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">【補足】 分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -82,7 +75,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画</li>
+      <li class="breadcrumb-item active">2. 問題の把握・明確化</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/02.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -92,36 +85,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="P(problem、問題)：問題の把握と明確化-＆-P(plan、計画)：仮説の設定・調査分析の計画">
-<h1>P(problem、問題)：問題の把握と明確化 ＆ P(plan、計画)：仮説の設定・調査分析の計画<a class="headerlink" href="#P(problem、問題)：問題の把握と明確化-＆-P(plan、計画)：仮説の設定・調査分析の計画" title="Link to this heading"></a></h1>
-<p>実務では、まずは分析を行う前に現状の精査から行います。 今回はすでに問題設定が決まっているため、下記のように課題を定義します。</p>
-<p>問題：データを活用した効率的な営業を行う 計画 - どんな顧客にアプローチすると成約率を高められるか① - どのような顧客が講座にたくさん貯金してくれるか(売上の高い顧客の要因)② - 今回のキャンペーンにはそもそも効果があったのか</p>
-<p>実務であればこの段階でどのような分析を行うのか方針を決めます。今回はまだ分析手法を学んでいないため、割愛しますが分析手法の決定のフレームワークを紹介します。</p>
-<section id="イシューツリー">
-<h2>イシューツリー<a class="headerlink" href="#イシューツリー" title="Link to this heading"></a></h2>
-<p><img alt="data" src="https://assets.monodukuri.com/article/uploads/020202D.jpg" /></p>
+  <section id="2.-問題の把握・明確化">
+<h1>2. 問題の把握・明確化<a class="headerlink" href="#2.-問題の把握・明確化" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">イシューツリーを使用することによって、必要なデータや、データ処理方法を効率化することができます。</div>
-<div class="line">例えば真ん中の「販売力が弱くなった」という仮説に注目します。</div>
-<div class="line">この販売力が弱くなったことを証明するためにはどのようなデータが必要でしょうか、またどのような分析をしたら良いでしょうか？</div>
+<div class="line">本章は実装パートはございません。</div>
+<div class="line">別途配布をしております、 PDF 資料をご確認ください。</div>
 </div>
-<div class="line-block">
-<div class="line">例えば 営業の知識テスト結果</div>
-<div class="line">過去の営業データ</div>
-<div class="line">現在の営業データ</div>
-<div class="line">商談時間のデータ</div>
-</div>
-<p>これらのようなデータを用意し、検定や知識テストの結果と営業データに相関関係があるのかなどの分析を行うことによって、販売力が弱くなってしまったことを証明することができ、営業マンの育成に注力することにより、売上の向上が期待出来るかもしれません。</p>
-<p>このように大枠の問題から課題を細分化し、分析の方向性の決定を行います。ビジネスの理解やビジネス力が重要になります。 よくある失敗としてデータ分析を第三者に丸投げすると行ったことがありますが、第三者がその分野やデータに対してのドメイン知識がないことが原因です。</p>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="01.html" class="btn btn-neutral float-left" title="データ分析とは" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="03.html" class="btn btn-neutral float-right" title="D(data、データ収集)：データの収集・整理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="01.html" class="btn btn-neutral float-left" title="1. データ分析とは" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="03.html" class="btn btn-neutral float-right" title="3. データの収集・整理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
