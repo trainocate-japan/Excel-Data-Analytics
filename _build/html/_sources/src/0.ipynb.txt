@@ -6,11 +6,6 @@
    "source": [
     "# 〜研修へようこそ"
    ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": []
   }
  ],
  "metadata": {

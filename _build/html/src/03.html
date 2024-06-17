@@ -57,7 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#効率の良いデータ収集">効率の良いデータ収集</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの最適化">データの最適化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの理解をする">データの理解をする</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#データを理解する【ワークシート1】">データを理解する【ワークシート1】</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#【実装】データを理解する">【実装】データを理解する</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#環境構築">環境構築</a></li>
 </ul>
 </li>
@@ -134,14 +134,14 @@
 <p>データの取捨選択と並行して、データの理解を進めます。収集したデータがどのようなものかわからなければ、分析や検証を行うことはできません。データは必要に応じてグラフ化したり、ピボットテーブルを作成することで、より理解を深めることができます。結果によっては新たな仮説を立てることもあります。</p>
 <p>それでは、本講座で使用する銀行のデータを見てみましょう。</p>
 </section>
-<section id="データを理解する【ワークシート1】">
-<h2>データを理解する【ワークシート1】<a class="headerlink" href="#データを理解する【ワークシート1】" title="Link to this heading"></a></h2>
+<section id="【実装】データを理解する">
+<h2>【実装】データを理解する<a class="headerlink" href="#【実装】データを理解する" title="Link to this heading"></a></h2>
 <section id="環境構築">
 <h3>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h3>
 <p><a class="reference external" href="https://docs.google.com/spreadsheets/d/17XMw70m8pAR_DjaIKjx5ViMvrdLvJCcD/edit?usp=sharing&amp;ouid=102712789547541073394&amp;rtpof=true&amp;sd=true">こちら</a>をクリックしExcelファイルのダウンロードを行いましょう。</p>
 <p>こちらをクリックして Excel ファイルをダウンロードしてください。ダウンロードした Excel ファイルを手元で展開し、以下のように複数のテーブルが定義された Excel ファイルを開きます。</p>
 <p><img alt="exel" src="../_images/Excelimage.png" /></p>
-<p>データには、預金口座開設キャンペーンで営業を行った際の顧客・営業結果のデータが含まれています。まずはどのようなカラムが取得されているか確認しましょう。</p>
+<p>データには、預金口座開設キャンペーンで営業を行った際の顧客・営業結果のデータが含まれています。「生データ」のテーブルを開き、まずはどのようなカラムが取得されているか確認しましょう。</p>
 <p>【参考】 - 連絡手段：営業を行った方法 - pday : 最後に営業を行ってからの経過日数 - day : 最後に顧客へ連絡した日付 - previous: 前回のマーケティングキャンペーン時の連絡回数</p>
 </section>
 </section>
@@ -149,9 +149,14 @@
 <h2>データの全体像の理解<a class="headerlink" href="#データの全体像の理解" title="Link to this heading"></a></h2>
 <section id="【復習・演習】代表値の算出">
 <h3>【復習・演習】代表値の算出<a class="headerlink" href="#【復習・演習】代表値の算出" title="Link to this heading"></a></h3>
-<p>データの概要が理解できました。次に、データから情報を抽出しましょう。データから得られる情報として、平均値・中央値・最頻値があります。このようにデータ全体の特徴を数値で表したものを代表値と呼びます。</p>
+<p>データの概要が理解できました。次に、データから情報を抽出しましょう。データから得られる情報として、平均値・中央値・最頻値があります。このようにデータ全体の特徴を数値で表したものを<strong>代表値</strong>と呼びます。</p>
 <p>代表値の意味</p>
-<p>平均値 (Mean): データの合計値をデータ数で割った値 最頻値 (Mode): データの中で最も多く出現する値 中央値 (Median): データを小さい順に並べたときの中央に位置する値 代表値を扱う際に重要なことは、データの特徴を表現する際に1つの代表値だけで判断しないことです。実際に確認してみましょう。</p>
+<div class="line-block">
+<div class="line">平均値 (Mean): データの合計値をデータ数で割った値</div>
+<div class="line">最頻値 (Mode): データの中で最も多く出現する値</div>
+<div class="line">中央値 (Median): データを小さい順に並べたときの中央に位置する値</div>
+</div>
+<p>代表値を扱う際に重要なことは、データの特徴を表現する際に1つの代表値だけで判断しないことです。実際に確認してみましょう。</p>
 <p>まず初めに、データから年齢、銀行残高、売上の各種代表値を算出しましょう。「ワークシート_1_」のシートを開き、各セルに代表値を算出してください。</p>
 <p><strong>下記のように値が算出されているか確認しましょう。</strong></p>
 <ul class="simple">
@@ -186,7 +191,7 @@
 <p>データ分析の最初に、分析の成果物や対象物として最も重要度の高いデータから概要を確認します。まずは、成約の有無の値を確認してみましょう。今回のデータには0（成約無）, 1（成約）の数値が含まれています。それぞれの値がどのくらい含まれているのか、頻度の集計を行いましょう。</p>
 <p>これには Excel の <strong>COUNTIF</strong> 関数を使用します。</p>
 <p>COUNTIF(範囲,条件) の様に値を渡します。</p>
-<p><strong>例）=countif(J:J,1)</strong></p>
+<p><strong>例）=COUNTIF(J:J,1)</strong></p>
 <p><img alt="Excel" src="../_images/2.png" /></p>
 <p>うまく集計ができました。</p>
 <p>そのまま、成約の有無がNo(0)も集計をします。</p>
