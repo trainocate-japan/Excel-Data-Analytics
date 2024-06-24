@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>【補足】 分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c033477b"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">【補足】 分析結果の考察、結論</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/07 (1).ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="【補足】-分析結果の考察、結論">
+<h1>【補足】 分析結果の考察、結論<a class="headerlink" href="#【補足】-分析結果の考察、結論" title="Link to this heading"></a></h1>
+<p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
+<div class="line-block">
+<div class="line">まずはホテルのレビューデータを使用し、PowerBIの操作に慣れましょう。</div>
+<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。 <img alt="01" src="../_images/011.png" /></div>
+</div>
+<section id="Power-BI-を使用した可視化">
+<h2>Power BI を使用した可視化<a class="headerlink" href="#Power-BI-を使用した可視化" title="Link to this heading"></a></h2>
+<p>Power BI は関連性のないデータソースを一貫性のある視覚的にイマーシブでインタラクティブな洞察に変えるために、連携して動作するソフトウェア サービス、アプリ、コネクタのコレクションです。データがシンプルな Microsoft Excel ワークブックであっても、クラウドベースおよびオンプレミスのハイブリッド データ ウェアハウスのコレクションであっても、Power BI を使用すると、データソースに簡単に接続して、基になるソースに影響を及ぼすことなく、データをクリーンアップおよびモデル化したり、重要なデータを可視化
+(または発見) したり、あらゆる必要なユーザー全員とデータを共有したりできます。 PowerBI は可視化ツールとしての認識が強いですが、可視化以外にも分析などを行うことが可能です。 <img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
+<p>Power BI は、Power BI Desktop と呼ばれる Microsoft Windows デスクトップ アプリケーション、Power BI サービスと呼ばれるオンライン SaaS (サービスとしてのソフトウェア) サービス、および携帯電話やタブレットで使用できるモバイル Power BI アプリ(PowerBI Mobile) で構成されます。</p>
+<p>Power BI の使用手順 使用手順は下記の通りです。</p>
+<p><img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
+<ol class="arabic simple">
+<li><p>Power BI Desktop にデータを取り込み、レポートを作成します。</p></li>
+<li><p>Power BI サービスに発行して、新しい視覚エフェクトを作成したり、ダッシュボードを作成したりできます。</p></li>
+<li><p>他のユーザー、特に外出先のユーザーとダッシュボードを共有します。</p></li>
+<li><p>Power BI Mobile アプリで共有ダッシュボードおよびレポートを表示および操作します。</p></li>
+</ol>
+<p>例えば、工場などでリアルタイムなデータを取得しそれを常に携帯などの IOT デバイスで確認することが可能です。 Power BI Desktop は Windows のみの提供のため、Mac をご利用の方は Web 版を使用してください。</p>
+</section>
+<section id="PowerBI-の実装">
+<h2>PowerBI の実装<a class="headerlink" href="#PowerBI-の実装" title="Link to this heading"></a></h2>
+<p>BI ツールを使用しデータから新たな傾向を見つけ出しましょう。</p>
+<p>Power BI Desktop もしくは Power BI (Web) を開いてください。 Desktop と Web 版でデータの取得の方法が異なるので注意してください</p>
+</section>
+<section id="Power-BI-Desktop-のセットアップ">
+<h2>Power BI Desktop のセットアップ<a class="headerlink" href="#Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
+<p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
+<p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
+<p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
+<p><img alt="03" src="../_images/031.png" /></p>
+<p>データにチェックをいれて読み込みをクリックしてください。</p>
+<p><img alt="04" src="../_images/041.png" /></p>
+<p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
+<p><img alt="05" src="../_images/051.png" /></p>
+<p>データの可視化から実装を行います。</p>
+</section>
+<section id="Power-BI(Web)-のセットアップ">
+<h2>Power BI(Web) のセットアップ<a class="headerlink" href="#Power-BI(Web)-のセットアップ" title="Link to this heading"></a></h2>
+<p>ホーム画面にてデータの取得先を選択できます。 Exel からのインポートも可能ですが実務では Desktop 版で作成された .pbix のファイルを読み込むことが一般的ですので下記ファイルをダウンロードしてください。</p>
+<p><a class="reference external" href="img/07/bi_hotel.pbix">ホテルレビュー.pbix</a></p>
+<p>データのダウンロードが完了しましたら、Power BI にデータのアップロードを行います。 Power BI を開いていただき、データの取得をクリックしてください。</p>
+<p><img alt="06" src="../_images/06.png" /></p>
+<p>ファイルを選択してください。先程ダウンロードをしました、bi_hotel.pbix を選択しアップロードしてください。 <img alt="07" src="../_images/071.png" /></p>
+<p>画像のようにレポートとデータセットの表示がされてましたら完了です。 次にレポートを選択してください。 <img alt="08" src="../_images/08.png" /></p>
+<p>すると画像のような画面に遷移しますので編集を押してください。</p>
+<p><img alt="09" src="../_images/09.png" /></p>
+<p>すると Workspace を開くことができます。 データを見てみるとホテルレビューの分析で使用したものと同じカラムが入っていることが確認できます。こちらでデータの可視化の実装を行います。</p>
+<p><img alt="10" src="../_images/10.png" /></p>
+</section>
+<section id="データの可視化">
+<h2>データの可視化<a class="headerlink" href="#データの可視化" title="Link to this heading"></a></h2>
+<p>こちらからの操作は Power BI Desktop, Power BI どちらを使用している方も同様となります</p>
+<section id="円グラフ">
+<h3>円グラフ<a class="headerlink" href="#円グラフ" title="Link to this heading"></a></h3>
+<p>それでは Power BI を使用してデータの可視化を行います。 満足度の割合を確認します。視覚化ウィンドウから円グラフを選択します。 すると画像のように表示がされます。この時点ではどのようなデータを表示させるのか定義をしていないので画像のような形になります。</p>
+<p><img alt="11" src="../_images/11.png" /></p>
+<p>次に表示させるデータを選択します。満足度を選択し値の部分に挿入てください。 すると画像のように表示されます</p>
+<p><img alt="12" src="../_images/12.png" /></p>
+<p>これでは割合を確認することができません。 値の表示方法を変更します。値の満足度をクリックしてください。</p>
+<p><img alt="13" src="../_images/13.png" /></p>
+<p>カウントにチェックいれます。</p>
+<p><img alt="14" src="../_images/14.png" /></p>
+<p>その後凡例に満足度をドラッグ・アンド・ドロップし、再度表示を確認します。</p>
+<p><img alt="15" src="../_images/15.png" /></p>
+<p>すると下記のように満足度の 1~5 のアンケート結果の割合を表示させることができました。</p>
+<p><img alt="16" src="../_images/16.png" /></p>
+<p>続けて、旅行の目的の可視化と Wifi 設備を可視化を行います。 旅行の目的は先程と同様に円グラフを使用しますので是非一度、動画を止めて実装を行ってください。</p>
+<p><img alt="17" src="../_images/17.png" /></p>
+<p>旅行の目的の可視化は下記のようになります。わからなくなってしまった方はもう一度、円グラフの作成方法を確認してみてください。 割合が Exel と同じ割合になりましたら正解です。</p>
+<p><img alt="18" src="../_images/18.png" /></p>
+</section>
+<section id="ヒストグラム">
+<h3>ヒストグラム<a class="headerlink" href="#ヒストグラム" title="Link to this heading"></a></h3>
+<p>次に Wifi 設備を Exel で実装した際と同じように可視化します。 視覚化ウィンドウから積み上げ縦棒グラフを選択してください。</p>
+<p><img alt="19" src="../_images/19.png" /></p>
+<p>ヒストグラムを整形するために必要な軸、凡例、値の情報を受け渡します。 凡例は値を渡さなくても実装できますがより理解しやすくするために入力をしています。3つの変数を使用し可視化をして分析を行う際にも有効です。</p>
+<p><img alt="20" src="../_images/20.png" /></p>
+<p>正しくデータが渡されると画像のように可視化を行うことができます。</p>
+<p><img alt="21" src="../_images/21.png" /></p>
+<p>次に 2 つの変数を使用し可視化を行います。 満足度とホテルの立地の平均値を可視化します。 再度ヒストグラムを選択してください。軸、凡例、値には下記を入力してください。</p>
+<p><img alt="22" src="../_images/22.png" /></p>
+<p>こちらが可視化結果です。</p>
+<p><img alt="23" src="../_images/23.png" /></p>
+<p>満足度の低いお客様はホテルの立地に対する評価も満足度5の平均と比べると低い傾向がありますが、満足度に関しまして 1,2,3 をつけたお客様のなかで3をつけたお客様がホテルの立地に対する平均の評価が最も低いという結果でした。</p>
+<ul class="simple">
+<li><p>満足度に反してホテルの立地への評価が高いことからお客様へのサービスが十分でない可能性が考えられる。データにはないが、ホテルの稼働率などを見ることによって従業員が足りていないなどの原因を特定できる。</p></li>
+<li><p>3 をつけたお客様はホテル選びの際に立地をある程度重視していたが期待していたほどのホテル立地ではなかった可能性があり、そのためホテルに来られる前からネガティブな印象をお持ちであったかもしれない。立地が満足度が向上しない要因である可能性がある。</p></li>
+</ul>
+<p>１例ではありますが上記のような仮説や考察をたてることができます。</p>
+</section>
+<section id="フィルター">
+<h3>フィルター<a class="headerlink" href="#フィルター" title="Link to this heading"></a></h3>
+<p>また、フィルタリング機能を使用することによってより範囲を絞って分析を行うことが可能です。 今回は年齢が75歳より上の人という条件をつけ、結果を確認します。</p>
+<p>フィルターの使用方法は使用したい変数をフィルタにドラッグ・アンド・ドロップをし、基準となる値を選択もしくは入力します。</p>
+<p><img alt="24" src="../_images/24.png" /></p>
+<p>すこしわかりにくいですが、満足度 2 と答えたお客様の立地の平均スコアを確認したところ、 4 以上のスコアを確認しました。 こちらのグラフだけでは考察が難しいですが、 - 75歳以上のお客様はより立地よりもより、サービス面を評価し満足度が決まっているという可能性が考えられます。</p>
+<p>フィルター機能も合わせて使用することによってデータの背後にある関係性を見つけ出すことができ、視覚的に説明をすることが可能となります。</p>
+</section>
+<section id="PowerBI-を用いた高度な分析">
+<h3>PowerBI を用いた高度な分析<a class="headerlink" href="#PowerBI-を用いた高度な分析" title="Link to this heading"></a></h3>
+<p>ここまで基礎的な Power BI の実装方法についてご紹介いたしました。 他にも Power BI ではデータの説明の補助、分析の補助をするためのツールがありますのでそちらについてご紹介致します。</p>
+</section>
+<section id="主要なインフルエンサー">
+<h3>主要なインフルエンサー<a class="headerlink" href="#主要なインフルエンサー" title="Link to this heading"></a></h3>
+<p>主要なインフルエンサーは、関心のある変数（ホテルのレビュー）を動作させる要因を理解するのに役立ちます。 データを分析し、重要な要因にランクを付け、主要なインフルエンサーとして表示します。重回帰などのデータ分析を行ったことがない方でも簡単に重要度を可視化できる便利なツールです。 便利な反面、ブラックボックスな要素が多く、重要度を算出する上でどのような分析手法や計算を行ったのかがわかりません。 視覚化ウィンドウから主要なインフルエンサーを選択します。</p>
+<p><img alt="25" src="../_images/25.png" /></p>
+<p>分析を行う対象は満足度なので画像のようにします。 <img alt="26" src="../_images/26.png" /></p>
+<p>分析後の重要度です。</p>
+<p><img alt="27" src="../_images/27.png" /></p>
+<p>こちらは滞在時の快適さが 1.32 上昇すると満足度に対しても 0.52 の上昇が見られるということを表しています。 表示を変えることで満足度が下がってしまう要因の特定を行うことも可能です。使用されている分析手法のの詳細等は<a class="reference external" href="https://dotnet.microsoft.com/en-us/platform/customers/power-bi">こちら</a>こちらをご確認ください。</p>
+</section>
+<section id="チャットボット">
+<h3>チャットボット<a class="headerlink" href="#チャットボット" title="Link to this heading"></a></h3>
+<p>こちらは Power BI やデータ分析の実装ができない方でも簡単にデータの概要が把握できるよう、補助を行ってくれるツールです。 ノンコードでチャットボットの作成を行ってくれます。平均値や変数内の値の数、データの並び替えなどを行ってくれます。 実装は今までと同様に視覚化ウィンドウから QnA を選択してください。</p>
+<p><img alt="28" src="../_images/28.png" /></p>
+<p>視覚化ができましたら、質問をしてみましょう。 average 年齢としていただくとデータの平均年齢を確認することができます。 分析にも役立ちますが、デバイスや現場で働かれている方々が店舗の売上などを確認したりするために使用されることが多いです。</p>
+<p><img alt="29" src="../_images/29.png" /></p>
+</section>
+<section id="ツリー">
+<h3>ツリー<a class="headerlink" href="#ツリー" title="Link to this heading"></a></h3>
+<p>ツリーは集計された値を任意の順序で探索することができます。アドホック探索や根本原因分析に役立つツールになります。 データサイエンスの知識がなくてもデータの深堀りを行い、メトリックの要因の特定を行うことが可能です。詳細はこちらをご確認ください。</p>
+<p>視覚化ウィンドウから分解ツリーを選択します。</p>
+<p><img alt="30" src="../_images/30.png" /></p>
+<p>次に分析に使用するメトリックを決めます。今回は満足度の平均値に注目をし、立地の悪いホテルでも高い満足度を得ることが可能かどうかを検証します。使用する変数はホテル立地、wifi満足度、食事満足度です。 tree1.png</p>
+<p>画像のようにホテル立地に対して最低点の1の評価をつけたお客様でもwifiや食事といったサービスを充実させることによって平均以上の満足度を得ることが可能です。</p>
+<p><img alt="31" src="../_images/31.png" /></p>
+<p>また、実務で考えますと新しいホテルを建設する際に、立地の良いところに建設すべきなのかそれとも建設予算を押さえてその他のサービスに力を入れるべきなのかなど、様々な場面でのビジネス上の意思決定においても活用が可能です。</p>
+<p><img alt="32" src="../_images/32.png" /></p>
+<p>ここまで Power BI の基礎的な使用方法と活用場面について解説を行いました。データサイエンスだけではなく、意思決定を行う際の説明ツールとしても使用可能ですのでぜひ使用してください。</p>
+<p>時間のある方は、講座内で使用した Bank データを使用し、試行錯誤を行ってみてください。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
