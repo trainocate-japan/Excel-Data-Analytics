@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>【補足】 C(conclusion、結論)：分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
   <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
+    <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=c033477b"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=4dbe4bdc"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
-    <link rel="index" title="索引" href="../genindex.html" />
-    <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="5. 分析結果の考察、結論" href="07.html" />
-    <link rel="prev" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" /> 
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -37,11 +35,11 @@
 
           
           
-          <a href="../index.html" class="icon icon-home">
+          <a href="index.html" class="icon icon-home">
             Sphinx
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -49,30 +47,17 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】 C(conclusion、結論)：分析結果の考察、結論</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#Power-BI-を使用した可視化">Power BI を使用した可視化</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Power-BI-の実装">Power BI の実装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Power-BI-Desktop-のセットアップ">Power BI Desktop のセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Power-BI(Web)-のセットアップ">Power BI(Web) のセットアップ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#データの可視化">データの可視化</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#円グラフ">円グラフ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ヒストグラム">ヒストグラム</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#PowerBI-を用いた高度な分析">PowerBI を用いた高度な分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#主要なインフルエンサー">主要なインフルエンサー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ツリー">ツリー</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src/0.html">〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/01.html">1. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/02.html">2. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/04-00.html">4. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/06-1.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -81,17 +66,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Sphinx</a>
+          <a href="index.html">Sphinx</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">【補足】 C(conclusion、結論)：分析結果の考察、結論</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/src/06.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/06.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -104,7 +89,7 @@
 <p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
 <div class="line-block">
 <div class="line">まずはホテルのレビューデータを使用し、PowerBIの操作に慣れましょう。</div>
-<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。 <img alt="01" src="../_images/011.png" /></div>
+<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。 <img alt="01" src="img/07/01.png" /></div>
 </div>
 <section id="Power-BI-を使用した可視化">
 <h2>Power BI を使用した可視化<a class="headerlink" href="#Power-BI-を使用した可視化" title="Link to this heading"></a></h2>
@@ -131,11 +116,11 @@
 <p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
 <p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
 <p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
-<p><img alt="03" src="../_images/031.png" /></p>
+<p><img alt="03" src="img/07/03.png" /></p>
 <p>データにチェックをいれて読み込みをクリックしてください。</p>
-<p><img alt="04" src="../_images/041.png" /></p>
+<p><img alt="04" src="img/07/04.png" /></p>
 <p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
-<p><img alt="05" src="../_images/051.png" /></p>
+<p><img alt="05" src="img/07/05.png" /></p>
 <p>データの可視化から実装を行います。</p>
 </section>
 <section id="Power-BI(Web)-のセットアップ">
@@ -143,13 +128,13 @@
 <p>ホーム画面にてデータの取得先を選択できます。 Exel からのインポートも可能ですが実務では Desktop 版で作成された .pbix のファイルを読み込むことが一般的ですので下記ファイルをダウンロードしてください。</p>
 <p><a class="reference external" href="img/07/bi_hotel.pbix">ホテルレビュー.pbix</a></p>
 <p>データのダウンロードが完了しましたら、Power BI にデータのアップロードを行います。 Power BI を開いていただき、データの取得をクリックしてください。</p>
-<p><img alt="06" src="../_images/06.png" /></p>
-<p>ファイルを選択してください。先程ダウンロードをしました、bi_hotel.pbix を選択しアップロードしてください。 <img alt="07" src="../_images/071.png" /></p>
-<p>画像のようにレポートとデータセットの表示がされてましたら完了です。 次にレポートを選択してください。 <img alt="08" src="../_images/08.png" /></p>
+<p><img alt="06" src="img/07/06.png" /></p>
+<p>ファイルを選択してください。先程ダウンロードをしました、bi_hotel.pbix を選択しアップロードしてください。 <img alt="07" src="img/07/07.png" /></p>
+<p>画像のようにレポートとデータセットの表示がされてましたら完了です。 次にレポートを選択してください。 <img alt="08" src="img/07/08.png" /></p>
 <p>すると画像のような画面に遷移しますので編集を押してください。</p>
-<p><img alt="09" src="../_images/09.png" /></p>
+<p><img alt="09" src="img/07/09.png" /></p>
 <p>すると Workspace を開くことができます。 データを見てみるとホテルレビューの分析で使用したものと同じカラムが入っていることが確認できます。こちらでデータの可視化の実装を行います。</p>
-<p><img alt="10" src="../_images/10.png" /></p>
+<p><img alt="10" src="img/07/10.png" /></p>
 </section>
 <section id="データの可視化">
 <h2>データの可視化<a class="headerlink" href="#データの可視化" title="Link to this heading"></a></h2>
@@ -157,30 +142,30 @@
 <section id="円グラフ">
 <h3>円グラフ<a class="headerlink" href="#円グラフ" title="Link to this heading"></a></h3>
 <p>それでは Power BI を使用してデータの可視化を行います。 満足度の割合を確認します。視覚化ウィンドウから円グラフを選択します。 すると画像のように表示がされます。この時点ではどのようなデータを表示させるのか定義をしていないので画像のような形になります。</p>
-<p><img alt="11" src="../_images/11.png" /></p>
+<p><img alt="11" src="img/07/11.png" /></p>
 <p>次に表示させるデータを選択します。満足度を選択し値の部分に挿入てください。 すると画像のように表示されます</p>
-<p><img alt="12" src="../_images/12.png" /></p>
+<p><img alt="12" src="img/07/12.png" /></p>
 <p>これでは割合を確認することができません。 値の表示方法を変更します。値の満足度をクリックしてください。</p>
-<p><img alt="13" src="../_images/13.png" /></p>
+<p><img alt="13" src="img/07/13.png" /></p>
 <p>カウントにチェックいれます。</p>
-<p><img alt="14" src="../_images/14.png" /></p>
+<p><img alt="14" src="img/07/14.png" /></p>
 <p>その後凡例に満足度をドラッグ・アンド・ドロップし、再度表示を確認します。</p>
-<p><img alt="15" src="../_images/15.png" /></p>
+<p><img alt="15" src="img/07/15.png" /></p>
 <p>すると下記のように満足度の 1~5 のアンケート結果の割合を表示させることができました。</p>
-<p><img alt="16" src="../_images/16.png" /></p>
+<p><img alt="16" src="img/07/16.png" /></p>
 </section>
 <section id="ヒストグラム">
 <h3>ヒストグラム<a class="headerlink" href="#ヒストグラム" title="Link to this heading"></a></h3>
 <p>次に Wifi 設備を Exel で実装した際と同じように可視化します。 視覚化ウィンドウから積み上げ縦棒グラフを選択してください。</p>
-<p><img alt="19" src="../_images/19.png" /></p>
+<p><img alt="19" src="img/07/19.png" /></p>
 <p>ヒストグラムを整形するために必要な軸、凡例、値の情報を受け渡します。 凡例は値を渡さなくても実装できますがより理解しやすくするために入力をしています。3つの変数を使用し可視化をして分析を行う際にも有効です。</p>
-<p><img alt="20" src="../_images/20.png" /></p>
+<p><img alt="20" src="img/07/20.png" /></p>
 <p>正しくデータが渡されると画像のように可視化を行うことができます。</p>
-<p><img alt="21" src="../_images/21.png" /></p>
+<p><img alt="21" src="img/07/21.png" /></p>
 <p>次に 2 つの変数を使用し可視化を行います。 満足度とホテルの立地の平均値を可視化します。 再度ヒストグラムを選択してください。軸、凡例、値には下記を入力してください。</p>
-<p><img alt="22" src="../_images/22.png" /></p>
+<p><img alt="22" src="img/07/22.png" /></p>
 <p>こちらが可視化結果です。</p>
-<p><img alt="23" src="../_images/23.png" /></p>
+<p><img alt="23" src="img/07/23.png" /></p>
 <p>満足度の低いお客様はホテルの立地に対する評価も満足度5の平均と比べると低い傾向がありますが、満足度に関しまして 1,2,3 をつけたお客様のなかで3をつけたお客様がホテルの立地に対する平均の評価が最も低いという結果でした。</p>
 <ul class="simple">
 <li><p>満足度に反してホテルの立地への評価が高いことからお客様へのサービスが十分でない可能性が考えられる。データにはないが、ホテルの稼働率などを見ることによって従業員が足りていないなどの原因を特定できる。</p></li>
@@ -195,22 +180,22 @@
 <section id="主要なインフルエンサー">
 <h3>主要なインフルエンサー<a class="headerlink" href="#主要なインフルエンサー" title="Link to this heading"></a></h3>
 <p>主要なインフルエンサーは、関心のある変数（ホテルのレビュー）を動作させる要因を理解するのに役立ちます。 データを分析し、重要な要因にランクを付け、主要なインフルエンサーとして表示します。重回帰などのデータ分析を行ったことがない方でも簡単に重要度を可視化できる便利なツールです。 便利な反面、ブラックボックスな要素が多く、重要度を算出する上でどのような分析手法や計算を行ったのかがわかりません。 視覚化ウィンドウから主要なインフルエンサーを選択します。</p>
-<p><img alt="25" src="../_images/25.png" /></p>
-<p>分析を行う対象は満足度なので画像のようにします。 <img alt="26" src="../_images/26.png" /></p>
+<p><img alt="25" src="img/07/25.png" /></p>
+<p>分析を行う対象は満足度なので画像のようにします。 <img alt="26" src="img/07/26.png" /></p>
 <p>分析後の重要度です。</p>
-<p><img alt="27" src="../_images/27.png" /></p>
+<p><img alt="27" src="img/07/27.png" /></p>
 <p>こちらは滞在時の快適さが 1.32 上昇すると満足度に対しても 0.52 の上昇が見られるということを表しています。 表示を変えることで満足度が下がってしまう要因の特定を行うことも可能です。使用されている分析手法の詳細等は<a class="reference external" href="https://dotnet.microsoft.com/en-us/platform/customers/power-bi">こちら</a>をご確認ください。</p>
 </section>
 <section id="ツリー">
 <h3>ツリー<a class="headerlink" href="#ツリー" title="Link to this heading"></a></h3>
 <p>ツリーは集計された値を任意の順序で探索することができます。アドホック探索や根本原因分析に役立つツールになります。 データサイエンスの知識がなくてもデータの深堀りを行い、メトリックの要因の特定を行うことが可能です。</p>
 <p>視覚化ウィンドウから分解ツリーを選択します。</p>
-<p><img alt="30" src="../_images/30.png" /></p>
+<p><img alt="30" src="img/07/30.png" /></p>
 <p>次に分析に使用するメトリックを決めます。今回は満足度の平均値に注目をし、立地の悪いホテルでも高い満足度を得ることが可能かどうかを検証します。使用する変数はホテル立地、wifi満足度、食事満足度です。 tree1.png</p>
 <p>画像のようにホテル立地に対して最低点の1の評価をつけたお客様でもwifiや食事といったサービスを充実させることによって平均以上の満足度を得ることが可能です。</p>
-<p><img alt="31" src="../_images/31.png" /></p>
+<p><img alt="31" src="img/07/31.png" /></p>
 <p>また、実務で考えますと新しいホテルを建設する際に、立地の良いところに建設すべきなのかそれとも建設予算を抑さえてその他のサービスに力を入れるべきなのかなど、様々な場面でのビジネス上の意思決定においても活用が可能です。</p>
-<p><img alt="32" src="../_images/32.png" /></p>
+<p><img alt="32" src="img/07/32.png" /></p>
 <p>ここまで Power BI の基礎的な使用方法と活用場面について解説を行いました。データサイエンスだけではなく、意思決定を行う際の説明ツールとしても使用可能ですのでぜひ使用してください。</p>
 <p>時間のある方は、講座内で使用した Bank データを使用し、試行錯誤を行ってみてください。</p>
 </section>
@@ -220,10 +205,7 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="05.html" class="btn btn-neutral float-left" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="07.html" class="btn btn-neutral float-right" title="5. 分析結果の考察、結論" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

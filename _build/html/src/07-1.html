@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>【補足】 分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
+  <title>【補足】 ０６． 分析結果の可視化 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -57,12 +57,11 @@
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06-1.html">C(conclusion、結論)：分析結果の考察、結論</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】 分析結果の考察、結論</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】 ０６．　分析結果の可視化</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Power-BI-を使用した可視化">Power BI を使用した可視化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#PowerBI-の実装">PowerBI の実装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#Power-BI-Desktop-のセットアップ">Power BI Desktop のセットアップ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【補足】Power-BI-Desktop-のセットアップ">【補足】Power BI Desktop のセットアップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#Power-BI(Web)-のセットアップ">Power BI(Web) のセットアップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの可視化">データの可視化</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#円グラフ">円グラフ</a></li>
@@ -70,7 +69,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#フィルター">フィルター</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#PowerBI-を用いた高度な分析">PowerBI を用いた高度な分析</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#主要なインフルエンサー">主要なインフルエンサー</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#チャットボット">チャットボット</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ツリー">ツリー</a></li>
 </ul>
 </li>
@@ -93,7 +91,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">【補足】 分析結果の考察、結論</li>
+      <li class="breadcrumb-item active">【補足】 ０６．　分析結果の可視化</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/07-1.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -103,8 +101,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="【補足】-分析結果の考察、結論">
-<h1>【補足】 分析結果の考察、結論<a class="headerlink" href="#【補足】-分析結果の考察、結論" title="Link to this heading"></a></h1>
+  <section id="【補足】-０６．　分析結果の可視化">
+<h1>【補足】 ０６．　分析結果の可視化<a class="headerlink" href="#【補足】-０６．　分析結果の可視化" title="Link to this heading"></a></h1>
 <p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
 <div class="line-block">
 <div class="line">まずはホテルのレビューデータを使用し、PowerBIの操作に慣れましょう。</div>
@@ -130,8 +128,8 @@
 <p>BI ツールを使用しデータから新たな傾向を見つけ出しましょう。</p>
 <p>Power BI Desktop もしくは Power BI (Web) を開いてください。 Desktop と Web 版でデータの取得の方法が異なるので注意してください</p>
 </section>
-<section id="Power-BI-Desktop-のセットアップ">
-<h2>Power BI Desktop のセットアップ<a class="headerlink" href="#Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
+<section id="【補足】Power-BI-Desktop-のセットアップ">
+<h2>【補足】Power BI Desktop のセットアップ<a class="headerlink" href="#【補足】Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
 <p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
 <p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
 <p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
@@ -217,13 +215,6 @@
 <p>分析後の重要度です。</p>
 <p><img alt="27" src="../_images/27.png" /></p>
 <p>こちらは滞在時の快適さが 1.32 上昇すると満足度に対しても 0.52 の上昇が見られるということを表しています。 表示を変えることで満足度が下がってしまう要因の特定を行うことも可能です。使用されている分析手法のの詳細等は<a class="reference external" href="https://dotnet.microsoft.com/en-us/platform/customers/power-bi">こちら</a>こちらをご確認ください。</p>
-</section>
-<section id="チャットボット">
-<h3>チャットボット<a class="headerlink" href="#チャットボット" title="Link to this heading"></a></h3>
-<p>こちらは Power BI やデータ分析の実装ができない方でも簡単にデータの概要が把握できるよう、補助を行ってくれるツールです。 ノンコードでチャットボットの作成を行ってくれます。平均値や変数内の値の数、データの並び替えなどを行ってくれます。 実装は今までと同様に視覚化ウィンドウから QnA を選択してください。</p>
-<p><img alt="28" src="../_images/28.png" /></p>
-<p>視覚化ができましたら、質問をしてみましょう。 average 年齢としていただくとデータの平均年齢を確認することができます。 分析にも役立ちますが、デバイスや現場で働かれている方々が店舗の売上などを確認したりするために使用されることが多いです。</p>
-<p><img alt="29" src="../_images/29.png" /></p>
 </section>
 <section id="ツリー">
 <h3>ツリー<a class="headerlink" href="#ツリー" title="Link to this heading"></a></h3>
