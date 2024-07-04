@@ -13,8 +13,6 @@
    src/04-00.ipynb
    src/04-01.ipynb
    src/05.ipynb
-   src/06.ipynb
-   src/06-1.ipynb
    src/07-1.ipynb
    src/07.ipynb
    src/08.ipynb

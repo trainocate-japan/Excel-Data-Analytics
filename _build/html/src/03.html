@@ -80,7 +80,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06.html">【補足】 C(conclusion、結論)：分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -228,12 +228,15 @@
 <li><p>先ほど算出した頻度の部分を選択して、「挿入」 → 「円グラフ」の順に進めます。 <img alt="graff" src="../_images/%E5%86%86%E3%82%B0%E3%83%A9%E3%83%95.jpg" /></p></li>
 <li><p>表示されている割合や実数値と、グラフの凡例が正しい事を確認してください。</p>
 <p><img alt="maru" src="../_images/001.png" /></p>
+<p>*間違った列が表示される場合は表示されたグラフをダブルクリックし、データのスライスを画像のように設定してください。</p>
+<p><img alt="dataaa" src="../_images/%E3%82%B0%E3%83%A9%E3%83%952.jpg" /></p>
 </li>
 <li><p>円グラフの種類を変更することも可能です。</p>
 <p><img alt="styale" src="../_images/style.png" /></p>
 </li>
 </ol>
-<p>続いて職業も同じ用に円グラフで可視化を行いましょう。</p>
+<p>続いて職業も同じ用に円グラフで可視化を行いましょう。 職業のように、項目が複数ある場合は【UNIQUE関数】を使用することによって効率的に収集できます。</p>
+<p>=UNIQUE（範囲, 検索方向True or False , 回数True or False）</p>
 <p><img alt="maru2" src="../_images/%E5%86%86%E3%82%B0%E3%83%A9%E3%83%951.png" /></p>
 <p>画像のように可視化ができましたら、実装完了です。可視化することで、より端的にデータを把握できるようになりました。</p>
 </section>
@@ -244,7 +247,8 @@
 <ol class="arabic">
 <li><p>年齢の列を選択したままで、「挿入」 → 「ヒストグラム」を選択します。</p>
 <p>ヒストグラムは、区間でデータを区切ります。身長で言えば、120〜130、140〜150のように区切るイメージです。この区間のことをbinと呼びます。ヒストグラムでは、bin の幅を調整することができます。</p>
-<p>ここまでで以下のようなヒストグラムが作成できます。 <img alt="hist" src="../_images/%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0.png" /></p>
+<p>ここまでで以下のようなヒストグラムが作成できます。</p>
+<p><img alt="hist" src="../_images/%E3%83%92%E3%82%B9%E3%83%88%E3%82%B0%E3%83%A9%E3%83%A0.png" /></p>
 </li>
 </ol>
 <div class="line-block">
