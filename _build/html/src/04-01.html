@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" />
+    <link rel="next" title="総演習：データに基づく営業支援のための施策を立案" href="05.html" />
     <link rel="prev" title="4. データに基づく分析・処理（分析）" href="04-00.html" /> 
 </head>
 
@@ -67,8 +67,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】06. 分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -100,7 +100,7 @@
 <h1>4-2データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#4-2データに基づく分析・処理-（統計仮説検定）" title="Link to this heading"></a></h1>
 <section id="検定とは（推測統計）">
 <h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
-<p>本章では統計的仮説検定について学習します。検定を行うことで、仮説が正しいと言ってよいのかを判断できます。</p>
+<p>本章では統計的仮説検定について学習します。検定を行うことで、<strong>統計的に仮説が正しい</strong>と言ってよいのかを判断できます。</p>
 <p>具体例を用いて考えましょう。集計や可視化を行うとそれぞれに差があることがわかりますが、現時点ではその差が統計的に有意であるかどうかを確認できません。 なぜなら、データは一部分であり、全ての店舗や期間のデータが得られていないためです。全てのデータを母集団、取得したデータを標本集団と呼びます。標本集団の結果から、母集団においても同様の性質があるかどうかを判定するのが検定です。検定は推測統計の一分野であり、標本集団から母集団の性質を推測するものです。集計や可視化を行うことは記述統計と呼ばれます。</p>
 <p>また、推測統計には検定の他にも推定という手法があります。推定は標本集団の結果から母集団の平均値や分散を推測する手法です。</p>
 <p>それでは検定の詳細について学習していきましょう。</p>
@@ -220,17 +220,16 @@
 </li>
 <li><p>期待度数を求める</p>
 <p>先程の期待度数の求め方にしたがって、以下のように求めていきます。</p>
-<p><img alt="x3" src="../_images/x2.png" /></p>
+<p><img alt="kai1" src="../_images/x01.png" /></p>
 <p>Excelを参考に他の値を計算し、埋めましょう。</p>
 </li>
 <li><p>p 値を計算する</p>
 <p>χ二乗検定の P 値は以下の関数を使用して算出します。</p>
 <p><strong>=CHISQ.TEST(実測度数, 期待度数)</strong></p>
-<p><img alt="kai1" src="../_images/%CF%8701.jpg" /></p>
+<p><img alt="image1" src="../_images/x02.png" /></p>
 </li>
 <li><p>判定</p>
-<p><img alt="x2" src="../_images/x3.png" /></p>
-<p>結果は、p 値が有意水準 5% を下回りました。そのため、帰無仮説は棄却され、成約と有無と結婚状況には関連があることがわかりました。</p>
+<p>結果は<code class="docutils literal notranslate"><span class="pre">2.76672E-78</span></code>と出力され、p 値が有意水準 5% を下回りました。そのため、帰無仮説は棄却され、成約と有無と結婚状況には関連があることがわかりました。</p>
 </li>
 </ol>
 <p>ここまでで仮説検定を実装してきました。最後に行った χ二乗検定は、連続値であっても区切ってしまえば順位尺度として扱えるため、幅広く使用できるため便利です。</p>
@@ -243,7 +242,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="04-00.html" class="btn btn-neutral float-left" title="4. データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="05.html" class="btn btn-neutral float-right" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="05.html" class="btn btn-neutral float-right" title="総演習：データに基づく営業支援のための施策を立案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

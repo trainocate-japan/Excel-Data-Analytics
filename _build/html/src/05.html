@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>【演習】データ分析を行い、データに基づく営業支援のための施策を立てる &mdash; Sphinx  ドキュメント</title>
+  <title>総演習：データに基づく営業支援のための施策を立案 &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -25,7 +25,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="【補足】 ０６． 分析結果の可視化" href="07-1.html" />
+    <link rel="next" title="【補足】06. 分析結果の可視化" href="07-1.html" />
     <link rel="prev" title="4-2データに基づく分析・処理 （統計仮説検定）" href="04-01.html" /> 
 </head>
 
@@ -56,8 +56,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】06. 分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -75,7 +75,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</li>
+      <li class="breadcrumb-item active">総演習：データに基づく営業支援のための施策を立案</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/05.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -85,35 +85,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる">
-<h1>【演習】データ分析を行い、データに基づく営業支援のための施策を立てる<a class="headerlink" href="#【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" title="Link to this heading"></a></h1>
+  <section id="総演習：データに基づく営業支援のための施策を立案">
+<h1>総演習：データに基づく営業支援のための施策を立案<a class="headerlink" href="#総演習：データに基づく営業支援のための施策を立案" title="Link to this heading"></a></h1>
 <p>ここまでの分析で、下記のことがわかりました。</p>
 <p>【単一のデータの可視化による気づき】</p>
 <ul class="simple">
 <li><p>リストの平均年齢41歳</p></li>
-<li><p>リストの平均残高1450.296ドル</p></li>
-<li><p>成約数、不成約の数はあまり変わらない</p></li>
-<li><p>2000 サンプルと16列あることがわかる</p></li>
+<li><p>リストの平均残高1790ドル</p></li>
+<li><p>成約確度は3,7が多い</p></li>
 <li><p>ローンのない顧客が大半を占める</p></li>
 <li><p>顧客のボリュームゾーンは 40 代</p></li>
 </ul>
 <p>【複数データの集計・可視化による気づき】</p>
 <ul class="simple">
 <li><p>「工場作業員」や「接客」の仕事に就いている顧客は、断られることが多い</p></li>
-<li><p>既婚の顧客は成約率が低い傾向にあるがデータ数は一番多い。</p></li>
-<li><p>最終学歴が中等教育だと成約率が低い。学歴が上がるほど成約率が上がっている。</p></li>
-<li><p>学生の成約率も高い</p></li>
-<li><p>工場作業員・接客業・家政婦は成約率が低い。だが現状の顧客リストに工場作業員は 2 番目に多くいると考えられる</p></li>
+<li><p>成約数の最も多いのはマネージャー</p></li>
+<li><p>データ数に対して引退の成約確度が高そう</p></li>
 </ul>
-<p>分析・検定</p>
+<p>【分析・検定】</p>
 <ul class="simple">
-<li><p>売上には銀行残高が大きく関わることがわかった</p></li>
-<li><p>預金口座の成約の有無にはローンの有無と持ち家の有無の関わりがあることがわかった</p></li>
-<li><p>登録されている顧客への連絡手段も成約に関わりがあることがわかった</p></li>
-<li><p>成約と有無と結婚状況には関連がある</p></li>
+<li><p>すべての値が成約確度に影響を与えている。結婚状況と持ち家の有無の影響度合いが高い</p></li>
+<li><p>成約確度と結婚状況には統計的に関連がある</p></li>
 </ul>
 <p>更に分析を進めて、最終的な結論と具体的な営業支援の施策を考えましょう。</p>
-<p>現状での施策を考えることはできますが、単に家やすでにローンを持っている人と行っても様々なタイプの方がいます。ここまでの分析結果をもとに施策を考えることもできますが、より具体的で効果の高い施策となるように更なる分析を行いましょう。</p>
+<p>現状での施策を考えることはできますが、単に家やすでにローンを持っている人と行っても様々なタイプの方がいますより具体的で効果の高い施策となるように更なる分析を行いましょう。</p>
 </section>
 
 
@@ -121,7 +116,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="04-01.html" class="btn btn-neutral float-left" title="4-2データに基づく分析・処理 （統計仮説検定）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="07-1.html" class="btn btn-neutral float-right" title="【補足】 ０６． 分析結果の可視化" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="07-1.html" class="btn btn-neutral float-right" title="【補足】06. 分析結果の可視化" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

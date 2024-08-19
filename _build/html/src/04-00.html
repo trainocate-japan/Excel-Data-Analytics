@@ -56,14 +56,16 @@
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. データに基づく分析・処理（分析）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#多変量解析の基礎---相関と回帰分析">多変量解析の基礎 - 相関と回帰分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#【実装】環境構築">【実装】環境構築</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【確認】相関分析">【確認】相関分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#【実装1:-5-分】相関係数をみる">【実装1: 5 分】相関係数をみる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【実装】環境構築">【実装】環境構築</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【確認】相関分析">【確認】相関分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#【実装1:-5-分】相関係数をみる">【実装1: 5 分】相関係数をみる</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#【発展】因果関係">【発展】因果関係</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#重回帰分析">重回帰分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#要因分析と予測分析">要因分析と予測分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#重回帰分析">重回帰分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#要因分析と予測分析">要因分析と予測分析</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#【実装2:-10-分】重回帰分析">【実装2: 10 分】重回帰分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#重回帰分析の結果の解釈">重回帰分析の結果の解釈</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#p-値">p 値</a></li>
@@ -75,7 +77,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#まとめ">まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#【発展】ロジスティック回帰">【発展】ロジスティック回帰</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#【補足】ロジスティック回帰">【補足】ロジスティック回帰</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#結果の考察">結果の考察</a></li>
 </ul>
 </li>
@@ -83,8 +85,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】06. 分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -142,8 +144,9 @@
 <p>設定が完了しました。Excelにもどり、【データ】タブを選択します。すると画像のように新たに分析ツールが選択できるようになります。</p>
 <p><img alt="en5" src="../_images/en5.jpg" /></p>
 <p>環境構築は以上です。分析の各種手法や検定等を行う際に使用します。</p>
+</section>
 <section id="【確認】相関分析">
-<h3>【確認】相関分析<a class="headerlink" href="#【確認】相関分析" title="Link to this heading"></a></h3>
+<h2>【確認】相関分析<a class="headerlink" href="#【確認】相関分析" title="Link to this heading"></a></h2>
 <p>相関分析とは、文字通り、変数同士の相関を見る分析方法です。相関とは、互いに影響し合っているような状態または関係のことを指します。</p>
 <p>例えば、アイスの販売数と気温には、気温が上がればアイスが売れるという関係があります。この場合相関関係があると言えます。 相関分析を使用すると、関連性を相関係数という数値で定量的に評価することが可能です。つまり、相関分析とは、2 種類のデータの関係性の強さを、相関係数という数値で表す分析手法です。</p>
 <p>下記について相関関係があるかどうかを調べます。</p>
@@ -158,7 +161,7 @@
 </ul>
 </section>
 <section id="【実装1:-5-分】相関係数をみる">
-<h3>【実装1: 5 分】相関係数をみる<a class="headerlink" href="#【実装1:-5-分】相関係数をみる" title="Link to this heading"></a></h3>
+<h2>【実装1: 5 分】相関係数をみる<a class="headerlink" href="#【実装1:-5-分】相関係数をみる" title="Link to this heading"></a></h2>
 <p>可視化を行うことで、概ね2つの変数の間に関連性があることがわかりました。しかし、現状では確かに関連性がありそうだということはわかっても、「どれが最も関連性が強いか？」という問いには答えられません。つまり、相対的に比較ができる定量的な指標が必要です。そこで、相関係数を用います。</p>
 <p>相関係数は、Excelのデータ分析機能を使用して簡単に算出できます。</p>
 <p><img alt="04" src="../_images/04new.png" /></p>
@@ -172,7 +175,6 @@
 <p><img alt="03" src="../_images/03.jpg" /></p>
 <p>成約確度と結婚状況 に0.6と弱い正の相関があることがわかりました。</p>
 <p>他の変数との組み合わせで相関係数を見ることができれば、どの変数が相関が高いのかについて答えることが可能です。</p>
-</section>
 <section id="【発展】因果関係">
 <h3>【発展】因果関係<a class="headerlink" href="#【発展】因果関係" title="Link to this heading"></a></h3>
 <p>相関分析は非常に強力な手法ですが、これにはいくつか注意点があります。相関は2つの変数間に因果関係があれば強く現れます。ここで注目すべき点は、相関がお互いの影響度合いを見ている点です。つまり、A ⇔ B の関係性を基本的に見ており、A ⇒ B、B ⇒ A のような因果関係が必ずしも読み取れるわけではありません。</p>
@@ -199,15 +201,15 @@
 <li><p>b: 切片</p></li>
 </ul>
 <p>上式からも重回帰分析は単回帰分析の拡張版であることがわかります。</p>
-</section>
 <section id="要因分析と予測分析">
-<h2>要因分析と予測分析<a class="headerlink" href="#要因分析と予測分析" title="Link to this heading"></a></h2>
+<h3>要因分析と予測分析<a class="headerlink" href="#要因分析と予測分析" title="Link to this heading"></a></h3>
 <p>重回帰分析の用途は要因分析と予測に分かれます。</p>
 <ul class="simple">
 <li><p>要因分析：複数ある要因（説明変数）のうち、目的変数に関連している度合いの大きいものを調べること</p></li>
 <li><p>予測：要因分析を元に重回帰式を求めて未来の値を予測すること</p></li>
 </ul>
 <p>単回帰分析では 1 対 1 の変数の関係を見ていたのに対し、重回帰分析では、1 対複数の変数の関係をみることになります。重回帰分析の偏回帰係数は、用いている複数の説明変数を考慮した上での目的変数に対するそれぞれの影響度合いが算出されています。</p>
+</section>
 </section>
 <section id="【実装2:-10-分】重回帰分析">
 <h2>【実装2: 10 分】重回帰分析<a class="headerlink" href="#【実装2:-10-分】重回帰分析" title="Link to this heading"></a></h2>
@@ -326,8 +328,8 @@
 </ul>
 </section>
 </section>
-<section id="【発展】ロジスティック回帰">
-<h2>【発展】ロジスティック回帰<a class="headerlink" href="#【発展】ロジスティック回帰" title="Link to this heading"></a></h2>
+<section id="【補足】ロジスティック回帰">
+<h2>【補足】ロジスティック回帰<a class="headerlink" href="#【補足】ロジスティック回帰" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">データ分析で重回帰分析と並びよく用いられる手法としてロジスティック回帰があります。 重回帰分析は連続値を目標値として分析や予測を行う手法です。</div>
 <div class="line">つまり、今回のユースケースのような成約の有無（ 0 or 1 ）のようなカテゴリの分析や予測には適していません。</div>
