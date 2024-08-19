@@ -1,4 +1,4 @@
-#!/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/AI ビジネス/myvenv/bin/python3.12
+#!/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/Excel-Data-Analytics/myvenv/bin/python3.12
 
 # Copyright: This module has been placed in the public domain.
 

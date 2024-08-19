@@ -16,9 +16,9 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/translations.js?v=4dbe4bdc"></script>
+        <script src="../_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -105,7 +105,7 @@
 <li><p>年齢と銀行残高の相関関係</p></li>
 <li><p>売上と銀行残高の相関関係</p></li>
 </ul>
-<p><img alt="01" src="../_images/01.png" /> <img alt="02" src="../_images/02.png" /></p>
+<p><img alt="01" src="../_images/011.png" /> <img alt="02" src="../_images/02.png" /></p>
 <div class="line-block">
 <div class="line">画像のような結果になります。銀行残高と年齢には相関関係はあまりなさそうですが、銀行残高と売上に関しては相関がありそうです。</div>
 <div class="line"><strong>もともとの預金の多い人が定義預金講座を開講後も多くのお金を預けてくれる可能性が高い</strong>ということがわかりました。逆に<strong>我々の顧客は年齢によって銀行残高（貯金）に差があるということは言えない</strong>ということもわかりました。</div>
@@ -116,9 +116,9 @@
 <p>可視化を行うことでおおよそ 2 つの変数の間に関連性があることが分かりました。 ですが現状は、確かにありそうであることは分かっても、「どれが最も関連性が強いですか？」という問いに回答できません。 つまりは相対的に比較ができる定量的な指標があればよいのですが、そこで相関係数が有効に用いることができます。</p>
 <p>相関係数は、excelのデータ分析機能を使用して簡単に算出できます。　　 ここは、すべてのデータを使って確認します。（各満足度で絞ると、相関関数の計算の都合上、エラーとなってしまうためです）</p>
 <p><img alt="04" src="../_images/04.png" /></p>
-<p>相関の設定は下記のようにしてください。 <img alt="05" src="../_images/05.png" /></p>
+<p>相関の設定は下記のようにしてください。 <img alt="05" src="src/img/04/05.png" /></p>
 <p>入力範囲 : データ全体 先頭行をラベルとして使用 : ☑</p>
-<p>結果以下のような値が算出されていれば成功です。 <img alt="03" src="../_images/03.png" /></p>
+<p>結果以下のような値が算出されていれば成功です。 <img alt="03" src="src/img/04/03.png" /></p>
 <div class="line-block">
 <div class="line">相関係数としても売上と銀行残高に0.656648808と算出されています。これが相関係数です。</div>
 <div class="line">一般的な指標でみるとやや相関あり、という結果です。</div>
@@ -170,10 +170,10 @@
 <p>【分析に期待すること】 - 売上の高い→優良顧客の発見 - 成約はするが売上の低い顧客属性の発見</p>
 <p>売上予測の重回帰モデルを作成して、売上の要因→成約の要因を探す 成約している人のみに注目し、売上に影響（成約）与える要因を探索する。</p>
 <p>データ分析 → 「回帰分析」を選択します。</p>
-<p><img alt="06" src="../_images/06.png" /> 　 「入力 Y の範囲」に売上 「入力 X の範囲」にその他の項目（変数）を選択します。</p>
-<p><img alt="07" src="../_images/07.png" /></p>
+<p><img alt="06" src="src/img/04/06.png" /> 　 「入力 Y の範囲」に売上 「入力 X の範囲」にその他の項目（変数）を選択します。</p>
+<p><img alt="07" src="src/img/04/07.png" /></p>
 <p>画像のように設定ができたら OK ボタンを選択して、重回帰分析を実行しましょう。 分析の実装が完了すると下記のように実行結果が表示されます。</p>
-<p><img alt="08q" src="../_images/08-1.png" /></p>
+<p><img alt="08q" src="src/img/04/08-1.png" /></p>
 </section>
 </section>
 <section id="重回帰分析の結果の解釈">

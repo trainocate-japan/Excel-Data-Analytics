@@ -16,10 +16,12 @@
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="_static/documentation_options.js?v=c033477b"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/translations.js?v=4dbe4bdc"></script>
+        <script src="_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
@@ -106,15 +108,15 @@
 <li class="toctree-l2"><a class="reference internal" href="src/03.html#データの全体像の理解">データの全体像の理解</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src/03.html#【復習・演習】代表値の算出">【復習・演習】代表値の算出</a></li>
 <li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装】集計-（単純集計）">【実装】集計 （単純集計）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装】可視化：円グラフ">【実装】可視化：円グラフ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装】可視化：ヒストグラム">【実装】可視化：ヒストグラム</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/03.html#【確認】可視化：円グラフ">【確認】可視化：円グラフ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/03.html#【確認+実装】可視化">【確認+実装】可視化</a></li>
 <li class="toctree-l3"><a class="reference internal" href="src/03.html#まとめ">まとめ</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="src/03.html#データの加工">データの加工</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src/03.html#データの種類">データの種類</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装】成約の有無と他の列の関係性を確認する">【実装】成約の有無と他の列の関係性を確認する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装・演習】成約の有無と他の列の関係性を確認する">【実装・演習】成約の有無と他の列の関係性を確認する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装4-:-5-分】成約の確度と他の列の関係性を確認する">【実装4 : 5 分】成約の確度と他の列の関係性を確認する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/03.html#【実装5:-15-分】成約の有無と他の列の関係性を確認する">【実装5: 15 分】成約の有無と他の列の関係性を確認する</a></li>
 </ul>
 </li>
 </ul>
@@ -123,18 +125,18 @@
 <li class="toctree-l2"><a class="reference internal" href="src/04-00.html#多変量解析の基礎---相関と回帰分析">多変量解析の基礎 - 相関と回帰分析</a></li>
 <li class="toctree-l2"><a class="reference internal" href="src/04-00.html#【実装】環境構築">【実装】環境構築</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src/04-00.html#【確認】相関分析">【確認】相関分析</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/04-00.html#【実装】相関係数をみる">【実装】相関係数をみる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/04-00.html#【実装1:-5-分】相関係数をみる">【実装1: 5 分】相関係数をみる</a></li>
 <li class="toctree-l3"><a class="reference internal" href="src/04-00.html#【発展】因果関係">【発展】因果関係</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="src/04-00.html#重回帰分析">重回帰分析</a></li>
 <li class="toctree-l2"><a class="reference internal" href="src/04-00.html#要因分析と予測分析">要因分析と予測分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/04-00.html#【実装】重回帰分析">【実装】重回帰分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/04-00.html#【実装2:-10-分】重回帰分析">【実装2: 10 分】重回帰分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src/04-00.html#重回帰分析の結果の解釈">重回帰分析の結果の解釈</a></li>
 <li class="toctree-l3"><a class="reference internal" href="src/04-00.html#まとめ">まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/04-00.html#【発展：デモ】ロジスティック回帰">【発展：デモ】ロジスティック回帰</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/04-00.html#【発展】ロジスティック回帰">【発展】ロジスティック回帰</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="src/04-00.html#結果の考察">結果の考察</a></li>
 </ul>
 </li>

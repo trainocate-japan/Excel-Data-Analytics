@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/AI ビジネス/myvenv"
+set -gx VIRTUAL_ENV "/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/Excel-Data-Analytics/myvenv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

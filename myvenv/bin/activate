@@ -39,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/AI ビジネス/myvenv")
+    export VIRTUAL_ENV=$(cygpath "/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/Excel-Data-Analytics/myvenv")
 else
     # use the path as-is
-    export VIRTUAL_ENV="/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/AI ビジネス/myvenv"
+    export VIRTUAL_ENV="/Users/koikeayumi/Library/CloudStorage/GoogleDrive-wwe.ayumu@gmail.com/その他のパソコン/マイ ノートパソコン/ドキュメント/Text/Excel-Data-Analytics/myvenv"
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"
