@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="5. 分析結果の考察、結論" href="07.html" />
-    <link rel="prev" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" href="05.html" /> 
+    <link rel="prev" title="総演習：データに基づく営業支援のための施策を立案" href="05.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,7 +56,7 @@
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】06. 分析結果の可視化</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Power-BI-を使用した可視化">Power BI を使用した可視化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#PowerBI-の実装">PowerBI の実装</a></li>
@@ -105,12 +105,14 @@
 <p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
 <div class="line-block">
 <div class="line">まずはホテルのレビューデータを使用し、PowerBIの操作に慣れましょう。</div>
-<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。 <img alt="01" src="../_images/012.png" /></div>
+<div class="line">一般的なホテルの宿泊に関するレビューのデータです。 総合満足度の他に、お客様の属性や食事の満足度など各サービスに対する評価 (低1-5高) が入ったデータです。</div>
 </div>
+<p><img alt="01" src="../_images/011.png" /></p>
 <section id="Power-BI-を使用した可視化">
 <h2>Power BI を使用した可視化<a class="headerlink" href="#Power-BI-を使用した可視化" title="Link to this heading"></a></h2>
 <p>Power BI は関連性のないデータソースを一貫性のある視覚的にイマーシブでインタラクティブな洞察に変えるために、連携して動作するソフトウェア サービス、アプリ、コネクタのコレクションです。データがシンプルな Microsoft Excel ワークブックであっても、クラウドベースおよびオンプレミスのハイブリッド データ ウェアハウスのコレクションであっても、Power BI を使用すると、データソースに簡単に接続して、基になるソースに影響を及ぼすことなく、データをクリーンアップおよびモデル化したり、重要なデータを可視化
-(または発見) したり、あらゆる必要なユーザー全員とデータを共有したりできます。 PowerBI は可視化ツールとしての印象が強いですが、可視化以外にも分析などを行うことが可能です。 <img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
+(または発見) したり、あらゆる必要なユーザー全員とデータを共有したりできます。 PowerBI は可視化ツールとしての印象が強いですが、可視化以外にも分析などを行うことが可能です。</p>
+<p><img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
 <p>Power BI は、Power BI Desktop と呼ばれる Microsoft Windows デスクトップ アプリケーション、Power BI サービスと呼ばれるオンライン SaaS (サービスとしてのソフトウェア) サービス、および携帯電話やタブレットで使用できるモバイル Power BI アプリ(PowerBI Mobile) で構成されます。</p>
 <p>Power BI の使用手順 使用手順は下記の通りです。</p>
 <p><img alt="02" src="https://accessanalytic.com.au/wp-content/uploads/2016/09/Power-BI-Overview-Clear-1024x721.png" /></p>
@@ -134,7 +136,7 @@
 <p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
 <p><img alt="03" src="../_images/031.png" /></p>
 <p>データにチェックをいれて読み込みをクリックしてください。</p>
-<p><img alt="04" src="../_images/041.png" /></p>
+<p><img alt="04" src="../_images/04.png" /></p>
 <p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
 <p><img alt="05" src="../_images/051.png" /></p>
 <p>データの可視化から実装を行います。</p>
@@ -142,7 +144,7 @@
 <section id="Power-BI(Web)-のセットアップ">
 <h2>Power BI(Web) のセットアップ<a class="headerlink" href="#Power-BI(Web)-のセットアップ" title="Link to this heading"></a></h2>
 <p>ホーム画面にてデータの取得先を選択できます。</p>
-<p><a class="reference external" href="img/ホテルレビュー.csv">ホテルレビュー.csv</a></p>
+<p><a class="reference external" href="img/ホテルレビュー.csv">ホテルレビュー.csv</a></p>
 <p>データのダウンロードが完了しましたら、Power BI にデータのアップロードを行います。 Power BI を開いていただき、左上の【新しいレポート】を選択してください。</p>
 <p>csv を選択してください。先程ダウンロードをしました、ホテルレビュー.csv を選択しアップロードしてください。</p>
 <p><img alt="07" src="../_images/0700.jpg" /></p>
@@ -235,7 +237,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="05.html" class="btn btn-neutral float-left" title="【演習】データ分析を行い、データに基づく営業支援のための施策を立てる" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05.html" class="btn btn-neutral float-left" title="総演習：データに基づく営業支援のための施策を立案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="07.html" class="btn btn-neutral float-right" title="5. 分析結果の考察、結論" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
