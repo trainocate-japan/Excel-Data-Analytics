@@ -20,8 +20,6 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -100,7 +98,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="【補足】06.-分析結果の可視化">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="【補足】06.-分析結果の可視化">
 <h1>【補足】06. 分析結果の可視化<a class="headerlink" href="#【補足】06.-分析結果の可視化" title="Link to this heading"></a></h1>
 <p>データ分析を進める上で、データの可視化や統計量の確認の重要度はこれまででわかりました。 データ分析を援助するツールである BI ツールの基礎的な使用方法について紹介します。</p>
 <div class="line-block">
@@ -152,7 +174,7 @@
 <p>アップロードの設定は画像のようになります。</p>
 <p><img alt="07-1" src="../_images/07-1.jpg" /></p>
 <p>サインイン後、【次へ】→　【作成】を選択すると Workspace を開くことができます。 データを見てみるとホテルレビューの分析で使用したものと同じカラムが入っていることが確認できます。こちらでデータの可視化の実装を行います。</p>
-<p><img alt="10" src="../_images/10.png" /></p>
+<p><img alt="10" src="../_images/101.png" /></p>
 </section>
 <section id="データの可視化">
 <h2>データの可視化<a class="headerlink" href="#データの可視化" title="Link to this heading"></a></h2>
@@ -160,7 +182,7 @@
 <section id="円グラフ">
 <h3>円グラフ<a class="headerlink" href="#円グラフ" title="Link to this heading"></a></h3>
 <p>それでは Power BI を使用してデータの可視化を行います。 満足度の割合を確認します。視覚化ウィンドウから円グラフを選択します。 すると画像のように表示がされます。この時点ではどのようなデータを表示させるのか定義をしていないので画像のような形になります。</p>
-<p><img alt="11" src="../_images/11.png" /></p>
+<p><img alt="11" src="../_images/111.png" /></p>
 <p>次に表示させるデータを選択します。満足度を選択し値の部分に挿入てください。 すると画像のように表示されます</p>
 <p><img alt="12" src="../_images/12.png" /></p>
 <p>これでは割合を確認することができません。 値の表示方法を変更します。値の満足度をクリックしてください。</p>

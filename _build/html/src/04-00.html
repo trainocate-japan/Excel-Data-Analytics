@@ -20,8 +20,6 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -113,7 +111,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="4.-データに基づく分析・処理（分析）">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="4.-データに基づく分析・処理（分析）">
 <h1>4. データに基づく分析・処理（分析）<a class="headerlink" href="#4.-データに基づく分析・処理（分析）" title="Link to this heading"></a></h1>
 <p>ここまでデータの理解を進めました。 クロス集計やグラフを用いて可視化を行いデータの分析を行うことを探索的分析といいます。 本章では探索的分析ではなく、分析や検定について紹介します。</p>
 <section id="多変量解析の基礎---相関と回帰分析">
@@ -166,7 +188,7 @@
 <p><img alt="04" src="../_images/04new.png" /></p>
 <p>相関の設定は下記のようにしてください。</p>
 <p><img alt="051" src="../_images/05.jpg" /></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>入力範囲 : データ全体
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>入力範囲 : データ全体
 先頭行をラベルとして使用 : ☑
 </pre></div>
 </div>

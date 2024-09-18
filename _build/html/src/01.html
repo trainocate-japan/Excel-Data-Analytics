@@ -20,8 +20,6 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -61,8 +59,8 @@
 <li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">【演習】データ分析を行い、データに基づく営業支援のための施策を立てる</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】 ０６．　分析結果の可視化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】06. 分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -90,7 +88,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="1.-データ分析とは">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="1.-データ分析とは">
 <h1>1. データ分析とは<a class="headerlink" href="#1.-データ分析とは" title="Link to this heading"></a></h1>
 <section id="データ分析とは">
 <h2>データ分析とは<a class="headerlink" href="#データ分析とは" title="Link to this heading"></a></h2>
@@ -98,8 +120,8 @@
 <p>【データサイエンティストに必要なスキル】</p>
 <p><img alt="data" src="https://www.insource-da.co.jp/common/img/column/210818a_1.png" /></p>
 <p>出典：データサイエンティスト協会</p>
-<p>皆さんは、データサイエンティストにはどのようなイメージがあるでしょうか。 「プログラミングしながら、統計学を使って、画面に表示された大量のデータを 分析する」……そういった光景をイメージする方も多いかと存じます。 もちろんプログラミングをしてデータ分析を行うというのも、大事な工程の１つです。 しかし、それだけではデータ活用はうまく進みません。 「このデータから何が言えるのか分からない……」「このデータからどう問題解決に つなげればいいのか……」といったお悩みに繋がりがちです。
-これはなぜでしょうか。　　 データを並べて分析する前に、「どんな問題を解決したいか」「問題を解決するのに どんなデータが必要か」など、なんのためにデータ分析を行うのか、目的がはっきり していないと、せっかくのデータがあっても、どうすればいいのかが分からなくなってしまうからです。本講座ではメインとなるデータサイエンス力に注力し講義をお伝えしますが、同じくらいビジネス力やデータの処理能力も重要ということを押さえてください。</p>
+<p>皆さんは、データサイエンティストにはどのようなイメージがあるでしょうか。 「プログラミングしながら、統計学を使って、画面に表示された大量のデータを 分析する」……そういった光景をイメージする方も多いかと存じます。 もちろんプログラミングをしてデータ分析を行うというのも、大事な工程の１つです。 しかし、それだけではデータ活用はうまく進みません。 「このデータから何が言えるのか分からない……」「このデータからどう問題解決に つなげればいいのか……」といったお悩みに繋がりがちです。 これはなぜでしょうか。
+データを並べて分析する前に、「どんな問題を解決したいか」「問題を解決するのに どんなデータが必要か」など、なんのためにデータ分析を行うのか、目的がはっきり していないと、せっかくのデータがあっても、どうすればいいのかが分からなくなってしまうからです。本講座ではメインとなるデータサイエンス力に注力し講義をお伝えしますが、同じくらいビジネス力やデータの処理能力も重要ということを押さえてください。</p>
 <p>データ分析を行う理由は下記のとおりです。</p>
 <ol class="arabic simple">
 <li><p>問題の原因を究明したり、課題を解決したりするため</p></li>

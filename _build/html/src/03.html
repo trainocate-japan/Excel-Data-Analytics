@@ -20,8 +20,6 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/translations.js?v=91613774"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -115,7 +113,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="3.-データの収集・整理">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="3.-データの収集・整理">
 <h1>3. データの収集・整理<a class="headerlink" href="#3.-データの収集・整理" title="Link to this heading"></a></h1>
 <p>ここでは、データの収集と整理を行い、収集されたデータの理解を深めます。グラフ化などは一部、分析プロセスデモ実施しますが、ここではデータの理解を目的として使用できます。</p>
 <p>講義用のExcelファイルは <a class="reference external" href="https://docs.google.com/spreadsheets/d/17XMw70m8pAR_DjaIKjx5ViMvrdLvJCcD/edit?usp=sharing&amp;ouid=102712789547541073394&amp;rtpof=true&amp;sd=true">こちら</a> からダウンロードしてください。</p>
@@ -318,7 +340,7 @@
 <ol class="arabic">
 <li><p>挿入タブからピボットテーブルを選択します。</p></li>
 <li><p>データの範囲を選択します。テーブル全体を選択しましょう。「挿入」→「ピボットテーブル」を選択しピボットテーブルを作成します。ピボットテーブルの出力先はどちらでも構いません。</p>
-<p><img alt="pibo1t" src="../_images/101.png" /></p>
+<p><img alt="pibo1t" src="../_images/10.png" /></p>
 </li>
 </ol>
 <p>作成ができると上記画像のようにピボットテーブルが作成されます。</p>
@@ -328,11 +350,11 @@
 </li>
 </ol>
 <p>クロス集計を行ったピボットテーブルの作成ができました。結果を確認してみましょう。</p>
-<p><img alt="dpoi" src="../_images/111.png" /></p>
+<p><img alt="dpoi" src="../_images/11.png" /></p>
 <p>画像のようなピボットテーブルが作成できました。</p>
 <p>【補足】</p>
 <p>ピボットテーブルを可視化する場合には、棒グラフにすると関連性が分かりやすくなります。</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1. 作成したピボットテーブルを選択した状態で、「挿入」 → 「棒グラフ」を選択します。
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. 作成したピボットテーブルを選択した状態で、「挿入」 → 「棒グラフ」を選択します。
 </pre></div>
 </div>
 <p>ワークシート_1_データの可視化のグラフのように可視化できていれば成功です。非常に簡単に可視化ができました。</p>
