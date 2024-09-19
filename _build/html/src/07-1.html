@@ -51,14 +51,13 @@
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・探索的データ分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">4-2データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">【補足】06. 分析結果の可視化</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#Power-BI-を使用した可視化">Power BI を使用した可視化</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#PowerBI-の実装">PowerBI の実装</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#【補足】Power-BI-Desktop-のセットアップ">【補足】Power BI Desktop のセットアップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#PowerBI　Web-のセットアップ">PowerBI　Web のセットアップ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#データの可視化">データの可視化</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#円グラフ">円グラフ</a></li>
@@ -69,6 +68,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#【補足】フィルター">【補足】フィルター</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#【補足】Power-BI-Desktop-のセットアップ">【補足】Power BI Desktop のセットアップ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
@@ -151,18 +151,6 @@
 <p>BI ツールを使用しデータから新たな傾向を見つけ出しましょう。</p>
 <p>Power BI Desktop もしくは Power BI (Web) を開いてください。 Desktop と Web 版でデータの取得の方法が異なるので注意してください</p>
 </section>
-<section id="【補足】Power-BI-Desktop-のセットアップ">
-<h2>【補足】Power BI Desktop のセットアップ<a class="headerlink" href="#【補足】Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
-<p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
-<p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
-<p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
-<p><img alt="03" src="../_images/031.png" /></p>
-<p>データにチェックをいれて読み込みをクリックしてください。</p>
-<p><img alt="04" src="../_images/04.png" /></p>
-<p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
-<p><img alt="05" src="../_images/051.png" /></p>
-<p>データの可視化から実装を行います。</p>
-</section>
 <section id="PowerBI　Web-のセットアップ">
 <h2>PowerBI　Web のセットアップ<a class="headerlink" href="#PowerBI　Web-のセットアップ" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://app.fabric.microsoft.com/groups/me/quickcreate?experience=power-bi">PowerBI Web のサイト</a></p>
@@ -196,7 +184,7 @@
 </section>
 <section id="ヒストグラム">
 <h3>ヒストグラム<a class="headerlink" href="#ヒストグラム" title="Link to this heading"></a></h3>
-<p>次に Wifi 設備を Exel で実装した際と同じように可視化します。 視覚化ウィンドウから積み上げ縦棒グラフを選択してください。</p>
+<p>視覚化ウィンドウから積み上げ縦棒グラフを選択してください。</p>
 <p><img alt="19" src="../_images/19.png" /></p>
 <p>ヒストグラムを整形するために必要な軸、凡例、値の情報を受け渡します。 凡例は値を渡さなくても実装できますがより理解しやすくするために入力をしています。3つの変数を使用し可視化をして分析を行う際にも有効です。</p>
 <p><img alt="20" src="../_images/20.png" /></p>
@@ -206,12 +194,6 @@
 <p><img alt="22" src="../_images/22.png" /></p>
 <p>こちらが可視化結果です。</p>
 <p><img alt="23" src="../_images/23.png" /></p>
-<p>満足度の低いお客様はホテルの立地に対する評価も満足度5の平均と比べると低い傾向がありますが、満足度に関しまして 1,2,3 をつけたお客様のなかで3をつけたお客様がホテルの立地に対する平均の評価が最も低いという結果でした。</p>
-<ul class="simple">
-<li><p>満足度に反してホテルの立地への評価が高いことからお客様へのサービスが十分でない可能性が考えられる。データにはないが、ホテルの稼働率などを見ることによって従業員が足りていないなどの原因を特定できる。</p></li>
-<li><p>3 をつけたお客様はホテル選びの際に立地をある程度重視していたが期待していたほどのホテル立地ではなかった可能性があり、そのためホテルに来られる前からネガティブな印象をお持ちであったかもしれない。立地が満足度が向上しない要因である可能性がある。</p></li>
-</ul>
-<p>１例ではありますが上記のような仮説や考察をたてることができます。</p>
 </section>
 <section id="PowerBI-を用いた高度な分析">
 <h3>PowerBI を用いた高度な分析<a class="headerlink" href="#PowerBI-を用いた高度な分析" title="Link to this heading"></a></h3>
@@ -248,6 +230,18 @@
 <p>すこしわかりにくいですが、満足度 2 と答えたお客様の立地の平均スコアを確認したところ、 4 以上のスコアを確認しました。 こちらのグラフだけでは考察が難しいですが、 - 75歳以上のお客様はより立地よりもより、サービス面を評価し満足度が決まっているという可能性が考えられます。</p>
 <p>フィルター機能も合わせて使用することによってデータの背後にある関係性を見つけ出すことができ、視覚的に説明をすることが可能となります。</p>
 </section>
+</section>
+<section id="【補足】Power-BI-Desktop-のセットアップ">
+<h2>【補足】Power BI Desktop のセットアップ<a class="headerlink" href="#【補足】Power-BI-Desktop-のセットアップ" title="Link to this heading"></a></h2>
+<p>Exel からデータの読み込みを行い、実装を行う準備をします。まずは Power BI Desktop を起動させてください。 こちらのファイル使用してください。</p>
+<p><a class="reference external" href="img/07/ホテルレビュー.csv">ホテルレビュー</a></p>
+<p>ホーム画面からデータの取得を選択しダウンロードしたデータを選択してください。</p>
+<p><img alt="03" src="../_images/031.png" /></p>
+<p>データにチェックをいれて読み込みをクリックしてください。</p>
+<p><img alt="04" src="../_images/04.png" /></p>
+<p>読み込みが完了すると画像のようにフィールドに変数が表示されます。こちらのワークスペースを使用し実装を行います。</p>
+<p><img alt="05" src="../_images/051.png" /></p>
+<p>データの可視化から実装を行います。</p>
 </section>
 </section>
 
