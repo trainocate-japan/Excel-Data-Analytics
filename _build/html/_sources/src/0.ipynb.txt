@@ -11,9 +11,14 @@
     "\n",
     "[ホテルレビューデータ](img/ホテルレビュー.csv)\n",
     "\n",
-    "Zoom:a\n",
-    "https://trainocate-japan.zoom.us/j/93102512916?pwd=kyrrAIEs2N3BxxcT4wzYF21IfyzCNP.1\n"
+    "Zoom:https://trainocate-japan.zoom.us/j/98472537046?pwd=3kr8iKcypvfyqUkB5gtn8W7Og3FuJK.1\n",
+    "\n"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
   }
  ],
  "metadata": {
