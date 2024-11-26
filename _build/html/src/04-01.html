@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4-2データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
   
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=c033477b"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="../_static/translations.js?v=91613774"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -51,7 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・整理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・探索的データ分析</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4-2データに基づく分析・処理 （統計仮説検定）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">検定とは（推測統計）</a></li>
@@ -94,41 +96,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="4-2データに基づく分析・処理-（統計仮説検定）">
-<h1>4-2データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#4-2データに基づく分析・処理-（統計仮説検定）" title="Link to this heading"></a></h1>
+  <section id="4-2データに基づく分析・処理-（統計仮説検定）">
+<h1>4-2データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#4-2データに基づく分析・処理-（統計仮説検定）" title="この見出しへのパーマリンク"></a></h1>
 <section id="検定とは（推測統計）">
-<h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
+<h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="この見出しへのパーマリンク"></a></h2>
 <p>本章では統計的仮説検定について学習します。検定を行うことで、<strong>統計的に仮説が正しい</strong>と言ってよいのかを判断できます。</p>
 <p>具体例を用いて考えましょう。集計や可視化を行うとそれぞれに差があることがわかりますが、現時点ではその差が統計的に有意であるかどうかを確認できません。 なぜなら、データは一部分であり、全ての店舗や期間のデータが得られていないためです。全てのデータを母集団、取得したデータを標本集団と呼びます。標本集団の結果から、母集団においても同様の性質があるかどうかを判定するのが検定です。検定は推測統計の一分野であり、標本集団から母集団の性質を推測するものです。集計や可視化を行うことは記述統計と呼ばれます。</p>
 <p>また、推測統計には検定の他にも推定という手法があります。推定は標本集団の結果から母集団の平均値や分散を推測する手法です。</p>
 <p>それでは検定の詳細について学習していきましょう。</p>
 </section>
 <section id="t-検定">
-<h2>t-検定<a class="headerlink" href="#t-検定" title="Link to this heading"></a></h2>
+<h2>t-検定<a class="headerlink" href="#t-検定" title="この見出しへのパーマリンク"></a></h2>
 <p>検定には目的やデータの性質に応じていくつかの種類があり使い分けます。本章では、代表的な分析手法としてt検定（平均の差の検定）とχ二乗検定を扱います。</p>
 <p>まずはt検定について学びます。t検定は、2つの標本の平均の差を検定するための手法です。</p>
 <p>今回は、キャンペーン前と後でのデータを使用して、キャンペーンによる効果の有無を検証します。</p>
@@ -160,7 +138,7 @@
 </li>
 </ul>
 <section id="【実装】t検定">
-<h3>【実装】t検定<a class="headerlink" href="#【実装】t検定" title="Link to this heading"></a></h3>
+<h3>【実装】t検定<a class="headerlink" href="#【実装】t検定" title="この見出しへのパーマリンク"></a></h3>
 <p>t検定を実装し、以下の問題について調査します。今回は、銀行のマーケティングキャンペーンのデータではなくデモデータを用いて解説します。最後の演習時にマーケティングデータを使用してt検定を実装してみましょう。</p>
 <p>まずは<strong>Excelのワークシート_4_</strong>を開き、コンビニの施策データを使用してt検定の手順を学びます。</p>
 <div class="line-block">
@@ -208,7 +186,7 @@
 </section>
 </section>
 <section id="χ二乗検定">
-<h2>χ二乗検定<a class="headerlink" href="#χ二乗検定" title="Link to this heading"></a></h2>
+<h2>χ二乗検定<a class="headerlink" href="#χ二乗検定" title="この見出しへのパーマリンク"></a></h2>
 <p>次は、χ二乗検定について取り扱います。カイ二乗検定は独立性の検定とも呼ばれ、AとBには関連があるかないかを調べるために使用します。具体的な使用シーンとしては、「アンケート結果について、ある質問Aとある質問Bの結果に関連があるかどうかを調べる」などがあります。</p>
 <p>t検定と混同しやすいですが、t検定は数値（確率）に関する検定であり、カイ二乗検定はカテゴリ分けの検定であるというイメージを持つと良いです。</p>
 <p>（カイ二乗検定はノンパラメトリックな分析手法の1つであり、分析対象とするデータが正規分布に従っている必要はありません。）</p>
@@ -224,7 +202,7 @@
 <p>χ二乗値＝((観測度数−期待度数)²/期待度数)の総和</p>
 <p>自由度は、行と列がある二次元の表の場合の以下のようにして計算する。 自由度＝（行の数-1）x（列の数-1）</p>
 <section id="【実装】χ二乗検定">
-<h3>【実装】χ二乗検定<a class="headerlink" href="#【実装】χ二乗検定" title="Link to this heading"></a></h3>
+<h3>【実装】χ二乗検定<a class="headerlink" href="#【実装】χ二乗検定" title="この見出しへのパーマリンク"></a></h3>
 <p>χ二乗検定は［分析ツール］ではサポートしていませんが、CHISQ.TEST という関数を使って検定を行います。期待度数という考え方を理解し、χ二乗値を計算できるようになりましょう。</p>
 <p><strong>期待度数</strong>：行要素の合計や列要素の合計の比率から逆算して期待される度数のこと。期待度数に対し、実験、調査、観察などによって得られたデータに基づく度数を、実測度数、観測度数、観察度数などと言う。</p>
 <p>【問題】 以下の仮説を調べる</p>

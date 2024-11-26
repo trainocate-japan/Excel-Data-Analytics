@@ -16,9 +16,5 @@ Excel で学ぶデータ分析講座
    src/07-1.ipynb
    src/07.ipynb
    src/08.ipynb
-   src/9.ipynb
-   src/10.ipynb
-   src/11.ipynb
-   src/12.ipynb
-   src/13.ipynb
+
 =========================
