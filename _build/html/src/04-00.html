@@ -80,6 +80,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#結果の考察">結果の考察</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#Excelでの正規化の実装">Excelでの正規化の実装</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#まとめ">まとめ</a></li>
 </ul>
 </li>
@@ -348,6 +349,15 @@
 <p>続いて下記についても確認します。</p>
 <p><img alt="lo2" src="../_images/logistic2.png" /></p>
 </section>
+</section>
+<section id="Excelでの正規化の実装">
+<h2>Excelでの正規化の実装<a class="headerlink" href="#Excelでの正規化の実装" title="この見出しへのパーマリンク"></a></h2>
+<ul class="simple">
+<li><p>手順 E列の範囲を確認
+E列のデータ範囲が E2:E100 だと仮定します。</p></li>
+</ul>
+<p>=(E2-MIN(E$2:E$100))/(MAX(E$2:E$100)-MIN(E$2:E$100))</p>
+<p>この式を下にコピーすれば、E列のすべてのデータが正規化されます。</p>
 </section>
 <section id="まとめ">
 <h2>まとめ<a class="headerlink" href="#まとめ" title="この見出しへのパーマリンク"></a></h2>
