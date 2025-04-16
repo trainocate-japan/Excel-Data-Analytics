@@ -56,4 +56,6 @@ git push origin main
 
 github にPush 後、リポジトリのActionsからワークフローを実行してください。
 
+Run Workfrow を押してdeploy-docsと入力するとS3 にノートブックがアップロードされてWeb資料が更新されます。
+
 
