@@ -47,3 +47,13 @@ HTMLファイルをビルドする手順は以下の通りです。
 ```bash
 make html
 ```
+以下のコマンドを実行
+```bash
+git add .
+git commit -m 'coment'
+git push origin main
+```
+
+github にPush 後、リポジトリのActionsからワークフローを実行してください。
+
+
