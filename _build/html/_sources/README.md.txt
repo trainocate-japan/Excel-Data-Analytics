@@ -41,9 +41,28 @@ HTMLファイルをビルドする手順は以下の通りです。
 ```bash
 ./make.bat html
 ```
+以下のコマンドを実行
+```bash
+git add .
+git commit -m 'coment'
+git push origin main
+```
+
 
 ### Macの方
 
 ```bash
 make html
 ```
+以下のコマンドを実行
+```bash
+git add .
+git commit -m 'coment'
+git push origin main
+```
+
+github にPush 後、リポジトリのActionsからワークフローを実行してください。
+
+Run Workfrow を押してdeploy-docsと入力するとS3 にノートブックがアップロードされてWeb資料が更新されます。
+
+

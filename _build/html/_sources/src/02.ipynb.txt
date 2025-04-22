@@ -4,11 +4,16 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# 2. 問題の把握・明確化\n",
+    "# 問題の把握・明確化\n",
     "\n",
     "本章は実装パートはございません。  \n",
     "別途配布をしております、 テキストをご確認ください。"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
   }
  ],
  "metadata": {

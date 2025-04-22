@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4-2データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
+  <title>データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
@@ -26,7 +26,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="総演習：データに基づく営業支援のための施策を立案" href="05.html" />
-    <link rel="prev" title="4. データに基づく分析・処理（分析）" href="04-00.html" /> 
+    <link rel="prev" title="データに基づく分析・処理（分析）" href="04-00.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,11 +51,11 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">1. データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">2. 問題の把握・明確化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">3. データの収集・探索的データ分析</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-00.html">4. データに基づく分析・処理（分析）</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4-2データに基づく分析・処理 （統計仮説検定）</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">データの収集・探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">データに基づく分析・処理 （統計仮説検定）</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">検定とは（推測統計）</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#t-検定">t-検定</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#【実装】t検定">【実装】t検定</a></li>
@@ -68,7 +68,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07-1.html">【補足】06. 分析結果の可視化</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
 </ul>
 
@@ -86,7 +85,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">4-2データに基づく分析・処理 （統計仮説検定）</li>
+      <li class="breadcrumb-item active">データに基づく分析・処理 （統計仮説検定）</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/04-01.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -96,13 +95,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="4-2データに基づく分析・処理-（統計仮説検定）">
-<h1>4-2データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#4-2データに基づく分析・処理-（統計仮説検定）" title="この見出しへのパーマリンク"></a></h1>
+  <section id="データに基づく分析・処理-（統計仮説検定）">
+<h1>データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#データに基づく分析・処理-（統計仮説検定）" title="この見出しへのパーマリンク"></a></h1>
 <section id="検定とは（推測統計）">
 <h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="この見出しへのパーマリンク"></a></h2>
-<p>本章では統計的仮説検定について学習します。検定を行うことで、<strong>統計的に仮説が正しい</strong>と言ってよいのかを判断できます。</p>
-<p>具体例を用いて考えましょう。集計や可視化を行うとそれぞれに差があることがわかりますが、現時点ではその差が統計的に有意であるかどうかを確認できません。 なぜなら、データは一部分であり、全ての店舗や期間のデータが得られていないためです。全てのデータを母集団、取得したデータを標本集団と呼びます。標本集団の結果から、母集団においても同様の性質があるかどうかを判定するのが検定です。検定は推測統計の一分野であり、標本集団から母集団の性質を推測するものです。集計や可視化を行うことは記述統計と呼ばれます。</p>
-<p>また、推測統計には検定の他にも推定という手法があります。推定は標本集団の結果から母集団の平均値や分散を推測する手法です。</p>
+<p>この章では、「統計的な仮説検定（けんてい）」について学んでいきます。 難しく聞こえるかもしれませんが、これは簡単に言うと「データの違いに意味があるかどうかを判断する方法」です。</p>
+<p>たとえば、A店とB店の売上データを集計してみたところ、A店の方が少し売上が高いように見えたとします。 このとき、こんな疑問が出てきます。 「たまたまそうなっただけかもしれないし、本当にA店の方が売れてるのかどうか、わからないな…？」 この「偶然の差なのか、本当の差なのか」を判断するために使うのが「検定」です。</p>
+<div class="line-block">
+<div class="line">実際に分析する時、私たちは<strong>すべてのデータ（＝母集団）</strong>を持っているわけではありません。</div>
+<div class="line">多くの場合、<strong>一部のデータ（＝標本）</strong>だけを使って分析します。</div>
+<div class="line">例：全国に100店舗あるけど、今回は10店舗のデータだけ使って分析している場合など</div>
+<div class="line">このように一部のデータ（標本）を使って、全体（母集団）の特徴を推測する方法のことを「推測統計」と呼びます。</div>
+<div class="line">推測統計には2つの方法があります</div>
+</div>
+<div class="line-block">
+<div class="line">方法 | 何をする？</div>
+<div class="line">検定 | データの違いが「偶然」か「本当」かを判断する</div>
+<div class="line">推定 | 平均値や割合などを全体（母集団）に当てはめて考える</div>
+</div>
+<p>「検定」はその中のひとつで、標本のデータから、母集団にも違いがありそうかを判断する方法です。</p>
+<p>それでは次に、「検定」がどのように使われるのか、もう少し詳しく見ていきましょう。検定は推測統計の一分野であり、標本集団から母集団の性質を推測するものです。集計や可視化を行うことは記述統計と呼ばれます。 また、推測統計には検定の他にも推定という手法があります。推定は標本集団の結果から母集団の平均値や分散を推測する手法です。</p>
+<ul class="simple">
+<li><p>記述統計 → 今あるデータをまとめて整理する（グラフ化や平均値など）</p></li>
+<li><p>推測統計 → 一部のデータから、全体の特徴を「検定」や「推定」で推測する</p></li>
+</ul>
 <p>それでは検定の詳細について学習していきましょう。</p>
 </section>
 <section id="t-検定">
@@ -241,7 +257,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="04-00.html" class="btn btn-neutral float-left" title="4. データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04-00.html" class="btn btn-neutral float-left" title="データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="05.html" class="btn btn-neutral float-right" title="総演習：データに基づく営業支援のための施策を立案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
