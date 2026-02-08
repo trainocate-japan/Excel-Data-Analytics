@@ -1,27 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja">
+<html class="writer-html5" lang="ja" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>データの収集・探索的データ分析 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=91613774"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
@@ -115,10 +113,10 @@
            <div itemprop="articleBody">
              
   <section id="データの収集・探索的データ分析">
-<h1>データの収集・探索的データ分析<a class="headerlink" href="#データの収集・探索的データ分析" title="この見出しへのパーマリンク"></a></h1>
+<h1>データの収集・探索的データ分析<a class="headerlink" href="#データの収集・探索的データ分析" title="Link to this heading"></a></h1>
 <p>ここでは、データの収集と整理を行い、収集されたデータの理解を深めます。グラフ化などは一部、分析プロセスデモ実施しますが、ここではデータの理解を目的として使用できます。</p>
 <section id="効率の良いデータ収集">
-<h2>効率の良いデータ収集<a class="headerlink" href="#効率の良いデータ収集" title="この見出しへのパーマリンク"></a></h2>
+<h2>効率の良いデータ収集<a class="headerlink" href="#効率の良いデータ収集" title="Link to this heading"></a></h2>
 <p>本講座ではデモデータを用意していますが、実務においてはじめからデータが用意されていることは多くありません。データ収集の考え方として、集めやすいデータから集める方法があります。データは大きく一次データと二次データに分けられます。</p>
 <ul class="simple">
 <li><p>一次データ: 目的に沿って新たに収集されるデータ。収集には時間とコストがかかります。例えば、分析の目的に合わせたアンケートデータなどです。</p></li>
@@ -127,7 +125,7 @@
 <p>データは闇雲に収集してはいけません。先ほど紹介したイシューツリーを用いて、大枠の問題を頂点として、考えられる要因や仮説、それらを検証するデータを展開します。そして、データが絞り込まれてきたら、二次データのようにすぐに収集できるデータを優先して集めます。データソースは内部だけでなく、外部のデータも候補に入れます。全てのデータが揃わなくても、集まったデータで仮説の検証を始めます。</p>
 </section>
 <section id="データの最適化">
-<h2>データの最適化<a class="headerlink" href="#データの最適化" title="この見出しへのパーマリンク"></a></h2>
+<h2>データの最適化<a class="headerlink" href="#データの最適化" title="Link to this heading"></a></h2>
 <p>二次データを収集し分析しようとすると、そもそもデータが分析の目的で集められたものではないため、関係のないデータが混在しています。このようなデータは取捨選択する必要があります。</p>
 <p>ポイント</p>
 <ul class="simple">
@@ -140,23 +138,23 @@
 <p>明らかに他のデータより値が大きい場合などは、異常値として取り除く必要があります。異常値は分析や検証においてマイナスの要因となる可能性があります。例えば、自然災害により集客ができなかった場合などの突然発生するインシデントによる異常値や、入力ミスによる異常値が含まれることがあります。異常値の分析が必要な場合もありますので、適宜判断が求められます。散布図にプロットすることで異常値を見つけやすくなります。また、外れ値除去の方法として3シグマ法などがあります・</p>
 </section>
 <section id="データの理解をする">
-<h2>データの理解をする<a class="headerlink" href="#データの理解をする" title="この見出しへのパーマリンク"></a></h2>
+<h2>データの理解をする<a class="headerlink" href="#データの理解をする" title="Link to this heading"></a></h2>
 <p>データの取捨選択と並行して、データの理解を進めます。収集したデータがどのようなものかわからなければ、分析や検証を行うことはできません。データは必要に応じてグラフ化したり、ピボットテーブルを作成することで、より理解を深めることができます。結果によっては新たな仮説を立てることもあります。</p>
 <p>それでは、本講座で使用する銀行のデータを見てみましょう。</p>
 </section>
 <section id="【実装】データを理解する">
-<h2>【実装】データを理解する<a class="headerlink" href="#【実装】データを理解する" title="この見出しへのパーマリンク"></a></h2>
+<h2>【実装】データを理解する<a class="headerlink" href="#【実装】データを理解する" title="Link to this heading"></a></h2>
 <section id="環境構築">
-<h3>環境構築<a class="headerlink" href="#環境構築" title="この見出しへのパーマリンク"></a></h3>
+<h3>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h3>
 <p>配布された Excel ファイルを手元で展開してくらださい。以下のように複数のテーブルが定義された Excel ファイルを開きます。</p>
 <p><img alt="exel" src="../_images/01.png" /></p>
 <p>データには、預金口座開設キャンペーンで営業を行った際の顧客・営業結果のデータが含まれています。「生データ」のテーブルを開き、まずはどのようなカラムが取得されているか確認しましょう。</p>
 </section>
 </section>
 <section id="データの全体像の理解">
-<h2>データの全体像の理解<a class="headerlink" href="#データの全体像の理解" title="この見出しへのパーマリンク"></a></h2>
+<h2>データの全体像の理解<a class="headerlink" href="#データの全体像の理解" title="Link to this heading"></a></h2>
 <section id="【復習・演習】代表値の算出">
-<h3>【復習・演習】代表値の算出<a class="headerlink" href="#【復習・演習】代表値の算出" title="この見出しへのパーマリンク"></a></h3>
+<h3>【復習・演習】代表値の算出<a class="headerlink" href="#【復習・演習】代表値の算出" title="Link to this heading"></a></h3>
 <p>データの概要が理解できました。次に、データから情報を抽出しましょう。データから得られる情報として、平均値・中央値・最頻値があります。このようにデータ全体の特徴を数値で表したものを<strong>代表値</strong>と呼びます。</p>
 <p>代表値の意味</p>
 <div class="line-block">
@@ -187,7 +185,7 @@
 <p>データから情報を得ることができましたが、これだけではデータの特徴や仮説を立てるのは難しいです。さらに集計や可視化を行い、データから情報を引き出しましょう。</p>
 </section>
 <section id="【実装】集計-（単純集計）">
-<h3>【実装】集計 （単純集計）<a class="headerlink" href="#【実装】集計-（単純集計）" title="この見出しへのパーマリンク"></a></h3>
+<h3>【実装】集計 （単純集計）<a class="headerlink" href="#【実装】集計-（単純集計）" title="Link to this heading"></a></h3>
 <p>データを集計し確認することにより、データの特徴や分布を定量的に確認できます。また、分析や施策を検討するうえでの軸となるデータを発見できます。</p>
 <p>例: ある属性を持った顧客データが全体の 9 割を占める場合、残り 1 割のデータに対する施策を検討するより、9割のデータに対する施策を検討・実施する方が効果的と考えます。</p>
 <p>データ分析の最初に、分析の成果物や対象物として最も重要度の高いデータから概要を確認します。まずは、成約確度の値を確認してみましょう。今回のデータには成約の確度の数値が含まれています。それぞれの値がどのくらい含まれているのか、頻度の集計を行いましょう。</p>
@@ -200,18 +198,18 @@
 <p><img alt="Excel" src="../_images/02-0.png" /></p>
 <p>うまく集計ができました。</p>
 <section id="【実装-1-:-5-分】">
-<h4>【実装 1 : 5 分】<a class="headerlink" href="#【実装-1-:-5-分】" title="この見出しへのパーマリンク"></a></h4>
+<h4>【実装 1 : 5 分】<a class="headerlink" href="#【実装-1-:-5-分】" title="Link to this heading"></a></h4>
 <p>他の値の集計をしましょう。</p>
 <p><img alt="kannsu" src="../_images/03.png" /></p>
 <p>結果を確認すると、成約確度は 3,7 といった値の顧客が多いことがわかりました。</p>
 </section>
 <section id="【実装-2-:-15-分】">
-<h4>【実装 2 : 15 分】<a class="headerlink" href="#【実装-2-:-15-分】" title="この見出しへのパーマリンク"></a></h4>
+<h4>【実装 2 : 15 分】<a class="headerlink" href="#【実装-2-:-15-分】" title="Link to this heading"></a></h4>
 <p>結婚状況や最終学歴、債務不履行など他の値の集計を行いましょう。</p>
 </section>
 </section>
 <section id="【確認】可視化：円グラフ">
-<h3>【確認】可視化：円グラフ<a class="headerlink" href="#【確認】可視化：円グラフ" title="この見出しへのパーマリンク"></a></h3>
+<h3>【確認】可視化：円グラフ<a class="headerlink" href="#【確認】可視化：円グラフ" title="Link to this heading"></a></h3>
 <p>今回のようなデータを扱う際には、どのような値がどのような割合で含まれているかに注目することが多いです。また、データ分析では、結果を直感的に伝える必要があるため、可視化します。</p>
 <p>今回は、成約確度と職業の割合をグラフで可視化します。</p>
 <p>【実装手順】</p>
@@ -224,7 +222,7 @@
 </ol>
 </section>
 <section id="【確認+実装】可視化">
-<h3>【確認+実装】可視化<a class="headerlink" href="#【確認+実装】可視化" title="この見出しへのパーマリンク"></a></h3>
+<h3>【確認+実装】可視化<a class="headerlink" href="#【確認+実装】可視化" title="Link to this heading"></a></h3>
 <p>分割の割合が多く、解釈が難しい場合は分布を確認します。</p>
 <p>グラフを使用し、データを特定の区間で区切り、その区間の個数や各区間でのばらつきを表示します。例えば、身長のような連続する値の分布を把握したい場合に適した可視化方法です。棒グラフやヒストグラムなど様々なグラフのタイプがあります。</p>
 <ol class="arabic">
@@ -244,8 +242,12 @@
 </li>
 </ol>
 <section id="【実装-3-:-15-20-分】">
-<h4>【実装 3 : 15-20 分】<a class="headerlink" href="#【実装-3-:-15-20-分】" title="この見出しへのパーマリンク"></a></h4>
-<p>他の列の可視化を行い、単一列のデータから気づきを得ましょう。 - どの列を可視化しても構いません - ピボットテーブルなどの複数列の比較はNG</p>
+<h4>【実装 3 : 15-20 分】<a class="headerlink" href="#【実装-3-:-15-20-分】" title="Link to this heading"></a></h4>
+<p>他の列の可視化を行い、単一列のデータから気づきを得ましょう。</p>
+<ul class="simple">
+<li><p>どの列を可視化しても構いません</p></li>
+<li><p>ピボットテーブルなどの複数列の比較はNG</p></li>
+</ul>
 <p>実装2,3 から得られる気づきをメモ帳などにまとめてください。</p>
 <p>【補足：ヒストグラム】</p>
 <ol class="arabic">
@@ -270,7 +272,7 @@
 </section>
 </section>
 <section id="まとめ">
-<h3>まとめ<a class="headerlink" href="#まとめ" title="この見出しへのパーマリンク"></a></h3>
+<h3>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h3>
 <p>ここまで、データの代表値を確認し、可視化を行ってデータの概要を確認しました。ここまでの結果からわかることをまとめてみましょう。</p>
 <p>例）データから分かること</p>
 <ul class="simple">
@@ -283,11 +285,11 @@
 </section>
 </section>
 <section id="探索的データ分析">
-<h2>探索的データ分析<a class="headerlink" href="#探索的データ分析" title="この見出しへのパーマリンク"></a></h2>
+<h2>探索的データ分析<a class="headerlink" href="#探索的データ分析" title="Link to this heading"></a></h2>
 <p>それぞれのデータを確認し、データの大枠の理解が進みました。次に、複数のデータをまとめたり、分解したりして、さらに理解を深めます。</p>
 <p>さまざまな視点でデータを確認することで、新しい発見の可能性が高まります。集計・可視化をうまく使用すると、2 変数の関連性を理解することが可能です。</p>
 <section id="データの種類">
-<h3>データの種類<a class="headerlink" href="#データの種類" title="この見出しへのパーマリンク"></a></h3>
+<h3>データの種類<a class="headerlink" href="#データの種類" title="Link to this heading"></a></h3>
 <p>2 変数の関連性を正しく理解するには、データの種類と尺度について理解している必要があります。ここまで何気なくデータを扱ってきましたが、データにはその種類に明確な区分が存在します。まずは全体像から確認しましょう。データは以下のように大きく、質的データと量的データに区別することができます。</p>
 <ul class="simple">
 <li><p>質的データ:数値に直接置き換えることができないデータ。</p>
@@ -307,7 +309,7 @@
 <p>では、実際に今回のデータに対して、クロス集計を用いて関係性の把握を行いましょう。</p>
 </section>
 <section id="【実装4-:-5-分】成約の確度と他の列の関係性を確認する">
-<h3>【実装4 : 5 分】成約の確度と他の列の関係性を確認する<a class="headerlink" href="#【実装4-:-5-分】成約の確度と他の列の関係性を確認する" title="この見出しへのパーマリンク"></a></h3>
+<h3>【実装4 : 5 分】成約の確度と他の列の関係性を確認する<a class="headerlink" href="#【実装4-:-5-分】成約の確度と他の列の関係性を確認する" title="Link to this heading"></a></h3>
 <p>それでは、クロス集計を使用して、職業と成約確度の関係を見てみましょう。</p>
 <p>Excel ではクロス集計を関数を使用して実装することも可能ですが、今回はピボットテーブルを使用します。</p>
 <ol class="arabic">
@@ -333,7 +335,7 @@
 <p>ワークシート_1_データの可視化のグラフのように可視化できていれば成功です。非常に簡単に可視化ができました。</p>
 </section>
 <section id="【実装5:-15-分】成約の有無と他の列の関係性を確認する">
-<h3>【実装5: 15 分】成約の有無と他の列の関係性を確認する<a class="headerlink" href="#【実装5:-15-分】成約の有無と他の列の関係性を確認する" title="この見出しへのパーマリンク"></a></h3>
+<h3>【実装5: 15 分】成約の有無と他の列の関係性を確認する<a class="headerlink" href="#【実装5:-15-分】成約の有無と他の列の関係性を確認する" title="Link to this heading"></a></h3>
 <p>以下の項目に関して関連性を見るためにピボットテーブルの作成や可視化を行ってみましょう。また、結果から気づいたことをまとめましょう。</p>
 <ul class="simple">
 <li><p>成約確度 - 結婚状況</p></li>
@@ -343,7 +345,11 @@
 <div class="line">実際に 2 変数をクロス集計や散布図を用いて描画することによって、データのさらなる理解が深まりました。</div>
 <div class="line">最後にデータを集計し、可視化をすることによって得られた新たな気づきを記載しましょう。</div>
 </div>
-<p>【（例）気づき】 - 成約数の最も多いのはマネージャー - データ数に対して引退の成約確度が高そう</p>
+<p>【（例）気づき】</p>
+<ul class="simple">
+<li><p>成約数の最も多いのはマネージャー</p></li>
+<li><p>データ数に対して引退の成約確度が高そう</p></li>
+</ul>
 <div class="line-block">
 <div class="line">ここまででデータサイエンスサイクルの一周目を終了しました。 データを可視化したり、集計をおこない考察を得ることもデータ分析の一つです。</div>
 <div class="line">このような分析を探索的データ分析といいます。</div>
@@ -364,7 +370,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, trainocate.</p>
+    <p>&#169; Copyright 2026, trainocate.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

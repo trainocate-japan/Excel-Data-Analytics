@@ -19,7 +19,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Sphinx'
-copyright = '2024, trainocate'
+copyright = '2026, trainocate'
 author = 'koke'
 
 # The short X.Y version
