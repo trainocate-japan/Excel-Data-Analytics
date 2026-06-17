@@ -166,4 +166,10 @@ texinfo_documents = [
 ]
 
 
+# -- Section numbering -------------------------------------------------------
+
+# 章・節・項に番号を振る（深さ3まで: 章=1, 節=1.1, 項=1.1.1）
+numfig = True
+numfig_secnum_depth = 3
+
 # -- Extension configuration -------------------------------------------------

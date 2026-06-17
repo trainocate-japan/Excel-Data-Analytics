@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
+  <title>7. データに基づく分析・処理 （統計仮説検定） &mdash; Sphinx  ドキュメント</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
@@ -14,17 +14,17 @@
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=c033477b"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="../_static/translations.js?v=91613774"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
       <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
       <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="総演習：データに基づく営業支援のための施策を立案" href="05.html" />
-    <link rel="prev" title="データに基づく分析・処理（分析）" href="04-00.html" /> 
+    <link rel="next" title="8. 総演習：データに基づく営業支援のための施策を立案" href="05.html" />
+    <link rel="prev" title="6. データに基づく分析・処理（分析）" href="04-00.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,25 +48,26 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="0.html">〜研修へようこそ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="01.html">データ分析とは</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.html">問題の把握・明確化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="03.html">データの収集・探索的データ分析</a></li>
-<li class="toctree-l1"><a class="reference internal" href="04-00.html">データに基づく分析・処理（分析）</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">データに基づく分析・処理 （統計仮説検定）</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">検定とは（推測統計）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#t-検定">t-検定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【実装】t検定">【実装】t検定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="0.html">1. 〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">2. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">3. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html#データの収集">4. データの収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. データに基づく分析・処理 （統計仮説検定）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#検定とは（推測統計）">7.1. 検定とは（推測統計）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#t-検定">7.2. t-検定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#t検定の実装">7.2.1. t検定の実装</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#χ二乗検定">χ二乗検定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【実装】χ二乗検定">【実装】χ二乗検定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#χ二乗検定">7.3. χ二乗検定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.3.1. χ二乗検定</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="05.html">総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">5. 分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 【補足】分析結果の考察、結論</a></li>
 </ul>
 
         </div>
@@ -83,7 +84,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">データに基づく分析・処理 （統計仮説検定）</li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>データに基づく分析・処理 （統計仮説検定）</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/04-01.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -94,9 +95,9 @@
            <div itemprop="articleBody">
              
   <section id="データに基づく分析・処理-（統計仮説検定）">
-<h1>データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#データに基づく分析・処理-（統計仮説検定）" title="Link to this heading"></a></h1>
+<h1><span class="section-number">7. </span>データに基づく分析・処理 （統計仮説検定）<a class="headerlink" href="#データに基づく分析・処理-（統計仮説検定）" title="Link to this heading"></a></h1>
 <section id="検定とは（推測統計）">
-<h2>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
+<h2><span class="section-number">7.1. </span>検定とは（推測統計）<a class="headerlink" href="#検定とは（推測統計）" title="Link to this heading"></a></h2>
 <p>この章では、「統計的な仮説検定（けんてい）」について学んでいきます。 難しく聞こえるかもしれませんが、これは簡単に言うと「データの違いに意味があるかどうかを判断する方法」です。</p>
 <p>たとえば、A店とB店の売上データを集計してみたところ、A店の方が少し売上が高いように見えたとします。 このとき、こんな疑問が出てきます。 「たまたまそうなっただけかもしれないし、本当にA店の方が売れてるのかどうか、わからないな…？」 この「偶然の差なのか、本当の差なのか」を判断するために使うのが「検定」です。</p>
 <div class="line-block">
@@ -118,9 +119,10 @@
 <li><p>推測統計 → 一部のデータから、全体の特徴を「検定」や「推定」で推測する</p></li>
 </ul>
 <p>それでは検定の詳細について学習していきましょう。</p>
+<hr class="docutils" />
 </section>
 <section id="t-検定">
-<h2>t-検定<a class="headerlink" href="#t-検定" title="Link to this heading"></a></h2>
+<h2><span class="section-number">7.2. </span>t-検定<a class="headerlink" href="#t-検定" title="Link to this heading"></a></h2>
 <p>検定には目的やデータの性質に応じていくつかの種類があり使い分けます。本章では、代表的な分析手法としてt検定（平均の差の検定）とχ二乗検定を扱います。</p>
 <p>まずはt検定について学びます。t検定は、2つの標本の平均の差を検定するための手法です。</p>
 <p>今回は、キャンペーン前と後でのデータを使用して、キャンペーンによる効果の有無を検証します。</p>
@@ -151,8 +153,8 @@
 </ul>
 </li>
 </ul>
-<section id="【実装】t検定">
-<h3>【実装】t検定<a class="headerlink" href="#【実装】t検定" title="Link to this heading"></a></h3>
+<section id="t検定の実装">
+<h3><span class="section-number">7.2.1. </span>t検定の実装<a class="headerlink" href="#t検定の実装" title="Link to this heading"></a></h3>
 <p>t検定を実装し、以下の問題について調査します。今回は、銀行のマーケティングキャンペーンのデータではなくデモデータを用いて解説します。最後の演習時にマーケティングデータを使用してt検定を実装してみましょう。</p>
 <p>まずは<strong>Excelのワークシート_4_</strong>を開き、コンビニの施策データを使用してt検定の手順を学びます。</p>
 <div class="line-block">
@@ -197,10 +199,11 @@
 <li><p>P(T&lt;=t)両側：両側検定の場合のP値</p></li>
 <li><p>t境界値 両側：両側検定の場合の棄却限界値（この値をt値が超えると有意）</p></li>
 </ul>
+<hr class="docutils" />
 </section>
 </section>
 <section id="χ二乗検定">
-<h2>χ二乗検定<a class="headerlink" href="#χ二乗検定" title="Link to this heading"></a></h2>
+<h2><span class="section-number">7.3. </span>χ二乗検定<a class="headerlink" href="#χ二乗検定" title="Link to this heading"></a></h2>
 <p>次は、χ二乗検定について取り扱います。カイ二乗検定は独立性の検定とも呼ばれ、AとBには関連があるかないかを調べるために使用します。具体的な使用シーンとしては、「アンケート結果について、ある質問Aとある質問Bの結果に関連があるかどうかを調べる」などがあります。</p>
 <p>t検定と混同しやすいですが、t検定は数値（確率）に関する検定であり、カイ二乗検定はカテゴリ分けの検定であるというイメージを持つと良いです。</p>
 <p>（カイ二乗検定はノンパラメトリックな分析手法の1つであり、分析対象とするデータが正規分布に従っている必要はありません。）</p>
@@ -215,8 +218,8 @@
 <p>χ二乗検定はχ二乗値と自由度を用いて、<a class="reference external" href="https://home.hiroshima-u.ac.jp/ichi/chi-square-distribution.pdf">二乗分布表</a>と見比べて有意な差があるといえるかどうか検定する手法です。</p>
 <p>χ二乗値＝((観測度数−期待度数)²/期待度数)の総和</p>
 <p>自由度は、行と列がある二次元の表の場合の以下のようにして計算する。 自由度＝（行の数-1）x（列の数-1）</p>
-<section id="【実装】χ二乗検定">
-<h3>【実装】χ二乗検定<a class="headerlink" href="#【実装】χ二乗検定" title="Link to this heading"></a></h3>
+<section id="id5">
+<span id="id6"></span><h3><span class="section-number">7.3.1. </span>χ二乗検定<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>χ二乗検定は［分析ツール］ではサポートしていませんが、CHISQ.TEST という関数を使って検定を行います。期待度数という考え方を理解し、χ二乗値を計算できるようになりましょう。</p>
 <p><strong>期待度数</strong>：行要素の合計や列要素の合計の比率から逆算して期待される度数のこと。期待度数に対し、実験、調査、観察などによって得られたデータに基づく度数を、実測度数、観測度数、観察度数などと言う。</p>
 <p>【問題】 以下の仮説を調べる</p>
@@ -247,6 +250,7 @@
 </li>
 </ol>
 <p>ここまでで仮説検定を実装してきました。最後に行った χ二乗検定は、連続値であっても区切ってしまえば順位尺度として扱えるため、幅広く使用できるため便利です。</p>
+<hr class="docutils" />
 </section>
 </section>
 </section>
@@ -255,8 +259,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="04-00.html" class="btn btn-neutral float-left" title="データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="05.html" class="btn btn-neutral float-right" title="総演習：データに基づく営業支援のための施策を立案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="04-00.html" class="btn btn-neutral float-left" title="6. データに基づく分析・処理（分析）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05.html" class="btn btn-neutral float-right" title="8. 総演習：データに基づく営業支援のための施策を立案" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -4,6 +4,7 @@ Excel で学ぶデータ分析講座
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
+   :numbered: 3
    :glob:
    
    src/0.ipynb
