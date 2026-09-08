@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10. 【補足】保守インシデント分析 演習 &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/translations.js?v=4755f45a"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="9. 【補足】分析結果の考察、結論" href="07.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0.html">1. 〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">2. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">3. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html#データの収集">4. データの収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 【補足】分析結果の考察、結論</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. 【補足】保守インシデント分析 演習</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#1.-この演習のねらい">10.1. 1. この演習のねらい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#2.-到達目標">10.2. 2. 到達目標</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#意識してほしいこと">10.2.1. 意識してほしいこと</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3.-課題設定">10.3. 3. 課題設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#あなたの立場">10.3.1. あなたの立場</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#部門長からの依頼">10.3.2. 部門長からの依頼</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4.-渡されるデータ">10.4. 4. 渡されるデータ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#結合キー">10.4.1. 結合キー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#補足">10.4.2. 補足</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#5.-成果物と条件">10.5. 5. 成果物と条件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#成果物">10.5.1. 成果物</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#スライドに必ず含めること">10.5.2. スライドに必ず含めること</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#条件">10.5.3. 条件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#6.-当日の流れ">10.6. 6. 当日の流れ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#事前準備（受講者）">10.6.1. 事前準備（受講者）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#7.-進め方のヒント">10.7. 7. 進め方のヒント</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#整形フェーズ">10.7.1. 整形フェーズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#分析フェーズ">10.7.2. 分析フェーズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#重回帰フェーズ">10.7.3. 重回帰フェーズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#提案フェーズ">10.7.4. 提案フェーズ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#8.-評価ルーブリック">10.8. 8. 評価ルーブリック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#データの出典">10.9. データの出典</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">10. </span>【補足】保守インシデント分析 演習</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/保守インシデント分析_演習ガイド.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="【補足】保守インシデント分析-演習">
+<h1><span class="section-number">10. </span>【補足】保守インシデント分析 演習<a class="headerlink" href="#【補足】保守インシデント分析-演習" title="Link to this heading"></a></h1>
+<p>保守工程で蓄積されたインシデント記録を題材に、傾向を読み取り、保守作業の改善提案につなげるまでを一気通貫で行う演習です。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>前提スキル</p></td>
+<td><p>Excelの基本操作、ピボットテーブル</p></td>
+</tr>
+<tr class="row-odd"><td><p>使用データ</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">保守インシデント分析_演習用.xlsx</span></code>（24,918件のインシデント記録）</p></td>
+</tr>
+<tr class="row-even"><td><p>形態</p></td>
+<td><p>個人ワーク → グループワーク → 発表</p></td>
+</tr>
+</tbody>
+</table>
+<section id="1.-この演習のねらい">
+<h2><span class="section-number">10.1. </span>1. この演習のねらい<a class="headerlink" href="#1.-この演習のねらい" title="Link to this heading"></a></h2>
+<p><strong>「集計できる」から「集計結果で判断を動かせる」へ。</strong></p>
+<p>この演習の本質は、関数やツールの習熟ではありません。 <strong>そのまま使うと間違える場面で立ち止まれるか</strong> —— それを身体で覚えることが目的です。</p>
+<p>用意したデータには、そのための落とし穴が実際に含まれています。 正解を先に教えず、いったん間違えてから気づく順番で進めます。</p>
+</section>
+<section id="2.-到達目標">
+<h2><span class="section-number">10.2. </span>2. 到達目標<a class="headerlink" href="#2.-到達目標" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>層</p></th>
+<th class="head"><p>到達目標</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>整形</strong></p></td>
+<td><p>分割されたテーブルを結合し、分析可能な形に整えられる。結合で件数が変わっていないことを自分で検証できる</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>分析</strong></p></td>
+<td><p>傾向を掴み、問題箇所を数字で特定できる。重回帰分析で複数の要因を同時に扱える</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>提案</strong></p></td>
+<td><p>分析結果を保守作業の改善提案に翻訳できる。あわせて分析の限界も説明できる</p></td>
+</tr>
+</tbody>
+</table>
+<section id="意識してほしいこと">
+<h3><span class="section-number">10.2.1. </span>意識してほしいこと<a class="headerlink" href="#意識してほしいこと" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>使ってはいけない列</strong> — 記録されているからといって、分析に使ってよいとは限らない</p></li>
+<li><p><strong>平均か中央値か</strong> — 分布の形を見ずに代表値を選ばない</p></li>
+<li><p><strong>率か件数か</strong> — 比率が高くても母数が小さい区分を「最大の問題」と言わない</p></li>
+<li><p><strong>相関と因果を区別する</strong> — 「Aが多いとBが長い」は「AをやめればBが縮む」ではない</p></li>
+</ol>
+</section>
+</section>
+<section id="3.-課題設定">
+<h2><span class="section-number">10.3. </span>3. 課題設定<a class="headerlink" href="#3.-課題設定" title="Link to this heading"></a></h2>
+<section id="あなたの立場">
+<h3><span class="section-number">10.3.1. </span>あなたの立場<a class="headerlink" href="#あなたの立場" title="Link to this heading"></a></h3>
+<p>あなたは<strong>保守サービス部門のデータ分析担当</strong>です。</p>
+</section>
+<section id="部門長からの依頼">
+<h3><span class="section-number">10.3.2. </span>部門長からの依頼<a class="headerlink" href="#部門長からの依頼" title="Link to this heading"></a></h3>
+<blockquote>
+<div><p>「保守のインシデント記録が約1年分たまっている。 社内からは『件数は減らないし、解決も遅い』と言われているが、 実際に何が起きているのか、誰も数字で説明できていない。</p>
+<p>傾向を分析して、来期の保守体制で何を変えるべきかを提案してほしい。 次の部門会議で15分もらってある。そこで話せる形にしてくれ。</p>
+<p>予算も人も限られているので、やることは3つまでに絞ってほしい」</p>
+</div></blockquote>
+</section>
+</section>
+<section id="4.-渡されるデータ">
+<h2><span class="section-number">10.4. </span>4. 渡されるデータ<a class="headerlink" href="#4.-渡されるデータ" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">保守インシデント分析_演習用.xlsx</span></code> の3シートです。<strong>分析できる形に整えるところから始めてください。</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>シート</p></th>
+<th class="head"><p>内容</p></th>
+<th class="head"><p>行数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T_インシデント</span></code></p></td>
+<td><p>インシデント台帳（ヘッダ）</p></td>
+<td><p>24,918</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T_作業履歴</span></code></p></td>
+<td><p>対応の履歴（明細）</p></td>
+<td><p>141,712</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">M_コードマスタ</span></code></p></td>
+<td><p>カテゴリ名・グループ名などのコード表</p></td>
+<td><p>1,126</p></td>
+</tr>
+</tbody>
+</table>
+<section id="結合キー">
+<h3><span class="section-number">10.4.1. </span>結合キー<a class="headerlink" href="#結合キー" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ヘッダ ↔ 明細</strong> — <code class="docutils literal notranslate"><span class="pre">T_インシデント[インシデント番号]</span></code> 1 : 多 <code class="docutils literal notranslate"><span class="pre">T_作業履歴[インシデント番号]</span></code></p></li>
+<li><p><strong>ヘッダ ↔ マスタ</strong> — マスタ区分とIDの組み合わせが複合キー <code class="docutils literal notranslate"><span class="pre">M_コードマスタ</span></code> のA列「検索キー」は <code class="docutils literal notranslate"><span class="pre">マスタ区分</span> <span class="pre">&amp;</span> <span class="pre">&quot;_&quot;</span> <span class="pre">&amp;</span> <span class="pre">ID</span></code>（例：<code class="docutils literal notranslate"><span class="pre">カテゴリ_42</span></code>）</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=VLOOKUP(&quot;カテゴリ_&quot;&amp;[@カテゴリID], M_コードマスタ!$A:$D, 4, FALSE)
+</pre></div>
+</div>
+</section>
+<section id="補足">
+<h3><span class="section-number">10.4.2. </span>補足<a class="headerlink" href="#補足" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>カテゴリ名やグループ名は <code class="docutils literal notranslate"><span class="pre">Category</span> <span class="pre">42</span></code> のような<strong>匿名ラベル</strong>です。名前から中身は推測できません。数字だけで判断する練習だと考えてください</p></li>
+<li><p>影響度と緊急度は、どちらもマスタ区分「影響度緊急度」を参照します（同一コード体系）</p></li>
+<li><p>申告者ID・担当者IDなど、<strong>マスタが存在しないID</strong>も混じっています</p></li>
+</ul>
+</section>
+</section>
+<section id="5.-成果物と条件">
+<h2><span class="section-number">10.5. </span>5. 成果物と条件<a class="headerlink" href="#5.-成果物と条件" title="Link to this heading"></a></h2>
+<section id="成果物">
+<h3><span class="section-number">10.5.1. </span>成果物<a class="headerlink" href="#成果物" title="Link to this heading"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><ol class="arabic simple">
+<li><p>スライド</p></li>
+</ol>
+</td>
+<td><p>部門会議用。<strong>3枚以内</strong></p></td>
+</tr>
+<tr class="row-odd"><td><ol class="arabic simple" start="2">
+<li><p>Excelファイル</p></li>
+</ol>
+</td>
+<td><p>スライドの数字の裏付けとなる集計・分析の作業ファイル</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="スライドに必ず含めること">
+<h3><span class="section-number">10.5.2. </span>スライドに必ず含めること<a class="headerlink" href="#スライドに必ず含めること" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>現状</strong> — いま保守で何が起きているのか。</p></li>
+<li><p><strong>分析結果</strong> — 解決時間が長引く要因は何か。</p></li>
+<li><p><strong>提案</strong> — 来期に取り組むこと3つ。優先順位をつけること 各提案に「根拠となる数字」「期待される効果」「実行するうえでの障壁」を添える</p></li>
+</ul>
+</section>
+<section id="条件">
+<h3><span class="section-number">10.5.3. </span>条件<a class="headerlink" href="#条件" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>重回帰分析を1回以上行うこと。</strong> 目的変数と説明変数の設計は自分で行うこと （どの列を使うか、数値化・変換が必要か、どの行を分析対象にするかを含む）</p></li>
+<li><p>使った数字は、Excel上でどの集計から出したのかを<strong>たどれる状態</strong>にしておくこと</p></li>
+<li><p>「〜と思われる」ではなく、必ず<strong>件数・率・時間</strong>で語ること</p></li>
+<li><p>分析の過程で判断に迷った点（どのデータを使わなかったか、なぜか）を説明できること</p></li>
+</ol>
+<blockquote>
+<div><p><strong>このデータには、そのまま使うと結論を誤る列や行が含まれています。</strong> 何をどう扱うかの判断も、この演習の一部です。</p>
+</div></blockquote>
+</section>
+</section>
+<section id="6.-当日の流れ">
+<h2><span class="section-number">10.6. </span>6. 当日の流れ<a class="headerlink" href="#6.-当日の流れ" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>内容</p></th>
+<th class="head"><p>形態</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>オリエンテーション・課題提示</p></td>
+<td><p>講師</p></td>
+</tr>
+<tr class="row-odd"><td><p>データ整形・結合</p></td>
+<td><p>個人</p></td>
+</tr>
+<tr class="row-even"><td><p>中間共有 — 結合後の件数を全員が申告</p></td>
+<td><p>全体</p></td>
+</tr>
+<tr class="row-odd"><td><p>分析</p></td>
+<td><p>個人</p></td>
+</tr>
+<tr class="row-even"><td><p>提案づくり</p></td>
+<td><p>グループ 4〜5名</p></td>
+</tr>
+<tr class="row-odd"><td><p>発表・相互レビュー（7分 + 質疑3分）</p></td>
+<td><p>全体</p></td>
+</tr>
+<tr class="row-even"><td><p>講評</p></td>
+<td><p>講師</p></td>
+</tr>
+</tbody>
+</table>
+<section id="事前準備（受講者）">
+<h3><span class="section-number">10.6.1. </span>事前準備（受講者）<a class="headerlink" href="#事前準備（受講者）" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>本ガイドの「3. 課題設定」まで目を通しておく</p></li>
+<li><p><strong>Excelの分析ツールアドインを有効化しておく</strong> ［ファイル］→［オプション］→［アドイン］→ 管理「Excelアドイン」→［設定］→「分析ツール」にチェック</p></li>
+</ul>
+</section>
+</section>
+<section id="7.-進め方のヒント">
+<h2><span class="section-number">10.7. </span>7. 進め方のヒント<a class="headerlink" href="#7.-進め方のヒント" title="Link to this heading"></a></h2>
+<p>正解は書いていません。詰まったときの視点だけ挙げます。</p>
+<section id="整形フェーズ">
+<h3><span class="section-number">10.7.1. </span>整形フェーズ<a class="headerlink" href="#整形フェーズ" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>結合し終わったら、<strong>まず行数を数えてください。</strong> 増えても減っても、原因を突き止めてから先に進むこと</p></li>
+<li><p>名称を引けなかった行があれば、それは何を意味するか考える</p></li>
+</ul>
+</section>
+<section id="分析フェーズ">
+<h3><span class="section-number">10.7.2. </span>分析フェーズ<a class="headerlink" href="#分析フェーズ" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>全体を1つの数字で語る前に、<strong>分布の形を見る</strong>こと</p></li>
+<li><p>「どの切り口で層別すると差が出るか」を複数試す。最初に思いついた切り口が最良とは限らない</p></li>
+<li><p>明細（<code class="docutils literal notranslate"><span class="pre">T_作業履歴</span></code>）は、ヘッダだけでは見えないプロセスの動きを持っています</p></li>
+</ul>
+</section>
+<section id="重回帰フェーズ">
+<h3><span class="section-number">10.7.3. </span>重回帰フェーズ<a class="headerlink" href="#重回帰フェーズ" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>目的変数の分布をヒストグラムで確認してから、変換の要否を判断する</p></li>
+<li><p>説明変数を選ぶとき、<strong>「その値はいつ判明するのか」</strong>を毎回自問する</p></li>
+<li><p>決定係数が高く出たら、まず疑う</p></li>
+</ul>
+</section>
+<section id="提案フェーズ">
+<h3><span class="section-number">10.7.4. </span>提案フェーズ<a class="headerlink" href="#提案フェーズ" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>「件数が多いから対策する」と「1件あたりの損害が大きいから対策する」では結論が変わります。どちらを取ったかを言えるように</p></li>
+<li><p>3つに絞るということは、<strong>4つ目以降を捨てる理由</strong>を持つということです</p></li>
+</ul>
+</section>
+</section>
+<section id="8.-評価ルーブリック">
+<h2><span class="section-number">10.8. </span>8. 評価ルーブリック<a class="headerlink" href="#8.-評価ルーブリック" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>観点</p></th>
+<th class="head"><p>Lv1</p></th>
+<th class="head"><p>Lv2</p></th>
+<th class="head"><p>Lv3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>データ整形</strong></p></td>
+<td><p>結合できた</p></td>
+<td><p>件数の整合を確認した</p></td>
+<td><p>欠損・除外行の扱いを説明できる</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>分析の妥当性</strong></p></td>
+<td><p>集計を出した</p></td>
+<td><p>使うべきでない列を避けた</p></td>
+<td><p>平均/中央値、率/件数の選択理由を語れる</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>提案の具体性</strong></p></td>
+<td><p>提案を3つ出した</p></td>
+<td><p>各提案に数字の根拠がある</p></td>
+<td><p>期待効果を件数・時間で見積もっている</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>限界の説明</strong></p></td>
+<td><p>触れていない</p></td>
+<td><p>「因果ではない」と言及した</p></td>
+<td><p>検証に必要な追加データを挙げられる</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>合格ライン：Lv3が2観点以上</strong></p>
+</section>
+<section id="データの出典">
+<h2><span class="section-number">10.9. </span>データの出典<a class="headerlink" href="#データの出典" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>データセット</p></td>
+<td><p>Incident management process enriched event log</p></td>
+</tr>
+<tr class="row-even"><td><p>提供元</p></td>
+<td><p>UCI Machine Learning Repository</p></td>
+</tr>
+<tr class="row-odd"><td><p>出典</p></td>
+<td><p>Amaral, C., Fantinato, M., &amp; Peres, S. (2018)</p></td>
+</tr>
+<tr class="row-even"><td><p>URL</p></td>
+<td><p><a class="reference external" href="https://archive.ics.uci.edu/dataset/498">https://archive.ics.uci.edu/dataset/498</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ライセンス</p></td>
+<td><p><strong>CC BY 4.0</strong> — 出典表示のうえ、商用利用・改変が可能</p></td>
+</tr>
+<tr class="row-even"><td><p>原データ</p></td>
+<td><p>あるIT企業の ServiceNow 監査ログ 141,712イベント / 24,918インシデント（匿名化済み）</p></td>
+</tr>
+<tr class="row-odd"><td><p>対象期間</p></td>
+<td><p>2016年2月29日 〜 2017年2月16日（受付日時ベース）</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="07.html" class="btn btn-neutral float-left" title="9. 【補足】分析結果の考察、結論" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
