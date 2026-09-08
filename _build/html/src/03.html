@@ -60,13 +60,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#データの全体像の理解">5.2. データの全体像の理解</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#代表値の算出">5.2.1. 代表値の算出</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#集計-（単純集計）">5.2.2. 集計 （単純集計）</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#【実装-1-:-5-分】">【実装 1 : 5 分】</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#【実装-2-:-15-分】">【実装 2 : 15 分】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#【実装-1】">【実装 1】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#【実装-2】">【実装 2】</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#可視化：円グラフ">5.2.3. 可視化：円グラフ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#可視化">5.2.4. 可視化</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#【実装-3-:-15-20-分】">【実装 3 : 15-20 分】</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#可視化：棒グラフとヒストグラム">5.2.4. 可視化：棒グラフとヒストグラム</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#【実装-3】">【実装 3】</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#まとめ">5.2.5. まとめ</a></li>
@@ -75,7 +75,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#複数の変数による探索的データ分析">5.3. 複数の変数による探索的データ分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#データの種類">5.3.1. データの種類</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#成約の確度と他の列の関係性を確認する">5.3.2. 成約の確度と他の列の関係性を確認する</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#成約の有無と他の列の関係性を確認する">5.3.3. 成約の有無と他の列の関係性を確認する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#成約確度と他の列の関係性を確認する（実践）">5.3.3. 成約確度と他の列の関係性を確認する（実践）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#【実装-4】">【実装 4】</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -116,7 +119,13 @@
 <h2><span class="section-number">5.1. </span>データを理解する<a class="headerlink" href="#データを理解する" title="Link to this heading"></a></h2>
 <section id="環境構築">
 <h3><span class="section-number">5.1.1. </span>環境構築<a class="headerlink" href="#環境構築" title="Link to this heading"></a></h3>
-<p>配布された Excel ファイルを手元で展開してくらださい。以下のように複数のテーブルが定義された Excel ファイルを開きます。 データには、預金口座開設キャンペーンで営業を行った際の顧客・営業結果のデータが含まれています。「生データ」のテーブルを開き、まずはどのようなカラムが取得されているか確認しましょう。</p>
+<p>配布された Excel ファイルを手元で展開してください。以下のように複数のテーブルが定義された Excel ファイルを開きます。 データには、預金口座開設キャンペーンで営業を行った際の顧客・営業結果のデータが含まれています。「生データ」のテーブルを開き、まずはどのようなカラムが取得されているか確認しましょう。</p>
+<p>確認する際のポイント</p>
+<ul class="simple">
+<li><p>どのようなカラム（列）があるか</p></li>
+<li><p>各カラムが数値データか文字列データか</p></li>
+<li><p>欠損値（空白セル）がないか</p></li>
+</ul>
 <p><img alt="exel" src="../_images/01.png" /></p>
 <hr class="docutils" />
 </section>
@@ -125,17 +134,17 @@
 <h2><span class="section-number">5.2. </span>データの全体像の理解<a class="headerlink" href="#データの全体像の理解" title="Link to this heading"></a></h2>
 <section id="代表値の算出">
 <h3><span class="section-number">5.2.1. </span>代表値の算出<a class="headerlink" href="#代表値の算出" title="Link to this heading"></a></h3>
-<p>データの概要が理解できました。次に、データから情報を抽出しましょう。データから得られる情報として、平均値・中央値・最頻値があります。このようにデータ全体の特徴を数値で表したものを<strong>代表値</strong>と呼びます。</p>
+<p>データの概要が理解できました。次に、データから情報を抽出しましょう。データから得られる情報として、平均値・中央値・最頻値があります。このようにデータ全体の特徴を1つの数値で表したものを<strong>代表値</strong>と呼びます。</p>
 <p>代表値の意味</p>
 <div class="line-block">
-<div class="line">平均値 (<code class="docutils literal notranslate"><span class="pre">Avarage</span></code>): データの合計値をデータ数で割った値</div>
-<div class="line">最頻値 (<code class="docutils literal notranslate"><span class="pre">Mode</span></code>): データの中で最も多く出現する値</div>
-<div class="line">中央値 (<code class="docutils literal notranslate"><span class="pre">Median</span></code>): データを小さい順に並べたときの中央に位置する値</div>
+<div class="line">平均値 (<code class="docutils literal notranslate"><span class="pre">AVERAGE</span></code>): データの合計値をデータ数で割った値</div>
+<div class="line">中央値 (<code class="docutils literal notranslate"><span class="pre">MEDIAN</span></code>): データを小さい順に並べたときの中央に位置する値</div>
+<div class="line">最頻値 (<code class="docutils literal notranslate"><span class="pre">MODE</span></code>): データの中で最も多く出現する値</div>
 </div>
-<p>代表値を扱う際に重要なことは、データの特徴を表現する際に1つの代表値だけで判断しないことです。実際に確認してみましょう。</p>
+<p>代表値を扱う際に重要なことは、データの特徴を表現する際に1つの代表値だけで判断しないことです。例えば、平均値は極端に大きい（または小さい）値、いわゆる<strong>外れ値</strong>の影響を受けやすいという性質があります。そのため、平均値だけでなく中央値・最頻値も合わせて確認することで、データの分布をより正確に捉えることができます。実際に確認してみましょう。</p>
 <p>まず初めに、データから年齢、銀行残高の各種代表値を算出しましょう。「ワークシート_1_」のシートを開き、各セルに代表値を算出してください。</p>
 <p><strong>下記のように値が算出されているか確認しましょう。</strong></p>
-<p>例）=<code class="docutils literal notranslate"><span class="pre">Avarage(年齢列)</span></code></p>
+<p>例）<code class="docutils literal notranslate"><span class="pre">=AVERAGE(年齢列)</span></code></p>
 <ul>
 <li><p>年齢の代表値</p>
 <div class="line-block">
@@ -152,6 +161,7 @@
 </div>
 </li>
 </ul>
+<p>銀行残高は平均値（約1,791）と中央値（712）が大きく離れており、最頻値は0です。このように平均値と中央値・最頻値の差が大きい場合、一部の顧客が突出して高い残高を持っている（分布が偏っている）可能性が考えられます。</p>
 <p>データから情報を得ることができましたが、これだけではデータの特徴や仮説を立てるのは難しいです。さらに集計や可視化を行い、データから情報を引き出しましょう。</p>
 </section>
 <section id="集計-（単純集計）">
@@ -163,25 +173,25 @@
 <div class="line">これには Excel の <code class="docutils literal notranslate"><span class="pre">COUNTIF</span></code>関数を使用します。</div>
 <div class="line">Excel の COUNTIF 関数を使用して、「成約確度」の各値の頻度を集計します。</div>
 </div>
-<p>COUNTIF(範囲,条件) の様に値を渡します。</p>
-<p><code class="docutils literal notranslate"><span class="pre">例）=COUNTIF(列,カウントする値)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">COUNTIF(範囲,</span> <span class="pre">検索条件)</span></code> の様に値を渡します。範囲には集計したい列全体を、検索条件には数えたい値を指定します。</p>
+<p>例）<code class="docutils literal notranslate"><span class="pre">=COUNTIF(成約確度の列,</span> <span class="pre">数えたい値)</span></code></p>
 <p><img alt="Excel" src="../_images/02-0.png" /></p>
 <p>うまく集計ができました。</p>
-<section id="【実装-1-:-5-分】">
-<h4>【実装 1 : 5 分】<a class="headerlink" href="#【実装-1-:-5-分】" title="Link to this heading"></a></h4>
-<p>他の値の集計をしましょう。</p>
+<section id="【実装-1】">
+<h4>【実装 1】<a class="headerlink" href="#【実装-1】" title="Link to this heading"></a></h4>
+<p>上記の例では成約確度のうち1つの値だけを集計しました。同じ手順で、成約確度に含まれる残りの値（0〜10）についても1つずつ集計しましょう。</p>
 <p><img alt="kannsu" src="../_images/03.png" /></p>
 <p>結果を確認すると、成約確度は 3,7 といった値の顧客が多いことがわかりました。</p>
 </section>
-<section id="【実装-2-:-15-分】">
-<h4>【実装 2 : 15 分】<a class="headerlink" href="#【実装-2-:-15-分】" title="Link to this heading"></a></h4>
-<p>結婚状況や最終学歴、債務不履行など他の値の集計を行いましょう。</p>
+<section id="【実装-2】">
+<h4>【実装 2】<a class="headerlink" href="#【実装-2】" title="Link to this heading"></a></h4>
+<p>結婚状況や最終学歴、債務不履行、職業など他の列についても同様に集計を行いましょう。</p>
 </section>
 </section>
 <section id="可視化：円グラフ">
 <h3><span class="section-number">5.2.3. </span>可視化：円グラフ<a class="headerlink" href="#可視化：円グラフ" title="Link to this heading"></a></h3>
 <p>今回のようなデータを扱う際には、どのような値がどのような割合で含まれているかに注目することが多いです。また、データ分析では、結果を直感的に伝える必要があるため、可視化します。</p>
-<p>今回は、成約確度と職業の割合をグラフで可視化します。</p>
+<p>今回は、先ほど集計した成約確度と職業の割合をグラフで可視化します。</p>
 <p>【実装手順】</p>
 <ol class="arabic">
 <li><p>先ほど算出した頻度の部分を選択して、「挿入」 → 「円グラフ」の順に進めます。 <img alt="graff" src="../_images/04.jpg" /></p></li>
@@ -190,11 +200,16 @@
 <p>*間違った列が表示される場合は表示されたグラフをダブルクリックし、データのスライスの設定やデータの選択を確認します。</p>
 </li>
 </ol>
+<p>*円グラフはカテゴリの数が少ない（5〜7個程度まで）場合に見やすくなります。職業のようにカテゴリ数が多い項目は、次に紹介する棒グラフの方が比較しやすい場合があります。</p>
 </section>
-<section id="可視化">
-<h3><span class="section-number">5.2.4. </span>可視化<a class="headerlink" href="#可視化" title="Link to this heading"></a></h3>
-<p>分割の割合が多く、解釈が難しい場合は分布を確認します。</p>
-<p>グラフを使用し、データを特定の区間で区切り、その区間の個数や各区間でのばらつきを表示します。例えば、身長のような連続する値の分布を把握したい場合に適した可視化方法です。棒グラフやヒストグラムなど様々なグラフのタイプがあります。</p>
+<section id="可視化：棒グラフとヒストグラム">
+<h3><span class="section-number">5.2.4. </span>可視化：棒グラフとヒストグラム<a class="headerlink" href="#可視化：棒グラフとヒストグラム" title="Link to this heading"></a></h3>
+<p>円グラフは項目数が多い場合や、それぞれの割合の差が小さい場合には解釈が難しくなります。そのような場合は、棒グラフやヒストグラムを使って分布を確認しましょう。</p>
+<ul class="simple">
+<li><p><strong>棒グラフ</strong>：職業や成約確度のように、カテゴリ（区分）ごとの個数を比較したいときに使います。</p></li>
+<li><p><strong>ヒストグラム</strong>：年齢や残高のように連続した数値を一定の区間（<strong>bin</strong>）で区切り、区間ごとの個数やばらつきを確認したいときに使います。</p></li>
+</ul>
+<p>まずは棒グラフから作成してみましょう。</p>
 <ol class="arabic">
 <li><p>集計結果の値を選択し、「挿入」→「棒グラフ」を選択します。 以下の画像のように選択をしてください。</p>
 <p><img alt="bou" src="../_images/06.jpg" /></p>
@@ -203,7 +218,7 @@
 <p><img alt="bou2" src="../_images/07.jpg" /></p>
 <p>データの範囲選択を行う際に以下のように設定します。</p>
 <ul class="simple">
-<li><p>判例項目：頻度</p></li>
+<li><p>凡例項目：頻度</p></li>
 <li><p>横（項目）軸ラベル：成約確度の集計列の0~10値の場所を参照</p></li>
 <li><p>設定後、「OK」ボタンを選択</p></li>
 </ul>
@@ -211,8 +226,8 @@
 <p>画像のような棒グラフを作成できます。</p>
 </li>
 </ol>
-<section id="【実装-3-:-15-20-分】">
-<h4>【実装 3 : 15-20 分】<a class="headerlink" href="#【実装-3-:-15-20-分】" title="Link to this heading"></a></h4>
+<section id="【実装-3】">
+<h4>【実装 3】<a class="headerlink" href="#【実装-3】" title="Link to this heading"></a></h4>
 <p>他の列の可視化を行い、単一列のデータから気づきを得ましょう。</p>
 <ul class="simple">
 <li><p>どの列を可視化しても構いません</p></li>
@@ -228,7 +243,7 @@
 </li>
 </ol>
 <div class="line-block">
-<div class="line">Excel のヒストグラムは、bin を自動で設定してくれますが、うまく捉えられない場合があります。今回も bin　の調整する必要が理想です。</div>
+<div class="line">Excel のヒストグラムは bin を自動で設定してくれますが、区間が粗すぎたり細かすぎたりして分布をうまく捉えられない場合があります。bin が広すぎると細かい傾向が見えなくなり、逆に狭すぎると細かすぎて全体の傾向がつかみにくくなります。今回も bin の幅を調整してみましょう。</div>
 <div class="line">bin の調整にはいくつか方法がありますが、今回は数を調整します。</div>
 </div>
 <ol class="arabic" start="2">
@@ -247,8 +262,8 @@
 <p>例）データから分かること</p>
 <ul class="simple">
 <li><p>データ数は〇〇サンプル</p></li>
-<li><p>リストの平均年齢41歳</p></li>
-<li><p>リストの平均残高1450.296ドル</p></li>
+<li><p>リストの平均年齢は約42歳</p></li>
+<li><p>リストの平均残高は約1,791（中央値は712、最頻値は0）</p></li>
 <li><p>ローンのない顧客が大半を占める</p></li>
 </ul>
 <p>問）他に可視化の結果からどのようなことがわかるか書き出してみよう。</p>
@@ -276,12 +291,44 @@
 </ul>
 </li>
 </ul>
-<p>これらは見分けるのが難しいですが、コツとして数値に仮に置き換えて考えてみると良いです。例えば、性別において男性を 1、女性を 0 と置き換えて考えます。数値として扱うとこの 2 つには差が存在しますが、その差に厳密な意味はありません。それに対して、満足度を満足：1、普通：2、不満足：0 と置き換えた場合、この数値の差には意味が存在することが分かります。つまり、0〜2 の数値には順序の概念があります。データの種類の組み合わせによって、関連性の把握方法が異なります。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>分類</p></th>
+<th class="head"><p>尺度</p></th>
+<th class="head"><p>例</p></th>
+<th class="head"><p>特徴</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>質的データ</p></td>
+<td><p>名義尺度</p></td>
+<td><p>性別、職業</p></td>
+<td><p>分類のためだけの数値・ラベルで、順序に意味がない</p></td>
+</tr>
+<tr class="row-odd"><td><p>質的データ</p></td>
+<td><p>順位尺度</p></td>
+<td><p>満足度 (不満足/普通/満足)</p></td>
+<td><p>順序には意味があるが、差の大きさには意味がない</p></td>
+</tr>
+<tr class="row-even"><td><p>量的データ</p></td>
+<td><p>間隔尺度</p></td>
+<td><p>年齢、気温</p></td>
+<td><p>数値の間隔（差）に意味があるが、比率には意味がない</p></td>
+</tr>
+<tr class="row-odd"><td><p>量的データ</p></td>
+<td><p>比例尺度</p></td>
+<td><p>売上、残高</p></td>
+<td><p>差にも比率にも意味があり、「〇〇倍」と表現できる</p></td>
+</tr>
+</tbody>
+</table>
+<p>これらは見分けるのが難しいですが、コツとして数値に仮に置き換えて考えてみると良いです。例えば、性別において男性を 1、女性を 0 と置き換えて考えます。数値として扱うとこの 2 つには差が存在しますが、その差に厳密な意味はありません（男性から女性を引いても意味のある量にはなりません）。</p>
+<p>それに対して、満足度を不満足：0、普通：1、満足：2 と置き換えた場合、0〜2 の数値には「不満足 &lt; 普通 &lt; 満足」という順序の意味が存在します。ただし、満足(2)と普通(1)の差、普通(1)と不満足(0)の差が同じ大きさとは限らない点が、次に説明する間隔尺度・比例尺度との違いです。データの種類の組み合わせによって、関連性の把握方法が異なります。</p>
 <p>では、実際に今回のデータに対して、クロス集計を用いて関係性の把握を行いましょう。</p>
 </section>
 <section id="成約の確度と他の列の関係性を確認する">
 <h3><span class="section-number">5.3.2. </span>成約の確度と他の列の関係性を確認する<a class="headerlink" href="#成約の確度と他の列の関係性を確認する" title="Link to this heading"></a></h3>
-<p>それでは、クロス集計を使用して、職業と成約確度の関係を見てみましょう。</p>
+<p>それでは、クロス集計を使用して、職業と成約確度の関係を見てみましょう。<strong>クロス集計</strong>とは、2つの項目を掛け合わせて集計し、それぞれの組み合わせがいくつあるかを確認する方法です。例えば「職業」と「成約確度」を掛け合わせることで、職業ごとに成約確度の分布がどう違うのかを確認できます。</p>
 <p>Excel ではクロス集計を関数を使用して実装することも可能ですが、今回はピボットテーブルを使用します。</p>
 <ol class="arabic">
 <li><p>挿入タブからピボットテーブルを選択します。</p></li>
@@ -291,7 +338,7 @@
 </ol>
 <p>作成ができると上記画像のようにピボットテーブルが作成されます。</p>
 <ol class="arabic" start="3">
-<li><p>以下の図のように、列に職業、行に成約確度、値に成約確度の個数を選択します ＊デフォルトですと合計値が入力されるため、適宜画像のように個数に変更してください</p>
+<li><p>以下の図のように、列に職業、行に成約確度、値に成約確度の個数を選択します ＊値の欄はデフォルトで「合計」が設定されている場合があります。成約確度は数値のため合計が選ばれやすいですが、ここでは件数を数えたいので、画像のように「個数」に変更してください</p>
 <p><img alt="pibo1t" src="../_images/09.jpg" /></p>
 </li>
 </ol>
@@ -305,15 +352,17 @@
 </div>
 <p>ワークシート_1_データの可視化のグラフのように可視化できていれば成功です。非常に簡単に可視化ができました。</p>
 </section>
-<section id="成約の有無と他の列の関係性を確認する">
-<h3><span class="section-number">5.3.3. </span>成約の有無と他の列の関係性を確認する<a class="headerlink" href="#成約の有無と他の列の関係性を確認する" title="Link to this heading"></a></h3>
-<p>以下の項目に関して関連性を見るためにピボットテーブルの作成や可視化を行ってみましょう。また、結果から気づいたことをまとめましょう。</p>
+<section id="成約確度と他の列の関係性を確認する（実践）">
+<h3><span class="section-number">5.3.3. </span>成約確度と他の列の関係性を確認する（実践）<a class="headerlink" href="#成約確度と他の列の関係性を確認する（実践）" title="Link to this heading"></a></h3>
+<section id="【実装-4】">
+<h4>【実装 4】<a class="headerlink" href="#【実装-4】" title="Link to this heading"></a></h4>
+<p>先ほどと同じ手順（ピボットテーブルの作成 → 棒グラフでの可視化）で、以下の項目についても関連性を確認してみましょう。また、結果から気づいたことをまとめましょう。</p>
 <ul class="simple">
 <li><p>成約確度 - 結婚状況</p></li>
 <li><p>成約確度 - 最終学歴</p></li>
 </ul>
 <div class="line-block">
-<div class="line">実際に 2 変数をクロス集計や散布図を用いて描画することによって、データのさらなる理解が深まりました。</div>
+<div class="line">実際に 2 変数をクロス集計や棒グラフを用いて描画することによって、データのさらなる理解が深まりました。</div>
 <div class="line">最後にデータを集計し、可視化をすることによって得られた新たな気づきを記載しましょう。</div>
 </div>
 <p>【（例）気づき】</p>
@@ -326,6 +375,7 @@
 <div class="line">このような分析を探索的データ分析といいます。</div>
 </div>
 <p>ここで得た気づきや仮説を検証するために分析手法や統計検定を用いて統計的な証明を行います。</p>
+</section>
 </section>
 </section>
 </section>
