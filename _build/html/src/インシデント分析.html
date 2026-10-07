@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=91613774"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="0.html">1. 〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">2. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">3. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html#データの収集">4. データの収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 【補足】分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">10. FreshMart社 〜販促企画部 Aさんの悩み〜</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html#分析ワークシート">11. 分析ワークシート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">12. 【補足】保守インシデント分析 演習</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/インシデント分析.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>■ 講師用メモ：データに仕込まれている判断ポイント
+検索キー列   A列は数式で入れてある。前処理そのものを演習にする場合は削除して受講者に作らせる
+カテゴリ階層  サブカテゴリ246件のうち46件が複数カテゴリにまたがる。素直な親子関係ではない
+クローズ日時  解決の120時間後に自動クローズされる案件が大半。所要時間は 受付→解決 で測るべき</p>
+<blockquote>
+<div><p>クローズ日時で所要時間を出した答案は、この点に気づいていない</p>
+</div></blockquote>
+<p>解決日時の欠損 516件（約6%）が空欄。除外するか別扱いするかの判断が必要
+所要時間の歪み 中央値22時間に対し最大8,070時間。平均値だけで語ると実態を外す
+優先度の偏り  94%が &quot;3 - Moderate&quot;。優先度だけで層別しても差が出にくい
+件数の偏り   受付の約99%が2016年3〜5月。月次より週次・日次のほうが読み取りやすい
+少数区分の罠  未達成率が高くても件数が数件しかない区分がある。率だけで順位づけすると誤る</p>
+<dl class="simple">
+<dt>■ 講師用メモ：重回帰分析の想定解</dt><dd><p>回帰用のデータ整形は受講者が行う。想定される設計と結果は次のとおり。</p>
+</dd>
+</dl>
+<p>目的変数    解決所要時間（受付→解決の時間数）。右に大きく歪むため LN(1+時間) の対数変換を推奨
+対象行     解決日時が空欄の516件を除外して7,484行
+説明変数A（受付時点）     優先度レベル／影響度レベル／緊急度レベル／受付時刻／休日フラグ／営業時間外フラグ／電話受付フラグ
+説明変数B（対応過程）     再割当回数／再オープン回数／更新回数／関与グループ数／ナレッジ利用／問題管理紐付け／変更要求紐付け／ベンダー関与</p>
+<p>想定される結果 Aのみ：決定係数 R2 ≒ 0.02　／　A+B：R2 ≒ 0.48（目的変数は対数、本ファイル作成時にPythonで算出）
+論点①     受付時点の情報だけでは解決時間はほとんど説明できない。優先度で所要時間が読めるという通念が否定される
+論点②     R2を押し上げるのは更新回数・関与グループ数など「対応した結果」の変数。</p>
+<blockquote>
+<div><p>受付時点では取得できないため予測には使えない。R2が高い＝良いモデルではない</p>
+</div></blockquote>
+<dl class="simple">
+<dt>論点③     優先度は 影響度×緊急度 でほぼ機械的に決まる（優先度レベル ≒ 影響度+緊急度-2）。</dt><dd><p>3つ同時に投入するとVIFが優先度13.9・緊急度5.9・影響度5.0となり係数が不安定になる</p>
+</dd>
+<dt>論点④     観察データなので因果ではない。「関与グループ数が多いと遅い」は</dt><dd><p>「たらい回しをやめれば速くなる」の証明にはならない（難案件だからまたいだ、が同じくらい成り立つ）</p>
+</dd>
+</dl>
+<p>Excelでの実行       ［ファイル］→［オプション］→［アドイン］→［分析ツール］を有効化 →［データ］→［データ分析］→［回帰分析］
+変数の上限   分析ツールの回帰は説明変数16個まで、かつ連続した範囲。カテゴリのダミー変数を足す場合は変数を絞る判断が必要</p>
+<dl class="simple">
+<dt>■ 出所</dt><dd><p>UCI ML Repository / Incident management process enriched event log (CC BY 4.0)
+<a class="reference external" href="https://archive.ics.uci.edu/dataset/498">https://archive.ics.uci.edu/dataset/498</a></p>
+</dd>
+<dt>■ 軽量版について</dt><dd><p>全24,918件から8,000件をランダム抽出した研修用の軽量版です（乱数シード42）。
+主要な発見は全件版と一致します（SLA達成率63.0% / Critical未達成率100% / 解決時間中央値21.7時間 /
+ナレッジ利用あり・なしの未達成率74.8%・30.5% / 重回帰の決定係数 受付時点のみ0.020・全変数0.475）。</p>
+</dd>
+<dt>マスタについて M_コードマスタは全件版のまま。抽出により出現しないコードが含まれます。</dt><dd><p>実務のマスタも未使用コードを持つため、そのままにしてあります。</p>
+</dd>
+<dt>件数の変化   カテゴリ57→48種、担当グループ69→65種、再オープン発生275→82件。</dt><dd><p>少数区分の議論をさせたい場合は、この点に注意してください。</p>
+</dd>
+<dt>■ テーブル化について</dt><dd><p>各データシートはExcelテーブルに変換済みです。テーブル名は次のとおり。</p>
+</dd>
+</dl>
+<p>T_インシデント        テーブル名「インシデント」
+T_作業履歴  テーブル名「作業履歴」
+M_コードマスタ        テーブル名「コードマスタ」</p>
+<blockquote>
+<div><p>構造化参照が使えるため、範囲が実データに自動で収まります。全列参照（A:A）による
+不要な重さが起きにくく、行を追加しても範囲を直す必要がありません。</p>
+</div></blockquote>
+<dl class="simple">
+<dt>書き方の例   VLOOKUP(&quot;<a href="#id1"><span class="problematic" id="id2">カテゴリ_</span></a>&quot;&amp;[&#64;カテゴリID], コードマスタ, 4, FALSE)</dt><dd><p>COUNTIFS(作業履歴[インシデント番号], [&#64;インシデント番号])　※先頭に = を付けて使用</p>
+</dd>
+<dt>演習にする場合 テーブルを解除して配布すると、Ctrl+T によるテーブル化そのものを演習にできます。</dt><dd><p>［テーブルデザイン］→［範囲に変換］で解除できます。</p>
+</dd>
+</dl>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
