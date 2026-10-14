@@ -15,6 +15,8 @@ Excel で学ぶデータ分析講座
    src/04-01.ipynb
    src/05.ipynb
    src/07.ipynb
+   src/08.ipynb
+   src/09.ipynb
    src/FreshMart_case.ipynb
    src/保守インシデント分析_演習ガイド.ipynb
 

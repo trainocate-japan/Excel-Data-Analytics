@@ -4,11 +4,11 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# FreshMart社 〜販促企画部 Aさんの悩み〜\n",
+    "# 【補足】問題解決演習\n",
     "\n",
     "**Excelデータ分析講座 総合演習ケース**\n",
     "\n",
-    "Excel版ワークブック [ `FreshMart_workbook.xlsx`](img/FreshMart_workbook.xlsx)と中身は同じです。\n",
+    "Excel版ワークブック [`FreshMart_workbook.xlsx`](img/FreshMart_workbook.xlsx)と中身は同じです。\n",
     "\n",
     "進め方\n",
     "\n",
@@ -366,7 +366,7 @@
    "source": [
     "---\n",
     "\n",
-    "# 分析ワークシート\n",
+    "## 分析ワークシート\n",
     "\n",
     "ここから下が受講者の記入欄です。Excel版の「✏️分析ワークシート」と同じ構成になっています。\n",
     "\n",
