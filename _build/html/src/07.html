@@ -1,30 +1,31 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9. 【補足】分析結果の考察、結論 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+  <title>9. 営業支援データ分析 模範解答（講師用） &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
   
-      <script src="../_static/jquery.js?v=5d32c60e"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c033477b"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="../_static/translations.js?v=91613774"></script>
-      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="10. FreshMart社 〜販促企画部 Aさんの悩み〜" href="FreshMart_case.html" />
+    <link rel="next" title="10. 【補足】クラスタリング" href="08.html" />
     <link rel="prev" title="8. 総演習：データに基づく営業支援のための施策を立案" href="05.html" /> 
 </head>
 
@@ -57,21 +58,50 @@
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 【補足】分析結果の考察、結論</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#分析から得られた結果：">9.1. 分析から得られた結果：</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【コード:デモ】">9.1.1. 【コード:デモ】</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 営業支援データ分析 模範解答（講師用）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#想定した設問">9.1. 想定した設問</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#結論（提出物①〜④の要約）">9.2. 結論（提出物①〜④の要約）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#解答の考え方（What-→-Where-→-Why-→-How）">9.3. 解答の考え方（What → Where → Why → How）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP1　問題設定：「営業支援」を分解する">9.4. STEP1　問題設定：「営業支援」を分解する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP2　データを理解する">9.5. STEP2　データを理解する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#成約確度は「平均」してはいけない">9.5.1. 成約確度は「平均」してはいけない</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#最終結論">9.2. 最終結論</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#【Power-BI:デモ】">9.2.1. 【Power BI:デモ】</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP3　データの整備">9.6. STEP3　データの整備</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP4　全体像：商談のどこで落ちているか">9.7. STEP4　全体像：商談のどこで落ちているか</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP5　属性を1つずつ見る">9.8. STEP5　属性を1つずつ見る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP6　掛け合わせ（層別）で確かめる">9.9. STEP6　掛け合わせ（層別）で確かめる</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#①-年代の差は本物か">9.9.1. ① 年代の差は本物か</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#②-決め手になる組み合わせを探す">9.9.2. ② 決め手になる組み合わせを探す</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#③-優先ランク-S〜D">9.9.3. ③ 優先ランク S〜D</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#まとめ">9.3. まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP7　担当者を比べる">9.10. STEP7　担当者を比べる</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#①-まず「比べてよいか」を確かめる">9.10.1. ① まず「比べてよいか」を確かめる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#②-商談のどの段階で差がつくか">9.10.2. ② 商談のどの段階で差がつくか</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">10. FreshMart社 〜販促企画部 Aさんの悩み〜</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html#分析ワークシート">11. 分析ワークシート</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">12. 【補足】保守インシデント分析 演習</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP8　営業支援の提案（提出物②③）">9.11. STEP8　営業支援の提案（提出物②③）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#打ち手1：優先ランク付きのリストを配る">9.11.1. 打ち手1：優先ランク付きのリストを配る</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#打ち手2：訪問の使い方を変える">9.11.2. 打ち手2：訪問の使い方を変える</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#打ち手3：担当者を支援する">9.11.3. 打ち手3：担当者を支援する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#打ち手4：データの取り方を見直す">9.11.4. 打ち手4：データの取り方を見直す</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#STEP9　効果の見込みと確かめ方（提出物④）">9.12. STEP9　効果の見込みと確かめ方（提出物④）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#効果の見込み">9.12.1. 効果の見込み</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#確かめ方">9.12.2. 確かめ方</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#注意すべき点">9.13. 注意すべき点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#よくある誤答">9.14. よくある誤答</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">10. 【補足】クラスタリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">11. 【補足】主成分分析とは？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">13. 【補足】問題解決演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
 </ul>
 
         </div>
@@ -88,7 +118,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">9. </span>【補足】分析結果の考察、結論</li>
+      <li class="breadcrumb-item active"><span class="section-number">9. </span>営業支援データ分析 模範解答（講師用）</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/src/07.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -98,787 +128,767 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="【補足】分析結果の考察、結論">
-<h1><span class="section-number">9. </span>【補足】分析結果の考察、結論<a class="headerlink" href="#【補足】分析結果の考察、結論" title="Link to this heading"></a></h1>
-<p>分析結果から結論を導く</p>
-<section id="分析から得られた結果：">
-<h2><span class="section-number">9.1. </span>分析から得られた結果：<a class="headerlink" href="#分析から得られた結果：" title="Link to this heading"></a></h2>
-<p>【データの可視化による気づき】 リストの平均年齢41歳 リストの平均残高1450.296ドル 成約数、不成約の数はあまり変わらない 2000 サンプルと16列あることがわかる ローンのない顧客が大半を占める 顧客のボリュームゾーンは 40 代</p>
-<p>【データの集計による気づき】 「工場作業員」や「接客」の仕事に就いている顧客は、断られることが多い 既婚の顧客は成約率が低い傾向にあるがデータ数は一番多い。 最終学歴が中等教育だと成約率が低い。学歴が上がるほど成約率が上がっている。 学生の成約率も高い 工場作業員・接客業・家政婦は成約率が低い。だが現状の顧客リストに工場作業員は 2 番目に多くいると考えられる。</p>
-<p>【分析・検定による気づき】 売上には銀行残高が大きく関わることがわかった 預金口座の成約の有無にはローンの有無と持ち家の有無の関わりがあることがわかった 登録されている顧客への連絡手段も成約に関わりがあることがわかった 成約と有無と結婚状況には関連がある</p>
-<section id="【コード:デモ】">
-<h3><span class="section-number">9.1.1. </span>【コード:デモ】<a class="headerlink" href="#【コード:デモ】" title="Link to this heading"></a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 持ち家の有無と成約の有無についてまとめて</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="c1"># 持ち家の有無と成約の有無のクロス集計</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-  <div id="df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>成約の有無</th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-    </tr>
-    <tr>
-      <th>持ち家の有無</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2527</td>
-      <td>3354</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3346</td>
-      <td>1935</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-    </tr>
-  </tbody>
+  <section id="営業支援データ分析-模範解答（講師用）">
+<h1><span class="section-number">9. </span>営業支援データ分析 模範解答（講師用）<a class="headerlink" href="#営業支援データ分析-模範解答（講師用）" title="この見出しへのパーマリンク"></a></h1>
+<p><strong>見込み客935件の商談結果から、営業チームの成約を増やす打ち手を考える</strong></p>
+<p>数値はすべて、配布データ（Sheet1、935件×10列）の集計です。 使う手法は、件数・割合の集計、クロス集計、ピボット（掛け合わせ）だけです。検定や回帰は使いません。</p>
+<section id="想定した設問">
+<h2><span class="section-number">9.1. </span>想定した設問<a class="headerlink" href="#想定した設問" title="この見出しへのパーマリンク"></a></h2>
+<p>データに問題文が付いていないため、模範解答では次の設問を想定しました。</p>
+<blockquote>
+<div><p>あなたは営業企画部の担当者です。営業担当A〜Eが過去に商談した見込み客935件について、顧客の属性と商談の結果が手元にあります。 <strong>営業チームの成約を増やすための支援策を提案しなさい。</strong></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>提出物</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>①</p></td>
+<td><p>成約しやすい顧客の特徴</p></td>
+</tr>
+<tr class="row-odd"><td><p>②</p></td>
+<td><p>訪問の優先順位。どの条件の顧客が何件いるか</p></td>
+</tr>
+<tr class="row-even"><td><p>③</p></td>
+<td><p>担当者ごとの課題と、その支援策</p></td>
+</tr>
+<tr class="row-odd"><td><p>④</p></td>
+<td><p>支援策の効果の見込みと、効果の確かめ方</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b7f1aae5-5e53-4fbb-8bd4-e1c9d022004d');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-6673305f-f0b0-46e6-a8de-84a9bab05681">
-  <button class="colab-df-quickchart" onclick="quickchart('df-6673305f-f0b0-46e6-a8de-84a9bab05681')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-6673305f-f0b0-46e6-a8de-84a9bab05681 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-
-    </div>
-  </div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 年齢列を10代ごとに区切って</span>
-
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢&#39;</span><span class="p">]</span> <span class="o">//</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span>
-<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area rendered_html docutils container">
-  <div id="df-e10a648b-0d61-4d99-bfad-514eaf2f7913" class="colab-df-container">
-    <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>年齢</th>
-      <th>仕事</th>
-      <th>結婚状況</th>
-      <th>最終学歴</th>
-      <th>銀行残高</th>
-      <th>持ち家の有無</th>
-      <th>ローンの有無</th>
-      <th>day</th>
-      <th>成約の有無</th>
-      <th>売上</th>
-      <th>年齢の10の位</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>2343.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>23.43</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>45.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>0.45</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>40.0</td>
-      <td>technician</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>1270.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>12.70</td>
-      <td>40.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>50.0</td>
-      <td>services</td>
-      <td>married</td>
-      <td>secondary</td>
-      <td>2476.0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>24.76</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>50.0</td>
-      <td>admin.</td>
-      <td>married</td>
-      <td>tertiary</td>
-      <td>184.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>5.0</td>
-      <td>1</td>
-      <td>1.84</td>
-      <td>50.0</td>
-    </tr>
-  </tbody>
+<p>シート右側にある「顧客情報テーブル」（生年月日・住所を分割する例）は、今回の分析では使いません。</p>
+</section>
+<section id="結論（提出物①〜④の要約）">
+<h2><span class="section-number">9.2. </span>結論（提出物①〜④の要約）<a class="headerlink" href="#結論（提出物①〜④の要約）" title="この見出しへのパーマリンク"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>提出物</p></th>
+<th class="head"><p>模範解答</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>① 成約しやすい顧客</p></td>
+<td><p><strong>既婚・ローンなし</strong>が前提条件。そのうえで<strong>持ち家あり</strong>か<strong>銀行残高が3,000超</strong>の顧客は、成約率が5〜10割に達する。既婚以外（独身・離婚）は417件中6件、ローンありは91件中0件しか成約していない</p></td>
+</tr>
+<tr class="row-odd"><td><p>② 訪問の優先順位</p></td>
+<td><p>4つの属性で S〜D の5ランクに分ける。<strong>上位3ランク（S・A・B）は251件・全体の27%だが、成約157件のうち140件（89%）がここに集まる</strong>。C・Dランクは684件で成約17件</p></td>
+</tr>
+<tr class="row-even"><td><p>③ 担当者の課題</p></td>
+<td><p>アポを取る力は5人ともほぼ同じ（52〜62%）。差がつくのはアポの後で、<strong>B・Eはアポの34%を成約にするが、A・C・Dは24〜25%</strong>。同じ優先客（S・A・B）に限っても、B・Eは66〜67%、A・C・Dは45〜55%</p></td>
+</tr>
+<tr class="row-odd"><td><p>④ 効果と確かめ方</p></td>
+<td><p>今はアポの55%（301件）が成約見込
+み5%以下の顧客に使われている。この訪問を資料送付に切り替え、空いた時間を優先客の開拓とクロージングに回す。A・C・DがB・E並みにクロージングできれば、成約は最大で約30件（+19%）増える。ランク別の成約率を毎月追い、一部チームで先行して従来の運用と比べる</p></td>
+</tr>
+</tbody>
 </table>
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-e10a648b-0d61-4d99-bfad-514eaf2f7913')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-e10a648b-0d61-4d99-bfad-514eaf2f7913 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-e10a648b-0d61-4d99-bfad-514eaf2f7913');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93">
-  <button class="colab-df-quickchart" onclick="quickchart('df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93')"
-            title="Suggest charts"
-            style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-bcc061aa-5fdd-44e7-8af4-fe4e2547dc93 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-
-    </div>
-  </div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</section>
+<section id="解答の考え方（What-→-Where-→-Why-→-How）">
+<h2><span class="section-number">9.3. </span>解答の考え方（What → Where → Why → How）<a class="headerlink" href="#解答の考え方（What-→-Where-→-Why-→-How）" title="この見出しへのパーマリンク"></a></h2>
+<p><img alt="考え方のツリー" src="../_images/fig0_tree.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>段階</p></th>
+<th class="head"><p>問い</p></th>
+<th class="head"><p>この解答での答え</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>What</strong></p></td>
+<td><p>何が問題か</p></td>
+<td><p>935件中、成約は157件（16.8%）。営業の時間をどこに使えば成約が増えるか</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Where</strong></p></td>
+<td><p>どこに差があるか</p></td>
+<td><p>顧客の側では、既婚・ローン・持ち家・残高の掛け合わせ。営業の側では、アポの後（クロージング）の担当者差</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Why</strong></p></td>
+<td><p>なぜ起きているか</p></td>
+<td><p>成約しやすい顧客は一部に偏っているのに、訪問は顧客を選ばずに行われている。加えて、クロージングの力に担当者差がある</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>How</strong></p></td>
+<td><p>どうするか</p></td>
+<td><p>優先ランク付きのリストを配る。C・Dは資料送付に切り替える。B・Eのクロージングを共有する。ランク別の成約率で効果を確かめる</p></td>
+</tr>
+</tbody>
+</table>
+<p>灰色の枝は「調べたが、単独では決め手にならなかった」ところです。 年代は単独で見ると既婚率の差を拾ってしまうので、ランクの条件には使わず、同じランクの中で訪問する順番を決めるのに使います。</p>
+</section>
+<section id="STEP1　問題設定：「営業支援」を分解する">
+<h2><span class="section-number">9.4. </span>STEP1　問題設定：「営業支援」を分解する<a class="headerlink" href="#STEP1　問題設定：「営業支援」を分解する" title="この見出しへのパーマリンク"></a></h2>
+<p>「成約を増やす」をそのまま考えても、打ち手は出てきません。成約数を式に分けます。</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>成約数 ＝ 接触する件数 × アポ率 × アポ→成約率
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 年齢列と持ち家の有無、成約の有無の関係性を可視化して</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="c1"># 年齢の10の位と持ち家の有無、成約の有無の関係性を可視化</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)]</span>
-    <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">],</span> <span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;年齢</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">代&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_0.png" src="../_images/src_07_5_0.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_1.png" src="../_images/src_07_5_1.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_2.png" src="../_images/src_07_5_2.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_3.png" src="../_images/src_07_5_3.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_4.png" src="../_images/src_07_5_4.png" />
-</div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_5.png" src="../_images/src_07_5_5.png" />
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_5_6.png" src="../_images/src_07_5_6.png" />
-</div>
-</div>
-<p>20,60,70 代の持ち家のない人が成約をしている。</p>
-<p>60 代の人の持ち家のない人の詳細を探索する</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 60代で持ち家の有無が0の人の職業は</span>
-
-<span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;年齢の10の位&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">60</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)][</span><span class="s1">&#39;仕事&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-仕事
-retired          214
-management        60
-admin.            25
-housemaid         25
-blue-collar       21
-technician        20
-self-employed     14
-entrepreneur       7
-unemployed         6
-unknown            3
-services           2
-Name: count, dtype: int64
-</pre></div></div>
-</div>
-<p>Retireしている人が多い。</p>
-<p>持ち家が0の人のとローンの有無と売上の関係を可視化</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># prompt: 持ち家が0の人のとローンの有無と売上の関係を可視化して</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="n">loan_no_df</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;持ち家の有無&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">loan_no_df</span><span class="p">[</span><span class="s1">&#39;ローンの有無&#39;</span><span class="p">],</span> <span class="n">loan_no_df</span><span class="p">[</span><span class="s1">&#39;成約の有無&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;持ち家なしのローンの有無と成約の有無&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<br/></pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/src_07_11_0.png" src="../_images/src_07_11_0.png" />
-</div>
-</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>分けた要素</p></th>
+<th class="head"><p>対応する問い</p></th>
+<th class="head"><p>打ち手の方向</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>接触する件数（誰に会うか）</p></td>
+<td><p>どんな顧客が成約しやすいか</p></td>
+<td><p>ターゲティング・訪問の優先順位</p></td>
+</tr>
+<tr class="row-odd"><td><p>アポ率</p></td>
+<td><p>アポが取れないのはどこか</p></td>
+<td><p>初回接触の改善</p></td>
+</tr>
+<tr class="row-even"><td><p>アポ→成約率</p></td>
+<td><p>アポの後で落ちるのはどこか</p></td>
+<td><p>クロージングの改善・担当者の育成</p></td>
+</tr>
+</tbody>
+</table>
+<p>営業の時間には限りがあるので、「件数を増やす」より「<strong>同じ時間でどこに会うか</strong>」と「<strong>会った後に取り切れるか</strong>」の2つを見ます。</p>
+</section>
+<section id="STEP2　データを理解する">
+<h2><span class="section-number">9.5. </span>STEP2　データを理解する<a class="headerlink" href="#STEP2　データを理解する" title="この見出しへのパーマリンク"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>中身</p></th>
+<th class="head"><p>注意点</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>年齢</p></td>
+<td><p>18〜92歳</p></td>
+<td><p>年代に区切って使う</p></td>
+</tr>
+<tr class="row-odd"><td><p>仕事</p></td>
+<td><p>10区分</p></td>
+<td><p>学生34件・起業家30件など、件数の少ない区分がある</p></td>
+</tr>
+<tr class="row-even"><td><p>結婚状況</p></td>
+<td><p>1＝離婚、2＝独身、3＝既婚</p></td>
+<td><p>数値だが大小に意味はない（カテゴリ）</p></td>
+</tr>
+<tr class="row-odd"><td><p>最終学歴</p></td>
+<td><p>1＝中卒、2＝高卒、3＝大卒、0＝不明</p></td>
+<td><p>0は「不明」で、最も低い学歴ではない</p></td>
+</tr>
+<tr class="row-even"><td><p>債務不履行・持ち家・ローン</p></td>
+<td><p>0＝なし、1＝あり</p></td>
+<td><p>債務不履行ありは<strong>9件しかない</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>銀行残高</p></td>
+<td><p>0〜77,462（単位の記載なし）</p></td>
+<td><p>中央値712に対し最大77,462。<strong>平均は外れ値に引っぱられる</strong>ので、階級に区切って使う</p></td>
+</tr>
+<tr class="row-even"><td><p>担当営業マン</p></td>
+<td><p>A〜E（各178〜195件）</p></td>
+<td><p>担当件数はほぼ均等</p></td>
+</tr>
+<tr class="row-odd"><td><p>成約確度</p></td>
+<td><p>0＝お断り、3＝資料送付または見送り、7＝アポイント、10＝成約</p></td>
+<td><p>下の注意を参照</p></td>
+</tr>
+</tbody>
+</table>
+<section id="成約確度は「平均」してはいけない">
+<h3><span class="section-number">9.5.1. </span>成約確度は「平均」してはいけない<a class="headerlink" href="#成約確度は「平均」してはいけない" title="この見出しへのパーマリンク"></a></h3>
+<p>成約確度の 0・3・7・10 は、<strong>商談の段階に付けた番号</strong>であって、量ではありません。 シートにも「3→7だけ数値のばらつきが異なります」とある通り、間隔もそろっていません。</p>
+<p>平均値（全体で5.55）を担当者や属性で比べても、「何が何件増えたのか」が読めません。 代わりに、段階ごとの<strong>割合</strong>に直して使います。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>指標</p></th>
+<th class="head"><p>定義</p></th>
+<th class="head"><p>全体</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>成約率</p></td>
+<td><p>成約確度＝10 の割合</p></td>
+<td><p>16.8%（157件）</p></td>
+</tr>
+<tr class="row-odd"><td><p>アポ以上率</p></td>
+<td><p>成約確度≧7 の割合</p></td>
+<td><p>58.7%（549件）</p></td>
+</tr>
+<tr class="row-even"><td><p>お断り率</p></td>
+<td><p>成約確度＝0 の割合</p></td>
+<td><p>9.9%（93件）</p></td>
+</tr>
+<tr class="row-odd"><td><p>アポ→成約率</p></td>
+<td><p>成約 ÷ アポ以上</p></td>
+<td><p>28.6%</p></td>
+</tr>
+</tbody>
+</table>
+<p>もう一つの限界として、「3」には資料送付と見送りという意味の違う結果が混ざっています。 STEP8の提案に、この入力ルールの見直しを含めます。</p>
 </section>
 </section>
-<section id="最終結論">
-<h2><span class="section-number">9.2. </span>最終結論<a class="headerlink" href="#最終結論" title="Link to this heading"></a></h2>
+<section id="STEP3　データの整備">
+<h2><span class="section-number">9.6. </span>STEP3　データの整備<a class="headerlink" href="#STEP3　データの整備" title="この見出しへのパーマリンク"></a></h2>
+<p>元のシートは L〜O 列にコード表が書かれているので、データ（A〜J列）を新しいシートにコピーしてから列を足します。 列は A＝年齢、B＝仕事、C＝結婚状況、D＝最終学歴、E＝債務不履行、F＝銀行残高、G＝持ち家、H＝ローン、I＝担当営業マン、J＝成約確度 です。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>追加する列</p></th>
+<th class="head"><p>数式（2行目）</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>成約</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(J2=10,1,0)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>アポ以上</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(J2&gt;=7,1,0)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>お断り</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(J2=0,1,0)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>既婚</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(C2=3,1,0)</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>年代</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(A2&lt;30,&quot;29歳以下&quot;,IF(A2&gt;=60,&quot;60歳以上&quot;,ROUNDDOWN(A2,-1)&amp;&quot;代&quot;))</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>残高階級</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(F2&lt;=500,&quot;500以下&quot;,IF(F2&lt;=1000,&quot;501〜1000&quot;,IF(F2&lt;=3000,&quot;1001〜3000&quot;,&quot;3000超&quot;)))</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>優先ランク</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">=IF(OR(C2&lt;&gt;3,H2=1),&quot;D&quot;,IF(AND(G2=1,F2&gt;3000),&quot;S&quot;,IF(G2=1,&quot;A&quot;,IF(F2&gt;3000,&quot;B&quot;,&quot;C&quot;))))</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>成約・アポ以上を 0/1 の列にしておくと、ピボットテーブルで「平均」を取るだけで割合が出ます。</p>
+</section>
+<section id="STEP4　全体像：商談のどこで落ちているか">
+<h2><span class="section-number">9.7. </span>STEP4　全体像：商談のどこで落ちているか<a class="headerlink" href="#STEP4　全体像：商談のどこで落ちているか" title="この見出しへのパーマリンク"></a></h2>
+<p><img alt="ファネル" src="../_images/fig1_funnel.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>段階</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>割合</p></th>
+<th class="head"><p>前の段階から</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>見込み客（接触）</p></td>
+<td><p>935</p></td>
+<td><p>100%</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>お断り以外</p></td>
+<td><p>842</p></td>
+<td><p>90.1%</p></td>
+<td><p>90.1%</p></td>
+</tr>
+<tr class="row-even"><td><p>アポイント以上</p></td>
+<td><p>549</p></td>
+<td><p>58.7%</p></td>
+<td><p>65.2%</p></td>
+</tr>
+<tr class="row-odd"><td><p>成約</p></td>
+<td><p>157</p></td>
+<td><p>16.8%</p></td>
+<td><p><strong>28.6%</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>接触した顧客の6割近くとはアポまで進んでいます。 しかし<strong>アポの7割強が成約に至っていません</strong>。訪問の多くが成約につながっていない、というのが出発点です。</p>
+</section>
+<section id="STEP5　属性を1つずつ見る">
+<h2><span class="section-number">9.8. </span>STEP5　属性を1つずつ見る<a class="headerlink" href="#STEP5　属性を1つずつ見る" title="この見出しへのパーマリンク"></a></h2>
+<p><img alt="属性ごとの成約率" src="../_images/fig2_attributes.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>属性</p></th>
+<th class="head"><p>成約率が高い</p></th>
+<th class="head"><p>成約率が低い</p></th>
+<th class="head"><p>差</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>結婚状況</p></td>
+<td><p>既婚 29.2%（518件）</p></td>
+<td><p>独身 1.3%、離婚 1.7%</p></td>
+<td><p><strong>非常に大きい</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>ローン</p></td>
+<td><p>なし 18.6%（844件）</p></td>
+<td><p>あり <strong>0.0%</strong>（91件）</p></td>
+<td><p>大きい</p></td>
+</tr>
+<tr class="row-even"><td><p>持ち家</p></td>
+<td><p>あり 28.1%（416件）</p></td>
+<td><p>なし 7.7%（519件）</p></td>
+<td><p>大きい</p></td>
+</tr>
+<tr class="row-odd"><td><p>銀行残高</p></td>
+<td><p>3000超 38.8%（165件）</p></td>
+<td><p>500以下 9.8%</p></td>
+<td><p>大きい</p></td>
+</tr>
+<tr class="row-even"><td><p>年代</p></td>
+<td><p>60歳以上 33.3%、40代 24.8%</p></td>
+<td><p>29歳以下 1.6%</p></td>
+<td><p>大きい（STEP6で要確認）</p></td>
+</tr>
+<tr class="row-odd"><td><p>仕事</p></td>
+<td><p>引退 27.3%、起業家 23.3%</p></td>
+<td><p>学生 0.0%、失業者 6.4%</p></td>
+<td><p>あるが区分の件数が少ない</p></td>
+</tr>
+<tr class="row-even"><td><p>最終学歴</p></td>
+<td><p>高卒 19.6%、大卒 18.2%</p></td>
+<td><p>不明 2.6%、中卒 8.2%</p></td>
+<td><p>中程度</p></td>
+</tr>
+<tr class="row-odd"><td><p>債務不履行</p></td>
+<td><p>なし 17.0%</p></td>
+<td><p>あり 0.0%</p></td>
+<td><p><strong>9件しかなく判断できない</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>1つずつ見ると、ほとんどの属性で差が出ます。 ただし、属性どうしは重なっています（例：年齢が高い人ほど既婚が多い）。 どれが本当に効いているのかは、掛け合わせて確かめる必要があります。</p>
+</section>
+<section id="STEP6　掛け合わせ（層別）で確かめる">
+<h2><span class="section-number">9.9. </span>STEP6　掛け合わせ（層別）で確かめる<a class="headerlink" href="#STEP6　掛け合わせ（層別）で確かめる" title="この見出しへのパーマリンク"></a></h2>
+<section id="①-年代の差は本物か">
+<h3><span class="section-number">9.9.1. </span>① 年代の差は本物か<a class="headerlink" href="#①-年代の差は本物か" title="この見出しへのパーマリンク"></a></h3>
+<p>60歳以上の成約率は33%で、29歳以下（2%）の約20倍です。「高齢者を狙え」と言いたくなるところです。 年代 × 既婚かどうか でピボットを作ります。</p>
+<p><img alt="年代の見かけ" src="../_images/fig3_age.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>年代</p></th>
+<th class="head"><p>既婚の割合</p></th>
+<th class="head"><p>既婚の成約率</p></th>
+<th class="head"><p>既婚以外の成約率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>29歳以下</p></td>
+<td><p>16%</p></td>
+<td><p>10.0%</p></td>
+<td><p>0.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>30代</p></td>
+<td><p>48%</p></td>
+<td><p>19.9%</p></td>
+<td><p>1.6%</p></td>
+</tr>
+<tr class="row-even"><td><p>40代</p></td>
+<td><p>69%</p></td>
+<td><p>35.3%</p></td>
+<td><p>1.4%</p></td>
+</tr>
+<tr class="row-odd"><td><p>50代</p></td>
+<td><p>71%</p></td>
+<td><p>31.9%</p></td>
+<td><p>2.7%</p></td>
+</tr>
+<tr class="row-even"><td><p>60歳以上</p></td>
+<td><p>84%</p></td>
+<td><p>38.6%</p></td>
+<td><p>6.2%</p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
-<li><p>データ分析の結果、持ち家の有無が成約数に大きな影響を与える。中でも60代以降の高齢者で仕事を退職した、持ち家のない人を優先的にアプローチしていく。</p></li>
-<li><p>更に、持ち家も、ローンもない人は定期預金口座に対して貯金も多くしてくれることがわかった。絶対数は少なそうだが、優先的にアプローチを行う。</p></li>
+<li><p><strong>既婚以外は、どの年代でも成約率6%以下</strong>。年齢が高くても、既婚でなければほとんど成約しない</p></li>
+<li><p>年代別の差の大半は、「年齢が上がるほど既婚の割合が増える」ことの表れだった</p></li>
+<li><p>ただし既婚の中でも、30代以下は40歳以上より低い。年代は<strong>同じランクの中で訪問する順番を決める</strong>のに使う</p></li>
 </ul>
-<section id="【Power-BI:デモ】">
-<h3><span class="section-number">9.2.1. </span>【Power BI:デモ】<a class="headerlink" href="#【Power-BI:デモ】" title="Link to this heading"></a></h3>
+</section>
+<section id="②-決め手になる組み合わせを探す">
+<h3><span class="section-number">9.9.2. </span>② 決め手になる組み合わせを探す<a class="headerlink" href="#②-決め手になる組み合わせを探す" title="この見出しへのパーマリンク"></a></h3>
+<p>既婚かどうかで大きく分かれたので、既婚の中をさらに分けていきます。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>条件</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>成約率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>既婚以外（独身・離婚）</p></td>
+<td><p>417</p></td>
+<td><p>1.4%</p></td>
+</tr>
+<tr class="row-odd"><td><p>既婚・ローンあり</p></td>
+<td><p>53</p></td>
+<td><p><strong>0.0%</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>既婚・ローンなし</p></td>
+<td><p>465</p></td>
+<td><p>32.5%</p></td>
+</tr>
+<tr class="row-odd"><td><p>└ 持ち家あり</p></td>
+<td><p>191</p></td>
+<td><p>58.6%</p></td>
+</tr>
+<tr class="row-even"><td><p>└ 持ち家なし</p></td>
+<td><p>274</p></td>
+<td><p>14.2%</p></td>
+</tr>
+<tr class="row-odd"><td><p>　　└ 残高3000超</p></td>
+<td><p>60</p></td>
+<td><p>46.7%</p></td>
+</tr>
+<tr class="row-even"><td><p>　　└ 残高3000以下</p></td>
+<td><p>214</p></td>
+<td><p>5.1%</p></td>
+</tr>
+</tbody>
+</table>
+<p>持ち家ありの中でも、残高が3000超なら成約率は97%（31件中30件）になります。 ここまでの分け方を、そのまま優先ランクにします。</p>
+</section>
+<section id="③-優先ランク-S〜D">
+<h3><span class="section-number">9.9.3. </span>③ 優先ランク S〜D<a class="headerlink" href="#③-優先ランク-S〜D" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ランク</p></th>
+<th class="head"><p>条件</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>成約数</p></th>
+<th class="head"><p>成約率</p></th>
+<th class="head"><p>件数の累積</p></th>
+<th class="head"><p>成約の累積</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>S</strong></p></td>
+<td><p>既婚・ローンなし・持ち家あり・残高3000超</p></td>
+<td><p>31</p></td>
+<td><p>30</p></td>
+<td><p><strong>96.8%</strong></p></td>
+<td><p>3%</p></td>
+<td><p>19%</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>A</strong></p></td>
+<td><p>既婚・ローンなし・持ち家あり（残高3000以下）</p></td>
+<td><p>160</p></td>
+<td><p>82</p></td>
+<td><p><strong>51.3%</strong></p></td>
+<td><p>20%</p></td>
+<td><p>71%</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>B</strong></p></td>
+<td><p>既婚・ローンなし・持ち家なし・残高3000超</p></td>
+<td><p>60</p></td>
+<td><p>28</p></td>
+<td><p><strong>46.7%</strong></p></td>
+<td><p>27%</p></td>
+<td><p><strong>89%</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>既婚・ローンなし・持ち家なし・残高3000以下</p></td>
+<td><p>214</p></td>
+<td><p>11</p></td>
+<td><p>5.1%</p></td>
+<td><p>50%</p></td>
+<td><p>96%</p></td>
+</tr>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>既婚以外、またはローンあり</p></td>
+<td><p>470</p></td>
+<td><p>6</p></td>
+<td><p>1.3%</p></td>
+<td><p>100%</p></td>
+<td><p>100%</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="優先ランク" src="../_images/fig4_rank.png" /></p>
+<p><strong>S・A・Bの251件（27%）に、成約の89%が集まっています。</strong> ランクの判定に使うのは、結婚状況・ローン・持ち家・銀行残高の4項目だけです。STEP3の IF 式で、新しい見込み客にも同じランクを付けられます。</p>
+</section>
+</section>
+<section id="STEP7　担当者を比べる">
+<h2><span class="section-number">9.10. </span>STEP7　担当者を比べる<a class="headerlink" href="#STEP7　担当者を比べる" title="この見出しへのパーマリンク"></a></h2>
+<section id="①-まず「比べてよいか」を確かめる">
+<h3><span class="section-number">9.10.1. </span>① まず「比べてよいか」を確かめる<a class="headerlink" href="#①-まず「比べてよいか」を確かめる" title="この見出しへのパーマリンク"></a></h3>
+<p>担当者によって受け持つ顧客が違えば、成約率の差は腕の差ではなく顧客の差かもしれません。 担当者ごとの顧客構成を確かめます。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>担当</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>既婚の割合</p></th>
+<th class="head"><p>持ち家の割合</p></th>
+<th class="head"><p>S・A・Bの件数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>195</p></td>
+<td><p>56%</p></td>
+<td><p>43%</p></td>
+<td><p>53</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>181</p></td>
+<td><p>57%</p></td>
+<td><p>40%</p></td>
+<td><p>49</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>192</p></td>
+<td><p>60%</p></td>
+<td><p>46%</p></td>
+<td><p>55</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>189</p></td>
+<td><p>52%</p></td>
+<td><p>43%</p></td>
+<td><p>47</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>178</p></td>
+<td><p>51%</p></td>
+<td><p>51%</p></td>
+<td><p>47</p></td>
+</tr>
+</tbody>
+</table>
+<p>顧客構成は5人ともほぼ同じです。担当者どうしを比べてよいと判断します。</p>
+</section>
+<section id="②-商談のどの段階で差がつくか">
+<h3><span class="section-number">9.10.2. </span>② 商談のどの段階で差がつくか<a class="headerlink" href="#②-商談のどの段階で差がつくか" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>担当</p></th>
+<th class="head"><p>アポ率</p></th>
+<th class="head"><p>アポ→成約率</p></th>
+<th class="head"><p>成約率（全体）</p></th>
+<th class="head"><p>優先客（S・A・B）の成約率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>59.0%</p></td>
+<td><p>25.2%</p></td>
+<td><p>14.9%</p></td>
+<td><p>54.7%（53件）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>B</strong></p></td>
+<td><p>62.4%</p></td>
+<td><p><strong>33.6%</strong></p></td>
+<td><p><strong>21.0%</strong></p></td>
+<td><p><strong>67.3%</strong>（49件）</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>59.4%</p></td>
+<td><p>25.4%</p></td>
+<td><p>15.1%</p></td>
+<td><p>47.3%（55件）</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p><strong>52.4%</strong></p></td>
+<td><p>24.2%</p></td>
+<td><p>12.7%</p></td>
+<td><p>44.7%（47件）</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>E</strong></p></td>
+<td><p>60.7%</p></td>
+<td><p><strong>34.3%</strong></p></td>
+<td><p><strong>20.8%</strong></p></td>
+<td><p><strong>66.0%</strong>（47件）</p></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="担当者比較" src="../_images/fig5_reps.png" /></p>
+<ul class="simple">
+<li><p><strong>アポを取る力は5人ともほぼ同じ</strong>（Dだけやや低い）</p></li>
+<li><p><strong>差がつくのはアポの後</strong>。B・Eはアポの3件に1件を成約にするが、A・C・Dは4件に1件</p></li>
+<li><p>同じ優先客だけで比べても、B・Eが高い。顧客の差ではなく、<strong>クロージングの差</strong>と考えられる</p></li>
+</ul>
+<p><strong>件数の注意</strong>：優先客は1人あたり約50件なので、1件の差で成約率が2ポイント動きます。 B・EとA・C・Dの差（10〜20ポイント）は5〜10件分にあたり、偶然とは考えにくい大きさです。 ただし、B・Eのやり方の何が効いているのかは、データからは分かりません。同行やヒアリングで確かめます。</p>
+</section>
+</section>
+<section id="STEP8　営業支援の提案（提出物②③）">
+<h2><span class="section-number">9.11. </span>STEP8　営業支援の提案（提出物②③）<a class="headerlink" href="#STEP8　営業支援の提案（提出物②③）" title="この見出しへのパーマリンク"></a></h2>
+<section id="打ち手1：優先ランク付きのリストを配る">
+<h3><span class="section-number">9.11.1. </span>打ち手1：優先ランク付きのリストを配る<a class="headerlink" href="#打ち手1：優先ランク付きのリストを配る" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p>見込み客リストに、STEP3の IF 式で優先ランク S〜D を付けて配る</p></li>
+<li><p>同じランクの中では、40歳以上を先に訪問する（STEP6①）</p></li>
+<li><p>ランクは「成約しやすさの見込み」であって、顧客の価値ではないことをチームに伝える</p></li>
+</ul>
+</section>
+<section id="打ち手2：訪問の使い方を変える">
+<h3><span class="section-number">9.11.2. </span>打ち手2：訪問の使い方を変える<a class="headerlink" href="#打ち手2：訪問の使い方を変える" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ランク</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>成約率</p></th>
+<th class="head"><p>対応</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>S</p></td>
+<td><p>31</p></td>
+<td><p>97%</p></td>
+<td><p>最優先で訪問。経験のある担当者が対応する</p></td>
+</tr>
+<tr class="row-odd"><td><p>A・B</p></td>
+<td><p>220</p></td>
+<td><p>47〜51%</p></td>
+<td><p>訪問。クロージングに時間をかける</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>214</p></td>
+<td><p>5%</p></td>
+<td><p>資料送付・メール・オンライン面談に切り替える</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>470</p></td>
+<td><p>1%</p></td>
+<td><p>資料送付のみ。問い合わせがあれば対応する</p></td>
+</tr>
+</tbody>
+</table>
+<p>今は、<strong>アポ549件のうち301件（55%）がC・Dランクに使われ、そこからの成約は17件</strong>です。 1訪問あたりの成約は、S・A・Bで0.56件、C・Dで0.06件と<strong>約10倍の差</strong>があります。 C・Dの訪問を減らして空いた時間を、優先客のクロージングと、同じ条件の新しい見込み客の開拓に回します。</p>
+</section>
+<section id="打ち手3：担当者を支援する">
+<h3><span class="section-number">9.11.3. </span>打ち手3：担当者を支援する<a class="headerlink" href="#打ち手3：担当者を支援する" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>対象</p></th>
+<th class="head"><p>課題</p></th>
+<th class="head"><p>支援策</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A・C・D</p></td>
+<td><p>アポ→成約が25%前後（B・Eは34%）</p></td>
+<td><p>B・Eの商談に同行する。提案の進め方をロールプレイで共有する。B・Eの商談記録から、成約した商談に共通する進め方を洗い出す</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>アポ率が52%で5人の中で最も低い</p></td>
+<td><p>初回接触の進め方（電話・訪問の時間帯、最初の資料）をB・Eと比べて見直す</p></td>
+</tr>
+<tr class="row-even"><td><p>全員</p></td>
+<td><p>Sランクの取りこぼし</p></td>
+<td><p>Sランクの商談は、経験者が同席する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="打ち手4：データの取り方を見直す">
+<h3><span class="section-number">9.11.4. </span>打ち手4：データの取り方を見直す<a class="headerlink" href="#打ち手4：データの取り方を見直す" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>今のデータ</p></th>
+<th class="head"><p>困ること</p></th>
+<th class="head"><p>見直し</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>成約確度「3」に資料送付と見送りが混在</p></td>
+<td><p>資料送付後に脈があるのかが分からない</p></td>
+<td><p>「3＝資料送付」「4＝見送り」のように分ける</p></td>
+</tr>
+<tr class="row-odd"><td><p>訪問日・訪問回数がない</p></td>
+<td><p>1件にかかった時間が分からず、効率を測れない</p></td>
+<td><p>商談ごとに日付と回数を記録する</p></td>
+</tr>
+<tr class="row-even"><td><p>商品名がない</p></td>
+<td><p>どの商品が誰に売れるのかが分からない</p></td>
+<td><p>提案した商品を記録する</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="STEP9　効果の見込みと確かめ方（提出物④）">
+<h2><span class="section-number">9.12. </span>STEP9　効果の見込みと確かめ方（提出物④）<a class="headerlink" href="#STEP9　効果の見込みと確かめ方（提出物④）" title="この見出しへのパーマリンク"></a></h2>
+<section id="効果の見込み">
+<h3><span class="section-number">9.12.1. </span>効果の見込み<a class="headerlink" href="#効果の見込み" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>打ち手</p></th>
+<th class="head"><p>見込み</p></th>
+<th class="head"><p>前提</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>クロージングの底上げ</p></td>
+<td><p>A・C・Dのアポ→成約率が、B・E並み（約34%）になれば、成約は <strong>+約30件</strong>（157 → 約187件、+19%）</p></td>
+<td><p>A＋10件、C＋10件、D＋10件。B・Eの水準は上限の目安</p></td>
+</tr>
+<tr class="row-odd"><td><p>訪問の配分の見直し</p></td>
+<td><p>C・D向けのアポ301件を資料送付に切り替えると、訪問の55%が空く。その時間で優先客を開拓すれば、1訪問あたりの成約は約10倍</p></td>
+<td><p>同じ条件の新しい見込み客がいること。C・Dから資料送付で取れていた成約（最大17件）の一部は失う可能性がある</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="確かめ方">
+<h3><span class="section-number">9.12.2. </span>確かめ方<a class="headerlink" href="#確かめ方" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>記入欄</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>測る指標</p></td>
+<td><p>ランク別の成約率、アポ→成約率、1訪問あたりの成約数</p></td>
+</tr>
+<tr class="row-odd"><td><p>比較の置き方</p></td>
+<td><p>新しい運用を一部の担当者（またはチーム）で先行し、従来の運用の担当者と比べる。担当者の腕の差が混ざらないよう、前後比較もあわせて見る</p></td>
+</tr>
+<tr class="row-even"><td><p>期間</p></td>
+<td><p>3か月で中間確認、6か月で判定</p></td>
+</tr>
+<tr class="row-odd"><td><p>成功の判定</p></td>
+<td><p>1訪問あたりの成約数が上がり、かつ成約の総数が減っていないこと</p></td>
+</tr>
+<tr class="row-even"><td><p>ランクの見直し</p></td>
+<td><p>毎月、ランク別の実際の成約率を確かめ、ずれてきたら条件を見直す</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="注意すべき点">
+<h2><span class="section-number">9.13. </span>注意すべき点<a class="headerlink" href="#注意すべき点" title="この見出しへのパーマリンク"></a></h2>
 <ol class="arabic simple">
-<li><p>分析結果の下記を分析軸として成約の要因とターゲット層を割り出す</p></li>
+<li><p><strong>属性は「原因」ではない</strong>：結婚すれば買うわけではありません。既婚・持ち家・残高は、「家計が安定していて余裕資金がある」ことの目印と考えられます。打ち手は「誰に先に会うか」に使い、「既婚者向けのトーク」のような決めつけには使いません</p></li>
+<li><p><strong>顧客を断る理由にしない</strong>：結婚状況などで訪問の優先順位を決めるのは社内の効率化のためです。低ランクの顧客から問い合わせがあれば、通常通り対応します。顧客の属性を営業に使う場合は、個人情報の利用目的の範囲内であることも確認します</p></li>
+<li><p><strong>件数が少ない区分で結論を出さない</strong>：債務不履行あり（9件）、学生（34件）などは、たまたまの結果かもしれません</p></li>
+<li><p><strong>担当者を評価する材料にしない</strong>：比較の目的は、うまくいっているやり方を共有することです</p></li>
 </ol>
-<ul class="simple">
-<li><p>ローンの有無</p></li>
-<li><p>持ち家の有無</p></li>
-</ul>
-<ol class="arabic simple" start="2">
-<li><p>次にデータの切り口となる列を使用し、最終的な施策を考える
-切り口となるデータとして下記を使用する</p></li>
-</ol>
-<ul class="simple">
-<li><p>結婚状況</p></li>
-<li><p>年代</p></li>
-<li><p>職業</p></li>
-</ul>
-<p><img alt="bi" src="../_images/Power_BI.jpg" /></p>
 </section>
-</section>
-<section id="まとめ">
-<h2><span class="section-number">9.3. </span>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h2>
-<div class="line-block">
-<div class="line">独身の成約をしている顧客に焦点を当ててみると、20-30 代の顧客が最も多く、学生やマネージャーといった仕事の方が多く成約をしていた。</div>
-<div class="line">同じ条件を成約をしなかった顧客で確認をしてみると営業をかけた件数が 89 件とアプローチがあまりできていないことが確認できた。</div>
-</div>
-<p>考察として、若年層のマネーリテラシーの高い方が定期預金の成約率が高いことが推測できる。成約をしている顧客のしごとを見てもマネージャーが最も多く責任のある仕事をしている人が多い特徴が見て取れた。 施策として以下を提案する。</p>
-<ul class="simple">
-<li><p><strong>20-30代の学生・マネージャー層の顧客に対して優先的にアプローチをする</strong></p></li>
-<li><p><strong>高齢者の顧客にでローンや持ち家のない顧客</strong>が成約後の売上につながりやすいことがわかった</p></li>
-</ul>
+<section id="よくある誤答">
+<h2><span class="section-number">9.14. </span>よくある誤答<a class="headerlink" href="#よくある誤答" title="この見出しへのパーマリンク"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>誤答</p></th>
+<th class="head"><p>どこが誤りか</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>「成約確度の平均はBが5.83で最も高い」</p></td>
+<td><p>0・3・7・10は段階の番号で、平均に意味がない。段階ごとの割合で比べる</p></td>
+</tr>
+<tr class="row-odd"><td><p>「60代が成約しやすいので、シニア向けに営業する」</p></td>
+<td><p>差の大半は既婚率の違い。既婚以外の60代は6%しか成約しない</p></td>
+</tr>
+<tr class="row-even"><td><p>「銀行残高の平均は成約者のほうが高い」</p></td>
+<td><p>最大77,462の外れ値に引っぱられる。階級に区切って見る</p></td>
+</tr>
+<tr class="row-odd"><td><p>「Dの成約率が低いので、Dの担当を減らす」</p></td>
+<td><p>アポ→成約はA・Cと同じ水準。Dの課題はアポ率。支援の方向が違う</p></td>
+</tr>
+<tr class="row-even"><td><p>「債務不履行の人は成約しない」</p></td>
+<td><p>9件しかなく、判断できない</p></td>
+</tr>
+<tr class="row-odd"><td><p>「低ランクの顧客には営業しない」</p></td>
+<td><p>資料送付など、手間の少ない対応に切り替えるのであって、切り捨てるのではない</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
@@ -887,7 +897,7 @@ Name: count, dtype: int64
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="05.html" class="btn btn-neutral float-left" title="8. 総演習：データに基づく営業支援のための施策を立案" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="FreshMart_case.html" class="btn btn-neutral float-right" title="10. FreshMart社 〜販促企画部 Aさんの悩み〜" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="08.html" class="btn btn-neutral float-right" title="10. 【補足】クラスタリング" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

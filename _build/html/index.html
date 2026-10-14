@@ -1,25 +1,25 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="./">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Excel で学ぶデータ分析講座 &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
 
   
-      <script src="_static/jquery.js?v=5d32c60e"></script>
-      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c033477b"></script>
-      <script src="_static/doctools.js?v=9a2dae69"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="_static/translations.js?v=91613774"></script>
-      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="検索" href="search.html" />
@@ -55,11 +55,12 @@
 <li class="toctree-l1"><a class="reference internal" href="src/04-00.html">6. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1"><a class="reference internal" href="src/07.html">9. 【補足】分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/07.html">9. 営業支援データ分析 模範解答（講師用）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/08.html">10. 【補足】クラスタリング</a></li>
 <li class="toctree-l1"><a class="reference internal" href="src/09.html">11. 【補足】主成分分析とは？</a></li>
-<li class="toctree-l1"><a class="reference internal" href="src/FreshMart_case.html">12. 【補足】問題解決演習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">13. 【補足】保守インシデント分析 演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/10.html">12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/FreshMart_case.html">13. 【補足】問題解決演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
 </ul>
 
         </div>
@@ -87,7 +88,7 @@
            <div itemprop="articleBody">
              
   <section id="excel">
-<h1>Excel で学ぶデータ分析講座<a class="headerlink" href="#excel" title="Link to this heading"></a></h1>
+<h1>Excel で学ぶデータ分析講座<a class="headerlink" href="#excel" title="この見出しへのパーマリンク"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -181,16 +182,43 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="src/05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1"><a class="reference internal" href="src/07.html">9. 【補足】分析結果の考察、結論</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="src/07.html#分析から得られた結果：">9.1. 分析から得られた結果：</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/07.html#【コード:デモ】">9.1.1. 【コード:デモ】</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/07.html">9. 営業支援データ分析 模範解答（講師用）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#想定した設問">9.1. 想定した設問</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#結論（提出物①〜④の要約）">9.2. 結論（提出物①〜④の要約）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#解答の考え方（What-→-Where-→-Why-→-How）">9.3. 解答の考え方（What → Where → Why → How）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP1　問題設定：「営業支援」を分解する">9.4. STEP1　問題設定：「営業支援」を分解する</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP2　データを理解する">9.5. STEP2　データを理解する</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#成約確度は「平均」してはいけない">9.5.1. 成約確度は「平均」してはいけない</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/07.html#最終結論">9.2. 最終結論</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/07.html#【Power-BI:デモ】">9.2.1. 【Power BI:デモ】</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP3　データの整備">9.6. STEP3　データの整備</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP4　全体像：商談のどこで落ちているか">9.7. STEP4　全体像：商談のどこで落ちているか</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP5　属性を1つずつ見る">9.8. STEP5　属性を1つずつ見る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP6　掛け合わせ（層別）で確かめる">9.9. STEP6　掛け合わせ（層別）で確かめる</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#①-年代の差は本物か">9.9.1. ① 年代の差は本物か</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#②-決め手になる組み合わせを探す">9.9.2. ② 決め手になる組み合わせを探す</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#③-優先ランク-S〜D">9.9.3. ③ 優先ランク S〜D</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/07.html#まとめ">9.3. まとめ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP7　担当者を比べる">9.10. STEP7　担当者を比べる</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#①-まず「比べてよいか」を確かめる">9.10.1. ① まず「比べてよいか」を確かめる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#②-商談のどの段階で差がつくか">9.10.2. ② 商談のどの段階で差がつくか</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP8　営業支援の提案（提出物②③）">9.11. STEP8　営業支援の提案（提出物②③）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#打ち手1：優先ランク付きのリストを配る">9.11.1. 打ち手1：優先ランク付きのリストを配る</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#打ち手2：訪問の使い方を変える">9.11.2. 打ち手2：訪問の使い方を変える</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#打ち手3：担当者を支援する">9.11.3. 打ち手3：担当者を支援する</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#打ち手4：データの取り方を見直す">9.11.4. 打ち手4：データの取り方を見直す</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#STEP9　効果の見込みと確かめ方（提出物④）">9.12. STEP9　効果の見込みと確かめ方（提出物④）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#効果の見込み">9.12.1. 効果の見込み</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/07.html#確かめ方">9.12.2. 確かめ方</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#注意すべき点">9.13. 注意すべき点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/07.html#よくある誤答">9.14. よくある誤答</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="src/08.html">10. 【補足】クラスタリング</a><ul>
@@ -220,102 +248,156 @@
 <li class="toctree-l2"><a class="reference internal" href="src/09.html#まとめ">11.8. まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="src/FreshMart_case.html">12. 【補足】問題解決演習</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#冒頭">12.1. 冒頭</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#食品スーパー業界">12.2. 食品スーパー業界</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#市場の停滞と他業態の侵食">12.2.1. 市場の停滞と他業態の侵食</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員アプリをめぐる競争">12.2.2. 会員アプリをめぐる競争</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/10.html">12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#課題設定（前提）">12.1. 課題設定（前提）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#あなたの立場">12.1.1. あなたの立場</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#支配人からの依頼">12.1.2. 支配人からの依頼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#渡されたデータ">12.1.3. 渡されたデータ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#成果物">12.1.4. 成果物</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#FreshMart社">12.3. FreshMart社</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#沿革と店舗">12.3.1. 沿革と店舗</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#商品構成">12.3.2. 商品構成</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#競合環境">12.3.3. 競合環境</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#考え方の枠組み：What-→-Where-→-Why-→-How">12.2. 考え方の枠組み：What → Where → Why → How</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#4段階とこの分析の対応">12.2.1. 4段階とこの分析の対応</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#なぜこの順番でなければならないか">12.2.2. なぜこの順番でなければならないか</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#会員制度と販促の仕組み">12.4. 会員制度と販促の仕組み</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員カードとアプリ">12.4.1. 会員カードとアプリ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員ランク">12.4.2. 会員ランク</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#クーポンの運用">12.4.3. クーポンの運用</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#直近3年の入会キャンペーン">12.4.4. 直近3年の入会キャンペーン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#第1部　前処理で気づくべき4点">12.3. 第1部　前処理で気づくべき4点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#判断1　ホテルの立地に-11.54-という値が1件ある">12.3.1. 判断1　ホテルの立地に 11.54 という値が1件ある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#判断2　送迎とオンライン予約に-0-がある">12.3.2. 判断2　送迎とオンライン予約に 0 がある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#判断3　年代に-0-が7件ある">12.3.3. 判断3　年代に 0 が7件ある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#判断4　70代5件・80代1件は率で語れない">12.3.4. 判断4　70代5件・80代1件は率で語れない</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#Aさんのミッションと足元の業績">12.5. Aさんのミッションと足元の業績</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#ミッション">12.5.1. ミッション</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#足元の業績">12.5.2. 足元の業績</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#前任者からの引き継ぎ">12.5.3. 前任者からの引き継ぎ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#Aさんが使えるもの">12.5.4. Aさんが使えるもの</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#第2部　分析結果">12.4. 第2部　分析結果</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#全体像">12.4.1. 全体像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#評価項目の現状（クレンジング後）">12.4.2. 評価項目の現状（クレンジング後）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#不満の集中先は「個人客」">12.4.3. 不満の集中先は「個人客」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#その他のセグメント">12.4.4. その他のセグメント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#低評価層と高評価層を分けている項目">12.4.5. 低評価層と高評価層を分けている項目</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#設問">12.6. 設問</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#提出物">12.6.1. 提出物</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#条件">12.6.2. 条件</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#進め方の注意">12.6.3. 進め方の注意</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#第3部　重回帰分析">12.5. 第3部　重回帰分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#変数設計">12.5.1. 変数設計</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#結果">12.5.2. 結果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#この演習の核心：単相関では順位が変わる">12.5.3. この演習の核心：単相関では順位が変わる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#符号が説明できない項目">12.5.4. 符号が説明できない項目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#異常値を残した場合との比較">12.5.5. 異常値を残した場合との比較</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#添付資料-1〜9（社内定例レポート）">12.7. 添付資料 1〜9（社内定例レポート）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料1　食品小売市場の推移">12.7.1. 資料1　食品小売市場の推移</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料2　会員ランクの基準と特典">12.7.2. 資料2　会員ランクの基準と特典</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料3　会員数と会員1人あたり年間購入金額">12.7.3. 資料3　会員数と会員1人あたり年間購入金額</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料4　会員ランク別の状況（2025年度）">12.7.4. 資料4　会員ランク別の状況（2025年度）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料5　部門別売上（会員分、億円）">12.7.5. 資料5　部門別売上（会員分、億円）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料6　店舗立地タイプ別（2025年度）">12.7.6. 資料6　店舗立地タイプ別（2025年度）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料7　年代別の会員状況（2025年度）">12.7.7. 資料7　年代別の会員状況（2025年度）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料8　販促予算の配分（億円）">12.7.8. 資料8　販促予算の配分（億円）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料9　クーポン発行実績（2025年度）">12.7.9. 資料9　クーポン発行実績（2025年度）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#第4部　優先度と施策効果">12.6. 第4部　優先度と施策効果</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#優先度マトリクス：影響度-×-伸びしろ">12.6.1. 優先度マトリクス：影響度 × 伸びしろ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#施策シミュレーション">12.6.2. 施策シミュレーション</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#個人客に絞った効果">12.6.3. 個人客に絞った効果</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#添付資料-10〜13">12.8. 添付資料 10〜13</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料10　前任者の年度報告書（要旨）">12.8.1. 資料10　前任者の年度報告書（要旨）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料11　店長コメント（Aさんが12月に3店舗を訪問した際の談話）">12.8.2. 資料11　店長コメント（Aさんが12月に3店舗を訪問した際の談話）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料12　会員アンケートの自由記述（抜粋）">12.8.3. 資料12　会員アンケートの自由記述（抜粋）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料13　Aさんが使えるデータ">12.8.4. 資料13　Aさんが使えるデータ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/10.html#結論">12.7. 結論</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#現状-—-「平均3.24の裏で、2割が低評価を付けている」">12.7.1. 現状 — 「平均3.24の裏で、2割が低評価を付けている」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#分析-—-「相関の順位で選ぶと、投資先を間違える」">12.7.2. 分析 — 「相関の順位で選ぶと、投資先を間違える」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#提案-—-レビュー改善2つ・集客改善1つ">12.7.3. 提案 — レビュー改善2つ・集客改善1つ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#欄外：この分析の限界">12.7.4. 欄外：この分析の限界</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#効果検証に必要な追加データ">12.7.5. 効果検証に必要な追加データ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#More">12.7.6. More</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#Good">12.7.7. Good</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/10.html#自身の回答の確認質問">12.7.8. 自身の回答の確認質問</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#分析ワークシート">12.9. 分析ワークシート</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-1　問題設定">12.10. STEP 1　問題設定</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-2　分析計画">12.11. STEP 2　分析計画</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-3　データの整備">12.12. STEP 3　データの整備</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-4　既存の切り口での確認">12.13. STEP 4　既存の切り口での確認</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-5　自分で作った切り口での分析">12.14. STEP 5　自分で作った切り口での分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-6　要因の検証">12.15. STEP 6　要因の検証</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-7　結論">12.16. STEP 7　結論</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-8　予算配分案（提出物④）">12.17. STEP 8　予算配分案（提出物④）</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-9　効果の測定（提出物⑤）">12.18. STEP 9　効果の測定（提出物⑤）</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">13. 【補足】保守インシデント分析 演習</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#1.-この演習のねらい">13.1. 1. この演習のねらい</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#2.-到達目標">13.2. 2. 到達目標</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#3.-課題設定">13.3. 3. 課題設定</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#あなたの立場">13.3.1. あなたの立場</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#部門長からの依頼">13.3.2. 部門長からの依頼</a></li>
+<li class="toctree-l1"><a class="reference internal" href="src/FreshMart_case.html">13. 【補足】問題解決演習</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#冒頭">13.1. 冒頭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#食品スーパー業界">13.2. 食品スーパー業界</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#市場の停滞と他業態の侵食">13.2.1. 市場の停滞と他業態の侵食</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員アプリをめぐる競争">13.2.2. 会員アプリをめぐる競争</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#4.-渡されるデータ">13.4. 4. 渡されるデータ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#補足">13.4.1. 補足</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#FreshMart社">13.3. FreshMart社</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#沿革と店舗">13.3.1. 沿革と店舗</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#商品構成">13.3.2. 商品構成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#競合環境">13.3.3. 競合環境</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#5.-成果物と条件">13.5. 5. 成果物と条件</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#成果物">13.5.1. 成果物</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#スライドに必ず含めること">13.5.2. スライドに必ず含めること</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#条件">13.5.3. 条件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#会員制度と販促の仕組み">13.4. 会員制度と販促の仕組み</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員カードとアプリ">13.4.1. 会員カードとアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#会員ランク">13.4.2. 会員ランク</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#クーポンの運用">13.4.3. クーポンの運用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#直近3年の入会キャンペーン">13.4.4. 直近3年の入会キャンペーン</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#id13">13.6. 補足</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#6.-当日の流れ">13.7. 6. 当日の流れ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#事前準備（受講者）">13.7.1. 事前準備（受講者）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#Aさんのミッションと足元の業績">13.5. Aさんのミッションと足元の業績</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#ミッション">13.5.1. ミッション</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#足元の業績">13.5.2. 足元の業績</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#前任者からの引き継ぎ">13.5.3. 前任者からの引き継ぎ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#Aさんが使えるもの">13.5.4. Aさんが使えるもの</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#7.-進め方のヒント">13.8. 7. 進め方のヒント</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#整形フェーズ">13.8.1. 整形フェーズ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#分析フェーズ">13.8.2. 分析フェーズ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#重回帰フェーズ">13.8.3. 重回帰フェーズ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#提案フェーズ">13.8.4. 提案フェーズ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#設問">13.6. 設問</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#提出物">13.6.1. 提出物</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#条件">13.6.2. 条件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#進め方の注意">13.6.3. 進め方の注意</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#8.-評価ルーブリック">13.9. 8. 評価ルーブリック</a></li>
-<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#データの出典">13.10. データの出典</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#添付資料-1〜9（社内定例レポート）">13.7. 添付資料 1〜9（社内定例レポート）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料1　食品小売市場の推移">13.7.1. 資料1　食品小売市場の推移</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料2　会員ランクの基準と特典">13.7.2. 資料2　会員ランクの基準と特典</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料3　会員数と会員1人あたり年間購入金額">13.7.3. 資料3　会員数と会員1人あたり年間購入金額</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料4　会員ランク別の状況（2025年度）">13.7.4. 資料4　会員ランク別の状況（2025年度）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料5　部門別売上（会員分、億円）">13.7.5. 資料5　部門別売上（会員分、億円）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料6　店舗立地タイプ別（2025年度）">13.7.6. 資料6　店舗立地タイプ別（2025年度）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料7　年代別の会員状況（2025年度）">13.7.7. 資料7　年代別の会員状況（2025年度）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料8　販促予算の配分（億円）">13.7.8. 資料8　販促予算の配分（億円）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料9　クーポン発行実績（2025年度）">13.7.9. 資料9　クーポン発行実績（2025年度）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#添付資料-10〜13">13.8. 添付資料 10〜13</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料10　前任者の年度報告書（要旨）">13.8.1. 資料10　前任者の年度報告書（要旨）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料11　店長コメント（Aさんが12月に3店舗を訪問した際の談話）">13.8.2. 資料11　店長コメント（Aさんが12月に3店舗を訪問した際の談話）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料12　会員アンケートの自由記述（抜粋）">13.8.3. 資料12　会員アンケートの自由記述（抜粋）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/FreshMart_case.html#資料13　Aさんが使えるデータ">13.8.4. 資料13　Aさんが使えるデータ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#分析ワークシート">13.9. 分析ワークシート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-1　問題設定">13.10. STEP 1　問題設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-2　分析計画">13.11. STEP 2　分析計画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-3　データの整備">13.12. STEP 3　データの整備</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-4　既存の切り口での確認">13.13. STEP 4　既存の切り口での確認</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-5　自分で作った切り口での分析">13.14. STEP 5　自分で作った切り口での分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-6　要因の検証">13.15. STEP 6　要因の検証</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-7　結論">13.16. STEP 7　結論</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-8　予算配分案（提出物④）">13.17. STEP 8　予算配分案（提出物④）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/FreshMart_case.html#STEP-9　効果の測定（提出物⑤）">13.18. STEP 9　効果の測定（提出物⑤）</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#1.-この演習のねらい">14.1. 1. この演習のねらい</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#2.-到達目標">14.2. 2. 到達目標</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#3.-課題設定">14.3. 3. 課題設定</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#あなたの立場">14.3.1. あなたの立場</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#部門長からの依頼">14.3.2. 部門長からの依頼</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#4.-渡されるデータ">14.4. 4. 渡されるデータ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#補足">14.4.1. 補足</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#5.-成果物と条件">14.5. 5. 成果物と条件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#成果物">14.5.1. 成果物</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#スライドに必ず含めること">14.5.2. スライドに必ず含めること</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#条件">14.5.3. 条件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#id13">14.6. 補足</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#6.-当日の流れ">14.7. 6. 当日の流れ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#事前準備（受講者）">14.7.1. 事前準備（受講者）</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#7.-進め方のヒント">14.8. 7. 進め方のヒント</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#整形フェーズ">14.8.1. 整形フェーズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#分析フェーズ">14.8.2. 分析フェーズ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#提案フェーズ">14.8.3. 提案フェーズ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#8.-評価ルーブリック">14.9. 8. 評価ルーブリック</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src/%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html#データの出典">14.10. データの出典</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善 &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="next" title="13. 【補足】問題解決演習" href="FreshMart_case.html" />
+    <link rel="prev" title="11. 【補足】主成分分析とは？" href="09.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0.html">1. 〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">2. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">3. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html#データの収集">4. データの収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 営業支援データ分析 模範解答（講師用）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">10. 【補足】クラスタリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">11. 【補足】主成分分析とは？</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#課題設定（前提）">12.1. 課題設定（前提）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#あなたの立場">12.1.1. あなたの立場</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#支配人からの依頼">12.1.2. 支配人からの依頼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#渡されたデータ">12.1.3. 渡されたデータ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#成果物">12.1.4. 成果物</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#考え方の枠組み：What-→-Where-→-Why-→-How">12.2. 考え方の枠組み：What → Where → Why → How</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#4段階とこの分析の対応">12.2.1. 4段階とこの分析の対応</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#なぜこの順番でなければならないか">12.2.2. なぜこの順番でなければならないか</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第1部　前処理で気づくべき4点">12.3. 第1部　前処理で気づくべき4点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#判断1　ホテルの立地に-11.54-という値が1件ある">12.3.1. 判断1　ホテルの立地に 11.54 という値が1件ある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断2　送迎とオンライン予約に-0-がある">12.3.2. 判断2　送迎とオンライン予約に 0 がある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断3　年代に-0-が7件ある">12.3.3. 判断3　年代に 0 が7件ある</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断4　70代5件・80代1件は率で語れない">12.3.4. 判断4　70代5件・80代1件は率で語れない</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第2部　分析結果">12.4. 第2部　分析結果</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#全体像">12.4.1. 全体像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#評価項目の現状（クレンジング後）">12.4.2. 評価項目の現状（クレンジング後）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#不満の集中先は「個人客」">12.4.3. 不満の集中先は「個人客」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#その他のセグメント">12.4.4. その他のセグメント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#低評価層と高評価層を分けている項目">12.4.5. 低評価層と高評価層を分けている項目</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第3部　重回帰分析">12.5. 第3部　重回帰分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#変数設計">12.5.1. 変数設計</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#結果">12.5.2. 結果</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#この演習の核心：単相関では順位が変わる">12.5.3. この演習の核心：単相関では順位が変わる</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#符号が説明できない項目">12.5.4. 符号が説明できない項目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#異常値を残した場合との比較">12.5.5. 異常値を残した場合との比較</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第4部　優先度と施策効果">12.6. 第4部　優先度と施策効果</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#優先度マトリクス：影響度-×-伸びしろ">12.6.1. 優先度マトリクス：影響度 × 伸びしろ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#施策シミュレーション">12.6.2. 施策シミュレーション</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#個人客に絞った効果">12.6.3. 個人客に絞った効果</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#結論">12.7. 結論</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#現状-—-「平均3.24の裏で、2割が低評価を付けている」">12.7.1. 現状 — 「平均3.24の裏で、2割が低評価を付けている」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#分析-—-「相関の順位で選ぶと、投資先を間違える」">12.7.2. 分析 — 「相関の順位で選ぶと、投資先を間違える」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#提案-—-レビュー改善2つ・集客改善1つ">12.7.3. 提案 — レビュー改善2つ・集客改善1つ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#提案1（最優先）　Wifi設備への投資を最優先にする">提案1（最優先）　Wifi設備への投資を最優先にする</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提案2　個人客の体験を立て直す">提案2　個人客の体験を立て直す</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提案3　集客はビジネス・40〜50代・グループに絞る">提案3　集客はビジネス・40〜50代・グループに絞る</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#欄外：この分析の限界">12.7.4. 欄外：この分析の限界</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#効果検証に必要な追加データ">12.7.5. 効果検証に必要な追加データ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#More">12.7.6. More</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Good">12.7.7. Good</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#自身の回答の確認質問">12.7.8. 自身の回答の確認質問</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">13. 【補足】問題解決演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>模範解答：ホテルレビューの分析によるレビュー改善・集客改善</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/10.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="模範解答：ホテルレビューの分析によるレビュー改善・集客改善">
+<h1><span class="section-number">12. </span>模範解答：ホテルレビューの分析によるレビュー改善・集客改善<a class="headerlink" href="#模範解答：ホテルレビューの分析によるレビュー改善・集客改善" title="この見出しへのパーマリンク"></a></h1>
+<p>対象データ：ホテルレビュー 500件（満足度調査、評価は1〜5の5段階） 対応するワークブック：<code class="docutils literal notranslate"><span class="pre">模範解答_ホテルレビュー分析.xlsx</span></code></p>
+<section id="課題設定（前提）">
+<h2><span class="section-number">12.1. </span>課題設定（前提）<a class="headerlink" href="#課題設定（前提）" title="この見出しへのパーマリンク"></a></h2>
+<section id="あなたの立場">
+<h3><span class="section-number">12.1.1. </span>あなたの立場<a class="headerlink" href="#あなたの立場" title="この見出しへのパーマリンク"></a></h3>
+<p>あなたはホテルのマーケティング担当です。</p>
+</section>
+<section id="支配人からの依頼">
+<h3><span class="section-number">12.1.2. </span>支配人からの依頼<a class="headerlink" href="#支配人からの依頼" title="この見出しへのパーマリンク"></a></h3>
+<blockquote>
+<div><p>「レビューサイトの点数が伸びない。良い設備は入れているはずなのに、評価が上がらない。</p>
+<p>アンケートが500件たまっているので、分析してほしい。 どこを直せばレビューが上がるのか、どういう客を狙えば集客につながるのか。</p>
+<p>使える予算は限られている。やることは3つまでに絞ってくれ」</p>
+</div></blockquote>
+</section>
+<section id="渡されたデータ">
+<h3><span class="section-number">12.1.3. </span>渡されたデータ<a class="headerlink" href="#渡されたデータ" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>列</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>属性4列</p></td>
+<td><p>性別／年代／個人・グループ／宿泊カテゴリ</p></td>
+</tr>
+<tr class="row-odd"><td><p>評価9項目</p></td>
+<td><p>Wifi設備／送迎の便利さ／オンライン予約のしやすさ／ホテルの立地／食事の満足度／チェックイン・アウトの接客／その他のサービス／清潔さ／滞在時の快適さ</p></td>
+</tr>
+<tr class="row-even"><td><p>目的変数</p></td>
+<td><p>満足度（1〜5）</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="成果物">
+<h3><span class="section-number">12.1.4. </span>成果物<a class="headerlink" href="#成果物" title="この見出しへのパーマリンク"></a></h3>
+<p>スライド3枚以内＋裏付けのExcelファイル。重回帰分析を1回以上行うこと。</p>
+</section>
+</section>
+<section id="考え方の枠組み：What-→-Where-→-Why-→-How">
+<h2><span class="section-number">12.2. </span>考え方の枠組み：What → Where → Why → How<a class="headerlink" href="#考え方の枠組み：What-→-Where-→-Why-→-How" title="この見出しへのパーマリンク"></a></h2>
+<p>分析を「集計の寄せ集め」にしないために、4段階で絞り込む。</p>
+<p>各段階で<strong>何を棄却したか</strong>が、採用した判断の根拠になる。下段の点線が棄却した道筋である。</p>
+<p><img alt="data" src="../_images/%E5%9B%B31_WhatWhereWhyHow.png" /></p>
+<section id="4段階とこの分析の対応">
+<h3><span class="section-number">12.2.1. </span>4段階とこの分析の対応<a class="headerlink" href="#4段階とこの分析の対応" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>段階</p></th>
+<th class="head"><p>問い</p></th>
+<th class="head"><p>この分析での答え</p></th>
+<th class="head"><p>使った手法</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>What</strong></p></td>
+<td><p>何が問題か</p></td>
+<td><p>平均3.24ではなく、低評価22%（110件）が点数を押し下げている</p></td>
+<td><p>分布の確認（平均・中央値・分布）</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Where</strong></p></td>
+<td><p>どこに集中しているか</p></td>
+<td><p>個人客（低評価率33.5%）と Wifi設備（平均2.90で最下位）</p></td>
+<td><p>セグメント別クロス集計</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Why</strong></p></td>
+<td><p>なぜそこなのか</p></td>
+<td><p>Wifiは影響度2位（係数0.364）なのに点数が9位。単相関では4位で見逃す</p></td>
+<td><p>重回帰分析＋単相関との比較</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>How</strong></p></td>
+<td><p>どうするか</p></td>
+<td><p>Wifiを1点上げると高評価率 +12.7pt。送迎・立地は±0pt</p></td>
+<td><p>回帰式による施策シミュレーション</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="なぜこの順番でなければならないか">
+<h3><span class="section-number">12.2.2. </span>なぜこの順番でなければならないか<a class="headerlink" href="#なぜこの順番でなければならないか" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p><strong>What を飛ばすと</strong>、平均を上げる施策になる。平均は外れ値に引かれるため、全体の底上げという無理な結論に向かう</p></li>
+<li><p><strong>Where を飛ばすと</strong>、全項目を均等に改善する話になる。予算が限られている以上、成立しない</p></li>
+<li><p><strong>Why を飛ばすと</strong>、単相関の高い順に選ぶ。清潔さが最優先になり、投資先を間違える</p></li>
+<li><p><strong>How を飛ばすと</strong>、効果の見積もりがない提案になる。「で、何が良くなるのか」に答えられない</p></li>
+</ul>
+</section>
+</section>
+<section id="第1部　前処理で気づくべき4点">
+<h2><span class="section-number">12.3. </span>第1部　前処理で気づくべき4点<a class="headerlink" href="#第1部　前処理で気づくべき4点" title="この見出しへのパーマリンク"></a></h2>
+<p>この演習の採点は、集計の正しさよりも<strong>異常値に気づけたか</strong>に重みがある。</p>
+<section id="判断1　ホテルの立地に-11.54-という値が1件ある">
+<h3><span class="section-number">12.3.1. </span>判断1　ホテルの立地に 11.54 という値が1件ある<a class="headerlink" href="#判断1　ホテルの立地に-11.54-という値が1件ある" title="この見出しへのパーマリンク"></a></h3>
+<p>評価は1〜5のはずなのに、1件だけ <strong>11.537967914438502</strong> が入っている。</p>
+<p>厄介なのは、<strong>整数ではなく小数</strong>であること。<code class="docutils literal notranslate"><span class="pre">=COUNTIF(範囲,11)</span></code> では見つからない。見つけるには次のいずれかが必要。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">=MAX(範囲)</span></code> で最大値を確認する</p></li>
+<li><p>降順ソートして先頭を見る</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=COUNTIF(範囲,&quot;&gt;5&quot;)</span></code> で範囲外を数える</p></li>
+</ul>
+<p><strong>対処</strong>：その1件を空欄にする（または行ごと除外）。</p>
+</section>
+<section id="判断2　送迎とオンライン予約に-0-がある">
+<h3><span class="section-number">12.3.2. </span>判断2　送迎とオンライン予約に 0 がある<a class="headerlink" href="#判断2　送迎とオンライン予約に-0-がある" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>0の件数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>送迎の便利さ</p></td>
+<td><p>22件（4.4%）</p></td>
+</tr>
+<tr class="row-odd"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>8件（1.6%）</p></td>
+</tr>
+</tbody>
+</table>
+<p>1〜5のスケールに0はない。<strong>「該当なし・未回答」</strong>を意味する。送迎を使わなかった客、電話で予約した客である。</p>
+<p>これを最低評価の1として扱うと、その項目の平均が実際より低く出る。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>0を含めた平均</p></th>
+<th class="head"><p>0を除いた平均</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>送迎の便利さ</p></td>
+<td><p>3.10</p></td>
+<td><p><strong>3.24</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>2.92</p></td>
+<td><p><strong>2.97</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>対処</strong>：空欄にして平均の母数から除く。回帰では該当行を除外する。</p>
+</section>
+<section id="判断3　年代に-0-が7件ある">
+<h3><span class="section-number">12.3.3. </span>判断3　年代に 0 が7件ある<a class="headerlink" href="#判断3　年代に-0-が7件ある" title="この見出しへのパーマリンク"></a></h3>
+<p>0代は存在しない。年代不明として別扱いにする。ただし満足度そのものの分析からは除外しない。</p>
+</section>
+<section id="判断4　70代5件・80代1件は率で語れない">
+<h3><span class="section-number">12.3.4. </span>判断4　70代5件・80代1件は率で語れない<a class="headerlink" href="#判断4　70代5件・80代1件は率で語れない" title="この見出しへのパーマリンク"></a></h3>
+<p>80代は1件なので高評価率0%。これを「80代の満足度が最低」と報告してはいけない。</p>
+</section>
+</section>
+<section id="第2部　分析結果">
+<h2><span class="section-number">12.4. </span>第2部　分析結果<a class="headerlink" href="#第2部　分析結果" title="この見出しへのパーマリンク"></a></h2>
+<section id="全体像">
+<h3><span class="section-number">12.4.1. </span>全体像<a class="headerlink" href="#全体像" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>指標</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>回答件数</p></td>
+<td><p>500件</p></td>
+</tr>
+<tr class="row-odd"><td><p>満足度 平均</p></td>
+<td><p>3.24</p></td>
+</tr>
+<tr class="row-even"><td><p>満足度 中央値</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>高評価率（4以上）</p></td>
+<td><p>42.2%</p></td>
+</tr>
+<tr class="row-even"><td><p>低評価率（2以下）</p></td>
+<td><p>22.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>異常値を含む回答</p></td>
+<td><p>29件</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>平均を上げる最短経路は、低評価の110件を減らすこと。</strong> 平均3.24を3.3にする議論より、2割が何に不満なのかを見るほうが実務的である。</p>
+</section>
+<section id="評価項目の現状（クレンジング後）">
+<h3><span class="section-number">12.4.2. </span>評価項目の現状（クレンジング後）<a class="headerlink" href="#評価項目の現状（クレンジング後）" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>平均</p></th>
+<th class="head"><p>伸びしろ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wifi設備</strong></p></td>
+<td><p><strong>2.90</strong></p></td>
+<td><p>2.10</p></td>
+</tr>
+<tr class="row-odd"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>2.97</p></td>
+<td><p>2.03</p></td>
+</tr>
+<tr class="row-even"><td><p>ホテルの立地</p></td>
+<td><p>2.98</p></td>
+<td><p>2.02</p></td>
+</tr>
+<tr class="row-odd"><td><p>食事の満足度</p></td>
+<td><p>3.19</p></td>
+<td><p>1.81</p></td>
+</tr>
+<tr class="row-even"><td><p>清潔さ</p></td>
+<td><p>3.23</p></td>
+<td><p>1.77</p></td>
+</tr>
+<tr class="row-odd"><td><p>送迎の便利さ</p></td>
+<td><p>3.24</p></td>
+<td><p>1.76</p></td>
+</tr>
+<tr class="row-even"><td><p>チェックイン・アウトの接客</p></td>
+<td><p>3.25</p></td>
+<td><p>1.75</p></td>
+</tr>
+<tr class="row-odd"><td><p>滞在時の快適さ</p></td>
+<td><p>3.48</p></td>
+<td><p>1.52</p></td>
+</tr>
+<tr class="row-even"><td><p>その他のサービス</p></td>
+<td><p>3.65</p></td>
+<td><p>1.35</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="不満の集中先は「個人客」">
+<h3><span class="section-number">12.4.3. </span>不満の集中先は「個人客」<a class="headerlink" href="#不満の集中先は「個人客」" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>区分</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>満足度</p></th>
+<th class="head"><p>高評価率</p></th>
+<th class="head"><p>低評価率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>グループ</p></td>
+<td><p>330</p></td>
+<td><p>3.41</p></td>
+<td><p>48.5%</p></td>
+<td><p>16.1%</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>個人</strong></p></td>
+<td><p><strong>170</strong></p></td>
+<td><p><strong>2.91</strong></p></td>
+<td><p>30.0%</p></td>
+<td><p><strong>33.5%</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>データ中で最も差が大きいセグメント。個人客は全体の34%を占めながら、低評価率が2倍以上ある。</p>
+<p>さらに、個人客は<strong>満足度を決める項目2つで劣っている</strong>。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>グループ</p></th>
+<th class="head"><p>個人</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wifi設備</p></td>
+<td><p>3.05</p></td>
+<td><p><strong>2.60</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>滞在時の快適さ</p></td>
+<td><p>3.67</p></td>
+<td><p><strong>3.12</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>清潔さ</p></td>
+<td><p>3.35</p></td>
+<td><p>2.99</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="その他のセグメント">
+<h3><span class="section-number">12.4.4. </span>その他のセグメント<a class="headerlink" href="#その他のセグメント" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>宿泊カテゴリ</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>満足度</p></th>
+<th class="head"><p>高評価率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ビジネス</p></td>
+<td><p>102</p></td>
+<td><p><strong>3.44</strong></p></td>
+<td><p>52.0%</p></td>
+</tr>
+<tr class="row-odd"><td><p>旅行</p></td>
+<td><p>160</p></td>
+<td><p>3.33</p></td>
+<td><p>47.5%</p></td>
+</tr>
+<tr class="row-even"><td><p>学生</p></td>
+<td><p>117</p></td>
+<td><p>3.09</p></td>
+<td><p>34.2%</p></td>
+</tr>
+<tr class="row-odd"><td><p>航空関係</p></td>
+<td><p>79</p></td>
+<td><p>3.09</p></td>
+<td><p>35.4%</p></td>
+</tr>
+<tr class="row-even"><td><p>その他</p></td>
+<td><p>42</p></td>
+<td><p>3.10</p></td>
+<td><p>33.3%</p></td>
+</tr>
+</tbody>
+</table>
+<p>年代では50代（3.46）と40代（3.37）が高く、10代（2.98）と60代（3.05）が低い。</p>
+<p><strong>性別の差はほぼない</strong>（女性3.26・男性3.22）。差がなかったことも報告に値する。</p>
+</section>
+<section id="低評価層と高評価層を分けている項目">
+<h3><span class="section-number">12.4.5. </span>低評価層と高評価層を分けている項目<a class="headerlink" href="#低評価層と高評価層を分けている項目" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>低評価層</p></th>
+<th class="head"><p>高評価層</p></th>
+<th class="head"><p>差</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>滞在時の快適さ</p></td>
+<td><p>1.70</p></td>
+<td><p>4.51</p></td>
+<td><p><strong>2.81</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>清潔さ</p></td>
+<td><p>1.78</p></td>
+<td><p>4.10</p></td>
+<td><p><strong>2.32</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>食事の満足度</p></td>
+<td><p>2.00</p></td>
+<td><p>4.01</p></td>
+<td><p><strong>2.01</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Wifi設備</p></td>
+<td><p>2.09</p></td>
+<td><p>3.64</p></td>
+<td><p>1.55</p></td>
+</tr>
+<tr class="row-even"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>2.63</p></td>
+<td><p>3.38</p></td>
+<td><p>0.74</p></td>
+</tr>
+<tr class="row-odd"><td><p>その他のサービス</p></td>
+<td><p>3.28</p></td>
+<td><p>3.87</p></td>
+<td><p>0.59</p></td>
+</tr>
+<tr class="row-even"><td><p>チェックイン・アウトの接客</p></td>
+<td><p>3.08</p></td>
+<td><p>3.41</p></td>
+<td><p>0.33</p></td>
+</tr>
+<tr class="row-odd"><td><p>ホテルの立地</p></td>
+<td><p>2.95</p></td>
+<td><p>3.28</p></td>
+<td><p>0.32</p></td>
+</tr>
+<tr class="row-even"><td><p>送迎の便利さ</p></td>
+<td><p>3.28</p></td>
+<td><p>3.50</p></td>
+<td><p>0.23</p></td>
+</tr>
+</tbody>
+</table>
+<p>送迎・立地・接客は、満足した客と不満な客でほとんど差がない。<strong>これらは満足度の分かれ目になっていない。</strong></p>
+</section>
+</section>
+<section id="第3部　重回帰分析">
+<h2><span class="section-number">12.5. </span>第3部　重回帰分析<a class="headerlink" href="#第3部　重回帰分析" title="この見出しへのパーマリンク"></a></h2>
+<section id="変数設計">
+<h3><span class="section-number">12.5.1. </span>変数設計<a class="headerlink" href="#変数設計" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>目的変数</p></td>
+<td><p>満足度（1〜5、変換なし）</p></td>
+</tr>
+<tr class="row-odd"><td><p>説明変数</p></td>
+<td><p>評価9項目</p></td>
+</tr>
+<tr class="row-even"><td><p>対象行</p></td>
+<td><p>471行（異常値を含む29件を除外）</p></td>
+</tr>
+</tbody>
+</table>
+<p>満足度は1〜5の狭い範囲で歪みも小さいため、対数変換は不要。</p>
+</section>
+<section id="結果">
+<h3><span class="section-number">12.5.2. </span>結果<a class="headerlink" href="#結果" title="この見出しへのパーマリンク"></a></h3>
+<p>決定係数 <strong>R² = 0.9217</strong>（補正R² = 0.9202）</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>回帰係数</p></th>
+<th class="head"><p>t値</p></th>
+<th class="head"><p>有意</p></th>
+<th class="head"><p>VIF</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>滞在時の快適さ</p></td>
+<td><p><strong>0.3911</strong></p></td>
+<td><p>27.19</p></td>
+<td><p>○</p></td>
+<td><p>2.22</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wifi設備</p></td>
+<td><p><strong>0.3643</strong></p></td>
+<td><p>27.49</p></td>
+<td><p>○</p></td>
+<td><p>1.77</p></td>
+</tr>
+<tr class="row-even"><td><p>その他のサービス</p></td>
+<td><p>0.1363</p></td>
+<td><p>11.59</p></td>
+<td><p>○</p></td>
+<td><p>1.09</p></td>
+</tr>
+<tr class="row-odd"><td><p>清潔さ</p></td>
+<td><p>0.1359</p></td>
+<td><p>8.84</p></td>
+<td><p>○</p></td>
+<td><p>2.47</p></td>
+</tr>
+<tr class="row-even"><td><p>食事の満足度</p></td>
+<td><p>0.0864</p></td>
+<td><p>6.44</p></td>
+<td><p>○</p></td>
+<td><p>1.93</p></td>
+</tr>
+<tr class="row-odd"><td><p>チェックイン・アウトの接客</p></td>
+<td><p>−0.0408</p></td>
+<td><p>−3.82</p></td>
+<td><p>○</p></td>
+<td><p>1.18</p></td>
+</tr>
+<tr class="row-even"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>−0.0234</p></td>
+<td><p>−1.69</p></td>
+<td></td>
+<td><p>2.06</p></td>
+</tr>
+<tr class="row-odd"><td><p>送迎の便利さ</p></td>
+<td><p>−0.0100</p></td>
+<td><p>−0.85</p></td>
+<td></td>
+<td><p>1.61</p></td>
+</tr>
+<tr class="row-even"><td><p>ホテルの立地</p></td>
+<td><p>0.0034</p></td>
+<td><p>0.27</p></td>
+<td></td>
+<td><p>1.56</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>9項目のうち、満足度を動かしているのは実質5項目。</strong> 送迎・オンライン予約・立地は統計的に有意ではない。</p>
+<p>VIFはいずれも2.5以下で、多重共線性は問題にならない水準。</p>
+</section>
+<section id="この演習の核心：単相関では順位が変わる">
+<h3><span class="section-number">12.5.3. </span>この演習の核心：単相関では順位が変わる<a class="headerlink" href="#この演習の核心：単相関では順位が変わる" title="この見出しへのパーマリンク"></a></h3>
+<p>満足度との相関だけを見て改善項目を選ぶと、投資先を間違える。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>単相関</p></th>
+<th class="head"><p>相関順位</p></th>
+<th class="head"><p>回帰係数</p></th>
+<th class="head"><p>係数順位</p></th>
+<th class="head"><p>順位の動き</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>滞在時の快適さ</p></td>
+<td><p>0.808</p></td>
+<td><p>1</p></td>
+<td><p>0.3911</p></td>
+<td><p>1</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>清潔さ</strong></p></td>
+<td><p>0.695</p></td>
+<td><p><strong>2</strong></p></td>
+<td><p>0.1359</p></td>
+<td><p><strong>4</strong></p></td>
+<td><p>↓2</p></td>
+</tr>
+<tr class="row-even"><td><p>食事の満足度</p></td>
+<td><p>0.605</p></td>
+<td><p>3</p></td>
+<td><p>0.0864</p></td>
+<td><p>5</p></td>
+<td><p>↓2</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Wifi設備</strong></p></td>
+<td><p>0.585</p></td>
+<td><p><strong>4</strong></p></td>
+<td><p>0.3643</p></td>
+<td><p><strong>2</strong></p></td>
+<td><p>↑2</p></td>
+</tr>
+<tr class="row-even"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>0.268</p></td>
+<td><p>5</p></td>
+<td><p>−0.0234</p></td>
+<td><p>8</p></td>
+<td><p>↓3</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>その他のサービス</strong></p></td>
+<td><p>0.219</p></td>
+<td><p><strong>6</strong></p></td>
+<td><p>0.1363</p></td>
+<td><p><strong>3</strong></p></td>
+<td><p>↑3</p></td>
+</tr>
+<tr class="row-even"><td><p>ホテルの立地</p></td>
+<td><p>0.157</p></td>
+<td><p>7</p></td>
+<td><p>0.0034</p></td>
+<td><p>6</p></td>
+<td><p>↑1</p></td>
+</tr>
+<tr class="row-odd"><td><p>チェックイン・アウトの接客</p></td>
+<td><p>0.098</p></td>
+<td><p>8</p></td>
+<td><p>−0.0408</p></td>
+<td><p>9</p></td>
+<td><p>↓1</p></td>
+</tr>
+<tr class="row-even"><td><p>送迎の便利さ</p></td>
+<td><p>0.087</p></td>
+<td><p>9</p></td>
+<td><p>−0.0100</p></td>
+<td><p>7</p></td>
+<td><p>↑2</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>清潔さは相関2位だが係数4位。</strong> 理由は項目間の相関にある。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>組み合わせ</p></th>
+<th class="head"><p>相関</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>清潔さ × 滞在時の快適さ</p></td>
+<td><p>0.703</p></td>
+</tr>
+<tr class="row-odd"><td><p>食事の満足度 × 清潔さ</p></td>
+<td><p>0.656</p></td>
+</tr>
+<tr class="row-even"><td><p>Wifi設備 × オンライン予約のしやすさ</p></td>
+<td><p>0.631</p></td>
+</tr>
+</tbody>
+</table>
+<p>清潔さは「滞在時の快適さ」と強く相関している。清潔さが高い客は快適さも高く付けるため、単相関では快適さの効果を借りて強く見える。両方を同時に投入すると、清潔さ固有の効果は0.136に落ちる。</p>
+<p><img alt="png" src="../_images/%E5%9B%B32_%E5%8D%98%E7%9B%B8%E9%96%A2%E3%81%8C%E5%BC%B7%E3%81%8F%E8%A6%8B%E3%81%88%E3%82%8B%E4%BB%95%E7%B5%84%E3%81%BF.png" /></p>
+<p>　清潔さの単相関が強く見える仕組み。実線（オレンジ）が迂回路、点線が清潔さ固有の効果。単相関はこの2つを合算して見せる。</p>
+<p>逆に<strong>その他のサービスは相関6位だが係数3位</strong>。他項目との相関が低い（VIF 1.09）ため単相関では埋もれるが、独立した効果を持っている。</p>
+</section>
+<section id="符号が説明できない項目">
+<h3><span class="section-number">12.5.4. </span>符号が説明できない項目<a class="headerlink" href="#符号が説明できない項目" title="この見出しへのパーマリンク"></a></h3>
+<p>チェックイン・アウトの接客は係数 <strong>−0.0408（t = −3.82）</strong> で統計的に有意だが負。</p>
+<p>単相関は +0.098 で正なので、符号が逆転している。これは「接客を悪くすれば満足度が上がる」という意味ではない。</p>
+<ul class="simple">
+<li><p>効果量が極小（他項目の10分の1）</p></li>
+<li><p>説明のつく仮説がない</p></li>
+</ul>
+<p><strong>統計的に有意であることと、施策の根拠になることは別。</strong> この項目は提案に使わない、という判断が正しい。</p>
+</section>
+<section id="異常値を残した場合との比較">
+<h3><span class="section-number">12.5.5. </span>異常値を残した場合との比較<a class="headerlink" href="#異常値を残した場合との比較" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>モデル</p></th>
+<th class="head"><p>n</p></th>
+<th class="head"><p>R²</p></th>
+<th class="head"><p>結果</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>そのまま投入（0と11.54を残す）</p></td>
+<td><p>500</p></td>
+<td><p>0.9203</p></td>
+<td><p>係数の順位は変わらない</p></td>
+</tr>
+<tr class="row-odd"><td><p>異常値を除外</p></td>
+<td><p>471</p></td>
+<td><p>0.9217</p></td>
+<td><p>こちらを採用</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>今回は結論が変わらなかった。</strong> しかし確かめたこと自体が前処理の仕事であり、確かめずに同じ結論に至った答案と、確かめて同じ結論に至った答案は評価が異なる。</p>
+</section>
+</section>
+<section id="第4部　優先度と施策効果">
+<h2><span class="section-number">12.6. </span>第4部　優先度と施策効果<a class="headerlink" href="#第4部　優先度と施策効果" title="この見出しへのパーマリンク"></a></h2>
+<section id="優先度マトリクス：影響度-×-伸びしろ">
+<h3><span class="section-number">12.6.1. </span>優先度マトリクス：影響度 × 伸びしろ<a class="headerlink" href="#優先度マトリクス：影響度-×-伸びしろ" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>影響度（係数）</p></th>
+<th class="head"><p>現在平均</p></th>
+<th class="head"><p>伸びしろ</p></th>
+<th class="head"><p>優先度スコア</p></th>
+<th class="head"><p>判定</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Wifi設備</strong></p></td>
+<td><p>0.3643</p></td>
+<td><p>2.90</p></td>
+<td><p>2.10</p></td>
+<td><p><strong>0.765</strong></p></td>
+<td><p>最優先</p></td>
+</tr>
+<tr class="row-odd"><td><p>滞在時の快適さ</p></td>
+<td><p>0.3911</p></td>
+<td><p>3.50</p></td>
+<td><p>1.50</p></td>
+<td><p>0.587</p></td>
+<td><p>最優先</p></td>
+</tr>
+<tr class="row-even"><td><p>清潔さ</p></td>
+<td><p>0.1359</p></td>
+<td><p>3.26</p></td>
+<td><p>1.74</p></td>
+<td><p>0.236</p></td>
+<td><p>次善</p></td>
+</tr>
+<tr class="row-odd"><td><p>その他のサービス</p></td>
+<td><p>0.1363</p></td>
+<td><p>3.65</p></td>
+<td><p>1.35</p></td>
+<td><p>0.184</p></td>
+<td><p>次善</p></td>
+</tr>
+<tr class="row-even"><td><p>食事の満足度</p></td>
+<td><p>0.0864</p></td>
+<td><p>3.21</p></td>
+<td><p>1.79</p></td>
+<td><p>0.155</p></td>
+<td><p>次善</p></td>
+</tr>
+<tr class="row-odd"><td><p>ホテルの立地</p></td>
+<td><p>0.0034</p></td>
+<td><p>2.97</p></td>
+<td><p>2.03</p></td>
+<td><p>0.007</p></td>
+<td><p>投資不要</p></td>
+</tr>
+<tr class="row-even"><td><p>送迎の便利さ</p></td>
+<td><p>−0.0100</p></td>
+<td><p>3.25</p></td>
+<td><p>1.75</p></td>
+<td><p>−0.018</p></td>
+<td><p>投資不要</p></td>
+</tr>
+<tr class="row-odd"><td><p>オンライン予約のしやすさ</p></td>
+<td><p>−0.0234</p></td>
+<td><p>2.95</p></td>
+<td><p>2.05</p></td>
+<td><p>−0.048</p></td>
+<td><p>投資不要</p></td>
+</tr>
+<tr class="row-even"><td><p>チェックイン・アウトの接客</p></td>
+<td><p>−0.0408</p></td>
+<td><p>3.23</p></td>
+<td><p>1.77</p></td>
+<td><p>−0.072</p></td>
+<td><p>投資不要</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Wifiが1位になる理由</strong>：影響度は2位（0.364）だが、現在平均が9項目中<strong>最下位</strong>（2.90）。影響の大きい項目で、最も点数が低い。</p>
+<p>滞在時の快適さは影響度1位だが、すでに3.50まで来ているため伸びしろが小さい。</p>
+</section>
+<section id="施策シミュレーション">
+<h3><span class="section-number">12.6.2. </span>施策シミュレーション<a class="headerlink" href="#施策シミュレーション" title="この見出しへのパーマリンク"></a></h3>
+<p>回帰式に改善幅を入れ、予測満足度を四捨五入して高評価率・低評価率を再計算した。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>施策</p></th>
+<th class="head"><p>高評価率</p></th>
+<th class="head"><p>低評価率</p></th>
+<th class="head"><p>高評価率の変化</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>現状（施策なし）</p></td>
+<td><p>42.7%</p></td>
+<td><p>21.0%</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wifi設備 +0.5</p></td>
+<td><p>48.8%</p></td>
+<td><p>18.0%</p></td>
+<td><p>+6.1pt</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Wifi設備 +1.0</strong></p></td>
+<td><p><strong>55.4%</strong></p></td>
+<td><p><strong>14.9%</strong></p></td>
+<td><p><strong>+12.7pt</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>滞在時の快適さ +0.5</p></td>
+<td><p>47.6%</p></td>
+<td><p>17.8%</p></td>
+<td><p>+4.9pt</p></td>
+</tr>
+<tr class="row-even"><td><p>Wifi +0.5 かつ 快適さ +0.5</p></td>
+<td><p>57.1%</p></td>
+<td><p>14.6%</p></td>
+<td><p>+14.4pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>清潔さ +1.0</p></td>
+<td><p>46.9%</p></td>
+<td><p>19.1%</p></td>
+<td><p>+4.2pt</p></td>
+</tr>
+<tr class="row-even"><td><p>送迎の便利さ +1.0</p></td>
+<td><p>42.5%</p></td>
+<td><p>21.4%</p></td>
+<td><p>−0.2pt</p></td>
+</tr>
+<tr class="row-odd"><td><p>ホテルの立地 +1.0</p></td>
+<td><p>42.7%</p></td>
+<td><p>21.0%</p></td>
+<td><p>±0pt</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>送迎と立地を1点上げても高評価率は動かない。</strong> ここへの投資は満足度に返ってこない。</p>
+</section>
+<section id="個人客に絞った効果">
+<h3><span class="section-number">12.6.3. </span>個人客に絞った効果<a class="headerlink" href="#個人客に絞った効果" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>条件</p></th>
+<th class="head"><p>個人客の高評価率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>現状</p></td>
+<td><p>32.3%</p></td>
+</tr>
+<tr class="row-odd"><td><p>個人客のWifiをグループ客水準（+0.45）に</p></td>
+<td><p>36.1%</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="結論">
+<h2><span class="section-number">12.7. </span>結論<a class="headerlink" href="#結論" title="この見出しへのパーマリンク"></a></h2>
+<section id="現状-—-「平均3.24の裏で、2割が低評価を付けている」">
+<h3><span class="section-number">12.7.1. </span>現状 — 「平均3.24の裏で、2割が低評価を付けている」<a class="headerlink" href="#現状-—-「平均3.24の裏で、2割が低評価を付けている」" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p>満足度の平均3.24、中央値3.0。高評価42.2%、低評価22.0%</p></li>
+<li><p>低評価層110件が点数を押し下げている。この層を減らすのが平均を上げる最短経路</p></li>
+<li><p>個人客の低評価率は33.5%、グループ客は16.1%。個人客は170件（全体の34%）</p></li>
+<li><p>評価項目で最も低いのはWifi設備（2.90）</p></li>
+</ul>
+<p>平均を0.1上げる議論ではなく、低評価の2割が何に不満なのかを見る。<strong>不満の集中先は「個人客」と「Wifi」である。</strong></p>
+</section>
+<section id="分析-—-「相関の順位で選ぶと、投資先を間違える」">
+<h3><span class="section-number">12.7.2. </span>分析 — 「相関の順位で選ぶと、投資先を間違える」<a class="headerlink" href="#分析-—-「相関の順位で選ぶと、投資先を間違える」" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p>重回帰（n=471）の係数：滞在時の快適さ0.391、Wifi設備0.364、その他のサービス0.136、清潔さ0.136、食事0.086</p></li>
+<li><p>送迎（−0.010）・オンライン予約（−0.023）・立地（0.003）はいずれも有意でない</p></li>
+<li><p>清潔さは相関2位（0.695）だが係数4位（0.136）。快適さとの相関0.703による見かけの強さ</p></li>
+<li><p>その他のサービスは相関6位（0.219）だが係数3位（0.136）。単相関では埋もれる</p></li>
+<li><p>低評価層と高評価層の差：快適さ2.81点・清潔さ2.32・食事2.01に対し、送迎0.23・立地0.32・接客0.33</p></li>
+<li><p>シミュレーション：Wifiを1点上げると高評価率42.7%→55.4%。送迎を1点上げても42.5%で不変</p></li>
+</ul>
+<p><strong>9項目のうち満足度を動かすのは実質5項目。残り4項目に投資しても点数は返ってこない。そして動く5項目のうち、最も点数が低いのがWifiである。</strong></p>
+</section>
+<section id="提案-—-レビュー改善2つ・集客改善1つ">
+<h3><span class="section-number">12.7.3. </span>提案 — レビュー改善2つ・集客改善1つ<a class="headerlink" href="#提案-—-レビュー改善2つ・集客改善1つ" title="この見出しへのパーマリンク"></a></h3>
+<section id="提案1（最優先）　Wifi設備への投資を最優先にする">
+<h4>提案1（最優先）　Wifi設備への投資を最優先にする<a class="headerlink" href="#提案1（最優先）　Wifi設備への投資を最優先にする" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>影響度は9項目中2位（係数0.364）、現在平均は9項目中最下位（2.90）。影響度×伸びしろのスコアで1位</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>1点改善で高評価率 <strong>+12.7pt</strong>（42.7%→55.4%）、低評価率 <strong>−6.1pt</strong>（21.0%→14.9%）</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>客室単位の増強は設備投資になる。低評価が集中する個人客の滞在エリアから部分的に実施し、再調査で効果を確認してから全館に広げる</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="提案2　個人客の体験を立て直す">
+<h4>提案2　個人客の体験を立て直す<a class="headerlink" href="#提案2　個人客の体験を立て直す" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>個人客170件の満足度2.91・低評価率33.5%（グループ客は3.41・16.1%）。個人客はWifi 2.60（グループ3.05）、快適さ3.12（同3.67）と、効く項目2つで劣る</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>個人客のWifiをグループ客水準に揃えると、個人客の高評価率は32.3%→36.1%。低評価の3分の1がこの層にあるため、レビュー点数への寄与は大きい</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>同じ設備で評価が分かれる理由がデータから分からない。客室の割り当て方か、繁忙帯の混雑か、現場へのヒアリングが先に必要</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="提案3　集客はビジネス・40〜50代・グループに絞る">
+<h4>提案3　集客はビジネス・40〜50代・グループに絞る<a class="headerlink" href="#提案3　集客はビジネス・40〜50代・グループに絞る" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>満足度が高いのはビジネス3.44（高評価率52.0%）、50代3.46、40代3.37、グループ3.41。低いのは学生3.09・航空関係3.09・その他3.10、10代2.98、個人2.91</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>満足している層を増やせば、追加投資なしでレビュー点数の構成が改善する</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>学生・個人客を切り捨てる判断ではない。提案1・2で体験が直るまでは満足層への集客を優先するという、順序の話として扱う</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="欄外：この分析の限界">
+<h3><span class="section-number">12.7.4. </span>欄外：この分析の限界<a class="headerlink" href="#欄外：この分析の限界" title="この見出しへのパーマリンク"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>相関であって因果ではない。</strong> 満足度調査は同じ回答者が同じ時点で付けた点数であり、「Wifiを改善すれば満足度が上がる」は証明されていない。施策後の再調査が必要</p></li>
+<li><p><strong>チェックイン・アウトの接客は有意だが負の係数</strong>（−0.041、t=−3.82）。説明がつかないため施策の根拠にしない。有意性と重要性は別物</p></li>
+<li><p><strong>決定係数0.922は満足度調査としては高すぎる。</strong> このデータは満足度が評価項目からほぼ算出される構造になっており、実際の調査データでここまで綺麗に要因が分離することはない</p></li>
+<li><p><strong>70代5件・80代1件・年代不明7件</strong>は母数が小さく、率での比較に使えない</p></li>
+<li><p><strong>レビュー点数と予約数の関係は、このデータに入っていない。</strong> 「点数が上がれば集客が増える」は仮定であり、検証していない</p></li>
+</ol>
+</section>
+<section id="効果検証に必要な追加データ">
+<h3><span class="section-number">12.7.5. </span>効果検証に必要な追加データ<a class="headerlink" href="#効果検証に必要な追加データ" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p>施策の実施日（Wifi増強の工事日など。前後比較の基準点）</p></li>
+<li><p>予約経路と予約時のレビュー点数（点数と集客の関係を測るため）</p></li>
+<li><p>客室タイプと階数（同じ設備で個人客の評価が低い理由の切り分け）</p></li>
+<li><p>宿泊日と繁忙度（混雑が体験を下げているかの確認）</p></li>
+<li><p>自由記述のコメント（点数だけでは不満の中身が分からない）</p></li>
+</ul>
+</section>
+<section id="More">
+<h3><span class="section-number">12.7.6. </span>More<a class="headerlink" href="#More" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p><strong>単相関の高い順に改善項目を選んでいる</strong>（清潔さを最優先にしている）</p></li>
+<li><p>立地の異常値に気づいていない（11.54を1〜5として平均に入れている）</p></li>
+<li><p>送迎・立地の改善を提案に入れている（影響度がほぼ0の項目）</p></li>
+<li><p>80代の満足度が最低と報告している（母数1件）</p></li>
+</ul>
+</section>
+<section id="Good">
+<h3><span class="section-number">12.7.7. </span>Good<a class="headerlink" href="#Good" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p><strong>「影響度が低い項目には投資しない」という逆方向の提案</strong>を含んでいる</p></li>
+<li><p>有意だが符号が説明できない接客の係数を、あえて採用しなかったと述べている</p></li>
+<li><p>0を含めた平均と除いた平均の両方を出して、差を確認している</p></li>
+</ul>
+</section>
+<section id="自身の回答の確認質問">
+<h3><span class="section-number">12.7.8. </span>自身の回答の確認質問<a class="headerlink" href="#自身の回答の確認質問" title="この見出しへのパーマリンク"></a></h3>
+<p>効く順。</p>
+<ol class="arabic simple">
+<li><p>「なぜ清潔さではなくWifiを最優先にしたのですか」</p></li>
+<li><p>「その高評価率+12.7ptはどうやって出した数字ですか」</p></li>
+<li><p>「Wifiを直せば本当に満足度が上がると言えますか」</p></li>
+<li><p>「80代の満足度が最低と書いていますが、母数は何件ですか」</p></li>
+<li><p>「送迎の評価が3.24なのはなぜ500件の平均になっていないのですか」</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="09.html" class="btn btn-neutral float-left" title="11. 【補足】主成分分析とは？" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FreshMart_case.html" class="btn btn-neutral float-right" title="13. 【補足】問題解決演習" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

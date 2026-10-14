@@ -1,30 +1,32 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="ja" data-content_root="../">
+<html class="writer-html5" lang="ja">
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10. 【補足】クラスタリング &mdash; Sphinx  ドキュメント</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
 
   
-      <script src="../_static/jquery.js?v=5d32c60e"></script>
-      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../_static/documentation_options.js?v=c033477b"></script>
-      <script src="../_static/doctools.js?v=9a2dae69"></script>
-      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script src="../_static/translations.js?v=91613774"></script>
-      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
     <link rel="next" title="11. 【補足】主成分分析とは？" href="09.html" />
-    <link rel="prev" title="9. 【補足】分析結果の考察、結論" href="07.html" /> 
+    <link rel="prev" title="9. 営業支援データ分析 模範解答（講師用）" href="07.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,7 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07.html">9. 【補足】分析結果の考察、結論</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 営業支援データ分析 模範解答（講師用）</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">10. 【補足】クラスタリング</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#概要">10.1. 概要</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#「分類」との違い">10.2. 「分類」との違い</a></li>
@@ -74,8 +76,9 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="09.html">11. 【補足】主成分分析とは？</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">12. 【補足】問題解決演習</a></li>
-<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">13. 【補足】保守インシデント分析 演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">12. 模範解答：ホテルレビューの分析によるレビュー改善・集客改善</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">13. 【補足】問題解決演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
 </ul>
 
         </div>
@@ -103,17 +106,17 @@
            <div itemprop="articleBody">
              
   <section id="【補足】クラスタリング">
-<h1><span class="section-number">10. </span>【補足】クラスタリング<a class="headerlink" href="#【補足】クラスタリング" title="Link to this heading"></a></h1>
+<h1><span class="section-number">10. </span>【補足】クラスタリング<a class="headerlink" href="#【補足】クラスタリング" title="この見出しへのパーマリンク"></a></h1>
 <p><strong>正解のないデータを「似たものどうし」に分ける</strong> ― Excel で k-means を動かして理解する</p>
 <section id="概要">
-<h2><span class="section-number">10.1. </span>概要<a class="headerlink" href="#概要" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.1. </span>概要<a class="headerlink" href="#概要" title="この見出しへのパーマリンク"></a></h2>
 <p>会員を一律に扱っていては、施策が誰にも刺さらない。客層ごとに打ち手を変えたい。 ところが <strong>「どこで線を引けばグループになるのか」は、誰も教えてくれない</strong>。</p>
 <p>クラスタリングは、この線引きをデータ自身にやらせる手法です。 項目の値が近いものどうしを集めて、いくつかのまとまり（クラスタ）を見つけます。</p>
 <p><img alt="分ける前と分けた後" src="../_images/fig1_concept.png" /></p>
 <p>左はただの点の集まりですが、来店回数と客単価の2つの軸で見ると、3つの塊があることが分かります。 クラスタリングはこの塊を自動で見つけ、それぞれに番号を振ります。</p>
 </section>
 <section id="「分類」との違い">
-<h2><span class="section-number">10.2. </span>「分類」との違い<a class="headerlink" href="#「分類」との違い" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.2. </span>「分類」との違い<a class="headerlink" href="#「分類」との違い" title="この見出しへのパーマリンク"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -143,7 +146,7 @@
 <p>クラスタリングが出すのは「番号」だけです。それが何者かを決めるのは分析者の仕事です。</p>
 </section>
 <section id="「似ている」＝「距離が近い」">
-<h2><span class="section-number">10.3. </span>「似ている」＝「距離が近い」<a class="headerlink" href="#「似ている」＝「距離が近い」" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.3. </span>「似ている」＝「距離が近い」<a class="headerlink" href="#「似ている」＝「距離が近い」" title="この見出しへのパーマリンク"></a></h2>
 <p>クラスタリングでは、似ている度合いを <strong>距離</strong> で測ります。 2つの項目（来店回数 x、客単価 y）なら、平面上の直線距離です。</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>距離 = √（ (x₁ − x₂)² + (y₁ − y₂)² ）
 </pre></div>
@@ -151,7 +154,7 @@
 <p>項目が3つ以上でも、同じように差の2乗を足してルートを取るだけです。</p>
 </section>
 <section id="k-means-の仕組み">
-<h2><span class="section-number">10.4. </span>k-means の仕組み<a class="headerlink" href="#k-means-の仕組み" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.4. </span>k-means の仕組み<a class="headerlink" href="#k-means-の仕組み" title="この見出しへのパーマリンク"></a></h2>
 <p>最もよく使われる手法が <strong>k-means（k平均法）</strong> です。やることは4ステップしかありません。</p>
 <p><img alt="k-meansの4ステップ" src="../_images/fig2_kmeans_steps.png" /></p>
 <ol class="arabic simple">
@@ -163,9 +166,9 @@
 <p>図の①では、2つの中心がたまたま右下の塊に重なって置かれています。 それでもくり返すうちに中心が移動し、4回目で3つの塊に収まりました。</p>
 </section>
 <section id="使う前の3つの注意">
-<h2><span class="section-number">10.5. </span>使う前の3つの注意<a class="headerlink" href="#使う前の3つの注意" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.5. </span>使う前の3つの注意<a class="headerlink" href="#使う前の3つの注意" title="この見出しへのパーマリンク"></a></h2>
 <section id="単位をそろえる（標準化）">
-<h3><span class="section-number">10.5.1. </span>単位をそろえる（標準化）<a class="headerlink" href="#単位をそろえる（標準化）" title="Link to this heading"></a></h3>
+<h3><span class="section-number">10.5.1. </span>単位をそろえる（標準化）<a class="headerlink" href="#単位をそろえる（標準化）" title="この見出しへのパーマリンク"></a></h3>
 <p>来店回数は「数十回」、客単価は「数千円」の単位です。このまま距離を計算すると、 <strong>数字の大きい客単価の差が距離のほとんどを占め、来店回数がほぼ無視されます。</strong></p>
 <p><img alt="標準化の有無による違い" src="../_images/fig3_standardize.png" /></p>
 <p>左は標準化せずに分けた結果です。客単価だけで上下に輪切りにされ、 来店20回の客と90回の客が同じグループに混ざっています。</p>
@@ -175,20 +178,20 @@
 </div>
 </section>
 <section id="k（グループ数）の決め方">
-<h3><span class="section-number">10.5.2. </span>k（グループ数）の決め方<a class="headerlink" href="#k（グループ数）の決め方" title="Link to this heading"></a></h3>
+<h3><span class="section-number">10.5.2. </span>k（グループ数）の決め方<a class="headerlink" href="#k（グループ数）の決め方" title="この見出しへのパーマリンク"></a></h3>
 <p>k を増やせば各点は中心に近づくので、「まとまりの悪さ（SSE）」は必ず下がります。 大事なのは <strong>下がり方が急に鈍くなる点</strong> です。ここを「ひじ（エルボー）」と呼び、k の目安にします。</p>
 <p><img alt="エルボー法" src="../_images/fig4_elbow.png" /></p>
 <p>この例では k=3 で一気に下がり、それ以降はほとんど変わりません。</p>
 <p>ただしエルボーは目安です。最後は <strong>「その数のグループに、別々の施策を打てるか」</strong> で決めます。 10グループに分けても、10通りの施策を回せなければ意味がありません。</p>
 </section>
 <section id="初期値で結果が変わる">
-<h3><span class="section-number">10.5.3. </span>初期値で結果が変わる<a class="headerlink" href="#初期値で結果が変わる" title="Link to this heading"></a></h3>
+<h3><span class="section-number">10.5.3. </span>初期値で結果が変わる<a class="headerlink" href="#初期値で結果が変わる" title="この見出しへのパーマリンク"></a></h3>
 <p>k-means は最初に置いた中心の位置によって、違う答えに落ち着くことがあります。 初期値を変えて何回か実行し、<strong>SSE が一番小さい結果を採用</strong>するのが基本です。</p>
 <p>デモファイル <a class="reference external" href="img/kmeans_button.xlsm">クラスタリングEXCEL</a></p>
 </section>
 </section>
 <section id="結果の読み方">
-<h2><span class="section-number">10.6. </span>結果の読み方<a class="headerlink" href="#結果の読み方" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.6. </span>結果の読み方<a class="headerlink" href="#結果の読み方" title="この見出しへのパーマリンク"></a></h2>
 <div class="line-block">
 <div class="line">クラスタごとに <strong>元の単位で平均を取り</strong>、特徴を見て名前をつけます。</div>
 <div class="line">例）</div>
@@ -236,7 +239,7 @@
 <p>年間購入額で見ると日常利用型とまとめ買い型はほぼ同じですが、<strong>買い方がまったく違うので打ち手も違う</strong>。 購入額のランクだけでは見えなかった違いです。</p>
 </section>
 <section id="注意点">
-<h2><span class="section-number">10.7. </span>注意点<a class="headerlink" href="#注意点" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.7. </span>注意点<a class="headerlink" href="#注意点" title="この見出しへのパーマリンク"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>落とし穴</p></th>
@@ -269,7 +272,7 @@
 </table>
 </section>
 <section id="まとめ">
-<h2><span class="section-number">10.8. </span>まとめ<a class="headerlink" href="#まとめ" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.8. </span>まとめ<a class="headerlink" href="#まとめ" title="この見出しへのパーマリンク"></a></h2>
 <ul class="simple">
 <li><p>クラスタリングは、<strong>正解のないデータを「似たものどうし」に分ける</strong>手法</p></li>
 <li><p>k-means は <strong>「近い中心に入れる → 中心を平均に動かす」をくり返すだけ</strong></p></li>
@@ -283,7 +286,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="07.html" class="btn btn-neutral float-left" title="9. 【補足】分析結果の考察、結論" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="07.html" class="btn btn-neutral float-left" title="9. 営業支援データ分析 模範解答（講師用）" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="09.html" class="btn btn-neutral float-right" title="11. 【補足】主成分分析とは？" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
