@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="検索" href="../search.html" />
-    <link rel="next" title="11. 主成分分析とは？" href="09.html" />
+    <link rel="next" title="11. 【補足】主成分分析とは？" href="09.html" />
     <link rel="prev" title="9. 【補足】分析結果の考察、結論" href="07.html" /> 
 </head>
 
@@ -58,22 +58,22 @@
 <li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.html">9. 【補足】分析結果の考察、結論</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">10. 【補足】クラスタリング</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#1.-どんな問題を解くのか">10.1. 1. どんな問題を解くのか</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#2.-「分類」との違い">10.2. 2. 「分類」との違い</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#3.-「似ている」＝「距離が近い」">10.3. 3. 「似ている」＝「距離が近い」</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#4.-k-means-の仕組み">10.4. 4. k-means の仕組み</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#5.-使う前の3つの注意">10.5. 5. 使う前の3つの注意</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#5-1.-単位をそろえる（標準化）">10.5.1. 5-1. 単位をそろえる（標準化）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#5-2.-k（グループ数）の決め方">10.5.2. 5-2. k（グループ数）の決め方</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#5-3.-初期値で結果が変わる">10.5.3. 5-3. 初期値で結果が変わる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#概要">10.1. 概要</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#「分類」との違い">10.2. 「分類」との違い</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#「似ている」＝「距離が近い」">10.3. 「似ている」＝「距離が近い」</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#k-means-の仕組み">10.4. k-means の仕組み</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#使う前の3つの注意">10.5. 使う前の3つの注意</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#単位をそろえる（標準化）">10.5.1. 単位をそろえる（標準化）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#k（グループ数）の決め方">10.5.2. k（グループ数）の決め方</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#初期値で結果が変わる">10.5.3. 初期値で結果が変わる</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#6.-結果の読み方">10.6. 6. 結果の読み方</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#7.-よくある落とし穴">10.7. 7. よくある落とし穴</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#結果の読み方">10.6. 結果の読み方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#注意点">10.7. 注意点</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#まとめ">10.8. まとめ</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="09.html">11. 主成分分析とは？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">11. 【補足】主成分分析とは？</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">12. 【補足】問題解決演習</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">13. 【補足】保守インシデント分析 演習</a></li>
 </ul>
@@ -105,15 +105,15 @@
   <section id="【補足】クラスタリング">
 <h1><span class="section-number">10. </span>【補足】クラスタリング<a class="headerlink" href="#【補足】クラスタリング" title="Link to this heading"></a></h1>
 <p><strong>正解のないデータを「似たものどうし」に分ける</strong> ― Excel で k-means を動かして理解する</p>
-<section id="1.-どんな問題を解くのか">
-<h2><span class="section-number">10.1. </span>1. どんな問題を解くのか<a class="headerlink" href="#1.-どんな問題を解くのか" title="Link to this heading"></a></h2>
+<section id="概要">
+<h2><span class="section-number">10.1. </span>概要<a class="headerlink" href="#概要" title="Link to this heading"></a></h2>
 <p>会員を一律に扱っていては、施策が誰にも刺さらない。客層ごとに打ち手を変えたい。 ところが <strong>「どこで線を引けばグループになるのか」は、誰も教えてくれない</strong>。</p>
 <p>クラスタリングは、この線引きをデータ自身にやらせる手法です。 項目の値が近いものどうしを集めて、いくつかのまとまり（クラスタ）を見つけます。</p>
 <p><img alt="分ける前と分けた後" src="../_images/fig1_concept.png" /></p>
 <p>左はただの点の集まりですが、来店回数と客単価の2つの軸で見ると、3つの塊があることが分かります。 クラスタリングはこの塊を自動で見つけ、それぞれに番号を振ります。</p>
 </section>
-<section id="2.-「分類」との違い">
-<h2><span class="section-number">10.2. </span>2. 「分類」との違い<a class="headerlink" href="#2.-「分類」との違い" title="Link to this heading"></a></h2>
+<section id="「分類」との違い">
+<h2><span class="section-number">10.2. </span>「分類」との違い<a class="headerlink" href="#「分類」との違い" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -142,16 +142,16 @@
 </table>
 <p>クラスタリングが出すのは「番号」だけです。それが何者かを決めるのは分析者の仕事です。</p>
 </section>
-<section id="3.-「似ている」＝「距離が近い」">
-<h2><span class="section-number">10.3. </span>3. 「似ている」＝「距離が近い」<a class="headerlink" href="#3.-「似ている」＝「距離が近い」" title="Link to this heading"></a></h2>
+<section id="「似ている」＝「距離が近い」">
+<h2><span class="section-number">10.3. </span>「似ている」＝「距離が近い」<a class="headerlink" href="#「似ている」＝「距離が近い」" title="Link to this heading"></a></h2>
 <p>クラスタリングでは、似ている度合いを <strong>距離</strong> で測ります。 2つの項目（来店回数 x、客単価 y）なら、平面上の直線距離です。</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>距離 = √（ (x₁ − x₂)² + (y₁ − y₂)² ）
 </pre></div>
 </div>
 <p>項目が3つ以上でも、同じように差の2乗を足してルートを取るだけです。</p>
 </section>
-<section id="4.-k-means-の仕組み">
-<h2><span class="section-number">10.4. </span>4. k-means の仕組み<a class="headerlink" href="#4.-k-means-の仕組み" title="Link to this heading"></a></h2>
+<section id="k-means-の仕組み">
+<h2><span class="section-number">10.4. </span>k-means の仕組み<a class="headerlink" href="#k-means-の仕組み" title="Link to this heading"></a></h2>
 <p>最もよく使われる手法が <strong>k-means（k平均法）</strong> です。やることは4ステップしかありません。</p>
 <p><img alt="k-meansの4ステップ" src="../_images/fig2_kmeans_steps.png" /></p>
 <ol class="arabic simple">
@@ -162,10 +162,10 @@
 </ol>
 <p>図の①では、2つの中心がたまたま右下の塊に重なって置かれています。 それでもくり返すうちに中心が移動し、4回目で3つの塊に収まりました。</p>
 </section>
-<section id="5.-使う前の3つの注意">
-<h2><span class="section-number">10.5. </span>5. 使う前の3つの注意<a class="headerlink" href="#5.-使う前の3つの注意" title="Link to this heading"></a></h2>
-<section id="5-1.-単位をそろえる（標準化）">
-<h3><span class="section-number">10.5.1. </span>5-1. 単位をそろえる（標準化）<a class="headerlink" href="#5-1.-単位をそろえる（標準化）" title="Link to this heading"></a></h3>
+<section id="使う前の3つの注意">
+<h2><span class="section-number">10.5. </span>使う前の3つの注意<a class="headerlink" href="#使う前の3つの注意" title="Link to this heading"></a></h2>
+<section id="単位をそろえる（標準化）">
+<h3><span class="section-number">10.5.1. </span>単位をそろえる（標準化）<a class="headerlink" href="#単位をそろえる（標準化）" title="Link to this heading"></a></h3>
 <p>来店回数は「数十回」、客単価は「数千円」の単位です。このまま距離を計算すると、 <strong>数字の大きい客単価の差が距離のほとんどを占め、来店回数がほぼ無視されます。</strong></p>
 <p><img alt="標準化の有無による違い" src="../_images/fig3_standardize.png" /></p>
 <p>左は標準化せずに分けた結果です。客単価だけで上下に輪切りにされ、 来店20回の客と90回の客が同じグループに混ざっています。</p>
@@ -174,21 +174,21 @@
 </pre></div>
 </div>
 </section>
-<section id="5-2.-k（グループ数）の決め方">
-<h3><span class="section-number">10.5.2. </span>5-2. k（グループ数）の決め方<a class="headerlink" href="#5-2.-k（グループ数）の決め方" title="Link to this heading"></a></h3>
+<section id="k（グループ数）の決め方">
+<h3><span class="section-number">10.5.2. </span>k（グループ数）の決め方<a class="headerlink" href="#k（グループ数）の決め方" title="Link to this heading"></a></h3>
 <p>k を増やせば各点は中心に近づくので、「まとまりの悪さ（SSE）」は必ず下がります。 大事なのは <strong>下がり方が急に鈍くなる点</strong> です。ここを「ひじ（エルボー）」と呼び、k の目安にします。</p>
 <p><img alt="エルボー法" src="../_images/fig4_elbow.png" /></p>
 <p>この例では k=3 で一気に下がり、それ以降はほとんど変わりません。</p>
 <p>ただしエルボーは目安です。最後は <strong>「その数のグループに、別々の施策を打てるか」</strong> で決めます。 10グループに分けても、10通りの施策を回せなければ意味がありません。</p>
 </section>
-<section id="5-3.-初期値で結果が変わる">
-<h3><span class="section-number">10.5.3. </span>5-3. 初期値で結果が変わる<a class="headerlink" href="#5-3.-初期値で結果が変わる" title="Link to this heading"></a></h3>
+<section id="初期値で結果が変わる">
+<h3><span class="section-number">10.5.3. </span>初期値で結果が変わる<a class="headerlink" href="#初期値で結果が変わる" title="Link to this heading"></a></h3>
 <p>k-means は最初に置いた中心の位置によって、違う答えに落ち着くことがあります。 初期値を変えて何回か実行し、<strong>SSE が一番小さい結果を採用</strong>するのが基本です。</p>
 <p>デモファイル <a class="reference external" href="img/kmeans_button.xlsm">クラスタリングEXCEL</a></p>
 </section>
 </section>
-<section id="6.-結果の読み方">
-<h2><span class="section-number">10.6. </span>6. 結果の読み方<a class="headerlink" href="#6.-結果の読み方" title="Link to this heading"></a></h2>
+<section id="結果の読み方">
+<h2><span class="section-number">10.6. </span>結果の読み方<a class="headerlink" href="#結果の読み方" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line">クラスタごとに <strong>元の単位で平均を取り</strong>、特徴を見て名前をつけます。</div>
 <div class="line">例）</div>
@@ -235,8 +235,8 @@
 </ul>
 <p>年間購入額で見ると日常利用型とまとめ買い型はほぼ同じですが、<strong>買い方がまったく違うので打ち手も違う</strong>。 購入額のランクだけでは見えなかった違いです。</p>
 </section>
-<section id="7.-よくある落とし穴">
-<h2><span class="section-number">10.7. </span>7. よくある落とし穴<a class="headerlink" href="#7.-よくある落とし穴" title="Link to this heading"></a></h2>
+<section id="注意点">
+<h2><span class="section-number">10.7. </span>注意点<a class="headerlink" href="#注意点" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>落とし穴</p></th>
@@ -284,7 +284,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="07.html" class="btn btn-neutral float-left" title="9. 【補足】分析結果の考察、結論" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="09.html" class="btn btn-neutral float-right" title="11. 主成分分析とは？" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="09.html" class="btn btn-neutral float-right" title="11. 【補足】主成分分析とは？" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
