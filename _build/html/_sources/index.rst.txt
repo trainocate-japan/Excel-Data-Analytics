@@ -20,5 +20,6 @@ Excel で学ぶデータ分析講座
    src/10.ipynb
    src/FreshMart_case.ipynb
    src/保守インシデント分析_演習ガイド.ipynb
+   src/模範解答_保守インシデント分析.ipynb
 
 =========================

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15. 模範解答：保守インシデントの傾向分析と改善提案 &mdash; Sphinx  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="検索" href="../search.html" />
+    <link rel="prev" title="14. 【補足】保守インシデント分析 演習" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Sphinx
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0.html">1. 〜研修へようこそ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01.html">2. データ分析とは</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html">3. 問題の把握・明確化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.html#データの収集">4. データの収集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.html">5. 探索的データ分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-00.html">6. データに基づく分析・処理（分析）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-01.html">7. データに基づく分析・処理 （統計仮説検定）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.html">8. 総演習：データに基づく営業支援のための施策を立案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.html">9. 営業支援データ分析 模範解答（講師用）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.html">10. 【補足】クラスタリング</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.html">11. 【補足】主成分分析とは？</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.html">12. 解答例：ホテルレビューの分析によるレビュー改善・集客改善</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FreshMart_case.html">13. 【補足】問題解決演習</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 模範解答：保守インシデントの傾向分析と改善提案</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む">15.1. 考え方の枠組み：What → Where → Why → How をピラミッドで組む</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#分析はツリー、報告はピラミッド">15.1.1. 分析はツリー、報告はピラミッド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#まず問題を定義する-—-現状と理想のギャップ">15.1.2. まず問題を定義する — 現状と理想のギャップ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#縦の問答が成立しているか">15.1.3. 縦の問答が成立しているか</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第1部　前処理でなされるべき4つの判断">15.2. 第1部　前処理でなされるべき4つの判断</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#判断1　所要時間は「受付→解決」で測る。クローズ日時は使わない">15.2.1. 判断1　所要時間は「受付→解決」で測る。クローズ日時は使わない</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断2　解決日時が空欄の516件は、指標ごとに扱いを変える">15.2.2. 判断2　解決日時が空欄の516件は、指標ごとに扱いを変える</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断3　代表値は中央値を使う">15.2.3. 判断3　代表値は中央値を使う</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#判断4　率で順位づけするときは母数を併記する">15.2.4. 判断4　率で順位づけするときは母数を併記する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第2部　分析結果">15.3. 第2部　分析結果</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#全体像">15.3.1. 全体像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#長期化の要因は「担当の受け渡し」">15.3.2. 長期化の要因は「担当の受け渡し」</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#明細から見える特定の経路">15.3.3. 明細から見える特定の経路</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#一次受けの精度">15.3.4. 一次受けの精度</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#経過時間の内訳">15.3.5. 経過時間の内訳</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第3部　重回帰分析">15.4. 第3部　重回帰分析</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#変数設計">15.4.1. 変数設計</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#モデル比較">15.4.2. モデル比較</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#モデル2の主な係数">15.4.3. モデル2の主な係数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#モデル1で現れる符号の逆転">15.4.4. モデル1で現れる符号の逆転</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#多重共線性">15.4.5. 多重共線性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#相関と交絡：ナレッジ利用フラグ">15.4.6. 相関と交絡：ナレッジ利用フラグ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第4部　スライド3枚（ピラミッド順）">15.5. 第4部　スライド3枚（ピラミッド順）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#1枚目：問いと答え">15.5.1. 1枚目：問いと答え</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#2枚目：3つの根拠">15.5.2. 2枚目：3つの根拠</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#3枚目：施策とギャップの回収">15.5.3. 3枚目：施策とギャップの回収</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する">提案1（最優先）　Group 20 と Group 70 の担当範囲を文書で確定する</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提案2　Group-9-を一次受けから外す">提案2　Group 9 を一次受けから外す</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提案3　客待ち（Awaiting-User-Info）の運用ルールを作る">提案3　客待ち（Awaiting User Info）の運用ルールを作る</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#欄外：この分析の限界">15.5.4. 欄外：この分析の限界</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#効果検証に必要な追加データ">15.5.5. 効果検証に必要な追加データ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#第5部　採点の着眼点">15.6. 第5部　採点の着眼点</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#データ整形">15.6.1. データ整形</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#分析の妥当性">15.6.2. 分析の妥当性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#提案の具体性">15.6.3. 提案の具体性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#限界の説明">15.6.4. 限界の説明</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#発表での詰め質問">15.6.5. 発表での詰め質問</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Sphinx</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">15. </span>模範解答：保守インシデントの傾向分析と改善提案</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/src/模範解答_保守インシデント分析.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="模範解答：保守インシデントの傾向分析と改善提案">
+<h1><span class="section-number">15. </span>模範解答：保守インシデントの傾向分析と改善提案<a class="headerlink" href="#模範解答：保守インシデントの傾向分析と改善提案" title="この見出しへのパーマリンク"></a></h1>
+<p>対象データ：<code class="docutils literal notranslate"><span class="pre">保守インシデント分析_演習用_配布版.xlsx</span></code>（8,000件） 対応するワークブック：<code class="docutils literal notranslate"><span class="pre">模範解答_保守インシデント分析.xlsx</span></code></p>
+<section id="考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む">
+<h2><span class="section-number">15.1. </span>考え方の枠組み：What → Where → Why → How をピラミッドで組む<a class="headerlink" href="#考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む" title="この見出しへのパーマリンク"></a></h2>
+<section id="分析はツリー、報告はピラミッド">
+<h3><span class="section-number">15.1.1. </span>分析はツリー、報告はピラミッド<a class="headerlink" href="#分析はツリー、報告はピラミッド" title="この見出しへのパーマリンク"></a></h3>
+<p>同じ What → Where → Why → How でも、<strong>分析するときと報告するときでは向きが逆になる。</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>向き</p></th>
+<th class="head"><p>構造</p></th>
+<th class="head"><p>目的</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>分析</p></td>
+<td><p>What → Where → Why → How</p></td>
+<td><p>ツリー（枝を切って絞り込む）</p></td>
+<td><p>答えを<strong>導く</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>報告</p></td>
+<td><p>How → Why → Where</p></td>
+<td><p>ピラミッド（結論から降りる）</p></td>
+<td><p>答えを<strong>伝える</strong></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="まず問題を定義する-—-現状と理想のギャップ">
+<h3><span class="section-number">15.1.2. </span>まず問題を定義する — 現状と理想のギャップ<a class="headerlink" href="#まず問題を定義する-—-現状と理想のギャップ" title="この見出しへのパーマリンク"></a></h3>
+<p>「SLA未達成が多い」とだけ言っても、どこまでやれば十分かが決まらない。理想を置いて初めて、埋めるべき差が数字になる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>値</p></th>
+<th class="head"><p>定義</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>現状</p></td>
+<td><p><strong>2,964件（37.1%）</strong></p></td>
+<td><p>8,000件中のSLA未達成</p></td>
+</tr>
+<tr class="row-odd"><td><p>理想</p></td>
+<td><p><strong>1,760件（22.0%）</strong></p></td>
+<td><p>全件が「再割当なし」案件と同じ水準になった場合</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ギャップ</strong></p></td>
+<td><p><strong>1,204件（▲15.1pt）</strong></p></td>
+<td><p>受け渡しによって生まれている未達成</p></td>
+</tr>
+</tbody>
+</table>
+<p>理想値を「未達成ゼロ」に置くと非現実的で、打ち手の大きさを測れない。<strong>実績として存在する水準（再割当が起きなかった4,367件の22.0%）</strong>を理想に据えると、ギャップがそのまま「受け渡しが生んでいる損失」になる。</p>
+<p>ただしこれは仮定を含む。再割当が起きなかった案件は、もともと簡単だった可能性がある。<strong>理想値の置き方自体が分析者の判断</strong>であり、そこを説明できることが条件になる。</p>
+<p><img alt="data" src="../_images/%E5%9B%B3_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%83%81%E3%83%A3%E3%83%BC_%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88.png" /></p>
+</section>
+<section id="縦の問答が成立しているか">
+<h3><span class="section-number">15.1.3. </span>縦の問答が成立しているか<a class="headerlink" href="#縦の問答が成立しているか" title="この見出しへのパーマリンク"></a></h3>
+<p>ピラミッドが正しく組めているかは、<strong>上から下へ問いが連鎖するか</strong>で確かめる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>階層</p></th>
+<th class="head"><p>読み手の問い</p></th>
+<th class="head"><p>答え</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>頂点</p></td>
+<td><p>来期は何を変えるのか？</p></td>
+<td><p>受け渡しの削減に絞る</p></td>
+</tr>
+<tr class="row-odd"><td><p>↓</p></td>
+<td><p>なぜそう言えるのか？</p></td>
+<td><p>長期化は受け渡しで起きている／2経路に集中している／受付時点では防げない</p></td>
+</tr>
+<tr class="row-even"><td><p>↓</p></td>
+<td><p>その根拠は？</p></td>
+<td><p>再割当なし22.0%・あり55.1%／往復706回／R²=0.020 ほか</p></td>
+</tr>
+<tr class="row-odd"><td><p>最下層</p></td>
+<td><p>それはどこから出た数字か？</p></td>
+<td><p>ワークブックの集計シートとプロセス分析シート</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>横の並びがMECEかも確かめる。</strong> 3つの根拠は「事象の大きさ」「発生箇所」「打ち手の方向」を順に示しており、重複も飛躍もない。根拠3（受付時点では防げない）があることで、「事前の仕分けを強化すべきでは」という当然の反論を先に潰している。</p>
+</section>
+</section>
+<section id="第1部　前処理でなされるべき4つの判断">
+<h2><span class="section-number">15.2. </span>第1部　前処理でなされるべき4つの判断<a class="headerlink" href="#第1部　前処理でなされるべき4つの判断" title="この見出しへのパーマリンク"></a></h2>
+<p>この演習の採点は、集計の正しさよりも<strong>前処理での判断</strong>に重みがある。以下の4つは、気づかないまま進めると結論が変わる。</p>
+<section id="判断1　所要時間は「受付→解決」で測る。クローズ日時は使わない">
+<h3><span class="section-number">15.2.1. </span>判断1　所要時間は「受付→解決」で測る。クローズ日時は使わない<a class="headerlink" href="#判断1　所要時間は「受付→解決」で測る。クローズ日時は使わない" title="この見出しへのパーマリンク"></a></h3>
+<p>解決からクローズまでの時間の<strong>85.6%が119〜121時間</strong>に収まっている（中央値120.55時間）。解決の5日後に自動クローズされる運用で、クローズ日時は担当者の仕事の速さを表していない。</p>
+<p>クローズ日時で所要時間を出した答案は、所要時間の中央値が145.7時間になる。実際の21.7時間とは7倍違う。</p>
+</section>
+<section id="判断2　解決日時が空欄の516件は、指標ごとに扱いを変える">
+<h3><span class="section-number">15.2.2. </span>判断2　解決日時が空欄の516件は、指標ごとに扱いを変える<a class="headerlink" href="#判断2　解決日時が空欄の516件は、指標ごとに扱いを変える" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>指標</p></th>
+<th class="head"><p>母数</p></th>
+<th class="head"><p>理由</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>件数・SLA未達成率</p></td>
+<td><p>8,000件（全件）</p></td>
+<td><p>除外すると未達成を取りこぼす</p></td>
+</tr>
+<tr class="row-odd"><td><p>解決所要時間</p></td>
+<td><p>7,484件</p></td>
+<td><p>未解決を0時間として扱えない</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>一律に除外した答案は未達成率を誤る。一律に残した答案は所要時間を誤る。</strong> 目的ごとに母数を変え、それを明示できているかが分かれ目。</p>
+</section>
+<section id="判断3　代表値は中央値を使う">
+<h3><span class="section-number">15.2.3. </span>判断3　代表値は中央値を使う<a class="headerlink" href="#判断3　代表値は中央値を使う" title="この見出しへのパーマリンク"></a></h3>
+<p>中央値21.7時間に対し、平均183.4時間、最大7,316時間。平均値で語ると「解決に1週間かかる部門」に見えるが、実際は<strong>51.8%が24時間以内</strong>に解決している。</p>
+<p>平均値は併記してよい。ただし主役にすると、打つべき対策を見誤る。</p>
+</section>
+<section id="判断4　率で順位づけするときは母数を併記する">
+<h3><span class="section-number">15.2.4. </span>判断4　率で順位づけするときは母数を併記する<a class="headerlink" href="#判断4　率で順位づけするときは母数を併記する" title="この見出しへのパーマリンク"></a></h3>
+<p>優先度「緊急」78件と「高」136件は<strong>未達成率100%</strong>。しかし合計214件は、全未達成2,964件の<strong>7.2%</strong>にすぎない。</p>
+<p>率の順位と件数の順位は一致しない。どちらを採ったかを言えることが条件。</p>
+</section>
+</section>
+<section id="第2部　分析結果">
+<h2><span class="section-number">15.3. </span>第2部　分析結果<a class="headerlink" href="#第2部　分析結果" title="この見出しへのパーマリンク"></a></h2>
+<section id="全体像">
+<h3><span class="section-number">15.3.1. </span>全体像<a class="headerlink" href="#全体像" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>指標</p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>総件数</p></td>
+<td><p>8,000件</p></td>
+</tr>
+<tr class="row-odd"><td><p>SLA未達成</p></td>
+<td><p>2,964件（37.1%）</p></td>
+</tr>
+<tr class="row-even"><td><p>解決所要時間 中央値</p></td>
+<td><p>21.7時間</p></td>
+</tr>
+<tr class="row-odd"><td><p>解決所要時間 平均</p></td>
+<td><p>183.4時間</p></td>
+</tr>
+<tr class="row-even"><td><p>24時間以内の解決率</p></td>
+<td><p>51.8%</p></td>
+</tr>
+<tr class="row-odd"><td><p>再割当が発生した件数</p></td>
+<td><p>3,633件（45.4%）</p></td>
+</tr>
+<tr class="row-even"><td><p>関与グループが2つ以上</p></td>
+<td><p>3,065件（38.3%）</p></td>
+</tr>
+</tbody>
+</table>
+<p>カテゴリは48種。上位10種で全件の<strong>75.2%</strong>、上位3種（Category 42／26／53）で<strong>38.5%</strong>を占める。</p>
+</section>
+<section id="長期化の要因は「担当の受け渡し」">
+<h3><span class="section-number">15.3.2. </span>長期化の要因は「担当の受け渡し」<a class="headerlink" href="#長期化の要因は「担当の受け渡し」" title="この見出しへのパーマリンク"></a></h3>
+<p>関与グループ数と結果の関係が、この分析で最も明確な勾配を示す。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>関与グループ数</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>SLA未達成率</p></th>
+<th class="head"><p>解決時間 平均</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>4,806</p></td>
+<td><p>26.1%</p></td>
+<td><p>97.8h</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2,071</p></td>
+<td><p>47.6%</p></td>
+<td><p>277.2h</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>655</p></td>
+<td><p>64.7%</p></td>
+<td><p>323.6h</p></td>
+</tr>
+<tr class="row-odd"><td><p>4以上</p></td>
+<td><p>339</p></td>
+<td><p>77.6%</p></td>
+<td><p>475.8h</p></td>
+</tr>
+</tbody>
+</table>
+<p>再割当の有無でも同じ方向に出る。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>再割当</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>SLA未達成率</p></th>
+<th class="head"><p>解決時間 中央値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0回</p></td>
+<td><p>4,367</p></td>
+<td><p>22.0%</p></td>
+<td><p>0.7h</p></td>
+</tr>
+<tr class="row-odd"><td><p>1回以上</p></td>
+<td><p>3,633</p></td>
+<td><p>55.1%</p></td>
+<td><p>87.0h</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="明細から見える特定の経路">
+<h3><span class="section-number">15.3.3. </span>明細から見える特定の経路<a class="headerlink" href="#明細から見える特定の経路" title="この見出しへのパーマリンク"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">T_作業履歴</span></code>（45,401行）から担当グループの遷移を集計すると、上位に<strong>双方向の往復</strong>が現れる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>From</p></th>
+<th class="head"><p>To</p></th>
+<th class="head"><p>遷移件数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Group 20</p></td>
+<td><p>Group 70</p></td>
+<td><p>354</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 70</p></td>
+<td><p>Group 20</p></td>
+<td><p>352</p></td>
+</tr>
+<tr class="row-even"><td><p>Group 70</p></td>
+<td><p>Group 39</p></td>
+<td><p>334</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 39</p></td>
+<td><p>Group 70</p></td>
+<td><p>150</p></td>
+</tr>
+</tbody>
+</table>
+<p>Group 20 と Group 70 のあいだを往復した回数が合計706回。ほぼ同数の双方向で、<strong>どちらが担当すべきか決まっていない</strong>ことを示す。</p>
+<p>両方が関与した案件を切り出すと差は鮮明になる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>区分</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>SLA未達成率</p></th>
+<th class="head"><p>解決時間 中央値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Group 20 と 70 の両方が関与</p></td>
+<td><p>543（6.8%）</p></td>
+<td><p>63.7%</p></td>
+<td><p>153.8h</p></td>
+</tr>
+<tr class="row-odd"><td><p>それ以外</p></td>
+<td><p>7,457</p></td>
+<td><p>35.1%</p></td>
+<td><p>17.8h</p></td>
+</tr>
+</tbody>
+</table>
+<p>全体の6.8%が、未達成346件（全未達成の11.7%）を生んでいる。</p>
+</section>
+<section id="一次受けの精度">
+<h3><span class="section-number">15.3.4. </span>一次受けの精度<a class="headerlink" href="#一次受けの精度" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>初回担当グループ</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>再割当発生率</p></th>
+<th class="head"><p>SLA未達成率</p></th>
+<th class="head"><p>解決時間 中央値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Group 70</p></td>
+<td><p>4,118</p></td>
+<td><p>41.3%</p></td>
+<td><p>25.8%</p></td>
+<td><p>1.3h</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 20</p></td>
+<td><p>449</p></td>
+<td><p>92.7%</p></td>
+<td><p>51.0%</p></td>
+<td><p>59.4h</p></td>
+</tr>
+<tr class="row-even"><td><p>Group 9</p></td>
+<td><p>121</p></td>
+<td><p>93.4%</p></td>
+<td><p>85.1%</p></td>
+<td><p><strong>1,340.7h</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>Group 64</p></td>
+<td><p>203</p></td>
+<td><p>1.0%</p></td>
+<td><p>14.3%</p></td>
+<td><p>0.1h</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Group 9 が異常値。</strong> 121件と少数だが、受け取った案件の93.4%を他へ回し、未達成率85.1%、解決まで中央値で約56日かかっている。</p>
+</section>
+<section id="経過時間の内訳">
+<h3><span class="section-number">15.3.5. </span>経過時間の内訳<a class="headerlink" href="#経過時間の内訳" title="この見出しへのパーマリンク"></a></h3>
+<p>明細から状態ごとの滞留時間を積み上げると、削減余地のある場所が分かる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>状態</p></th>
+<th class="head"><p>滞留合計</p></th>
+<th class="head"><p>全体比</p></th>
+<th class="head"><p>滞留中央値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Resolved</p></td>
+<td><p>1,211,832h</p></td>
+<td><p>47.0%</p></td>
+<td><p>120.6h</p></td>
+</tr>
+<tr class="row-odd"><td><p>Active</p></td>
+<td><p>465,728h</p></td>
+<td><p>18.1%</p></td>
+<td><p>0.5h</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Awaiting User Info</strong></p></td>
+<td><p>381,856h</p></td>
+<td><p><strong>14.8%</strong></p></td>
+<td><p>17.4h</p></td>
+</tr>
+<tr class="row-odd"><td><p>New</p></td>
+<td><p>366,304h</p></td>
+<td><p>14.2%</p></td>
+<td><p>0.6h</p></td>
+</tr>
+<tr class="row-even"><td><p>Awaiting Vendor</p></td>
+<td><p>100,024h</p></td>
+<td><p>3.9%</p></td>
+<td><p>125.3h</p></td>
+</tr>
+</tbody>
+</table>
+<p>Resolved の47.0%は自動クローズ待ちの120時間で、短縮対象ではない。<strong>実質的に削れる最大の滞留は Awaiting User Info。</strong> 客待ちを経験した1,713件の未達成率は70.6%（未経験は27.9%）。</p>
+</section>
+</section>
+<section id="第3部　重回帰分析">
+<h2><span class="section-number">15.4. </span>第3部　重回帰分析<a class="headerlink" href="#第3部　重回帰分析" title="この見出しへのパーマリンク"></a></h2>
+<section id="変数設計">
+<h3><span class="section-number">15.4.1. </span>変数設計<a class="headerlink" href="#変数設計" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>目的変数</p></td>
+<td><p>解決所要時間の対数 <code class="docutils literal notranslate"><span class="pre">=LN(1+時間)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>対象行</p></td>
+<td><p>7,484行（解決日時が空欄の516件を除外）</p></td>
+</tr>
+<tr class="row-even"><td><p>説明変数A（受付時点）</p></td>
+<td><p>優先度レベル／影響度レベル／緊急度レベル／受付時刻／休日フラグ／営業時間外フラグ／電話受付フラグ</p></td>
+</tr>
+<tr class="row-odd"><td><p>説明変数B（対応過程）</p></td>
+<td><p>再割当回数／再オープン回数／更新回数／関与グループ数／ナレッジ利用／問題管理紐付け／変更要求紐付け／ベンダー関与</p></td>
+</tr>
+</tbody>
+</table>
+<p>対数変換は必須。生の時間のままだと最大7,316時間の外れ値に引かれ、係数が解釈できなくなる。</p>
+</section>
+<section id="モデル比較">
+<h3><span class="section-number">15.4.2. </span>モデル比較<a class="headerlink" href="#モデル比較" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>モデル</p></th>
+<th class="head"><p>説明変数</p></th>
+<th class="head"><p>R²</p></th>
+<th class="head"><p>解釈</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>モデル1</p></td>
+<td><p>A のみ（7変数）</p></td>
+<td><p><strong>0.020</strong></p></td>
+<td><p>受付票の情報だけでは所要時間はほぼ説明できない</p></td>
+</tr>
+<tr class="row-odd"><td><p>モデル2</p></td>
+<td><p>A + B（15変数）</p></td>
+<td><p><strong>0.475</strong></p></td>
+<td><p>精度は上がるが、追加分は対応後にしか分からない</p></td>
+</tr>
+<tr class="row-even"><td><p>モデル3</p></td>
+<td><p>モデル2 − 優先度レベル</p></td>
+<td><p>0.475</p></td>
+<td><p>ほぼ不変。優先度は他2変数と重複している</p></td>
+</tr>
+<tr class="row-odd"><td><p>参考A</p></td>
+<td><p>モデル2 − 更新回数</p></td>
+<td><p>0.278</p></td>
+<td><p>1列抜くだけでR²が0.20落ちる</p></td>
+</tr>
+<tr class="row-even"><td><p>参考B</p></td>
+<td><p>モデル2 − プロセス計数4列</p></td>
+<td><p>0.083</p></td>
+<td><p>説明力の大半がここに依存</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>説明力0.475のうち0.392（82%）が対応過程の変数に由来する。</strong> 受付時点では取得できない値なので、このモデルは予測には使えない。</p>
+</section>
+<section id="モデル2の主な係数">
+<h3><span class="section-number">15.4.3. </span>モデル2の主な係数<a class="headerlink" href="#モデル2の主な係数" title="この見出しへのパーマリンク"></a></h3>
+<p>対数変換しているため、係数は <code class="docutils literal notranslate"><span class="pre">EXP(係数)</span></code> で「何倍になるか」として読む。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>変数</p></th>
+<th class="head"><p>係数</p></th>
+<th class="head"><p>t値</p></th>
+<th class="head"><p>時間倍率</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>更新回数</p></td>
+<td><p>0.1352</p></td>
+<td><p><strong>52.94</strong></p></td>
+<td><p>1.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>ナレッジ利用フラグ</p></td>
+<td><p>0.9783</p></td>
+<td><p>17.35</p></td>
+<td><p>2.66</p></td>
+</tr>
+<tr class="row-even"><td><p>関与グループ数</p></td>
+<td><p>0.3474</p></td>
+<td><p>8.97</p></td>
+<td><p>1.42</p></td>
+</tr>
+<tr class="row-odd"><td><p>再割当回数</p></td>
+<td><p>0.1359</p></td>
+<td><p>5.96</p></td>
+<td><p>1.15</p></td>
+</tr>
+<tr class="row-even"><td><p>変更要求紐付けフラグ</p></td>
+<td><p>1.4280</p></td>
+<td><p>5.67</p></td>
+<td><p>4.17</p></td>
+</tr>
+<tr class="row-odd"><td><p>電話受付フラグ</p></td>
+<td><p>−0.9304</p></td>
+<td><p>−4.54</p></td>
+<td><p>0.39</p></td>
+</tr>
+</tbody>
+</table>
+<p>更新回数の t値 52.94 が突出している。これは「更新が多いほど時間がかかる」ではなく、<strong>時間がかかった案件ほど更新が積み上がる</strong>という逆方向の関係。目的変数とほぼ同義の変数を説明変数に入れてしまっている状態（リーケージ）。</p>
+</section>
+<section id="モデル1で現れる符号の逆転">
+<h3><span class="section-number">15.4.4. </span>モデル1で現れる符号の逆転<a class="headerlink" href="#モデル1で現れる符号の逆転" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>変数</p></th>
+<th class="head"><p>係数</p></th>
+<th class="head"><p>t値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>優先度レベル</p></td>
+<td><p><strong>+1.0995</strong></p></td>
+<td><p>3.82</p></td>
+</tr>
+</tbody>
+</table>
+<p>優先度レベルは「緊急=4、低=1」で作っているので、<strong>優先度が高いほど解決時間が長い</strong>という関係になる。現場の通念と逆だが、優先度「緊急」「高」のSLA未達成率100%と整合している。</p>
+</section>
+<section id="多重共線性">
+<h3><span class="section-number">15.4.5. </span>多重共線性<a class="headerlink" href="#多重共線性" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>変数</p></th>
+<th class="head"><p>VIF</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>優先度レベル</p></td>
+<td><p><strong>13.11</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>緊急度レベル</p></td>
+<td><p>5.70</p></td>
+</tr>
+<tr class="row-even"><td><p>影響度レベル</p></td>
+<td><p>4.77</p></td>
+</tr>
+<tr class="row-odd"><td><p>その他の変数</p></td>
+<td><p>1.00〜3.45</p></td>
+</tr>
+</tbody>
+</table>
+<p>優先度は影響度×緊急度でほぼ機械的に決まる（優先度レベル ≒ 影響度 + 緊急度 − 2）。優先度レベルを外すと他の係数が動く。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>変数</p></th>
+<th class="head"><p>モデル2</p></th>
+<th class="head"><p>モデル3</p></th>
+<th class="head"><p>変化</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>影響度レベル</p></td>
+<td><p>+0.1622</p></td>
+<td><p>−0.0063</p></td>
+<td><p><strong>符号反転</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p>緊急度レベル</p></td>
+<td><p>+0.8360</p></td>
+<td><p>+0.6442</p></td>
+<td><p>−23%</p></td>
+</tr>
+</tbody>
+</table>
+<p>1変数を抜くだけで係数が動く状態では、個々の係数をそのまま解釈できない。</p>
+</section>
+<section id="相関と交絡：ナレッジ利用フラグ">
+<h3><span class="section-number">15.4.6. </span>相関と交絡：ナレッジ利用フラグ<a class="headerlink" href="#相関と交絡：ナレッジ利用フラグ" title="この見出しへのパーマリンク"></a></h3>
+<p>単純な集計では「ナレッジを使うと遅い」と読める。しかし月で分けると様子が変わる。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>条件</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>SLA未達成率</p></th>
+<th class="head"><p>解決時間 平均</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>全期間 ナレッジあり</p></td>
+<td><p>1,184</p></td>
+<td><p>74.8%</p></td>
+<td><p>284.3h</p></td>
+</tr>
+<tr class="row-odd"><td><p>全期間 ナレッジなし</p></td>
+<td><p>6,816</p></td>
+<td><p>30.5%</p></td>
+<td><p>165.3h</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3月のみ</strong> ナレッジあり</p></td>
+<td><p>1,102</p></td>
+<td><p>78.3%</p></td>
+<td><p>284.0h</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3月のみ</strong> ナレッジなし</p></td>
+<td><p>1,791</p></td>
+<td><p>50.8%</p></td>
+<td><p>235.1h</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3月以外</strong> ナレッジあり</p></td>
+<td><p>82</p></td>
+<td><p>28.1%</p></td>
+<td><p>288.7h</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>3月以外</strong> ナレッジなし</p></td>
+<td><p>5,025</p></td>
+<td><p>23.2%</p></td>
+<td><p>141.9h</p></td>
+</tr>
+</tbody>
+</table>
+<p>ナレッジ利用「あり」1,184件のうち<strong>1,161件（98%）が2〜3月に集中</strong>している。3月以外では未達成率の差が44.3ポイントから4.9ポイントへ縮む。</p>
+<p><strong>ナレッジ利用フラグは「3月」の代理変数になっている。</strong> 回帰でも、3月を除くと係数は0.978から0.655へ下がる。</p>
+</section>
+</section>
+<section id="第4部　スライド3枚（ピラミッド順）">
+<h2><span class="section-number">15.5. </span>第4部　スライド3枚（ピラミッド順）<a class="headerlink" href="#第4部　スライド3枚（ピラミッド順）" title="この見出しへのパーマリンク"></a></h2>
+<p>分析の順（What → Where → Why → How）ではなく、<strong>報告の順（結論 → 根拠 → 施策）</strong>で並べる。</p>
+<section id="1枚目：問いと答え">
+<h3><span class="section-number">15.5.1. </span>1枚目：問いと答え<a class="headerlink" href="#1枚目：問いと答え" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>見出し：来期は「受け渡しの削減」に絞る</strong></p>
+<p>まず問いを置く。</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>現状</p></td>
+<td><p>SLA未達成 2,964件（37.1%）</p></td>
+</tr>
+<tr class="row-odd"><td><p>理想</p></td>
+<td><p>1,760件（22.0%）＝ 再割当なし案件と同じ水準</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>ギャップ</strong></p></td>
+<td><p><strong>1,204件</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>そのうえで答えを言い切る。</p>
+<blockquote>
+<div><p>解決の遅さは案件の難しさではなく、<strong>担当の受け渡し</strong>で生まれている。 来期は受け渡しの削減に絞り、2施策で未達成227件（ギャップの19%）を回収する。</p>
+</div></blockquote>
+<p><strong>1枚目で結論まで言う。</strong> 現状の説明に1枚使うと、残り2枚で根拠と施策を詰め込むことになる。</p>
+</section>
+<section id="2枚目：3つの根拠">
+<h3><span class="section-number">15.5.2. </span>2枚目：3つの根拠<a class="headerlink" href="#2枚目：3つの根拠" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>見出し：なぜ「受け渡し」なのか</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>根拠</p></th>
+<th class="head"><p>数字</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>① 長期化は受け渡しで起きている</strong></p></td>
+<td><p>関与1グループ 未達26.1%／平均97.8h → 4以上 77.6%／475.8h再割当なし 22.0%・中央値0.7h → あり 55.1%・87.0h</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>② 受け渡しは2経路に集中している</strong></p></td>
+<td><p>Group 20 ↔ 70 の往復706回（全遷移6,133回の11.5%）両方が関与した543件（6.8%）が未達成346件を生む</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>③ 受付時点の情報では防げない</strong></p></td>
+<td><p>受付時の7変数のみ R²=0.020優先度は94%が「中」で層別できない</p></td>
+</tr>
+</tbody>
+</table>
+<p>③が効く。<strong>「受付時の仕分けを厳しくすればよいのでは」という反論を先に潰している。</strong> 受付票を見ても所要時間は読めないので、プロセス側を変えるしかない。</p>
+</section>
+<section id="3枚目：施策とギャップの回収">
+<h3><span class="section-number">15.5.3. </span>3枚目：施策とギャップの回収<a class="headerlink" href="#3枚目：施策とギャップの回収" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>見出し：ギャップ1,204件のうち、どこまで埋まるか</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>施策</p></th>
+<th class="head"><p>根拠</p></th>
+<th class="head"><p>回収</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>1. Group 20 ↔ 70 の担当範囲を文書で確定</strong></p></td>
+<td><p>両方関与543件は未達63.7%（それ以外35.1%）</p></td>
+<td><p><strong>155件</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>2. Group 9 を一次受けから外す</strong></p></td>
+<td><p>初回121件の未達85.1%、中央値1,341h、再割当発生93.4%</p></td>
+<td><p><strong>72件</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>3. 客待ちの運用ルールを作る</strong></p></td>
+<td><p>全滞留の14.8%、経験1,713件の未達70.6%</p></td>
+<td><p>定量化できず</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>合計227件＝ギャップの19%。未達成率は37.1%→34.2%。</strong></p>
+<p>残る81%は、個別の経路ではなく<strong>受け渡しの発生そのものを減らす次の一手</strong>になる。1枚目で言い切った「絞る」という判断の射程を、ここで正直に示す。</p>
+<section id="提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する">
+<h4>提案1（最優先）　Group 20 と Group 70 の担当範囲を文書で確定する<a class="headerlink" href="#提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>両グループ間の往復706回。両方が関与した543件は未達成率63.7%・中央値153.8h（それ以外は35.1%・17.8h）</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>543件を全体平均35.1%まで下げられれば未達成が<strong>約155件減</strong>（全未達成の5.2%）</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>どちらが担当すべきか決まっていないのは、技術的に切り分けが難しい領域だから。線引きには両リーダーの合意と、迷う案件の棚卸しが必要</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="提案2　Group-9-を一次受けから外す">
+<h4>提案2　Group 9 を一次受けから外す<a class="headerlink" href="#提案2　Group-9-を一次受けから外す" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>Group 9 初回受付の121件：未達成率85.1%、解決時間中央値1,340.7h、再割当発生率93.4%</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>Group 70 水準（25.8%）に移せれば未達成が<strong>約72件減</strong>。件数が少なくても1件あたりの長期化が極端なため効果は大きい</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>121件という小ささゆえ「例外対応だから」で放置されてきた可能性がある。なぜGroup 9に振られるのかの経路を先に特定する必要がある</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="提案3　客待ち（Awaiting-User-Info）の運用ルールを作る">
+<h4>提案3　客待ち（Awaiting User Info）の運用ルールを作る<a class="headerlink" href="#提案3　客待ち（Awaiting-User-Info）の運用ルールを作る" title="この見出しへのパーマリンク"></a></h4>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>根拠</p></td>
+<td><p>全滞留時間の14.8%が客待ち。経験した1,713件の未達成率70.6%（未経験27.9%）、滞留中央値17.4h</p></td>
+</tr>
+<tr class="row-even"><td><p>期待効果</p></td>
+<td><p>催促のタイミングと打ち切り基準を決めることで短縮余地がある。ただし削減幅は本データからは見積もれない</p></td>
+</tr>
+<tr class="row-odd"><td><p>障壁</p></td>
+<td><p>申告者の応答速度は保守部門が制御できない。SLA計測から客待ち時間を除外する運用変更とセットで議論する必要がある</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="欄外：この分析の限界">
+<h3><span class="section-number">15.5.4. </span>欄外：この分析の限界<a class="headerlink" href="#欄外：この分析の限界" title="この見出しへのパーマリンク"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>相関であって因果ではない。</strong> 「関与グループ数が多いと遅い」は「受け渡しをやめれば速くなる」の証明ではない。難しい案件だから複数グループをまたいだ、という逆向きの説明も同じくらい成り立つ</p></li>
+<li><p><strong>R²0.475のうち8割は「対応した結果」の変数に由来する。</strong> 予測には使えず、要因の当たりをつける道具として読むべき</p></li>
+<li><p><strong>説明できていないばらつきが半分以上残る。</strong> 担当者のスキル、障害の実際の内容、部品調達の待ちなど、記録されていない要因がある</p></li>
+<li><p><strong>ナレッジ利用フラグは「3月」の代理変数。</strong> 単純集計では「ナレッジを使うと遅い」と見えるが、3月以外では差がほぼ消える</p></li>
+<li><p><strong>受付の約99%が2016年3〜5月。</strong> 通年の季節性は判断できない。また3月だけ未達成率61.3%（4月24.1%、5月21.9%）で、この月に何が起きたかはデータからは分からない</p></li>
+</ol>
+</section>
+<section id="効果検証に必要な追加データ">
+<h3><span class="section-number">15.5.5. </span>効果検証に必要な追加データ<a class="headerlink" href="#効果検証に必要な追加データ" title="この見出しへのパーマリンク"></a></h3>
+<ul class="simple">
+<li><p>振り分けルール変更の実施日（前後比較の基準点）</p></li>
+<li><p>案件ごとの技術難易度の記録（現在は優先度しかなく、難易度の代理にならない）</p></li>
+<li><p>担当グループ別の稼働状況（遅延が能力の問題か負荷の問題かの切り分け）</p></li>
+<li><p>客待ちの開始・終了時刻（現在は状態遷移から推定するしかない）</p></li>
+</ul>
+</section>
+</section>
+<section id="第5部　採点の着眼点">
+<h2><span class="section-number">15.6. </span>第5部　採点の着眼点<a class="headerlink" href="#第5部　採点の着眼点" title="この見出しへのパーマリンク"></a></h2>
+<p>ルーブリックの各観点について、具体的に何を見るか。</p>
+<section id="データ整形">
+<h3><span class="section-number">15.6.1. </span>データ整形<a class="headerlink" href="#データ整形" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>見るところ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lv1</p></td>
+<td><p>マスタを結合して名称を引けている</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lv2</p></td>
+<td><p>結合後の件数が8,000件のままであることを確認した痕跡がある</p></td>
+</tr>
+<tr class="row-even"><td><p>Lv3</p></td>
+<td><p>516件の欠損と、指標ごとの母数の違いを説明できる</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>減点所：</strong> クローズ日時で所要時間を計算している（判断1を外している）</p>
+</section>
+<section id="分析の妥当性">
+<h3><span class="section-number">15.6.2. </span>分析の妥当性<a class="headerlink" href="#分析の妥当性" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>見るところ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lv1</p></td>
+<td><p>集計表やピボットが出ている</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lv2</p></td>
+<td><p>所要時間を受付→解決で測っている</p></td>
+</tr>
+<tr class="row-even"><td><p>Lv3</p></td>
+<td><p>中央値を主役にした理由、率と件数のどちらで順位づけしたかを語れる</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>減点所：</strong> 平均183時間を前面に出している／未達成率100%の優先度「緊急」を母数78件と併記せず最大の問題として報告している</p>
+</section>
+<section id="提案の具体性">
+<h3><span class="section-number">15.6.3. </span>提案の具体性<a class="headerlink" href="#提案の具体性" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>見るところ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lv1</p></td>
+<td><p>提案が3つある</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lv2</p></td>
+<td><p>各提案に数字の根拠がある</p></td>
+</tr>
+<tr class="row-even"><td><p>Lv3</p></td>
+<td><p>期待効果を件数や時間で見積もっている</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>加点所：</strong> 「件数が多いから」と「1件あたりが重いから」の両方を検討し、どちらを採ったか述べている（提案1は前者、提案2は後者の論理）</p>
+</section>
+<section id="限界の説明">
+<h3><span class="section-number">15.6.4. </span>限界の説明<a class="headerlink" href="#限界の説明" title="この見出しへのパーマリンク"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>見るところ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lv1</p></td>
+<td><p>触れていない</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lv2</p></td>
+<td><p>「因果ではない」と言及した</p></td>
+</tr>
+<tr class="row-even"><td><p>Lv3</p></td>
+<td><p>検証に必要な追加データを挙げられる</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>最高評価：</strong> 更新回数のリーケージに自分で気づき、モデルから外して比較している／ナレッジの交絡を月別に分けて確認している</p>
+</section>
+<section id="発表での詰め質問">
+<h3><span class="section-number">15.6.5. </span>発表での詰め質問<a class="headerlink" href="#発表での詰め質問" title="この見出しへのパーマリンク"></a></h3>
+<p>効く順。</p>
+<ol class="arabic simple">
+<li><p>「更新回数が効いているとのことですが、それは受付時点で分かる情報ですか」</p></li>
+<li><p>「そのグループが遅いのは、難しい案件が回ってきているからではないですか」</p></li>
+<li><p>「その提案でSLA未達成は何件減りますか」</p></li>
+<li><p>「その所要時間は、受付から何までの時間ですか」</p></li>
+<li><p>「未達成率が高いその区分、母数は何件ですか」</p></li>
+<li><p>「なぜそのカテゴリを選んだんですか。件数ですか、1件あたりの時間ですか」</p></li>
+</ol>
+<p>1と2が答えられなかったチームがいたら、講評でリーケージと因果の論点につなげる。</p>
+<p>データ出所：UCI Machine Learning Repository / Incident management process enriched event log (CC BY 4.0) <a class="reference external" href="https://archive.ics.uci.edu/dataset/498">https://archive.ics.uci.edu/dataset/498</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html" class="btn btn-neutral float-left" title="14. 【補足】保守インシデント分析 演習" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, trainocate.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
