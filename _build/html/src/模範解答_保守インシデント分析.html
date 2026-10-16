@@ -66,8 +66,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">15. 模範解答：保守インシデントの傾向分析と改善提案</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む">15.1. 考え方の枠組み：What → Where → Why → How をピラミッドで組む</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#分析はツリー、報告はピラミッド">15.1.1. 分析はツリー、報告はピラミッド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#まず問題を定義する-—-現状と理想のギャップ">15.1.2. まず問題を定義する — 現状と理想のギャップ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#縦の問答が成立しているか">15.1.3. 縦の問答が成立しているか</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#まず問題を定義する-—-問いは2つある">15.1.2. まず問題を定義する — 問いは2つある</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#問い①　解決が遅い">問い①　解決が遅い</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#問い②　件数が減らない">問い②　件数が減らない</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#問いが2つなら、ピラミッドも2つ">15.1.3. 問いが2つなら、ピラミッドも2つ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#縦の問答が成立しているか">15.1.4. 縦の問答が成立しているか</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#第1部　前処理でなされるべき4つの判断">15.2. 第1部　前処理でなされるべき4つの判断</a><ul>
@@ -83,6 +88,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#明細から見える特定の経路">15.3.3. 明細から見える特定の経路</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#一次受けの精度">15.3.4. 一次受けの精度</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#経過時間の内訳">15.3.5. 経過時間の内訳</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#件数が減らない理由">15.3.6. 件数が減らない理由</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#第3部　重回帰分析">15.4. 第3部　重回帰分析</a><ul>
@@ -95,12 +101,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#第4部　スライド3枚（ピラミッド順）">15.5. 第4部　スライド3枚（ピラミッド順）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#1枚目：問いと答え">15.5.1. 1枚目：問いと答え</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#1枚目：2つの問いと、2つの答え">15.5.1. 1枚目：2つの問いと、2つの答え</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#2枚目：3つの根拠">15.5.2. 2枚目：3つの根拠</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#3枚目：施策とギャップの回収">15.5.3. 3枚目：施策とギャップの回収</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#3枚目：2つの問いに、それぞれ答える">15.5.3. 3枚目：2つの問いに、それぞれ答える</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する">提案1（最優先）　Group 20 と Group 70 の担当範囲を文書で確定する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#提案2　Group-9-を一次受けから外す">提案2　Group 9 を一次受けから外す</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#提案3　客待ち（Awaiting-User-Info）の運用ルールを作る">提案3　客待ち（Awaiting User Info）の運用ルールを作る</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#提案3　上位5症状を問題管理に載せる">提案3　上位5症状を問題管理に載せる</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#次の一手（3つに入らなかったもの）">次の一手（3つに入らなかったもの）</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#欄外：この分析の限界">15.5.4. 欄外：この分析の限界</a></li>
@@ -172,10 +179,13 @@
 </tr>
 </tbody>
 </table>
+<p>部門長の持ち時間は15分。<strong>結論を最後に置くと、聞き手は結論にたどり着く前に判断を始めてしまう。</strong> 分析の苦労の順に話すのではなく、答えから話す。</p>
 </section>
-<section id="まず問題を定義する-—-現状と理想のギャップ">
-<h3><span class="section-number">15.1.2. </span>まず問題を定義する — 現状と理想のギャップ<a class="headerlink" href="#まず問題を定義する-—-現状と理想のギャップ" title="この見出しへのパーマリンク"></a></h3>
-<p>「SLA未達成が多い」とだけ言っても、どこまでやれば十分かが決まらない。理想を置いて初めて、埋めるべき差が数字になる。</p>
+<section id="まず問題を定義する-—-問いは2つある">
+<h3><span class="section-number">15.1.2. </span>まず問題を定義する — 問いは2つある<a class="headerlink" href="#まず問題を定義する-—-問いは2つある" title="この見出しへのパーマリンク"></a></h3>
+<p>部門長は2つのことを言っている。<strong>「件数は減らない」と「解決も遅い」は別の問題</strong>で、打ち手も違う。どちらにも答える必要がある。</p>
+<section id="問い①　解決が遅い">
+<h4>問い①　解決が遅い<a class="headerlink" href="#問い①　解決が遅い" title="この見出しへのパーマリンク"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -200,11 +210,28 @@
 </table>
 <p>理想値を「未達成ゼロ」に置くと非現実的で、打ち手の大きさを測れない。<strong>実績として存在する水準（再割当が起きなかった4,367件の22.0%）</strong>を理想に据えると、ギャップがそのまま「受け渡しが生んでいる損失」になる。</p>
 <p>ただしこれは仮定を含む。再割当が起きなかった案件は、もともと簡単だった可能性がある。<strong>理想値の置き方自体が分析者の判断</strong>であり、そこを説明できることが条件になる。</p>
-<p><img alt="data" src="../_images/%E5%9B%B3_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E3%82%B9%E3%83%88%E3%83%A9%E3%82%AF%E3%83%81%E3%83%A3%E3%83%BC_%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88.png" /></p>
+</section>
+<section id="問い②　件数が減らない">
+<h4>問い②　件数が減らない<a class="headerlink" href="#問い②　件数が減らない" title="この見出しへのパーマリンク"></a></h4>
+<p>こちらは理想値を置くより先に、<strong>主張が本当かを確かめる。</strong></p>
+<p>打ち切りの影響がない12週（2016-W09〜W20）の週次件数は、傾き <strong>−2.9件/週</strong>。前半6週の平均628件に対し後半6週は597件で、ほぼ横ばい。<strong>部門長の主張はデータに支持される。</strong></p>
+<p>ただし受付の99%が2016年3〜5月に集中しているため、<strong>年間を通じた傾向は判断できない。</strong> この3か月で横ばいだった、までが言えること。</p>
+<p>件数側は効果を定量化できないので、ギャップは数字で置かない。<strong>原因が特定できれば十分</strong>とする。</p>
+</section>
+</section>
+<section id="問いが2つなら、ピラミッドも2つ">
+<h3><span class="section-number">15.1.3. </span>問いが2つなら、ピラミッドも2つ<a class="headerlink" href="#問いが2つなら、ピラミッドも2つ" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>ピラミッドの頂点は1つの主張でなければならない。</strong> 「受け渡しを減らし、再発を止める」は2つの主張を「と」で繋いだ形で、頂点としては成立しない。</p>
+<p>問いが2つあるなら、ピラミッドを2つ立てる。無理に1枚にまとめると、頂点が曖昧になるか、根拠の並びがMECEでなくなる。</p>
+<p><strong>2つは同じ深さである必要もない。</strong> 問い①は効果まで数字で追えるので3層、問い②は原因の特定で止まるので2層。<strong>浅いことを隠さないほうが、報告としては正確になる。</strong></p>
+<p><img alt="dataa" src="../_images/%E5%9B%B31_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E2%91%A0_%E8%A7%A3%E6%B1%BA%E3%81%8C%E9%81%85%E3%81%84.png" /> <em>図1　問い①のピラミッド。頂点「受け渡しを減らす」を3本の根拠が支え、各根拠を2つの事実が支える。効果は227件（ギャップの19%）まで数字で追える。</em></p>
+<p><img alt="add" src="../_images/%E5%9B%B32_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E2%91%A1_%E4%BB%B6%E6%95%B0%E3%81%8C%E6%B8%9B%E3%82%89%E3%81%AA%E3%81%84.png" /></p>
+<p><em>図2　問い②のピラミッド。根拠は2本、効果は定量化できない。図1より浅いが、それがこの問いに対して言えることの限界を正しく表している。</em></p>
 </section>
 <section id="縦の問答が成立しているか">
-<h3><span class="section-number">15.1.3. </span>縦の問答が成立しているか<a class="headerlink" href="#縦の問答が成立しているか" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">15.1.4. </span>縦の問答が成立しているか<a class="headerlink" href="#縦の問答が成立しているか" title="この見出しへのパーマリンク"></a></h3>
 <p>ピラミッドが正しく組めているかは、<strong>上から下へ問いが連鎖するか</strong>で確かめる。</p>
+<p><strong>ピラミッド①</strong></p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>階層</p></th>
@@ -214,24 +241,44 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>頂点</p></td>
-<td><p>来期は何を変えるのか？</p></td>
-<td><p>受け渡しの削減に絞る</p></td>
+<td><p>遅さをどう直すのか？</p></td>
+<td><p>受け渡しを減らす</p></td>
 </tr>
 <tr class="row-odd"><td><p>↓</p></td>
 <td><p>なぜそう言えるのか？</p></td>
-<td><p>長期化は受け渡しで起きている／2経路に集中している／受付時点では防げない</p></td>
+<td><p>受け渡しで起きている／2経路に集中している／受付時点では防げない</p></td>
 </tr>
 <tr class="row-even"><td><p>↓</p></td>
 <td><p>その根拠は？</p></td>
 <td><p>再割当なし22.0%・あり55.1%／往復706回／R²=0.020 ほか</p></td>
 </tr>
-<tr class="row-odd"><td><p>最下層</p></td>
-<td><p>それはどこから出た数字か？</p></td>
-<td><p>ワークブックの集計シートとプロセス分析シート</p></td>
+</tbody>
+</table>
+<p><strong>ピラミッド②</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>階層</p></th>
+<th class="head"><p>読み手の問い</p></th>
+<th class="head"><p>答え</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>頂点</p></td>
+<td><p>件数をどう減らすのか？</p></td>
+<td><p>再発を止める（上位5症状を問題管理に載せる）</p></td>
+</tr>
+<tr class="row-odd"><td><p>↓</p></td>
+<td><p>なぜそう言えるのか？</p></td>
+<td><p>症状が極端に集中している／問題管理が機能していない</p></td>
+</tr>
+<tr class="row-even"><td><p>↓</p></td>
+<td><p>その根拠は？</p></td>
+<td><p>上位5種で49.5%／問題管理の紐付けは1.4%</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>横の並びがMECEかも確かめる。</strong> 3つの根拠は「事象の大きさ」「発生箇所」「打ち手の方向」を順に示しており、重複も飛躍もない。根拠3（受付時点では防げない）があることで、「事前の仕分けを強化すべきでは」という当然の反論を先に潰している。</p>
+<p><strong>横の並びがMECEかも確かめる。</strong> ピラミッド①の3本は「事象の大きさ」「発生箇所」「打ち手の方向」で重複も飛躍もない。③があることで「受付時の仕分けを強化すべきでは」という当然の反論を先に潰している。</p>
+<p>ピラミッド②の2本は「再発している」と「止める仕組みが動いていない」。前者だけでは「仕方ない」で終わり、後者だけでは「何を止めるのか」が決まらない。2本で1つの主張を支えている。</p>
 </section>
 </section>
 <section id="第1部　前処理でなされるべき4つの判断">
@@ -503,6 +550,52 @@
 </table>
 <p>Resolved の47.0%は自動クローズ待ちの120時間で、短縮対象ではない。<strong>実質的に削れる最大の滞留は Awaiting User Info。</strong> 客待ちを経験した1,713件の未達成率は70.6%（未経験は27.9%）。</p>
 </section>
+<section id="件数が減らない理由">
+<h3><span class="section-number">15.3.6. </span>件数が減らない理由<a class="headerlink" href="#件数が減らない理由" title="この見出しへのパーマリンク"></a></h3>
+<p>ここまでは「遅さ」の話。<strong>件数側は、2つの数字を見るだけで原因が分かる。</strong></p>
+<p><strong>症状が極端に集中している。</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>症状</p></th>
+<th class="head"><p>件数</p></th>
+<th class="head"><p>累積</p></th>
+<th class="head"><p>問題管理に紐付く件数</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Symptom 491</strong></p></td>
+<td><p><strong>3,010</strong></p></td>
+<td><p>37.6%</p></td>
+<td><p>37件（1.2%）</p></td>
+</tr>
+<tr class="row-odd"><td><p>Symptom 534</p></td>
+<td><p>536</p></td>
+<td><p>44.3%</p></td>
+<td><p>0件</p></td>
+</tr>
+<tr class="row-even"><td><p>Symptom 116</p></td>
+<td><p>162</p></td>
+<td><p>46.4%</p></td>
+<td><p>1件</p></td>
+</tr>
+<tr class="row-odd"><td><p>Symptom 387</p></td>
+<td><p>134</p></td>
+<td><p>48.0%</p></td>
+<td><p>0件</p></td>
+</tr>
+<tr class="row-even"><td><p>Symptom 4</p></td>
+<td><p>115</p></td>
+<td><p>49.5%</p></td>
+<td><p>1件</p></td>
+</tr>
+</tbody>
+</table>
+<p>症状は331種類あるのに、<strong>上位5種で全体の49.5%。Symptom 491 は単独で37.6%</strong>を占める。</p>
+<p><strong>にもかかわらず、問題管理に回っていない。</strong></p>
+<p>問題管理に紐付くインシデントは全体で109件（<strong>1.4%</strong>）。残り98.6%は個別に対応して閉じている。同じ症状が3,000回起きているのに、根本原因の調査に一度も載っていない。</p>
+<p><strong>インシデント管理は回っているが、問題管理が機能していない。</strong> これが「件数が減らない」の直接的な答えになる。</p>
+<p>ただし<strong>効果は見積もれない。</strong> Symptom 491 の根本原因を解消して何件減るかは、このデータからは分からない。原因の特定までが、このデータで言えることの限界になる。</p>
+</section>
 </section>
 <section id="第3部　重回帰分析">
 <h2><span class="section-number">15.4. </span>第3部　重回帰分析<a class="headerlink" href="#第3部　重回帰分析" title="この見出しへのパーマリンク"></a></h2>
@@ -733,33 +826,30 @@
 <section id="第4部　スライド3枚（ピラミッド順）">
 <h2><span class="section-number">15.5. </span>第4部　スライド3枚（ピラミッド順）<a class="headerlink" href="#第4部　スライド3枚（ピラミッド順）" title="この見出しへのパーマリンク"></a></h2>
 <p>分析の順（What → Where → Why → How）ではなく、<strong>報告の順（結論 → 根拠 → 施策）</strong>で並べる。</p>
-<section id="1枚目：問いと答え">
-<h3><span class="section-number">15.5.1. </span>1枚目：問いと答え<a class="headerlink" href="#1枚目：問いと答え" title="この見出しへのパーマリンク"></a></h3>
-<p><strong>見出し：来期は「受け渡しの削減」に絞る</strong></p>
-<p>まず問いを置く。</p>
+<section id="1枚目：2つの問いと、2つの答え">
+<h3><span class="section-number">15.5.1. </span>1枚目：2つの問いと、2つの答え<a class="headerlink" href="#1枚目：2つの問いと、2つの答え" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>見出し：受け渡しを減らす／再発を止める</strong></p>
+<p>部門長は2つのことを言った。<strong>どちらにも、1枚目で答えを返す。</strong></p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>値</p></th>
+<tr class="row-odd"><th class="head"><p>問い</p></th>
+<th class="head"><p>現状</p></th>
+<th class="head"><p>答え</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>現状</p></td>
-<td><p>SLA未達成 2,964件（37.1%）</p></td>
+<tr class="row-even"><td><p><strong>① 解決が遅い</strong></p></td>
+<td><p>SLA未達成 2,964件（37.1%）理想1,760件（22.0%）との差＝<strong>ギャップ1,204件</strong></p></td>
+<td><p><strong>受け渡しを減らす</strong>2施策で227件を回収（ギャップの19%）</p></td>
 </tr>
-<tr class="row-odd"><td><p>理想</p></td>
-<td><p>1,760件（22.0%）＝ 再割当なし案件と同じ水準</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>ギャップ</strong></p></td>
-<td><p><strong>1,204件</strong></p></td>
+<tr class="row-odd"><td><p><strong>② 件数が減らない</strong></p></td>
+<td><p>週次 −2.9件/週でほぼ横ばい（主張はデータに支持される）</p></td>
+<td><p><strong>再発を止める</strong>上位5症状を問題管理に載せる</p></td>
 </tr>
 </tbody>
 </table>
-<p>そのうえで答えを言い切る。</p>
-<blockquote>
-<div><p>解決の遅さは案件の難しさではなく、<strong>担当の受け渡し</strong>で生まれている。 来期は受け渡しの削減に絞り、2施策で未達成227件（ギャップの19%）を回収する。</p>
-</div></blockquote>
-<p><strong>1枚目で結論まで言う。</strong> 現状の説明に1枚使うと、残り2枚で根拠と施策を詰め込むことになる。</p>
+<p><strong>1枚目で両方の結論まで言う。</strong> 現状の説明に1枚使うと、残り2枚で2つ分の根拠と施策を詰め込むことになる。</p>
+<p>②には効果の数字を置いていない。<strong>その理由は3枚目で述べる。</strong></p>
 </section>
 <section id="2枚目：3つの根拠">
 <h3><span class="section-number">15.5.2. </span>2枚目：3つの根拠<a class="headerlink" href="#2枚目：3つの根拠" title="この見出しへのパーマリンク"></a></h3>
@@ -777,16 +867,18 @@
 <tr class="row-odd"><td><p><strong>② 受け渡しは2経路に集中している</strong></p></td>
 <td><p>Group 20 ↔ 70 の往復706回（全遷移6,133回の11.5%）両方が関与した543件（6.8%）が未達成346件を生む</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>③ 受付時点の情報では防げない</strong></p></td>
-<td><p>受付時の7変数のみ R²=0.020優先度は94%が「中」で層別できない</p></td>
+<tr class="row-even"><td><p><strong>③ 件数が減らないのは再発を止めていないから</strong></p></td>
+<td><p>症状331種のうち上位5種で49.5%、Symptom 491 単独で37.6%問題管理に紐付くのは全体の1.4%（109件）のみ</p></td>
 </tr>
 </tbody>
 </table>
-<p>③が効く。<strong>「受付時の仕分けを厳しくすればよいのでは」という反論を先に潰している。</strong> 受付票を見ても所要時間は読めないので、プロセス側を変えるしかない。</p>
+<p>①と②が「遅さ」、③が「件数」に対応する。</p>
+<p>①の裏付けには<strong>受付時の7変数では R²=0.020</strong> という数字を添える。これが「受付時の仕分けを厳しくすればよいのでは」という反論を先に潰す。受付票を見ても所要時間は読めないので、プロセス側を変えるしかない。</p>
 </section>
-<section id="3枚目：施策とギャップの回収">
-<h3><span class="section-number">15.5.3. </span>3枚目：施策とギャップの回収<a class="headerlink" href="#3枚目：施策とギャップの回収" title="この見出しへのパーマリンク"></a></h3>
-<p><strong>見出し：ギャップ1,204件のうち、どこまで埋まるか</strong></p>
+<section id="3枚目：2つの問いに、それぞれ答える">
+<h3><span class="section-number">15.5.3. </span>3枚目：2つの問いに、それぞれ答える<a class="headerlink" href="#3枚目：2つの問いに、それぞれ答える" title="この見出しへのパーマリンク"></a></h3>
+<p><strong>見出し：遅さは227件を回収、件数は問題管理の起動から</strong></p>
+<p><strong>【遅さ】ギャップ1,204件のうち、どこまで埋まるか</strong></p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>施策</p></th>
@@ -803,14 +895,26 @@
 <td><p>初回121件の未達85.1%、中央値1,341h、再割当発生93.4%</p></td>
 <td><p><strong>72件</strong></p></td>
 </tr>
-<tr class="row-even"><td><p><strong>3. 客待ちの運用ルールを作る</strong></p></td>
-<td><p>全滞留の14.8%、経験1,713件の未達70.6%</p></td>
-<td><p>定量化できず</p></td>
+</tbody>
+</table>
+<p><strong>合計227件＝ギャップの19%。未達成率は37.1%→34.2%。</strong> 残る81%は、個別の経路ではなく受け渡しの発生そのものを減らす次の一手になる。</p>
+<p><strong>【件数】再発を止める</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>施策</p></th>
+<th class="head"><p>根拠</p></th>
+<th class="head"><p>効果</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>3. 上位5症状を問題管理に載せる</strong></p></td>
+<td><p>上位5症状で全体の49.5%、問題管理の紐付けは1.4%</p></td>
+<td><p><strong>見積もれない</strong></p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>合計227件＝ギャップの19%。未達成率は37.1%→34.2%。</strong></p>
-<p>残る81%は、個別の経路ではなく<strong>受け渡しの発生そのものを減らす次の一手</strong>になる。1枚目で言い切った「絞る」という判断の射程を、ここで正直に示す。</p>
+<p>効果を数字で置かないことを、<strong>隠さずに言う。</strong> Symptom 491 の根本原因を解消して何件減るかは、このデータからは分からない。分かるのは「再発防止に回っていない」という事実までである。</p>
+<p><strong>無理に数字を作らないことが、この提案の誠実さになる。</strong></p>
 <section id="提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する">
 <h4>提案1（最優先）　Group 20 と Group 70 の担当範囲を文書で確定する<a class="headerlink" href="#提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する" title="この見出しへのパーマリンク"></a></h4>
 <table class="docutils align-default">
@@ -843,21 +947,25 @@
 </tbody>
 </table>
 </section>
-<section id="提案3　客待ち（Awaiting-User-Info）の運用ルールを作る">
-<h4>提案3　客待ち（Awaiting User Info）の運用ルールを作る<a class="headerlink" href="#提案3　客待ち（Awaiting-User-Info）の運用ルールを作る" title="この見出しへのパーマリンク"></a></h4>
+<section id="提案3　上位5症状を問題管理に載せる">
+<h4>提案3　上位5症状を問題管理に載せる<a class="headerlink" href="#提案3　上位5症状を問題管理に載せる" title="この見出しへのパーマリンク"></a></h4>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>根拠</p></td>
-<td><p>全滞留時間の14.8%が客待ち。経験した1,713件の未達成率70.6%（未経験27.9%）、滞留中央値17.4h</p></td>
+<td><p>症状は331種類あるが上位5種で全体の49.5%、Symptom 491 単独で37.6%（3,010件）。一方で問題管理に紐付くのは全体の1.4%（109件）のみ</p></td>
 </tr>
 <tr class="row-even"><td><p>期待効果</p></td>
-<td><p>催促のタイミングと打ち切り基準を決めることで短縮余地がある。ただし削減幅は本データからは見積もれない</p></td>
+<td><p><strong>本データからは見積もれない。</strong> 根本原因が何で、解消して何件減るかはこのデータに入っていない</p></td>
 </tr>
 <tr class="row-odd"><td><p>障壁</p></td>
-<td><p>申告者の応答速度は保守部門が制御できない。SLA計測から客待ち時間を除外する運用変更とセットで議論する必要がある</p></td>
+<td><p>問題管理はインシデント対応より優先度が下がりやすい。専任を置くか、一定件数を超えた症状を自動で問題管理に上げる仕組みが要る</p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="次の一手（3つに入らなかったもの）">
+<h4>次の一手（3つに入らなかったもの）<a class="headerlink" href="#次の一手（3つに入らなかったもの）" title="この見出しへのパーマリンク"></a></h4>
+<p><strong>客待ち（Awaiting User Info）の運用ルール。</strong> 全滞留時間の14.8%を占め、経験した1,713件の未達成率は70.6%（未経験27.9%）。短縮余地はあるが、申告者の応答速度は保守部門が直接制御できない。SLA計測から客待ち時間を除外する運用変更とセットで議論する必要があり、来期3つには入れなかった。</p>
 </section>
 </section>
 <section id="欄外：この分析の限界">
