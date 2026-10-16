@@ -65,13 +65,13 @@
 <li class="toctree-l1"><a class="reference internal" href="%E4%BF%9D%E5%AE%88%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E5%88%86%E6%9E%90_%E6%BC%94%E7%BF%92%E3%82%AC%E3%82%A4%E3%83%89.html">14. 【補足】保守インシデント分析 演習</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">15. 模範解答：保守インシデントの傾向分析と改善提案</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む">15.1. 考え方の枠組み：What → Where → Why → How をピラミッドで組む</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#分析はツリー、報告はピラミッド">15.1.1. 分析はツリー、報告はピラミッド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#考える順と、伝える順は逆になる">15.1.1. 考える順と、伝える順は逆になる</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#まず問題を定義する-—-問いは2つある">15.1.2. まず問題を定義する — 問いは2つある</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#問い①　解決が遅い">問い①　解決が遅い</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#問い②　件数が減らない">問い②　件数が減らない</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#縦の問答が成立しているか">15.1.3. 縦の問答が成立しているか</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#各層の選定基準">15.1.3. 各層の選定基準</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#第1部　前処理でなされるべき4つの判断">15.2. 第1部　前処理でなされるべき4つの判断</a><ul>
@@ -102,7 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#結論">15.5. 結論</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#2つの問いと、2つの答え">15.5.1. 2つの問いと、2つの答え</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#根拠">15.5.2. 根拠</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#問いへの回答">15.5.3. 問いへの回答</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#問いの答え">15.5.3. 問いの答え</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#提案1（最優先）　Group-20-と-Group-70-の担当範囲を文書で確定する">提案1（最優先）　Group 20 と Group 70 の担当範囲を文書で確定する</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#提案2　Group-9-を一次受けから外す">提案2　Group 9 を一次受けから外す</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#提案3　上位5症状を問題管理に載せる">提案3　上位5症状を問題管理に載せる</a></li>
@@ -111,14 +111,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#欄外：この分析の限界">15.5.4. 欄外：この分析の限界</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#効果検証に必要な追加データ">15.5.5. 効果検証に必要な追加データ</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#第5部　採点の着眼点">15.6. 第5部　採点の着眼点</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#データ整形">15.6.1. データ整形</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#分析の妥当性">15.6.2. 分析の妥当性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#提案の具体性">15.6.3. 提案の具体性</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#限界の説明">15.6.4. 限界の説明</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#例）確認事項">15.6.5. 例）確認事項</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#分析の妥当性">15.5.6. 分析の妥当性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#自身の分析結果での確認事項">15.5.7. 自身の分析結果での確認事項</a></li>
 </ul>
 </li>
 </ul>
@@ -154,35 +148,31 @@
 <p>対象データ：<code class="docutils literal notranslate"><span class="pre">保守インシデント分析_演習用_配布版.xlsx</span></code>（8,000件） 対応するワークブック：<code class="docutils literal notranslate"><span class="pre">模範解答_保守インシデント分析.xlsx</span></code></p>
 <section id="考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む">
 <h2><span class="section-number">15.1. </span>考え方の枠組み：What → Where → Why → How をピラミッドで組む<a class="headerlink" href="#考え方の枠組み：What-→-Where-→-Why-→-How-をピラミッドで組む" title="この見出しへのパーマリンク"></a></h2>
-<section id="分析はツリー、報告はピラミッド">
-<h3><span class="section-number">15.1.1. </span>分析はツリー、報告はピラミッド<a class="headerlink" href="#分析はツリー、報告はピラミッド" title="この見出しへのパーマリンク"></a></h3>
-<p>同じ What → Where → Why → How でも、<strong>分析するときと報告するときでは向きが逆になる。</strong></p>
+<section id="考える順と、伝える順は逆になる">
+<h3><span class="section-number">15.1.1. </span>考える順と、伝える順は逆になる<a class="headerlink" href="#考える順と、伝える順は逆になる" title="この見出しへのパーマリンク"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"></th>
-<th class="head"><p>向き</p></th>
-<th class="head"><p>構造</p></th>
-<th class="head"><p>目的</p></th>
+<th class="head"><p>順序</p></th>
+<th class="head"><p>形</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>分析</p></td>
+<tr class="row-even"><td><p><strong>考える</strong></p></td>
 <td><p>What → Where → Why → How</p></td>
-<td><p>ツリー（枝を切って絞り込む）</p></td>
-<td><p>答えを<strong>導く</strong></p></td>
+<td><p>ピラミッド（上から降りる。各層で候補を広げ、1つ選んで次へ）</p></td>
 </tr>
-<tr class="row-odd"><td><p>報告</p></td>
-<td><p>How → Why → Where</p></td>
-<td><p>ピラミッド（結論から降りる）</p></td>
-<td><p>答えを<strong>伝える</strong></p></td>
+<tr class="row-odd"><td><p><strong>伝える</strong></p></td>
+<td><p>結論 → 根拠 → 事実</p></td>
+<td><p>答えから話す（部門長の持ち時間は15分）</p></td>
 </tr>
 </tbody>
 </table>
-<p>部門長の持ち時間は15分。<strong>結論を最後に置くと、聞き手は結論にたどり着く前に判断を始めてしまう。</strong> 分析の苦労の順に話すのではなく、答えから話す。</p>
+<p>以下は<strong>考える順</strong>のピラミッド。各層で<strong>何を候補に挙げ、何を基準に選び、何を切ったか</strong>がそのまま残る。</p>
 </section>
 <section id="まず問題を定義する-—-問いは2つある">
 <h3><span class="section-number">15.1.2. </span>まず問題を定義する — 問いは2つある<a class="headerlink" href="#まず問題を定義する-—-問いは2つある" title="この見出しへのパーマリンク"></a></h3>
-<p>部門長は2つのことを言っている。<strong>「件数は減らない」と「解決も遅い」は別の問題</strong>で、打ち手も違う。どちらにも答える必要がある。</p>
+<p>部門長は2つのことを言っている。<strong>「件数は減らない」と「解決も遅い」は別の問題</strong>で、探す場所も原因も打ち手も違う。それぞれ別のピラミッドになる。</p>
 <section id="問い①　解決が遅い">
 <h4>問い①　解決が遅い<a class="headerlink" href="#問い①　解決が遅い" title="この見出しへのパーマリンク"></a></h4>
 <table class="docutils align-default">
@@ -208,72 +198,45 @@
 </tbody>
 </table>
 <p>理想値を「未達成ゼロ」に置くと非現実的で、打ち手の大きさを測れない。<strong>実績として存在する水準（再割当が起きなかった4,367件の22.0%）</strong>を理想に据えると、ギャップがそのまま「受け渡しが生んでいる損失」になる。</p>
-<p>ただしこれは仮定を含む。再割当が起きなかった案件は、もともと簡単だった可能性がある。<strong>理想値の置き方自体が分析者の判断</strong>であり、そこを説明できることが条件になる。</p>
+<p>ただし仮定を含む。再割当が起きなかった案件は、もともと簡単だった可能性がある。<strong>理想値の置き方自体が分析者の判断</strong>であり、そこを説明できることが条件になる。</p>
 </section>
 <section id="問い②　件数が減らない">
 <h4>問い②　件数が減らない<a class="headerlink" href="#問い②　件数が減らない" title="この見出しへのパーマリンク"></a></h4>
-<p>こちらは理想値を置くより先に、<strong>主張が本当かを確かめる。</strong></p>
-<p>打ち切りの影響がない12週（2016-W09〜W20）の週次件数は、傾き <strong>−2.9件/週</strong>。前半6週の平均628件に対し後半6週は597件で、ほぼ横ばい。<strong>部門長の主張はデータに支持される。</strong></p>
-<p>ただし受付の99%が2016年3〜5月に集中しているため、<strong>年間を通じた傾向は判断できない。</strong> この3か月で横ばいだった、までが言えること。</p>
-<p>件数側は効果を定量化できないので、ギャップは数字で置かない。<strong>原因が特定できれば十分</strong>とする。</p>
-<p>問いが2つあるなら、ピラミッドを2つ立てる。無理に1枚にまとめると、頂点が曖昧になるか、根拠の並びがMECEでなくなる。</p>
-<p><strong>2つは同じ深さである必要もない。</strong> 問い①は効果まで数字で追えるので3層、問い②は原因の特定で止まるので2層。<strong>浅いことを隠さないほうが、報告としては正確になる。</strong></p>
-<p><img alt="dataa" src="../_images/%E5%9B%B31_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E2%91%A0_%E8%A7%A3%E6%B1%BA%E3%81%8C%E9%81%85%E3%81%84.png" /> <em>図1　問い①のピラミッド。頂点「受け渡しを減らす」を3本の根拠が支え、各根拠を2つの事実が支える。効果は227件（ギャップの19%）まで数字で追える。</em></p>
-<p><img alt="add" src="../_images/%E5%9B%B32_%E3%83%94%E3%83%A9%E3%83%9F%E3%83%83%E3%83%89%E2%91%A1_%E4%BB%B6%E6%95%B0%E3%81%8C%E6%B8%9B%E3%82%89%E3%81%AA%E3%81%84.png" /></p>
+<p>こちらは理想値を置くより先に、<strong>主張が本当かを確かめる。</strong> 打ち切りの影響がない12週（2016-W09〜W20）の週次件数は傾き <strong>−2.9件/週</strong>。前半6週の平均628件に対し後半6週は597件で、ほぼ横ばい。<strong>部門長の主張はデータに支持される。</strong></p>
+<p>効果を定量化できないため、こちらはギャップを数字で置かない。<strong>原因の特定までを答えとする。</strong></p>
+<p><img alt="dataa" src="../_images/%E5%9B%B31_%E6%80%9D%E8%80%83%E3%83%95%E3%83%AD%E3%83%BC_%E8%A7%A3%E6%B1%BA%E3%81%8C%E9%81%85%E3%81%84.png" /> <em>図1　問い①のピラミッド。頂点「受け渡しを減らす」を3本の根拠が支え、各根拠を2つの事実が支える。効果は227件（ギャップの19%）まで数字で追える。</em></p>
+<p><img alt="add" src="../_images/%E5%9B%B32_%E6%80%9D%E8%80%83%E3%83%95%E3%83%AD%E3%83%BC_%E4%BB%B6%E6%95%B0%E3%81%8C%E6%B8%9B%E3%82%89%E3%81%AA%E3%81%84.png" /></p>
 <p><em>図2　問い②のピラミッド。根拠は2本、効果は定量化できない。図1より浅いが、それがこの問いに対して言えることの限界を正しく表している。</em></p>
 </section>
 </section>
-<section id="縦の問答が成立しているか">
-<h3><span class="section-number">15.1.3. </span>縦の問答が成立しているか<a class="headerlink" href="#縦の問答が成立しているか" title="この見出しへのパーマリンク"></a></h3>
-<p>ピラミッドが正しく組めているかは、<strong>上から下へ問いが連鎖するか</strong>で確かめる。</p>
-<p><strong>ピラミッド①</strong></p>
+<section id="各層の選定基準">
+<h3><span class="section-number">15.1.3. </span>各層の選定基準<a class="headerlink" href="#各層の選定基準" title="この見出しへのパーマリンク"></a></h3>
+<p>ピラミッドが正しく降りているかは、<strong>各層で「なぜその枝を選んだか」が言えるか</strong>で確かめる。基準を言葉にできない選択は、勘で選んだのと変わらない。</p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>階層</p></th>
-<th class="head"><p>読み手の問い</p></th>
-<th class="head"><p>答え</p></th>
+<tr class="row-odd"><th class="head"><p>層</p></th>
+<th class="head"><p>候補の出し方</p></th>
+<th class="head"><p>選定基準</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>頂点</p></td>
-<td><p>遅さをどう直すのか？</p></td>
-<td><p>受け渡しを減らす</p></td>
+<tr class="row-even"><td><p><strong>Where</strong></p></td>
+<td><p>手持ちの列で片端から層別する</p></td>
+<td><p><strong>大きな層が実際に達成している水準</strong>があり、かつ<strong>操作できる</strong>軸</p></td>
 </tr>
-<tr class="row-odd"><td><p>↓</p></td>
-<td><p>なぜそう言えるのか？</p></td>
-<td><p>受け渡しで起きている／2経路に集中している／受付時点では防げない</p></td>
+<tr class="row-odd"><td><p><strong>Why</strong></p></td>
+<td><p>原因の仮説を並べる</p></td>
+<td><p><strong>このデータで検証できる</strong>もの</p></td>
 </tr>
-<tr class="row-even"><td><p>↓</p></td>
-<td><p>その根拠は？</p></td>
-<td><p>再割当なし22.0%・あり55.1%／往復706回／R²=0.020 ほか</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>ピラミッド②</strong></p>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>階層</p></th>
-<th class="head"><p>読み手の問い</p></th>
-<th class="head"><p>答え</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>頂点</p></td>
-<td><p>件数をどう減らすのか？</p></td>
-<td><p>再発を止める（上位5症状を問題管理に載せる）</p></td>
-</tr>
-<tr class="row-odd"><td><p>↓</p></td>
-<td><p>なぜそう言えるのか？</p></td>
-<td><p>症状が極端に集中している／問題管理が機能していない</p></td>
-</tr>
-<tr class="row-even"><td><p>↓</p></td>
-<td><p>その根拠は？</p></td>
-<td><p>上位5種で49.5%／問題管理の紐付けは1.4%</p></td>
+<tr class="row-even"><td><p><strong>How</strong></p></td>
+<td><p>打ち手を並べる</p></td>
+<td><p><strong>効果を見積もれる</strong>もの（見積もれないものは、そう明記して採る）</p></td>
 </tr>
 </tbody>
 </table>
-<p><strong>横の並びがMECEかも確かめる。</strong> ピラミッド①の3本は「事象の大きさ」「発生箇所」「打ち手の方向」で重複も飛躍もない。③があることで「受付時の仕分けを強化すべきでは」という当然の反論を先に潰している。</p>
-<p>ピラミッド②の2本は「再発している」と「止める仕組みが動いていない」。前者だけでは「仕方ない」で終わり、後者だけでは「何を止めるのか」が決まらない。2本で1つの主張を支えている。</p>
+<p><strong>Where の基準が2つあるのが要点。</strong> 拠点別は最良5.5%だが201件（2.5%）の小さな拠点で、「全拠点をこの水準に」は根拠にならない。カテゴリ別は最良20.8%で大きな層だが、<strong>案件の性質なので変えられない。</strong> 両方を満たすのは「受け渡しの有無」だけだった。</p>
+<p>問い②でも同じ。拠点別は上位5種で68.1%と症状別（49.5%）より集中しているが、<strong>拠点は「どこで起票されたか」であって「同じ事象か」を示さない。</strong> 再発を止めるには、同じ事象の単位＝症状で見る必要がある。</p>
+<p><strong>切った枝にも理由がある。</strong> それを残すのがこのピラミッドの役割になる。</p>
 </section>
 </section>
 <section id="第1部　前処理でなされるべき4つの判断">
@@ -621,7 +584,7 @@
 </section>
 <section id="モデル比較">
 <h3><span class="section-number">15.4.2. </span>モデル比較<a class="headerlink" href="#モデル比較" title="この見出しへのパーマリンク"></a></h3>
-<p>重回帰分析自体は実践できるが、性能はあまり良くないので分析で得られる情報としての価値は少なさそう。</p>
+<p>どれも性能が良くないので分析においてはあまり役立たない</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>モデル</p></th>
@@ -821,10 +784,9 @@
 </section>
 <section id="結論">
 <h2><span class="section-number">15.5. </span>結論<a class="headerlink" href="#結論" title="この見出しへのパーマリンク"></a></h2>
+<p>分析の順（What → Where → Why → How）ではなく、<strong>報告の順（結論 → 根拠 → 施策）</strong>で並べる。</p>
 <section id="2つの問いと、2つの答え">
 <h3><span class="section-number">15.5.1. </span>2つの問いと、2つの答え<a class="headerlink" href="#2つの問いと、2つの答え" title="この見出しへのパーマリンク"></a></h3>
-<p><strong>見出し：受け渡しを減らす／再発を止める</strong></p>
-<p>部門長は2つのことを言った。<strong>どちらにも、1枚目で答えを返す。</strong></p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>問い</p></th>
@@ -843,8 +805,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>1枚目で両方の結論まで言う。</strong> 現状の説明に1枚使うと、残り2枚で2つ分の根拠と施策を詰め込むことになる。</p>
-<p>②には効果の数字を置いていない。<strong>その理由は3枚目で述べる。</strong></p>
 </section>
 <section id="根拠">
 <h3><span class="section-number">15.5.2. </span>根拠<a class="headerlink" href="#根拠" title="この見出しへのパーマリンク"></a></h3>
@@ -870,9 +830,8 @@
 <p>①と②が「遅さ」、③が「件数」に対応する。</p>
 <p>①の裏付けには<strong>受付時の7変数では R²=0.020</strong> という数字を添える。これが「受付時の仕分けを厳しくすればよいのでは」という反論を先に潰す。受付票を見ても所要時間は読めないので、プロセス側を変えるしかない。</p>
 </section>
-<section id="問いへの回答">
-<h3><span class="section-number">15.5.3. </span>問いへの回答<a class="headerlink" href="#問いへの回答" title="この見出しへのパーマリンク"></a></h3>
-<p><strong>見出し：遅さは227件を回収、件数は問題管理の起動から</strong></p>
+<section id="問いの答え">
+<h3><span class="section-number">15.5.3. </span>問いの答え<a class="headerlink" href="#問いの答え" title="この見出しへのパーマリンク"></a></h3>
 <p><strong>【遅さ】ギャップ1,204件のうち、どこまで埋まるか</strong></p>
 <table class="docutils align-default">
 <thead>
@@ -982,34 +941,8 @@
 <li><p>客待ちの開始・終了時刻（現在は状態遷移から推定するしかない）</p></li>
 </ul>
 </section>
-</section>
-<section id="第5部　採点の着眼点">
-<h2><span class="section-number">15.6. </span>第5部　採点の着眼点<a class="headerlink" href="#第5部　採点の着眼点" title="この見出しへのパーマリンク"></a></h2>
-<p>ルーブリックの各観点について、具体的に何を見るか。</p>
-<section id="データ整形">
-<h3><span class="section-number">15.6.1. </span>データ整形<a class="headerlink" href="#データ整形" title="この見出しへのパーマリンク"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>見るところ</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Lv1</p></td>
-<td><p>マスタを結合して名称を引けている</p></td>
-</tr>
-<tr class="row-odd"><td><p>Lv2</p></td>
-<td><p>結合後の件数が8,000件のままであることを確認した痕跡がある</p></td>
-</tr>
-<tr class="row-even"><td><p>Lv3</p></td>
-<td><p>516件の欠損と、指標ごとの母数の違いを説明できる</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>減点所：</strong> クローズ日時で所要時間を計算している（判断1を外している）</p>
-</section>
 <section id="分析の妥当性">
-<h3><span class="section-number">15.6.2. </span>分析の妥当性<a class="headerlink" href="#分析の妥当性" title="この見出しへのパーマリンク"></a></h3>
+<h3><span class="section-number">15.5.6. </span>分析の妥当性<a class="headerlink" href="#分析の妥当性" title="この見出しへのパーマリンク"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"></th>
@@ -1030,52 +963,8 @@
 </table>
 <p><strong>減点所：</strong> 平均183時間を前面に出している／未達成率100%の優先度「緊急」を母数78件と併記せず最大の問題として報告している</p>
 </section>
-<section id="提案の具体性">
-<h3><span class="section-number">15.6.3. </span>提案の具体性<a class="headerlink" href="#提案の具体性" title="この見出しへのパーマリンク"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>見るところ</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Lv1</p></td>
-<td><p>提案が3つある</p></td>
-</tr>
-<tr class="row-odd"><td><p>Lv2</p></td>
-<td><p>各提案に数字の根拠がある</p></td>
-</tr>
-<tr class="row-even"><td><p>Lv3</p></td>
-<td><p>期待効果を件数や時間で見積もっている</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>加点所：</strong> 「件数が多いから」と「1件あたりが重いから」の両方を検討し、どちらを採ったか述べている（提案1は前者、提案2は後者の論理）</p>
-</section>
-<section id="限界の説明">
-<h3><span class="section-number">15.6.4. </span>限界の説明<a class="headerlink" href="#限界の説明" title="この見出しへのパーマリンク"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p></p></th>
-<th class="head"><p>見るところ</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Lv1</p></td>
-<td><p>触れていない</p></td>
-</tr>
-<tr class="row-odd"><td><p>Lv2</p></td>
-<td><p>「因果ではない」と言及した</p></td>
-</tr>
-<tr class="row-even"><td><p>Lv3</p></td>
-<td><p>検証に必要な追加データを挙げられる</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>最高評価：</strong> 更新回数のリーケージに自分で気づき、モデルから外して比較している／ナレッジの交絡を月別に分けて確認している</p>
-</section>
-<section id="例）確認事項">
-<h3><span class="section-number">15.6.5. </span>例）確認事項<a class="headerlink" href="#例）確認事項" title="この見出しへのパーマリンク"></a></h3>
+<section id="自身の分析結果での確認事項">
+<h3><span class="section-number">15.5.7. </span>自身の分析結果での確認事項<a class="headerlink" href="#自身の分析結果での確認事項" title="この見出しへのパーマリンク"></a></h3>
 <ol class="arabic simple">
 <li><p>「更新回数が効いているとのことですが、それは受付時点で分かる情報ですか」</p></li>
 <li><p>「そのグループが遅いのは、難しい案件が回ってきているからではないですか」</p></li>
@@ -1084,6 +973,7 @@
 <li><p>「未達成率が高いその区分、母数は何件ですか」</p></li>
 <li><p>「なぜそのカテゴリを選んだんですか。件数ですか、1件あたりの時間ですか」</p></li>
 </ol>
+<p>1と2が答えられなかったチームがいたら、講評でリーケージと因果の論点につなげる。</p>
 <p>データ出所：UCI Machine Learning Repository / Incident management process enriched event log (CC BY 4.0) <a class="reference external" href="https://archive.ics.uci.edu/dataset/498">https://archive.ics.uci.edu/dataset/498</a></p>
 </section>
 </section>
